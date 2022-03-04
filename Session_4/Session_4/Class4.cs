@@ -16,7 +16,8 @@ namespace Session_4
             {
                 for (int j = 0; j < Array2.Length; j++)
                 {
-                    Console.WriteLine(Array1[i] * Array2[j]);
+                    Console.Write($"{Array1[i] * Array2[j]} ");
+                    
                     
                 }
                 

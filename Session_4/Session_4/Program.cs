@@ -34,11 +34,13 @@ int[] Array2 = { 1, 3, 7, 10 };
 var c4 = new Class4();
 c4.ArrayNew(Array1, Array2);
 
+
 //askisi 5
 
 int[] myArray = new int[10] { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
 var c5 = new Class5();
 c5.Sort(myArray);
 for (int i = 0; i < myArray.Length; i++)
-    Console.WriteLine(myArray[i]);
+    Console.Write($"{myArray[i]} ");
+
 
