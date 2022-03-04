@@ -38,4 +38,7 @@ c4.ArrayNew(Array1, Array2);
 
 int[] myArray = new int[10] { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
 var c5 = new Class5();
+c5.Sort(myArray);
+for (int i = 0; i < myArray.Length; i++)
+    Console.WriteLine(myArray[i]);
 

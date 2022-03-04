@@ -8,9 +8,9 @@ namespace Session_4
 {
     internal class Class5
     {
-      public void Sort()
+      public void Sort(int[] myArray)
         {
-            
+            Array.Sort(myArray);
         }
 
         public Class5()
