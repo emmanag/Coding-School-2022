@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace Session_05
 {
-    //public enum ActionEnum
-    //{
-    //    Covert,
-    //    Uppercase,
-    //    Revere
-    //}
+    
     internal class ActionRequest
     {
-        public Guid RequestId { get; set; }
-        public string Input { get; set; }
+        public Guid RequestId { get;}
+        public string Input { get; }
+        public ActionEnum Action { get; }
 
         public enum ActionEnum
         {
@@ -23,11 +19,11 @@ namespace Session_05
             Uppercase,
             Revere
         }
-        public ActionRequest(Guid requestId, string input, ActionEnum action, ActionEnum actionEnum) 
+        public ActionRequest(Guid requestId, string input, ActionEnum action) 
         { 
             RequestId = requestId;
             Input = input;
-            actionEnum = action;
+            Action= action;
             
         }
 

@@ -14,11 +14,11 @@ namespace Session_05
             Logger = logger;
         }
 
-        private AbstractResolverBase(ActionEnum action)
+        private AbstractResolverBase GetResolverBase(ActionRequest action)
         {
             switch (action)
             {
-                case ActionEnum.Convert:                    
+                case ActionRequest.Convert:                    
                     return new ConvertResolver();
                     break;
                 case ActionEnum.Uppercase:                   
