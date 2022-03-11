@@ -8,13 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Session_07
 {
-    public partial class Course : Form
+    public partial class ProfessorForm : Form
     {
-        public Course()
+        public ProfessorForm()
         {
             InitializeComponent();
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

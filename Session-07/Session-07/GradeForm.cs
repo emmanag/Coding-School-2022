@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Session_07
 {
-    public partial class Student : Form
+    public partial class GradeForm : Form
     {
-        public Student()
+        public GradeForm()
         {
             InitializeComponent();
-        }
-
-        private void simpleButton8_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

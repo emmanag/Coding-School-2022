@@ -38,6 +38,9 @@
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,61 +54,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calc.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Course.cs">
+    <Compile Include="CourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Course.Designer.cs">
-      <DependentUpon>Course.cs</DependentUpon>
+    <Compile Include="CourseForm.Designer.cs">
+      <DependentUpon>CourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Schedule.cs">
+    <Compile Include="ScheduleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Schedule.Designer.cs">
-      <DependentUpon>Schedule.cs</DependentUpon>
+    <Compile Include="ScheduleForm.Designer.cs">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grade.cs">
+    <Compile Include="GradeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grade.Designer.cs">
-      <DependentUpon>Grade.cs</DependentUpon>
+    <Compile Include="GradeForm.Designer.cs">
+      <DependentUpon>GradeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="University.cs">
+    <Compile Include="UniversityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="University.Designer.cs">
-      <DependentUpon>University.cs</DependentUpon>
+    <Compile Include="UniversityForm.Designer.cs">
+      <DependentUpon>UniversityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs">
+    <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Student.Designer.cs">
-      <DependentUpon>Student.cs</DependentUpon>
+    <Compile Include="StudentForm.Designer.cs">
+      <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Professor.cs">
+    <Compile Include="ProfessorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Professor.Designer.cs">
-      <DependentUpon>Professor.cs</DependentUpon>
+    <Compile Include="ProfessorForm.Designer.cs">
+      <DependentUpon>ProfessorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Course.resx">
-      <DependentUpon>Course.cs</DependentUpon>
+    <EmbeddedResource Include="CourseForm.resx">
+      <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grade.resx">
-      <DependentUpon>Grade.cs</DependentUpon>
+    <EmbeddedResource Include="GradeForm.resx">
+      <DependentUpon>GradeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Professor.resx">
-      <DependentUpon>Professor.cs</DependentUpon>
+    <EmbeddedResource Include="ProfessorForm.resx">
+      <DependentUpon>ProfessorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -117,15 +121,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Schedule.resx">
-      <DependentUpon>Schedule.cs</DependentUpon>
+    <EmbeddedResource Include="ScheduleForm.resx">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Student.resx">
-      <DependentUpon>Student.cs</DependentUpon>
+    <EmbeddedResource Include="StudentForm.resx">
+      <DependentUpon>StudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="University.resx">
-      <DependentUpon>University.cs</DependentUpon>
+    <EmbeddedResource Include="UniversityForm.resx">
+      <DependentUpon>UniversityForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

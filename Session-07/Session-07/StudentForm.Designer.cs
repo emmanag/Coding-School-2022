@@ -1,6 +1,6 @@
 ﻿namespace Session_07
 {
-    partial class Student
+    partial class StudentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,13 +36,15 @@
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
+            this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(38, 58);
+            this.labelControl1.Location = new System.Drawing.Point(357, 59);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(98, 13);
             this.labelControl1.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(38, 121);
+            this.labelControl2.Location = new System.Drawing.Point(357, 122);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(39, 13);
             this.labelControl2.TabIndex = 1;
@@ -58,21 +60,21 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(189, 55);
+            this.textEdit1.Location = new System.Drawing.Point(508, 56);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(202, 20);
             this.textEdit1.TabIndex = 2;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(189, 118);
+            this.textEdit2.Location = new System.Drawing.Point(508, 119);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(202, 20);
             this.textEdit2.TabIndex = 3;
             // 
             // simpleButton5
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(337, 363);
+            this.simpleButton5.Location = new System.Drawing.Point(656, 364);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(75, 23);
             this.simpleButton5.TabIndex = 11;
@@ -80,15 +82,16 @@
             // 
             // simpleButton6
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(241, 363);
+            this.simpleButton6.Location = new System.Drawing.Point(560, 364);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(75, 23);
             this.simpleButton6.TabIndex = 10;
             this.simpleButton6.Text = "Save";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // simpleButton7
             // 
-            this.simpleButton7.Location = new System.Drawing.Point(144, 363);
+            this.simpleButton7.Location = new System.Drawing.Point(463, 364);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(75, 23);
             this.simpleButton7.TabIndex = 9;
@@ -96,18 +99,27 @@
             // 
             // simpleButton8
             // 
-            this.simpleButton8.Location = new System.Drawing.Point(38, 363);
+            this.simpleButton8.Location = new System.Drawing.Point(357, 364);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(75, 23);
             this.simpleButton8.TabIndex = 8;
             this.simpleButton8.Text = "New";
             this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
-            // Student
+            // listBoxControl1
+            // 
+            this.listBoxControl1.Location = new System.Drawing.Point(72, 59);
+            this.listBoxControl1.Name = "listBoxControl1";
+            this.listBoxControl1.Size = new System.Drawing.Size(222, 328);
+            this.listBoxControl1.TabIndex = 12;
+            this.listBoxControl1.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
+            // 
+            // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBoxControl1);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton7);
@@ -116,10 +128,11 @@
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Name = "Student";
+            this.Name = "StudentForm";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +148,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
+        private DevExpress.XtraEditors.ListBoxControl listBoxControl1;
     }
 }
