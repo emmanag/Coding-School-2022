@@ -63,17 +63,101 @@
     <Compile Include="CarCenter.Designer.cs">
       <DependentUpon>CarCenter.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarsF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarsF.Designer.cs">
+      <DependentUpon>CarsF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerF.Designer.cs">
+      <DependentUpon>CustomerF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersF.Designer.cs">
+      <DependentUpon>CustomersF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerF.Designer.cs">
+      <DependentUpon>EngineerF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineersF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineersF.Designer.cs">
+      <DependentUpon>EngineersF.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarF.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CarF.Designer.cs">
       <DependentUpon>CarF.cs</DependentUpon>
     </Compile>
-    <Compile Include="CarsF.cs">
+    <Compile Include="ManagersF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarsF.Designer.cs">
-      <DependentUpon>CarsF.cs</DependentUpon>
+    <Compile Include="ManagersF.Designer.cs">
+      <DependentUpon>ManagersF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerF.Designer.cs">
+      <DependentUpon>ManagerF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthlyLedgersF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlyLedgersF.Designer.cs">
+      <DependentUpon>MonthlyLedgersF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthyLedgerF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthyLedgerF.Designer.cs">
+      <DependentUpon>MonthyLedgerF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionLinesF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionLinesF.Designer.cs">
+      <DependentUpon>TransactionLinesF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionLineF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionLineF.Designer.cs">
+      <DependentUpon>TransactionLineF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionF.Designer.cs">
+      <DependentUpon>TransactionF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionsF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionsF.Designer.cs">
+      <DependentUpon>TransactionsF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceTasksF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceTasksF.Designer.cs">
+      <DependentUpon>ServiceTasksF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceTaskF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceTaskF.Designer.cs">
+      <DependentUpon>ServiceTaskF.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +170,30 @@
     <EmbeddedResource Include="CarsF.resx">
       <DependentUpon>CarsF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerF.resx">
+      <DependentUpon>CustomerF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomersF.resx">
+      <DependentUpon>CustomersF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineerF.resx">
+      <DependentUpon>EngineerF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineersF.resx">
+      <DependentUpon>EngineersF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerF.resx">
+      <DependentUpon>ManagerF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagersF.resx">
+      <DependentUpon>ManagersF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlyLedgersF.resx">
+      <DependentUpon>MonthlyLedgersF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthyLedgerF.resx">
+      <DependentUpon>MonthyLedgerF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +204,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ServiceTaskF.resx">
+      <DependentUpon>ServiceTaskF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceTasksF.resx">
+      <DependentUpon>ServiceTasksF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionF.resx">
+      <DependentUpon>TransactionF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionLineF.resx">
+      <DependentUpon>TransactionLineF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionLinesF.resx">
+      <DependentUpon>TransactionLinesF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionsF.resx">
+      <DependentUpon>TransactionsF.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

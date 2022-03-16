@@ -1,6 +1,6 @@
 ﻿namespace Session_11
 {
-    partial class CarF
+    partial class ServiceTaskF
     {
         /// <summary>
         /// Required designer variable.
@@ -43,66 +43,66 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(371, 349);
+            this.simpleButton2.Location = new System.Drawing.Point(382, 354);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 19;
+            this.simpleButton2.TabIndex = 29;
             this.simpleButton2.Text = "Exit";
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(169, 349);
+            this.simpleButton1.Location = new System.Drawing.Point(180, 354);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 18;
+            this.simpleButton1.TabIndex = 28;
             this.simpleButton1.Text = "Save";
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(169, 125);
+            this.textEdit3.Location = new System.Drawing.Point(180, 130);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(277, 20);
-            this.textEdit3.TabIndex = 15;
+            this.textEdit3.TabIndex = 25;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(169, 80);
+            this.textEdit2.Location = new System.Drawing.Point(180, 85);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(277, 20);
-            this.textEdit2.TabIndex = 14;
+            this.textEdit2.TabIndex = 24;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(169, 34);
+            this.textEdit1.Location = new System.Drawing.Point(180, 39);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(277, 20);
-            this.textEdit1.TabIndex = 13;
+            this.textEdit1.TabIndex = 23;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(46, 132);
+            this.labelControl3.Location = new System.Drawing.Point(57, 137);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(112, 13);
-            this.labelControl3.TabIndex = 12;
-            this.labelControl3.Text = "CarRegistrationNumber";
+            this.labelControl3.Size = new System.Drawing.Size(28, 13);
+            this.labelControl3.TabIndex = 22;
+            this.labelControl3.Text = "Hours";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(46, 83);
+            this.labelControl2.Location = new System.Drawing.Point(57, 88);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(28, 13);
-            this.labelControl2.TabIndex = 11;
-            this.labelControl2.Text = "Model";
+            this.labelControl2.Size = new System.Drawing.Size(53, 13);
+            this.labelControl2.TabIndex = 21;
+            this.labelControl2.Text = "Description";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(46, 37);
+            this.labelControl1.Location = new System.Drawing.Point(57, 42);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 13);
-            this.labelControl1.TabIndex = 10;
-            this.labelControl1.Text = "Brand";
+            this.labelControl1.Size = new System.Drawing.Size(25, 13);
+            this.labelControl1.TabIndex = 20;
+            this.labelControl1.Text = "Code";
             // 
-            // CarF
+            // ServiceTaskF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +115,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Name = "CarF";
+            this.Name = "ServiceTaskF";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
