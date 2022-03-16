@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Session_11
 {
-    public partial class Form1 : Form
+    public partial class CarF : Form
     {
-        public Form1()
+        public CarF()
         {
             InitializeComponent();
         }
-
-        
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session-11", "Session-11\Session-11.csproj", "{02DBA5A8-9288-4869-A059-F489BA91B86C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{31E61157-BB81-4CFE-A89C-848C97CD4299}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{02DBA5A8-9288-4869-A059-F489BA91B86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02DBA5A8-9288-4869-A059-F489BA91B86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02DBA5A8-9288-4869-A059-F489BA91B86C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E61157-BB81-4CFE-A89C-848C97CD4299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E61157-BB81-4CFE-A89C-848C97CD4299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E61157-BB81-4CFE-A89C-848C97CD4299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E61157-BB81-4CFE-A89C-848C97CD4299}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
