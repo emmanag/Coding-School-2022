@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class Manager : Person
+    public class Customer : Person
     {
-        public decimal SallaryPerMonth { get; set; }
+        public string Phone { get; set; }
+        public string TIN { get; set; }
 
-        public Manager()
+        public Customer()
         {
 
         }
