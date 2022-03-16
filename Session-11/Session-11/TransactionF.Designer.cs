@@ -1,6 +1,6 @@
 ﻿namespace Session_11
 {
-    partial class CarF
+    partial class TransactionF
     {
         /// <summary>
         /// Required designer variable.
@@ -30,96 +30,138 @@
         {
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(371, 349);
+            this.simpleButton2.Location = new System.Drawing.Point(361, 344);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 19;
+            this.simpleButton2.TabIndex = 29;
             this.simpleButton2.Text = "Exit";
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(169, 349);
+            this.simpleButton1.Location = new System.Drawing.Point(159, 344);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 18;
+            this.simpleButton1.TabIndex = 28;
             this.simpleButton1.Text = "Save";
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Location = new System.Drawing.Point(159, 166);
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(277, 20);
+            this.textEdit4.TabIndex = 27;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(36, 169);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(53, 13);
+            this.labelControl4.TabIndex = 26;
+            this.labelControl4.Text = "ManagerID";
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(169, 125);
+            this.textEdit3.Location = new System.Drawing.Point(159, 120);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(277, 20);
-            this.textEdit3.TabIndex = 15;
+            this.textEdit3.TabIndex = 25;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(169, 80);
+            this.textEdit2.Location = new System.Drawing.Point(159, 75);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(277, 20);
-            this.textEdit2.TabIndex = 14;
+            this.textEdit2.TabIndex = 24;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(169, 34);
+            this.textEdit1.Location = new System.Drawing.Point(159, 29);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(277, 20);
-            this.textEdit1.TabIndex = 13;
+            this.textEdit1.TabIndex = 23;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(46, 132);
+            this.labelControl3.Location = new System.Drawing.Point(36, 127);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(112, 13);
-            this.labelControl3.TabIndex = 12;
-            this.labelControl3.Text = "CarRegistrationNumber";
+            this.labelControl3.Size = new System.Drawing.Size(28, 13);
+            this.labelControl3.TabIndex = 22;
+            this.labelControl3.Text = "CarID";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(46, 83);
+            this.labelControl2.Location = new System.Drawing.Point(36, 78);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(28, 13);
-            this.labelControl2.TabIndex = 11;
-            this.labelControl2.Text = "Model";
+            this.labelControl2.Size = new System.Drawing.Size(57, 13);
+            this.labelControl2.TabIndex = 21;
+            this.labelControl2.Text = "CustomerID";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(46, 37);
+            this.labelControl1.Location = new System.Drawing.Point(36, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 13);
-            this.labelControl1.TabIndex = 10;
-            this.labelControl1.Text = "Brand";
+            this.labelControl1.Size = new System.Drawing.Size(23, 13);
+            this.labelControl1.TabIndex = 20;
+            this.labelControl1.Text = "Date";
             // 
-            // CarF
+            // textEdit5
+            // 
+            this.textEdit5.Location = new System.Drawing.Point(159, 206);
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(277, 20);
+            this.textEdit5.TabIndex = 31;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(36, 209);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(50, 13);
+            this.labelControl5.TabIndex = 30;
+            this.labelControl5.Text = "Total Price";
+            // 
+            // TransactionF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textEdit5);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.textEdit3);
             this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Name = "CarF";
+            this.Name = "TransactionF";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,11 +171,15 @@
 
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }
