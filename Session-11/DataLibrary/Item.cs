@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    internal class Item
+    public class Item
     {
         public Guid ID { get; set; }
 

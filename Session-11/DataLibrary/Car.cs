@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class Car
+    public class Car : Item
     {
         public int MyProperty { get; set; }
 
