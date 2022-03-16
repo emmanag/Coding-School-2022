@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class Car
+    internal class DataItem
     {
-        public int MyProperty { get; set; }
+        public Guid ID { get; set; }
 
-        public Car()
+        public DataItem()
         {
 
         }
