@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    internal class DataItem
+    internal class Item
     {
         public Guid ID { get; set; }
 
-        public DataItem()
+        public Item()
         {
-
+            ID = Guid.NewGuid();
         }
     }
 }
