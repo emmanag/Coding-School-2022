@@ -8,7 +8,9 @@ namespace DataLibrary
 {
     public class Car : Item
     {
-        public int MyProperty { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public int CarRegNumber { get; set; }
 
         public Car()
         {

@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    internal class ServiceTask
+    internal class ServiceTask : Item
     {
-        public Guid ID { get; set; }
         public string Code { get; set; }
         public string Description { get; set; }
-        public double Hours { get; set; }
+        public decimal Hours { get; set; }
 
         public ServiceTask()
         {
