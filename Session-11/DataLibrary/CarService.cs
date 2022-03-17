@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class Item
+    public class CarService
     {
-        public Guid ID { get; set; }
+        public List<Car> Cars { get; set; }
 
-        public Item()
-        {
-            ID = Guid.NewGuid();
-        }
     }
 }
