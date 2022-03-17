@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class TrassactionLine : Item
+    public class TransactionLine : Item
     {
         public Guid TransactionID { get; set; }
         public Guid ServiceTaskID { get; set; }
@@ -15,7 +15,7 @@ namespace DataLibrary
         public decimal PricePerHour { get; set; }
         public decimal Price { get; set; }
 
-        public TrassactionLine()
+        public TransactionLine()
         { 
         
         }
