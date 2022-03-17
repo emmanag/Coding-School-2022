@@ -99,6 +99,12 @@
     <Compile Include="CarF.Designer.cs">
       <DependentUpon>CarF.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginF.Designer.cs">
+      <DependentUpon>LoginF.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagersF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EngineersF.resx">
       <DependentUpon>EngineersF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginF.resx">
+      <DependentUpon>LoginF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerF.resx">
       <DependentUpon>ManagerF.cs</DependentUpon>
