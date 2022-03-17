@@ -41,25 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionHandler.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="CarHandler.cs" />
-    <Compile Include="CarService.cs" />
-    <Compile Include="TransactionLineHandler.cs" />
-    <Compile Include="TransactionHandler.cs" />
-    <Compile Include="ServiceTaskHandler.cs" />
-    <Compile Include="EngineerHandler.cs" />
-    <Compile Include="ManagerHandler.cs" />
-    <Compile Include="TransactionLine.cs" />
-    <Compile Include="MonthlyLedger.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="Engineer.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Manager.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="ItemHandlers\ActionHandler.cs" />
+    <Compile Include="DataClasses\Car.cs" />
+    <Compile Include="ItemHandlers\CarHandler.cs" />
+    <Compile Include="DataClasses\CarService.cs" />
+    <Compile Include="ItemHandlers\TransactionLineHandler.cs" />
+    <Compile Include="ItemHandlers\TransactionHandler.cs" />
+    <Compile Include="ItemHandlers\ServiceTaskHandler.cs" />
+    <Compile Include="ItemHandlers\EngineerHandler.cs" />
+    <Compile Include="ItemHandlers\ManagerHandler.cs" />
+    <Compile Include="DataClasses\TransactionLine.cs" />
+    <Compile Include="DataClasses\MonthlyLedger.cs" />
+    <Compile Include="DataClasses\Customer.cs" />
+    <Compile Include="DataClasses\Engineer.cs" />
+    <Compile Include="DataClasses\Item.cs" />
+    <Compile Include="DataClasses\Manager.cs" />
+    <Compile Include="DataClasses\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceTask.cs" />
-    <Compile Include="Transaction.cs" />
+    <Compile Include="DataClasses\ServiceTask.cs" />
+    <Compile Include="DataClasses\Transaction.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
