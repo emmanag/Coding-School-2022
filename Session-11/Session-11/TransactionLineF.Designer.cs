@@ -28,50 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
+            this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.CtrlengineerID = new DevExpress.XtraEditors.TextEdit();
+            this.CtrlservicetaskID = new DevExpress.XtraEditors.TextEdit();
+            this.CtrltransactionID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.Ctrlpriceperhour = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.Ctrlprice = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            this.Ctrlhours = new DevExpress.XtraEditors.SpinEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrltransactionID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlpriceperhour.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlprice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton2
+            // Btnexit
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(379, 362);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 29;
-            this.simpleButton2.Text = "Exit";
+            this.Btnexit.Location = new System.Drawing.Point(379, 362);
+            this.Btnexit.Name = "Btnexit";
+            this.Btnexit.Size = new System.Drawing.Size(75, 23);
+            this.Btnexit.TabIndex = 29;
+            this.Btnexit.Text = "Exit";
             // 
-            // simpleButton1
+            // Btnsave
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(177, 362);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 28;
-            this.simpleButton1.Text = "Save";
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(177, 184);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(277, 20);
-            this.textEdit4.TabIndex = 27;
+            this.Btnsave.Location = new System.Drawing.Point(177, 362);
+            this.Btnsave.Name = "Btnsave";
+            this.Btnsave.Size = new System.Drawing.Size(75, 23);
+            this.Btnsave.TabIndex = 28;
+            this.Btnsave.Text = "Save";
             // 
             // labelControl4
             // 
@@ -81,26 +74,26 @@
             this.labelControl4.TabIndex = 26;
             this.labelControl4.Text = "Hours";
             // 
-            // textEdit3
+            // CtrlengineerID
             // 
-            this.textEdit3.Location = new System.Drawing.Point(177, 138);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(277, 20);
-            this.textEdit3.TabIndex = 25;
+            this.CtrlengineerID.Location = new System.Drawing.Point(177, 138);
+            this.CtrlengineerID.Name = "CtrlengineerID";
+            this.CtrlengineerID.Size = new System.Drawing.Size(277, 20);
+            this.CtrlengineerID.TabIndex = 25;
             // 
-            // textEdit2
+            // CtrlservicetaskID
             // 
-            this.textEdit2.Location = new System.Drawing.Point(177, 93);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(277, 20);
-            this.textEdit2.TabIndex = 24;
+            this.CtrlservicetaskID.Location = new System.Drawing.Point(177, 93);
+            this.CtrlservicetaskID.Name = "CtrlservicetaskID";
+            this.CtrlservicetaskID.Size = new System.Drawing.Size(277, 20);
+            this.CtrlservicetaskID.TabIndex = 24;
             // 
-            // textEdit1
+            // CtrltransactionID
             // 
-            this.textEdit1.Location = new System.Drawing.Point(177, 47);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(277, 20);
-            this.textEdit1.TabIndex = 23;
+            this.CtrltransactionID.Location = new System.Drawing.Point(177, 47);
+            this.CtrltransactionID.Name = "CtrltransactionID";
+            this.CtrltransactionID.Size = new System.Drawing.Size(277, 20);
+            this.CtrltransactionID.TabIndex = 23;
             // 
             // labelControl3
             // 
@@ -126,12 +119,12 @@
             this.labelControl1.TabIndex = 20;
             this.labelControl1.Text = "TransactionID";
             // 
-            // textEdit5
+            // Ctrlpriceperhour
             // 
-            this.textEdit5.Location = new System.Drawing.Point(177, 225);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(277, 20);
-            this.textEdit5.TabIndex = 31;
+            this.Ctrlpriceperhour.Location = new System.Drawing.Point(177, 225);
+            this.Ctrlpriceperhour.Name = "Ctrlpriceperhour";
+            this.Ctrlpriceperhour.Size = new System.Drawing.Size(277, 20);
+            this.Ctrlpriceperhour.TabIndex = 31;
             // 
             // labelControl5
             // 
@@ -141,12 +134,12 @@
             this.labelControl5.TabIndex = 30;
             this.labelControl5.Text = "PricePerHour";
             // 
-            // textEdit6
+            // Ctrlprice
             // 
-            this.textEdit6.Location = new System.Drawing.Point(177, 266);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(277, 20);
-            this.textEdit6.TabIndex = 33;
+            this.Ctrlprice.Location = new System.Drawing.Point(177, 266);
+            this.Ctrlprice.Name = "Ctrlprice";
+            this.Ctrlprice.Size = new System.Drawing.Size(277, 20);
+            this.Ctrlprice.TabIndex = 33;
             // 
             // labelControl6
             // 
@@ -156,33 +149,47 @@
             this.labelControl6.TabIndex = 32;
             this.labelControl6.Text = "Price";
             // 
+            // Ctrlhours
+            // 
+            this.Ctrlhours.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.Ctrlhours.Location = new System.Drawing.Point(177, 180);
+            this.Ctrlhours.Name = "Ctrlhours";
+            this.Ctrlhours.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Ctrlhours.Size = new System.Drawing.Size(100, 20);
+            this.Ctrlhours.TabIndex = 34;
+            // 
             // TransactionLineF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textEdit6);
+            this.Controls.Add(this.Ctrlhours);
+            this.Controls.Add(this.Ctrlprice);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.textEdit5);
+            this.Controls.Add(this.Ctrlpriceperhour);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.Btnexit);
+            this.Controls.Add(this.Btnsave);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.CtrlengineerID);
+            this.Controls.Add(this.CtrlservicetaskID);
+            this.Controls.Add(this.CtrltransactionID);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "TransactionLineF";
             this.Text = "TransactionLine";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrltransactionID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlpriceperhour.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlprice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,19 +197,19 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.SimpleButton Btnexit;
+        private DevExpress.XtraEditors.SimpleButton Btnsave;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit CtrlengineerID;
+        private DevExpress.XtraEditors.TextEdit CtrlservicetaskID;
+        private DevExpress.XtraEditors.TextEdit CtrltransactionID;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit Ctrlpriceperhour;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit Ctrlprice;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.SpinEdit Ctrlhours;
     }
 }

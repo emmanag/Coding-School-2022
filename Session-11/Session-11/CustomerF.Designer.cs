@@ -31,17 +31,17 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.Ctrlname = new DevExpress.XtraEditors.TextEdit();
+            this.Ctrlsurname = new DevExpress.XtraEditors.TextEdit();
+            this.Ctrlphone = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            this.CtrlTIN = new DevExpress.XtraEditors.TextEdit();
+            this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
+            this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlphone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlTIN.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -68,26 +68,26 @@
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "Phone";
             // 
-            // textEdit1
+            // Ctrlname
             // 
-            this.textEdit1.Location = new System.Drawing.Point(180, 28);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(277, 20);
-            this.textEdit1.TabIndex = 3;
+            this.Ctrlname.Location = new System.Drawing.Point(180, 28);
+            this.Ctrlname.Name = "Ctrlname";
+            this.Ctrlname.Size = new System.Drawing.Size(277, 20);
+            this.Ctrlname.TabIndex = 3;
             // 
-            // textEdit2
+            // Ctrlsurname
             // 
-            this.textEdit2.Location = new System.Drawing.Point(180, 74);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(277, 20);
-            this.textEdit2.TabIndex = 4;
+            this.Ctrlsurname.Location = new System.Drawing.Point(180, 74);
+            this.Ctrlsurname.Name = "Ctrlsurname";
+            this.Ctrlsurname.Size = new System.Drawing.Size(277, 20);
+            this.Ctrlsurname.TabIndex = 4;
             // 
-            // textEdit3
+            // Ctrlphone
             // 
-            this.textEdit3.Location = new System.Drawing.Point(180, 119);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(277, 20);
-            this.textEdit3.TabIndex = 5;
+            this.Ctrlphone.Location = new System.Drawing.Point(180, 119);
+            this.Ctrlphone.Name = "Ctrlphone";
+            this.Ctrlphone.Size = new System.Drawing.Size(277, 20);
+            this.Ctrlphone.TabIndex = 5;
             // 
             // labelControl4
             // 
@@ -97,50 +97,50 @@
             this.labelControl4.TabIndex = 6;
             this.labelControl4.Text = "TIN";
             // 
-            // textEdit4
+            // CtrlTIN
             // 
-            this.textEdit4.Location = new System.Drawing.Point(180, 165);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(277, 20);
-            this.textEdit4.TabIndex = 7;
+            this.CtrlTIN.Location = new System.Drawing.Point(180, 165);
+            this.CtrlTIN.Name = "CtrlTIN";
+            this.CtrlTIN.Size = new System.Drawing.Size(277, 20);
+            this.CtrlTIN.TabIndex = 7;
             // 
-            // simpleButton1
+            // Btnsave
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(180, 343);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Save";
+            this.Btnsave.Location = new System.Drawing.Point(180, 343);
+            this.Btnsave.Name = "Btnsave";
+            this.Btnsave.Size = new System.Drawing.Size(75, 23);
+            this.Btnsave.TabIndex = 8;
+            this.Btnsave.Text = "Save";
             // 
-            // simpleButton2
+            // Btnexit
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(382, 343);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 9;
-            this.simpleButton2.Text = "Exit";
+            this.Btnexit.Location = new System.Drawing.Point(382, 343);
+            this.Btnexit.Name = "Btnexit";
+            this.Btnexit.Size = new System.Drawing.Size(75, 23);
+            this.Btnexit.TabIndex = 9;
+            this.Btnexit.Text = "Exit";
             // 
             // CustomerF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.Btnexit);
+            this.Controls.Add(this.Btnsave);
+            this.Controls.Add(this.CtrlTIN);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.Ctrlphone);
+            this.Controls.Add(this.Ctrlsurname);
+            this.Controls.Add(this.Ctrlname);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "CustomerF";
             this.Text = "Customer";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlphone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlTIN.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,12 +151,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit Ctrlname;
+        private DevExpress.XtraEditors.TextEdit Ctrlsurname;
+        private DevExpress.XtraEditors.TextEdit Ctrlphone;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.TextEdit CtrlTIN;
+        private DevExpress.XtraEditors.SimpleButton Btnsave;
+        private DevExpress.XtraEditors.SimpleButton Btnexit;
     }
 }
