@@ -45,6 +45,9 @@
     <Compile Include="Car.cs" />
     <Compile Include="CarHandler.cs" />
     <Compile Include="CarService.cs" />
+    <Compile Include="TransactionLineHandler.cs" />
+    <Compile Include="TransactionHandler.cs" />
+    <Compile Include="ServiceTaskHandler.cs" />
     <Compile Include="TransactionLine.cs" />
     <Compile Include="MonthlyLedger.cs" />
     <Compile Include="Customer.cs" />
