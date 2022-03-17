@@ -28,77 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GrdCars = new DevExpress.XtraGrid.GridControl();
+            this.Grdcars = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.GrdCars)).BeginInit();
+            this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
+            this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
+            this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
+            this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.Grdcars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // GrdCars
+            // Grdcars
             // 
-            this.GrdCars.Location = new System.Drawing.Point(2, 1);
-            this.GrdCars.MainView = this.gridView1;
-            this.GrdCars.Name = "GrdCars";
-            this.GrdCars.Size = new System.Drawing.Size(795, 162);
-            this.GrdCars.TabIndex = 0;
-            this.GrdCars.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.Grdcars.Location = new System.Drawing.Point(2, 1);
+            this.Grdcars.MainView = this.gridView1;
+            this.Grdcars.Name = "Grdcars";
+            this.Grdcars.Size = new System.Drawing.Size(795, 162);
+            this.Grdcars.TabIndex = 0;
+            this.Grdcars.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.GrdCars.Click += new System.EventHandler(this.gridControl1_Click);
+            this.Grdcars.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.GrdCars;
+            this.gridView1.GridControl = this.Grdcars;
             this.gridView1.Name = "gridView1";
             // 
-            // simpleButton1
+            // Btnnew
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(150, 309);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "New";
+            this.Btnnew.Location = new System.Drawing.Point(150, 309);
+            this.Btnnew.Name = "Btnnew";
+            this.Btnnew.Size = new System.Drawing.Size(75, 23);
+            this.Btnnew.TabIndex = 1;
+            this.Btnnew.Text = "New";
             // 
-            // simpleButton2
+            // Btnedit
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(264, 309);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Edit";
+            this.Btnedit.Location = new System.Drawing.Point(264, 309);
+            this.Btnedit.Name = "Btnedit";
+            this.Btnedit.Size = new System.Drawing.Size(75, 23);
+            this.Btnedit.TabIndex = 2;
+            this.Btnedit.Text = "Edit";
             // 
-            // simpleButton3
+            // Btndelete
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(385, 309);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Delete";
+            this.Btndelete.Location = new System.Drawing.Point(385, 309);
+            this.Btndelete.Name = "Btndelete";
+            this.Btndelete.Size = new System.Drawing.Size(75, 23);
+            this.Btndelete.TabIndex = 3;
+            this.Btndelete.Text = "Delete";
             // 
-            // simpleButton4
+            // Btnclose
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(501, 309);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(80, 23);
-            this.simpleButton4.TabIndex = 4;
-            this.simpleButton4.Text = "Close";
+            this.Btnclose.Location = new System.Drawing.Point(501, 309);
+            this.Btnclose.Name = "Btnclose";
+            this.Btnclose.Size = new System.Drawing.Size(80, 23);
+            this.Btnclose.TabIndex = 4;
+            this.Btnclose.Text = "Close";
             // 
             // CarsF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.GrdCars);
+            this.Controls.Add(this.Btnclose);
+            this.Controls.Add(this.Btndelete);
+            this.Controls.Add(this.Btnedit);
+            this.Controls.Add(this.Btnnew);
+            this.Controls.Add(this.Grdcars);
             this.Name = "CarsF";
             this.Text = "Cars";
-            ((System.ComponentModel.ISupportInitialize)(this.GrdCars)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grdcars)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -106,11 +106,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl GrdCars;
+        private DevExpress.XtraGrid.GridControl Grdcars;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton Btnnew;
+        private DevExpress.XtraEditors.SimpleButton Btnedit;
+        private DevExpress.XtraEditors.SimpleButton Btndelete;
+        private DevExpress.XtraEditors.SimpleButton Btnclose;
     }
 }
