@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionHandler.cs" />
     <Compile Include="Car.cs" />
+    <Compile Include="CarHandler.cs" />
     <Compile Include="TransactionLine.cs" />
     <Compile Include="MonthlyLedger.cs" />
     <Compile Include="Customer.cs" />
