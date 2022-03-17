@@ -117,12 +117,6 @@
     <Compile Include="MonthlyLedgersF.Designer.cs">
       <DependentUpon>MonthlyLedgersF.cs</DependentUpon>
     </Compile>
-    <Compile Include="MonthyLedgerF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MonthyLedgerF.Designer.cs">
-      <DependentUpon>MonthyLedgerF.cs</DependentUpon>
-    </Compile>
     <Compile Include="TransactionLinesF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,9 +184,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MonthlyLedgersF.resx">
       <DependentUpon>MonthlyLedgersF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonthyLedgerF.resx">
-      <DependentUpon>MonthyLedgerF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
