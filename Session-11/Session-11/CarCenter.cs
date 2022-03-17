@@ -57,16 +57,6 @@ namespace Session_11
 
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            SaveData();
-        }
-
         #endregion
 
 
@@ -96,5 +86,24 @@ namespace Session_11
             MessageBox.Show("File saved successfully.", "Informative Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void ShowForm(Form form)
+        {
+            form.ShowDialog();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            SaveData();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            ShowForm(new CarF(_carService));
+        }
     }
 }
