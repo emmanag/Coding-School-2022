@@ -14,7 +14,6 @@ namespace DataLibrary
         public List<Manager> Managers { get; set; }
         public List<Engineer> Engineers { get; set; }
         public List<Transaction> Transactions { get; set; }
-        public List<TransactionLine> TransactionLines { get; set; }
 
         public CarService()
         {
@@ -24,7 +23,6 @@ namespace DataLibrary
             Managers = new List<Manager>();
             Engineers = new List<Engineer>();
             Transactions = new List<Transaction>();
-            TransactionLines = new List<TransactionLine>();
         }
     }
 }

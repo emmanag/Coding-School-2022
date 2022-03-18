@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
             this.Ctrlsallarypermonth = new DevExpress.XtraEditors.TextEdit();
@@ -38,10 +39,12 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.bsEngineer = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEngineer)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -51,6 +54,7 @@
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 19;
             this.Btnexit.Text = "Exit";
+            this.Btnexit.Click += new System.EventHandler(this.Btnexit_Click);
             // 
             // Btnsave
             // 
@@ -59,6 +63,7 @@
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 18;
             this.Btnsave.Text = "Save";
+            this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
             // Ctrlsallarypermonth
             // 
@@ -141,6 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEngineer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +164,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.BindingSource bsEngineer;
     }
 }

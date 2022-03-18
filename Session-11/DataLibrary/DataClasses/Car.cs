@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
+    [Serializable]
     public class Car : Item
     {
         public string Brand { get; set; }
         public string Model { get; set; }
-        public int CarRegNumber { get; set; }
+        public string CarRegNumber { get; set; }
 
         public Car()
         {
