@@ -102,6 +102,11 @@
             // 
             // Ctrlcarregistrationnumber
             // 
+            this.Ctrlcarregistrationnumber.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.Ctrlcarregistrationnumber.Location = new System.Drawing.Point(169, 125);
             this.Ctrlcarregistrationnumber.Name = "Ctrlcarregistrationnumber";
             this.Ctrlcarregistrationnumber.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -125,7 +130,7 @@
             this.Controls.Add(this.Btnbrand);
             this.Controls.Add(this.Ctrlcarregistrationnumber);
             this.Name = "CarF";
-            this.Text = "Form1";
+            this.Text = "Car";
             this.Load += new System.EventHandler(this.CarF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlmodel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlbrand.Properties)).EndInit();

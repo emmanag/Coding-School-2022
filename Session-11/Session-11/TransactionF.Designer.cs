@@ -147,10 +147,11 @@
             this.Ctrldate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Ctrldate.Properties.DisplayFormat.FormatString = "";
+            this.Ctrldate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Ctrldate.Properties.EditFormat.FormatString = "";
+            this.Ctrldate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Ctrldate.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.Ctrldate.Properties.MaskSettings.Set("mask", "");
-            this.Ctrldate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.Ctrldate.Size = new System.Drawing.Size(100, 20);
             this.Ctrldate.TabIndex = 33;
             // 

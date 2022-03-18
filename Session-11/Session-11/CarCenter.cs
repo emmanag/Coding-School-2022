@@ -96,5 +96,20 @@ namespace Session_11
         {
             ShowForm(new CarF(_carService));
         }
+
+        private void Btnengineer_Click(object sender, EventArgs e)
+        {
+            ShowForm(new EngineerF(_carService));
+        }
+
+        private void Btnmanager_Click(object sender, EventArgs e)
+        {
+            ShowForm(new ManagerF(_carService));
+        }
+
+        private void Btncustomer_Click(object sender, EventArgs e)
+        {
+            ShowForm(new CustomerF(_carService));
+        }
     }
 }

@@ -59,7 +59,7 @@
             // 
             // Btncar
             // 
-            this.Btncar.Location = new System.Drawing.Point(202, 137);
+            this.Btncar.Location = new System.Drawing.Point(215, 137);
             this.Btncar.Name = "Btncar";
             this.Btncar.Size = new System.Drawing.Size(75, 23);
             this.Btncar.TabIndex = 2;
@@ -73,6 +73,7 @@
             this.Btncustomer.Size = new System.Drawing.Size(75, 23);
             this.Btncustomer.TabIndex = 3;
             this.Btncustomer.Text = "Customer";
+            this.Btncustomer.Click += new System.EventHandler(this.Btncustomer_Click);
             // 
             // Btnengineer
             // 
@@ -81,6 +82,7 @@
             this.Btnengineer.Size = new System.Drawing.Size(75, 23);
             this.Btnengineer.TabIndex = 4;
             this.Btnengineer.Text = "Engineer";
+            this.Btnengineer.Click += new System.EventHandler(this.Btnengineer_Click);
             // 
             // Btnmanager
             // 
@@ -89,6 +91,7 @@
             this.Btnmanager.Size = new System.Drawing.Size(75, 23);
             this.Btnmanager.TabIndex = 5;
             this.Btnmanager.Text = "Manager";
+            this.Btnmanager.Click += new System.EventHandler(this.Btnmanager_Click);
             // 
             // Btnmonthlyledger
             // 

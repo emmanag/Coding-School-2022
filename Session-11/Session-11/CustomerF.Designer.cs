@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -38,10 +39,12 @@
             this.CtrlTIN = new DevExpress.XtraEditors.TextEdit();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
+            this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlphone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlTIN.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -111,6 +114,7 @@
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 8;
             this.Btnsave.Text = "Save";
+            this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
             // Btnexit
             // 
@@ -119,6 +123,7 @@
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 9;
             this.Btnexit.Text = "Exit";
+            this.Btnexit.Click += new System.EventHandler(this.Btnexit_Click);
             // 
             // CustomerF
             // 
@@ -141,6 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlphone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlTIN.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +164,6 @@
         private DevExpress.XtraEditors.TextEdit CtrlTIN;
         private DevExpress.XtraEditors.SimpleButton Btnsave;
         private DevExpress.XtraEditors.SimpleButton Btnexit;
+        private System.Windows.Forms.BindingSource bsCustomer;
     }
 }

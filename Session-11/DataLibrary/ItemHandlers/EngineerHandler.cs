@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    internal class EngineerHandler : ActionHandler
+    public class EngineerHandler : ActionHandler
     {
         public EngineerHandler()
         {
