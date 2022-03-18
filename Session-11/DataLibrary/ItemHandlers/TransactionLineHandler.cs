@@ -6,20 +6,25 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class TransactionLineHandler : ActionHandler
+    public class TransactionLineHandler
     {
         public TransactionLineHandler()
         {
 
         }
 
-        public T Create<T>() where T : new()
+        //public T Create<T>() where T : new()
+        //{
+        //    return new T();
+        //    //return new TransactionLine();
+        //}
+
+        public TransactionLine Create()
         {
-            return new T();
-            //return new TransactionLine();
+            return new TransactionLine();
         }
 
-        public override void Delete<TransactionLine>(TransactionLine transactionLine, List<TransactionLine> transactionLines)
+        public void Delete(TransactionLine transactionLine, List<TransactionLine> transactionLines)
         {
             transactionLines.Remove(transactionLine);
         }
@@ -27,6 +32,11 @@ namespace DataLibrary
         public bool CheckEngineersAvail(List<Engineer> engineers)
         {
             return engineers.FindAll(e => e.Status == StatusEnum.Free).Count() > 0;
+        }
+
+        public void CalcTaskCost(TransactionLine transactionLine, ServiceTask serviceTask)
+        {
+            transactionLine.Price = transactionLine.PricePerHour * serviceTask.Hours;
         }
     }
 }
