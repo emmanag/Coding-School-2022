@@ -1,4 +1,5 @@
 ﻿using DataLibrary;
+using Session_11.HelperFunctions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,26 +14,22 @@ namespace Session_11
 {
     public partial class TransactionLineF : Form
     {
+        private const string FILE_NAME = "storage.json";
         private CarService _carService;
         private TransactionLine _transactionLine;
         private TransactionLineHandler _transactionLineHandler;
+        private StorageHelper _storageHelper;
 
         public TransactionLineF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _transactionLineHandler = new TransactionLineHandler();
+            _storageHelper = new StorageHelper();
         }
 
-        /*public TransactionLineF(CarService carService, TransactionLine transactionLine)
-        {
-            InitializeComponent();
-            _carService=carService;
-            _transaction=transactionLine;
-            _transactionHandler = new TransactionLineHandler();
-        }*/
 
-        public TransactionLineF(CarService carService, TransactionLine transactionLine)
+        public TransactionLineF(CarService carService, TransactionLine transactionLine) :this(carService)
         {
             _transactionLine = transactionLine;
         }
@@ -87,6 +84,7 @@ namespace Session_11
         private void SaveTransactionLine()
         {
             _carService.TransactionLines.Add(_transactionLine);
+            _storageHelper.SaveData(FILE_NAME, _carService);
             DialogResult = DialogResult.OK;
             Close();
         }

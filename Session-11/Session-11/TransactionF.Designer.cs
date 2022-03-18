@@ -31,10 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
-            this.CtrlmanagerID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.CtrlcarID = new DevExpress.XtraEditors.TextEdit();
-            this.CtrlcustomerID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -42,13 +39,16 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.bsTransaction = new System.Windows.Forms.BindingSource(this.components);
             this.Ctrldate = new DevExpress.XtraEditors.DateEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlcarID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlcustomerID.Properties)).BeginInit();
+            this.CtrlCustomer = new DevExpress.XtraEditors.LookUpEdit();
+            this.CtrlCar = new DevExpress.XtraEditors.LookUpEdit();
+            this.CtrlManager = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrltotalprice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlCustomer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlCar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlManager.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -69,50 +69,29 @@
             this.Btnsave.Text = "Save";
             this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
-            // CtrlmanagerID
-            // 
-            this.CtrlmanagerID.Location = new System.Drawing.Point(159, 166);
-            this.CtrlmanagerID.Name = "CtrlmanagerID";
-            this.CtrlmanagerID.Size = new System.Drawing.Size(100, 20);
-            this.CtrlmanagerID.TabIndex = 27;
-            // 
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(36, 169);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(53, 13);
+            this.labelControl4.Size = new System.Drawing.Size(42, 13);
             this.labelControl4.TabIndex = 26;
-            this.labelControl4.Text = "ManagerID";
-            // 
-            // CtrlcarID
-            // 
-            this.CtrlcarID.Location = new System.Drawing.Point(159, 120);
-            this.CtrlcarID.Name = "CtrlcarID";
-            this.CtrlcarID.Size = new System.Drawing.Size(100, 20);
-            this.CtrlcarID.TabIndex = 25;
-            // 
-            // CtrlcustomerID
-            // 
-            this.CtrlcustomerID.Location = new System.Drawing.Point(159, 75);
-            this.CtrlcustomerID.Name = "CtrlcustomerID";
-            this.CtrlcustomerID.Size = new System.Drawing.Size(100, 20);
-            this.CtrlcustomerID.TabIndex = 24;
+            this.labelControl4.Text = "Manager";
             // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(36, 127);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(28, 13);
+            this.labelControl3.Size = new System.Drawing.Size(17, 13);
             this.labelControl3.TabIndex = 22;
-            this.labelControl3.Text = "CarID";
+            this.labelControl3.Text = "Car";
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(36, 78);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(57, 13);
+            this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 21;
-            this.labelControl2.Text = "CustomerID";
+            this.labelControl2.Text = "Customer";
             // 
             // labelControl1
             // 
@@ -142,44 +121,76 @@
             this.Ctrldate.EditValue = null;
             this.Ctrldate.Location = new System.Drawing.Point(159, 29);
             this.Ctrldate.Name = "Ctrldate";
+            this.Ctrldate.Properties.Appearance.Options.UseTextOptions = true;
+            this.Ctrldate.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
             this.Ctrldate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Ctrldate.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.False;
             this.Ctrldate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Ctrldate.Properties.DisplayFormat.FormatString = "";
+            this.Ctrldate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Ctrldate.Properties.EditFormat.FormatString = "";
+            this.Ctrldate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Ctrldate.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.Ctrldate.Properties.MaskSettings.Set("mask", "");
-            this.Ctrldate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.Ctrldate.Size = new System.Drawing.Size(100, 20);
             this.Ctrldate.TabIndex = 33;
+            // 
+            // CtrlCustomer
+            // 
+            this.CtrlCustomer.Location = new System.Drawing.Point(159, 75);
+            this.CtrlCustomer.Name = "CtrlCustomer";
+            this.CtrlCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CtrlCustomer.Size = new System.Drawing.Size(100, 20);
+            this.CtrlCustomer.TabIndex = 34;
+            // 
+            // CtrlCar
+            // 
+            this.CtrlCar.Location = new System.Drawing.Point(159, 120);
+            this.CtrlCar.Name = "CtrlCar";
+            this.CtrlCar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CtrlCar.Size = new System.Drawing.Size(100, 20);
+            this.CtrlCar.TabIndex = 35;
+            // 
+            // CtrlManager
+            // 
+            this.CtrlManager.Location = new System.Drawing.Point(159, 162);
+            this.CtrlManager.Name = "CtrlManager";
+            this.CtrlManager.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CtrlManager.Size = new System.Drawing.Size(100, 20);
+            this.CtrlManager.TabIndex = 36;
             // 
             // TransactionF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CtrlManager);
+            this.Controls.Add(this.CtrlCar);
+            this.Controls.Add(this.CtrlCustomer);
             this.Controls.Add(this.Ctrltotalprice);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.Btnexit);
             this.Controls.Add(this.Btnsave);
-            this.Controls.Add(this.CtrlmanagerID);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.CtrlcarID);
-            this.Controls.Add(this.CtrlcustomerID);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.Ctrldate);
             this.Name = "TransactionF";
             this.Text = "Transaction";
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlcarID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlcustomerID.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.TransactionF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrltotalprice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransaction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlCustomer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlCar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlManager.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,10 +200,7 @@
 
         private DevExpress.XtraEditors.SimpleButton Btnexit;
         private DevExpress.XtraEditors.SimpleButton Btnsave;
-        private DevExpress.XtraEditors.TextEdit CtrlmanagerID;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit CtrlcarID;
-        private DevExpress.XtraEditors.TextEdit CtrlcustomerID;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -200,5 +208,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private System.Windows.Forms.BindingSource bsTransaction;
         private DevExpress.XtraEditors.DateEdit Ctrldate;
+        private DevExpress.XtraEditors.LookUpEdit CtrlCustomer;
+        private DevExpress.XtraEditors.LookUpEdit CtrlCar;
+        private DevExpress.XtraEditors.LookUpEdit CtrlManager;
     }
 }

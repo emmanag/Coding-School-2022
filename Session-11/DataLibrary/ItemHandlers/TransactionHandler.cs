@@ -18,6 +18,11 @@ namespace DataLibrary
             return new Transaction();
         }
 
+        public object CreateWithDateTimeToday()
+        {
+            return new Transaction() { Date=DateTime.Today};
+        }
+
         public override void Delete<Transaction>(Transaction transaction, List<Transaction> transactions)
         {
             transactions.Remove(transaction);

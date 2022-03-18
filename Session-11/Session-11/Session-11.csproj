@@ -135,12 +135,6 @@
     <Compile Include="MonthlyLedgersF.Designer.cs">
       <DependentUpon>MonthlyLedgersF.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransactionLinesF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TransactionLinesF.Designer.cs">
-      <DependentUpon>TransactionLinesF.cs</DependentUpon>
-    </Compile>
     <Compile Include="TransactionLineF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransactionLineF.resx">
       <DependentUpon>TransactionLineF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TransactionLinesF.resx">
-      <DependentUpon>TransactionLinesF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransactionsF.resx">
       <DependentUpon>TransactionsF.cs</DependentUpon>
