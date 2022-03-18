@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -42,12 +43,14 @@
             this.Ctrlprice = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.Ctrlhours = new DevExpress.XtraEditors.SpinEdit();
+            this.bsTransactionLine = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrltransactionID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlpriceperhour.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlprice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -57,6 +60,7 @@
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 29;
             this.Btnexit.Text = "Exit";
+            this.Btnexit.Click += new System.EventHandler(this.Btnexit_Click);
             // 
             // Btnsave
             // 
@@ -65,6 +69,7 @@
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 28;
             this.Btnsave.Text = "Save";
+            this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
             // labelControl4
             // 
@@ -190,6 +195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlpriceperhour.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlprice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +217,6 @@
         private DevExpress.XtraEditors.TextEdit Ctrlprice;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SpinEdit Ctrlhours;
+        private System.Windows.Forms.BindingSource bsTransactionLine;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
             this.Ctrlhours = new DevExpress.XtraEditors.TextEdit();
@@ -36,9 +37,11 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.bsServiceTask = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlcode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiceTask)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -48,6 +51,7 @@
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 29;
             this.Btnexit.Text = "Exit";
+            this.Btnexit.Click += new System.EventHandler(this.Btnexit_Click);
             // 
             // Btnsave
             // 
@@ -56,6 +60,7 @@
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 28;
             this.Btnsave.Text = "Save";
+            this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
             // Ctrlhours
             // 
@@ -116,10 +121,11 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "ServiceTaskF";
-            this.Text = "Form1";
+            this.Text = "Service Task";
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlcode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiceTask)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +141,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.BindingSource bsServiceTask;
     }
 }
