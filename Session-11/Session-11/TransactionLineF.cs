@@ -83,7 +83,7 @@ namespace Session_11
 
         private void SaveTransactionLine()
         {
-            _carService.TransactionLines.Add(_transactionLine);
+           // _carService.TransactionLines.Add(_transactionLine);
             _storageHelper.SaveData(FILE_NAME, _carService);
             DialogResult = DialogResult.OK;
             Close();
