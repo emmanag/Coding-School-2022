@@ -26,7 +26,7 @@ namespace Session_11
             InitializeComponent();
             _storageHelper = new StorageHelper();
             _messagesHelper = new MessagesHelper();
-<<<<<<< HEAD
+            
             _carService = new CarService()
             {
                 Cars = new List<Car>()
@@ -35,13 +35,13 @@ namespace Session_11
                     {
                         Brand = "Ford",
                         Model = "2003",
-                        CarRegNumber = 234321
+                        CarRegNumber = "234321"
                     },
                     new Car()
                     {
                         Brand = "Nissan",
                         Model = "1993",
-                        CarRegNumber = 21231
+                        CarRegNumber = "21231"
                     }
                 },
                 Managers = new List<Manager>()
@@ -81,19 +81,22 @@ namespace Session_11
                         CustomerID = new Guid(),
                         ManagerID = new Guid(),
                         TotalPrice =5,
-                        Date = DateTime.Now
-                    }
-                },
-                TransactionLines = new List<TransactionLine>()
-                {
-                    new TransactionLine()
-                    {
-                        EngineerID = new Guid(),
-                        Hours = 5,
-                        Price =6,
-                        PricePerHour = (decimal)44.5,
-                        ServiceTaskID = new Guid(),
-                        TransactionID = new Guid()
+                        Date = DateTime.Now,
+                        TransactionLines= new List<TransactionLine>()
+                        {
+                            
+                            new TransactionLine()
+                            {
+                                EngineerID = new Guid(),
+                                Hours = 5,
+                                Price =6,
+                                PricePerHour =(decimal) 44.5,
+                                ServiceTaskID = new Guid(),
+                                TransactionID = new Guid()
+                            }
+                
+                        }
+                        
                     }
                 },
                 ServiceTasks = new List<ServiceTask>()
@@ -106,35 +109,7 @@ namespace Session_11
                     }
                 }
             };
-=======
             callTestFunc();
-            //{
-            //    Cars = new List<Car>()
-            //    {
-            //        new Car()
-            //        {
-            //            Brand = "Ford",
-            //            Model = "2003",
-            //            CarRegNumber = 234321
-            //        },
-            //        new Car()
-            //        {
-            //            Brand = "Nissan",
-            //            Model = "1993",
-            //            CarRegNumber = 21231
-            //        }
-            //    },
-            //    Managers = new List<Manager>()
-            //    {
-            //        new Manager()
-            //        {
-            //            Name = "Tiza",
-            //            SallaryPerMonth = 600.32m,
-            //            Surname = "Zach",
-            //        }
-            //    }
-            //};
->>>>>>> main
         }
 
         #region UI Controls
@@ -225,9 +200,6 @@ namespace Session_11
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             ShowForm(new CarF(_carService));
-            /*ShowForm(new TransactionF(_carService,_carService.Transactions[0]));
-            ShowForm(new TransactionLineF(_carService, _carService.TransactionLines[0]));
-            ShowForm(new ServiceTaskF(_carService, _carService.ServiceTasks[0]));*/
         }
 
         private void Btnengineer_Click(object sender, EventArgs e)
