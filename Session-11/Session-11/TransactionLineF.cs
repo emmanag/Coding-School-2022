@@ -86,7 +86,7 @@ namespace Session_11
 
         private void SaveTransactionLine()
         {
-            _carService.TransactionLines.Add(_transactionLine);
+            //_carService.TransactionLines.Add(_transactionLine);
             DialogResult = DialogResult.OK;
             Close();
         }

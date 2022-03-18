@@ -61,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataClasses\ServiceTask.cs" />
     <Compile Include="DataClasses\Transaction.cs" />
+    <Compile Include="StatusEnum.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
