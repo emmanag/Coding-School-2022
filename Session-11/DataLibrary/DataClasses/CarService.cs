@@ -25,6 +25,7 @@ namespace DataLibrary
             Engineers = new List<Engineer>();
             Transactions = new List<Transaction>();
             TransactionLines = new List<TransactionLine>();
+            //this line should be deleted
         }
     }
 }
