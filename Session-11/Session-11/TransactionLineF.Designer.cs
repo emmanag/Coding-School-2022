@@ -104,25 +104,25 @@
             // 
             this.labelControl3.Location = new System.Drawing.Point(54, 145);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(53, 13);
+            this.labelControl3.Size = new System.Drawing.Size(42, 13);
             this.labelControl3.TabIndex = 22;
-            this.labelControl3.Text = "EngineerID";
+            this.labelControl3.Text = "Engineer";
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(54, 96);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(68, 13);
+            this.labelControl2.Size = new System.Drawing.Size(57, 13);
             this.labelControl2.TabIndex = 21;
-            this.labelControl2.Text = "ServiceTaskID";
+            this.labelControl2.Text = "ServiceTask";
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(54, 50);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(67, 13);
+            this.labelControl1.Size = new System.Drawing.Size(56, 13);
             this.labelControl1.TabIndex = 20;
-            this.labelControl1.Text = "TransactionID";
+            this.labelControl1.Text = "Transaction";
             // 
             // Ctrlpriceperhour
             // 
@@ -189,6 +189,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "TransactionLineF";
             this.Text = "TransactionLine";
+            this.Load += new System.EventHandler(this.TransactionLineF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrltransactionID.Properties)).EndInit();

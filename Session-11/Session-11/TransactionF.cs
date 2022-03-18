@@ -1,4 +1,5 @@
 ﻿using DataLibrary;
+using Session_11.HelperFunctions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,11 @@ namespace Session_11
 {
     public partial class TransactionF : Form
     {
+        private const string FILE_NAME = "storage.json";
         private CarService _carService;
         private Transaction _transaction;
         private TransactionHandler _transactionHandler;
+        private StorageHelper _storageHelper;
 
         public TransactionF(CarService carService)
         {
@@ -24,15 +27,8 @@ namespace Session_11
             _transactionHandler = new TransactionHandler();
         }
 
-        /*public TransactionF(CarService carService, Transaction transaction)
-        {
-            InitializeComponent();
-            _carService=carService;
-            _transaction=transaction;
-            _transactionHandler = new TransactionHandler();
-        }*/
-
-        public TransactionF(CarService carService, Transaction transaction)
+        
+        public TransactionF(CarService carService, Transaction transaction) : this(carService)
         {
             _transaction = transaction;
         }
@@ -45,7 +41,7 @@ namespace Session_11
 
             if (_transaction == null)
             {
-                _transaction = (Transaction)_transactionHandler.Create();
+                _transaction = (Transaction)_transactionHandler.CreateWithDateTimeToday();
             }
             bsTransaction.DataSource = _transaction;
 
@@ -69,9 +65,9 @@ namespace Session_11
             Ctrldate.DataBindings.Add(new Binding("EditValue", bsTransaction, "Date", true));
             Ctrltotalprice.DataBindings.Add(new Binding("EditValue", bsTransaction, "TotalPrice", true));
 
-            CtrlcustomerID.DataBindings.Add(new Binding("EditValue", bsTransaction, "CustomerID", true));
-            CtrlmanagerID.DataBindings.Add(new Binding("EditValue",bsTransaction,"ManagerID",true));
-            CtrlcarID.DataBindings.Add(new Binding("EditValue",bsTransaction,"CarID",true));
+            CtrlCustomer.DataBindings.Add(new Binding("EditValue", bsTransaction, "CustomerID", true));
+            CtrlManager.DataBindings.Add(new Binding("EditValue",bsTransaction,"ManagerID",true));
+            CtrlCar.DataBindings.Add(new Binding("EditValue",bsTransaction,"CarID",true));
         }
 
         private void PopulateControls()
@@ -82,6 +78,7 @@ namespace Session_11
         private void SaveTransaction()
         {
             _carService.Transactions.Add(_transaction);
+            _storageHelper.SaveData(FILE_NAME, _carService);
             DialogResult = DialogResult.OK;
             Close();
         }
