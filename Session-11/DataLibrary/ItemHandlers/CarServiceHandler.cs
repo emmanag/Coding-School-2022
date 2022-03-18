@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DataLibrary.ItemHandlers
 {
     internal class CarServiceHandler
@@ -13,14 +14,20 @@ namespace DataLibrary.ItemHandlers
 
         }
 
-        public decimal GetMaxDayWorkload()
+        public decimal GetMaxDayWorkload(CarService carService)
         {
-
+            return carService.Engineers.Count() * 8;
         }
 
-        public decimal GetReservedHours()
+        public decimal GetReservedHours(CarService carService)
         {
+            decimal hours = 0m;
+            foreach (var item in carService.Transactions.FindAll(x => x.Date.Day == DateTime.Now.Day))
+            {
+                hours += item.TransactionLines.Sum(t => t.Hours);
+            }
 
+            return hours;
         }
     }
 }
