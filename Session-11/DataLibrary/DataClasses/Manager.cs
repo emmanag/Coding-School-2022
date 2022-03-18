@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
+    [Serializable]
     public class Manager : Person
     {
         public decimal SallaryPerMonth { get; set; }

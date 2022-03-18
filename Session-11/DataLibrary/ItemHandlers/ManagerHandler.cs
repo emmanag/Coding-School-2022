@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class ManagerHandler : ActionHandler
+    public class ManagerHandler
     {
         public ManagerHandler()
         {
 
         }
 
-        public override object Create()
+        public Manager Create()
         {
             return new Manager();
         }
 
-        public override void Delete<Manager>(Manager obj, List<Manager> list)
+        public void Delete(Manager manager, List<Manager> managers, CarService carService)
         {
-            list.Remove(obj);
+            carService.Engineers.FindAll(e => e.ManagerID == manager.ID).ForEach(e => { e.ManagerID = null;
+                e.Status = StatusEnum.WithoutManager;
+            });
+            managers.Remove(manager);
         }
     }
 }

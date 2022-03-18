@@ -13,14 +13,20 @@ namespace DataLibrary
 
         }
 
-        public override object Create()
+        public T Create<T>() where T : new()
         {
-            return new TransactionLine();
+            return new T();
+            //return new TransactionLine();
         }
 
         public override void Delete<TransactionLine>(TransactionLine transactionLine, List<TransactionLine> transactionLines)
         {
             transactionLines.Remove(transactionLine);
+        }
+
+        public bool CheckEngineersAvail(List<Engineer> engineers)
+        {
+            return engineers.FindAll(e => e.Status == StatusEnum.Free).Count() > 0;
         }
     }
 }

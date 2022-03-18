@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
+    [Serializable]
     public class Customer : Person
     {
         public string Phone { get; set; }

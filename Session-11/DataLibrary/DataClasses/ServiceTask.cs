@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
+    [Serializable]
     public class ServiceTask : Item
     {
         public string Code { get; set; }
