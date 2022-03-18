@@ -21,6 +21,7 @@ namespace DataLibrary.ItemHandlers
 
         public decimal GetReservedHours(CarService carService)
         {
+            //test commit
             decimal hours = 0m;
             foreach (var item in carService.Transactions.FindAll(x => x.Date.Day == DateTime.Now.Day))
             {
