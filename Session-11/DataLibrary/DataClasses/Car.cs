@@ -10,7 +10,7 @@ namespace DataLibrary
     {
         public string Brand { get; set; }
         public string Model { get; set; }
-        public int CarRegNumber { get; set; }
+        public string CarRegNumber { get; set; }
 
         public Car()
         {
