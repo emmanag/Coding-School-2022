@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
+    [Serializable]
     public class Item
     {
         public Guid ID { get; set; }

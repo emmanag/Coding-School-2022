@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
+    [Serializable]
     public class Transaction : Item
     {
         public DateTime Date { get; set; }

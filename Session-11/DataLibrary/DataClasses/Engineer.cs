@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
+    [Serializable]
     public class Engineer : Person
     {
         public Guid? ManagerID { get; set; }
