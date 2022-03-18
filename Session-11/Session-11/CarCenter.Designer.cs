@@ -41,7 +41,7 @@
             // 
             // Btnload
             // 
-            this.Btnload.Location = new System.Drawing.Point(202, 335);
+            this.Btnload.Location = new System.Drawing.Point(215, 335);
             this.Btnload.Name = "Btnload";
             this.Btnload.Size = new System.Drawing.Size(75, 23);
             this.Btnload.TabIndex = 0;

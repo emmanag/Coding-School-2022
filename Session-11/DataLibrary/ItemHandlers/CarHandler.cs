@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class CarHandler : ActionHandler
+    public class CarHandler
     {
         public CarHandler()
         {
 
         }
 
-        public override object Create()
+        public Car Create()
         {
             return new Car();
         }
 
-        public override void Delete<Car>(Car car, List<Car> cars)
+        public void Delete(Car car, List<Car> cars)
         {
             cars.Remove(car);
         }

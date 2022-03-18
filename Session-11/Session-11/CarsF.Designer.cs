@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Grdcars = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
             this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
             this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
+            this.bsCars = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Grdcars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCars)).BeginInit();
             this.SuspendLayout();
             // 
             // Grdcars
@@ -47,7 +50,6 @@
             this.Grdcars.TabIndex = 0;
             this.Grdcars.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.Grdcars.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
@@ -61,6 +63,7 @@
             this.Btnnew.Size = new System.Drawing.Size(75, 23);
             this.Btnnew.TabIndex = 1;
             this.Btnnew.Text = "New";
+            this.Btnnew.Click += new System.EventHandler(this.Btnnew_Click);
             // 
             // Btnedit
             // 
@@ -69,6 +72,7 @@
             this.Btnedit.Size = new System.Drawing.Size(75, 23);
             this.Btnedit.TabIndex = 2;
             this.Btnedit.Text = "Edit";
+            this.Btnedit.Click += new System.EventHandler(this.Btnedit_Click);
             // 
             // Btndelete
             // 
@@ -77,6 +81,7 @@
             this.Btndelete.Size = new System.Drawing.Size(75, 23);
             this.Btndelete.TabIndex = 3;
             this.Btndelete.Text = "Delete";
+            this.Btndelete.Click += new System.EventHandler(this.Btndelete_Click);
             // 
             // Btnclose
             // 
@@ -85,6 +90,7 @@
             this.Btnclose.Size = new System.Drawing.Size(80, 23);
             this.Btnclose.TabIndex = 4;
             this.Btnclose.Text = "Close";
+            this.Btnclose.Click += new System.EventHandler(this.Btnclose_Click);
             // 
             // CarsF
             // 
@@ -100,6 +106,7 @@
             this.Text = "Cars";
             ((System.ComponentModel.ISupportInitialize)(this.Grdcars)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCars)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -112,5 +119,6 @@
         private DevExpress.XtraEditors.SimpleButton Btnedit;
         private DevExpress.XtraEditors.SimpleButton Btndelete;
         private DevExpress.XtraEditors.SimpleButton Btnclose;
+        private System.Windows.Forms.BindingSource bsCars;
     }
 }
