@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLibrary.ItemHandlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,26 +7,46 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class TransactionHandler : ActionHandler
+    public class TransactionHandler
     {
         public TransactionHandler()
         {
 
         }
 
-        public override object Create()
+        public Transaction Create()
         {
             return new Transaction();
         }
 
-        public object CreateWithDateTimeToday()
+        public Transaction CreateWithDateTimeToday()
         {
             return new Transaction() { Date=DateTime.Today};
         }
 
-        public override void Delete<Transaction>(Transaction transaction, List<Transaction> transactions)
+        public void Delete(Transaction transaction, List<Transaction> transactions)
         {
             transactions.Remove(transaction);
+        }
+
+        public bool AddNewTransactionLine(Transaction transaction, TransactionLine transactionLine, CarServiceHandler carServiceHandler, CarService carService)
+        {
+            if (CheckWorkLoadAvail(carServiceHandler.GetMaxDayWorkload(carService), transactionLine, carServiceHandler.GetReservedHours(carService), CurentTransactionHours(transaction)))
+            {
+                transaction.TransactionLines.Add(transactionLine);
+                return true;
+            }
+            return false;
+        }
+
+        public decimal CurentTransactionHours(Transaction transaction)
+        {
+            return transaction.TransactionLines.Sum(t => t.Hours);
+        }
+
+        public bool CheckWorkLoadAvail(int maxDayWorkLoad, TransactionLine transactionLine, decimal reservedHours, decimal currentTransactionHours)
+        {
+            return maxDayWorkLoad >= reservedHours + currentTransactionHours + transactionLine.Hours;
         }
     }
 }

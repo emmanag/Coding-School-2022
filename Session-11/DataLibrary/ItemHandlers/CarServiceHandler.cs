@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.ItemHandlers
 {
-    internal class CarServiceHandler
+    public class CarServiceHandler
     {
         public CarServiceHandler()
         {
 
         }
 
-        public decimal GetMaxDayWorkload(CarService carService)
+        public int GetMaxDayWorkload(CarService carService)
         {
             return carService.Engineers.Count() * 8;
         }
