@@ -75,8 +75,13 @@ namespace Session_11
 
         private void SaveCar()
         {
-            _carService.Cars.Add(_car);
-            _storageHelper.SaveData(FILE_NAME, _carService);
+            if (_carService.Cars.FindAll(c => c.ID == _car.ID).Count() <= 0 )
+            {
+                _carService.Cars.Add(_car);
+                _storageHelper.SaveData(FILE_NAME, _carService);
+               
+            }
+
             DialogResult = DialogResult.OK;
             Close();
         }
