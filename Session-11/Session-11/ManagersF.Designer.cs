@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.GrdManagers = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
+            this.bsManagers = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrdManagers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsManagers)).BeginInit();
             this.SuspendLayout();
             // 
             // GrdManagers
@@ -60,6 +63,7 @@
             this.Btnclose.Size = new System.Drawing.Size(80, 23);
             this.Btnclose.TabIndex = 19;
             this.Btnclose.Text = "Close";
+            this.Btnclose.Click += new System.EventHandler(this.Btnclose_Click);
             // 
             // Btndelete
             // 
@@ -68,6 +72,7 @@
             this.Btndelete.Size = new System.Drawing.Size(75, 23);
             this.Btndelete.TabIndex = 18;
             this.Btndelete.Text = "Delete";
+            this.Btndelete.Click += new System.EventHandler(this.Btndelete_Click);
             // 
             // Btnedit
             // 
@@ -76,6 +81,7 @@
             this.Btnedit.Size = new System.Drawing.Size(75, 23);
             this.Btnedit.TabIndex = 17;
             this.Btnedit.Text = "Edit";
+            this.Btnedit.Click += new System.EventHandler(this.Btnedit_Click);
             // 
             // Btnnew
             // 
@@ -84,6 +90,7 @@
             this.Btnnew.Size = new System.Drawing.Size(75, 23);
             this.Btnnew.TabIndex = 16;
             this.Btnnew.Text = "New";
+            this.Btnnew.Click += new System.EventHandler(this.Btnnew_Click);
             // 
             // ManagersF
             // 
@@ -99,6 +106,7 @@
             this.Text = "Managers";
             ((System.ComponentModel.ISupportInitialize)(this.GrdManagers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsManagers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,5 +119,6 @@
         private DevExpress.XtraEditors.SimpleButton Btndelete;
         private DevExpress.XtraEditors.SimpleButton Btnedit;
         private DevExpress.XtraEditors.SimpleButton Btnnew;
+        private System.Windows.Forms.BindingSource bsManagers;
     }
 }

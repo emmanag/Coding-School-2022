@@ -43,13 +43,13 @@ namespace Session_11
             bsCars.DataSource = _carService;
             bsCars.DataMember = "Cars";
 
-            Grdcars.DataSource = bsCars;
+            GrdCars.DataSource = bsCars;
                         
         }
 
         private void Btnnew_Click(object sender, EventArgs e)
         {
-            var cars = bsCars.Current as Cars;
+            var cars = bsCars.Current as Car;
 
             CarF carF = new CarF(_carService);
             carF.ShowDialog();
@@ -59,7 +59,7 @@ namespace Session_11
 
         private void Btnedit_Click(object sender, EventArgs e)
         {
-            var cars = bsCars.Current as Cars;
+            var cars = bsCars.Current as Car;
 
             CarF carF = new CarF(_carService, _car);
             carF.ShowDialog();
@@ -69,7 +69,7 @@ namespace Session_11
         private void Btndelete_Click(object sender, EventArgs e)
         {
            
-            //var car = bsCars.Current as Cars;
+            //var car = bsCars.Current as Car;
             //_carHandler.Delete; (car, _carService.Cars)
             //SaveData();
         }
