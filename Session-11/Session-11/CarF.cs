@@ -1,4 +1,5 @@
 ﻿using DataLibrary;
+using Session_11.HelperFunctions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,18 @@ namespace Session_11
 {
     public partial class CarF : Form
     {
+        private const string FILE_NAME = "storage.json";
         private CarService _carService;
         private Car _car;
         private CarHandler _carHandler;
+        private StorageHelper _storageHelper;
 
         public CarF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _carHandler = new CarHandler();
+            _storageHelper = new StorageHelper();
         }
 
         public CarF(CarService carService, Car car) : this(carService)
@@ -72,6 +76,7 @@ namespace Session_11
         private void SaveCar()
         {
             _carService.Cars.Add(_car);
+            _storageHelper.SaveData(FILE_NAME, _carService);
             DialogResult = DialogResult.OK;
             Close();
         }

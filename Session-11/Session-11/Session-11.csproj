@@ -104,6 +104,9 @@
     <Compile Include="CarF.Designer.cs">
       <DependentUpon>CarF.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperFunctions\ControlsHelper.cs" />
+    <Compile Include="HelperFunctions\MessagesHelper.cs" />
+    <Compile Include="HelperFunctions\StorageHelper.cs" />
     <Compile Include="LoginF.cs">
       <SubType>Form</SubType>
     </Compile>

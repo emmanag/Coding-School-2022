@@ -13,7 +13,7 @@ namespace DataLibrary
         public Guid CarID { get; set; }
         public Guid ManagerID { get; set; }
         public decimal TotalPrice { get; set; }
-        public TransactionLine TransactionLines { get; set; }
+        public List<TransactionLine> TransactionLines { get; set; }
 
         public Transaction()
         {
