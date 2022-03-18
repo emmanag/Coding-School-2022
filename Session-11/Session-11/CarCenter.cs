@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using Session_11.HelperFunctions;
 
 namespace Session_11
 {
@@ -17,11 +18,15 @@ namespace Session_11
     {
         private const string FILE_NAME = "storage.json";
         private CarService _carService;
+        private StorageHelper _storageHelper;
+        private MessagesHelper _messagesHelper;
 
         public CarCenter()
         {
             InitializeComponent();
             _carService = new CarService();
+            _storageHelper = new StorageHelper();
+            _messagesHelper = new MessagesHelper();
             //{
             //    Cars = new List<Car>()
             //    {
@@ -62,28 +67,14 @@ namespace Session_11
 
         private void LoadData()
         {
-            try
-            {
-                string obj = File.ReadAllText(FILE_NAME);
-                _carService = JsonConvert.DeserializeObject<CarService>(obj);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("There was a problem loading data!", "Loading Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            _carService = _storageHelper.LoadData(FILE_NAME);
         }
 
         private void SaveData()
         {
-            if (!File.Exists(FILE_NAME))
-            {
-                File.Create(FILE_NAME);
-                File.WriteAllText(FILE_NAME, "{}");
-            }
+            _storageHelper.SaveData(FILE_NAME, _carService);
+            _messagesHelper.MessageInfo("File saved successfully");
 
-            string jsonObject = JsonConvert.SerializeObject(_carService, Formatting.Indented);
-            File.WriteAllText(FILE_NAME, jsonObject);
-            MessageBox.Show("File saved successfully.", "Informative Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void ShowForm(Form form)
