@@ -27,6 +27,7 @@ namespace Session_11
             _carService = new CarService();
             _storageHelper = new StorageHelper();
             _messagesHelper = new MessagesHelper();
+            callTestFunc();
             //{
             //    Cars = new List<Car>()
             //    {
@@ -64,6 +65,54 @@ namespace Session_11
 
         #endregion
 
+        private void callTestFunc()
+        {
+            var manager1 = new Manager()
+            {
+                Name = "Kostas",
+                Surname = "Papadopoulos",
+                SallaryPerMonth = 1000.0m
+            };
+
+            var manager2 = new Manager()
+            {
+                Name = "Giannis",
+                Surname = "Papadopoulos",
+                SallaryPerMonth = 1000.0m
+            };
+
+            _carService.Managers.Add(manager1);
+            _carService.Managers.Add(manager2);
+
+            var engineer1 = new Engineer()
+            {
+                Name = "Nikos",
+                Surname = "Papadopoulos",
+                ManagerID = manager1.ID,
+                Status = StatusEnum.Free
+            };
+            var engineer2 = new Engineer()
+            {
+                Name = "Babis",
+                Surname = "Papadopoulos",
+                ManagerID = manager1.ID,
+                Status = StatusEnum.Free
+            };
+            var engineer3 = new Engineer()
+            {
+                Name = "Alekos",
+                Surname = "Papadopoulos",
+                ManagerID = manager2.ID,
+                Status = StatusEnum.Free
+            };
+
+            _carService.Engineers.Add(engineer1);
+            _carService.Engineers.Add(engineer2);
+            _carService.Engineers.Add(engineer3);
+
+            var managerH = new ManagerHandler();
+            managerH.Delete(manager1, _carService.Managers, _carService);
+        }
 
         private void LoadData()
         {
@@ -95,6 +144,21 @@ namespace Session_11
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             ShowForm(new CarF(_carService));
+        }
+
+        private void Btnengineer_Click(object sender, EventArgs e)
+        {
+            ShowForm(new EngineerF(_carService));
+        }
+
+        private void Btnmanager_Click(object sender, EventArgs e)
+        {
+            ShowForm(new ManagerF(_carService));
+        }
+
+        private void Btncustomer_Click(object sender, EventArgs e)
+        {
+            ShowForm(new CustomerF(_carService));
         }
     }
 }

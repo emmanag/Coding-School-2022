@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class ServiceTaskHandler : ActionHandler
+    public class ServiceTaskHandler
     {
         public ServiceTaskHandler()
         {
 
         }
 
-        public override object Create()
+        public ServiceTask Create()
         {
             return new ServiceTask();
         }
 
-        public override void Delete<ServiceTask>(ServiceTask serviceTask, List<ServiceTask> serviceTasks)
+        public void Delete(ServiceTask serviceTask, List<ServiceTask> serviceTasks)
         {
             serviceTasks.Remove(serviceTask);
         }

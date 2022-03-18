@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    [Serializable]
-    public class Item
+    public enum StatusEnum
     {
-        public Guid ID { get; set; }
-
-        public Item()
-        {
-            ID = Guid.NewGuid();
-        }
+        Free,
+        InTask,
+        WithoutManager
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="DataClasses\Car.cs" />
     <Compile Include="ItemHandlers\CarHandler.cs" />
     <Compile Include="DataClasses\CarService.cs" />
+    <Compile Include="ItemHandlers\CustomerHandler.cs" />
     <Compile Include="ItemHandlers\TransactionLineHandler.cs" />
     <Compile Include="ItemHandlers\TransactionHandler.cs" />
     <Compile Include="ItemHandlers\ServiceTaskHandler.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataClasses\ServiceTask.cs" />
     <Compile Include="DataClasses\Transaction.cs" />
+    <Compile Include="StatusEnum.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
