@@ -17,5 +17,13 @@ namespace DataLibrary.ItemHandlers
         //{
         //    return carService.Transactions.FindAll(t => t.Date.Month == month && t.Date.Year == month)
         //}
+
+        public decimal GetMonthlyExpenses(CarService carService)
+        {
+            decimal managersSalaries = carService.Managers.Sum(m => m.SallaryPerMonth);
+            decimal engineersSalaries = carService.Engineers.Sum(m => m.SallaryPerMonth);
+            
+            return managersSalaries + engineersSalaries;
+        }
     }
 }

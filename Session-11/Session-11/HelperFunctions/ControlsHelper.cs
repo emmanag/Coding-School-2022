@@ -1,6 +1,7 @@
 ﻿using DataLibrary;
 using DataLibrary.DataClasses;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,7 +104,7 @@ namespace Session_11.HelperFunctions
             lookUpEdit.ReadOnly = true;
         }
 
-        public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, DevExpress.XtraGrid.Views.Grid.GridView gridView, string indexColumn)
+        public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, GridView gridView, string indexColumn)
         {
             gridView.Columns[indexColumn].ColumnEdit = columnLookUpEdit;
         }
