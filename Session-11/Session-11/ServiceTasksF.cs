@@ -17,25 +17,20 @@ namespace Session_11
         private CarService _carService;
         private ServiceTask _selectedServiceTask;
         private ServiceTaskHandler _serviceTaskHandler;
-        private ControlsHelper _controlsHelper;
+        private StorageHelper _storageHelper;
         public ServiceTasksF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _selectedServiceTask = new ServiceTask();
             _serviceTaskHandler = new ServiceTaskHandler();
-            _controlsHelper = new ControlsHelper();
+            _storageHelper = new StorageHelper();
         }
 
         private void ServiceTaskF_Load(object sender, EventArgs e)
         {
-            PopulateControls();
+            
             PopulateServiceTask();
-        }
-
-        private void PopulateControls()
-        {
-
         }
 
         private void PopulateServiceTask()
@@ -45,12 +40,13 @@ namespace Session_11
 
             GrdServiceTasks.DataSource = bsServiceTasks;
 
+            HideColumns("ID");
         }
 
         private void Btnnew_Click(object sender, EventArgs e)
         {
-            TransactionF transactionF = new TransactionF(_carService);
-            transactionF.ShowDialog();
+            ServiceTaskF serviceTaskF = new ServiceTaskF(_carService);
+            serviceTaskF.ShowDialog();
             gridView1.RefreshData();
 
         }
@@ -66,13 +62,21 @@ namespace Session_11
 
         private void Btndelete_Click(object sender, EventArgs e)
         {
-            //TODO Delete an current object form the grid
+            var serviceTask = bsServiceTasks.Current as ServiceTask;
+            _serviceTaskHandler.Delete(serviceTask, _carService.ServiceTasks);
+            _storageHelper.SaveData("strorage.json", _carService);
+            gridView1.RefreshData();
         }
 
         private void Btnclose_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void HideColumns(string indexColumn)
+        {
+            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }
