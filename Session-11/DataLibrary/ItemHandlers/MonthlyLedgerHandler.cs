@@ -26,7 +26,7 @@ namespace DataLibrary.ItemHandlers
         public decimal GetMonthlyExpenses(CarService carService)
         {
             decimal managersSalaries = carService.Managers.Sum(m => m.SallaryPerMonth);
-            decimal engineersSalaries = carService.Engineers.Sum(m => m.SallaryPerMonth);
+            decimal engineersSalaries = carService.Engineers.Sum(e => e.SallaryPerMonth);
             
             return managersSalaries + engineersSalaries;
         }
