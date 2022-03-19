@@ -49,6 +49,7 @@
     <Compile Include="DataClasses\CarService.cs" />
     <Compile Include="ItemHandlers\CarServiceHandler.cs" />
     <Compile Include="ItemHandlers\CustomerHandler.cs" />
+    <Compile Include="ItemHandlers\MonthlyLedgerHandler.cs" />
     <Compile Include="ItemHandlers\SecurityHandler.cs" />
     <Compile Include="ItemHandlers\TransactionLineHandler.cs" />
     <Compile Include="ItemHandlers\TransactionHandler.cs" />
