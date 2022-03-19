@@ -35,10 +35,13 @@ namespace DataLibrary.ItemHandlers
                 string[] s = File.ReadAllLines(filename);
                 foreach (var line in s)
                 {
-                    list.Add(new Credential(line.Split(':')[0])
+                    if (line != string.Empty)
                     {
-                        Password = line.Split(':')[1]
-                    });
+                        list.Add(new Credential(line.Split(':')[0])
+                        {
+                            Password = line.Split(':')[1]
+                        });
+                    }
                 }
 
                 return list;

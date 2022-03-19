@@ -72,7 +72,6 @@
     <Compile Include="CarCenter.Designer.cs">
       <DependentUpon>CarCenter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cars.cs" />
     <Compile Include="CarsF.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -32,10 +32,10 @@ namespace Session_11
 
         private void LoginF_Load(object sender, EventArgs e)
         {
-            //FIRST -> Creating new user - ONLY FOR DEBBUGING!
-            //var user = new Credential("Mihalis");
-            //user.Password = _securityHandler.EncryptUserPassword("1234");
-            //_securityHandler.WritePassFile(FILE_NAME, user);
+          //RUN THIS FIRST -> Creating new user - ONLY FOR DEBBUGING!
+          /* var user = new Credential("Timos");
+             user.Password = _securityHandler.EncryptUserPassword("1234");
+             _securityHandler.WritePassFile(FILE_NAME, user); */
 
             //_users = _securityHandler.ReadPassFile(FILE_NAME);
 
