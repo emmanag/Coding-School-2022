@@ -55,6 +55,7 @@
             // 
             this.gridView1.GridControl = this.GrdCars;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             // 
             // Btnnew
             // 
@@ -104,6 +105,7 @@
             this.Controls.Add(this.GrdCars);
             this.Name = "CarsF";
             this.Text = "Cars";
+            this.Load += new System.EventHandler(this.CarsF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrdCars)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCars)).EndInit();

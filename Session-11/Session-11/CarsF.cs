@@ -29,14 +29,11 @@ namespace Session_11
 
         private void CarsF_Load(object sender, EventArgs e)
         {
-            PopulateControls();
+            
             PopulateCars();
         }
 
-        private void PopulateControls()
-        {
-            
-        }
+       
 
         private void PopulateCars()
         {
@@ -46,7 +43,8 @@ namespace Session_11
             bsCars.DataMember = "Cars";
 
             GrdCars.DataSource = bsCars;
-                        
+            HideColumns("ID");
+
         }
 
         private void Btnnew_Click(object sender, EventArgs e)
@@ -61,7 +59,7 @@ namespace Session_11
 
         private void Btnedit_Click(object sender, EventArgs e)
         {
-            var cars = bsCars.Current as Car;
+            _car = bsCars.Current as Car;
 
             CarF carF = new CarF(_carService, _car);
             carF.ShowDialog();
@@ -81,6 +79,10 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+        private void HideColumns(string indexColumn)
+        {
+            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }
