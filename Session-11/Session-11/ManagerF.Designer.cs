@@ -122,6 +122,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "ManagerF";
             this.Text = "Manager";
+            this.Load += new System.EventHandler(this.ManagerF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).EndInit();

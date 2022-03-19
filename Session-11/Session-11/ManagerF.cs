@@ -33,7 +33,7 @@ namespace Session_11
             _manager = manager;
         }
 
-        private void CarF_Load(object sender, EventArgs e)
+        private void ManagerF_Load(object sender, EventArgs e)
         {
             PopulateControls();
 
@@ -50,7 +50,7 @@ namespace Session_11
         {
             Ctrlname.DataBindings.Add(new Binding("EditValue", bsManager, "Name", true));
             Ctrlsurname.DataBindings.Add(new Binding("EditValue", bsManager, "Surname", true));
-            Ctrlsallarypermonth.DataBindings.Add(new Binding("EditValue", bsManager, "Sallary per month", true));
+            Ctrlsallarypermonth.DataBindings.Add(new Binding("EditValue", bsManager, "SallaryPerMonth", true));
         }
 
         private void Btnsave_Click(object sender, EventArgs e)
@@ -79,5 +79,6 @@ namespace Session_11
             DialogResult = DialogResult.OK;
             Close();
         }
+
     }
 }

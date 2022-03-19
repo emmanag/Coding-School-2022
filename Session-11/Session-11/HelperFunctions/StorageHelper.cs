@@ -38,7 +38,6 @@ namespace Session_11.HelperFunctions
         {
             if (!File.Exists(filename))
             {
-                File.Create(filename);
                 File.WriteAllText(filename, "{}");
             }
 

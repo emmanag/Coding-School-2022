@@ -62,7 +62,7 @@ namespace Session_11
 
         private void Btnedit_Click(object sender, EventArgs e)
         {
-            var cars = bsCustomers.Current as Customer;
+            _customer = bsCustomers.Current as Customer;
 
             CustomerF customerF = new CustomerF(_carService, _customer);
             customerF.ShowDialog();

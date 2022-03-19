@@ -142,7 +142,7 @@ namespace Session_11
         }
         private void buttonServiceTask_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ShowForm(new CarsF(_carService));
+            ShowForm(new ServiceTasksF(_carService));
         }
 
         private void buttonCustomers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -216,20 +216,9 @@ namespace Session_11
             managerH.Delete(manager1, _carService.Managers, _carService);
         }
 
-        private void SaveData()
-        {
-
-
-        }
-
         private void ShowForm(Form form)
         {
             form.ShowDialog();
-        }
-
-        private void simpleButton1_Click_1(object sender, EventArgs e)
-        {
-            ShowForm(new ServiceTasksF(_carService));
         }
 
     }

@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
-            this.Ctrlhours = new DevExpress.XtraEditors.TextEdit();
             this.Ctrlcode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.bsServiceTask = new System.Windows.Forms.BindingSource(this.components);
             this.Ctrldescription = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).BeginInit();
+            this.Ctrlhours = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServiceTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldescription.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -61,13 +61,6 @@
             this.Btnsave.TabIndex = 28;
             this.Btnsave.Text = "Save";
             this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
-            // 
-            // Ctrlhours
-            // 
-            this.Ctrlhours.Location = new System.Drawing.Point(180, 85);
-            this.Ctrlhours.Name = "Ctrlhours";
-            this.Ctrlhours.Size = new System.Drawing.Size(277, 20);
-            this.Ctrlhours.TabIndex = 25;
             // 
             // Ctrlcode
             // 
@@ -107,6 +100,17 @@
             this.Ctrldescription.Size = new System.Drawing.Size(277, 20);
             this.Ctrldescription.TabIndex = 30;
             // 
+            // Ctrlhours
+            // 
+            this.Ctrlhours.Location = new System.Drawing.Point(180, 85);
+            this.Ctrlhours.Name = "Ctrlhours";
+            this.Ctrlhours.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Ctrlhours.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.Ctrlhours.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.Ctrlhours.Size = new System.Drawing.Size(277, 20);
+            this.Ctrlhours.TabIndex = 25;
+            // 
             // ServiceTaskF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,19 +118,19 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Btnexit);
             this.Controls.Add(this.Btnsave);
-            this.Controls.Add(this.Ctrlhours);
             this.Controls.Add(this.Ctrlcode);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.Ctrldescription);
+            this.Controls.Add(this.Ctrlhours);
             this.Name = "ServiceTaskF";
             this.Text = "Service Task";
             this.Load += new System.EventHandler(this.ServiceTaskF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServiceTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldescription.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,12 +140,12 @@
 
         private DevExpress.XtraEditors.SimpleButton Btnexit;
         private DevExpress.XtraEditors.SimpleButton Btnsave;
-        private DevExpress.XtraEditors.TextEdit Ctrlhours;
         private DevExpress.XtraEditors.TextEdit Ctrlcode;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.BindingSource bsServiceTask;
         private DevExpress.XtraEditors.TextEdit Ctrldescription;
+        private DevExpress.XtraEditors.SpinEdit Ctrlhours;
     }
 }

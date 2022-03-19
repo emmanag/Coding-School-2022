@@ -142,6 +142,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "CustomerF";
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.CustomerF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlphone.Properties)).EndInit();

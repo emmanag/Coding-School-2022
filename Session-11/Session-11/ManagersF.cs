@@ -63,7 +63,7 @@ namespace Session_11
 
         private void Btnedit_Click(object sender, EventArgs e)
         {
-            var managers = bsManagers.Current as Manager;
+            _manager = bsManagers.Current as Manager;
 
             ManagerF managerF = new ManagerF(_carService, _manager);
             managerF.ShowDialog();

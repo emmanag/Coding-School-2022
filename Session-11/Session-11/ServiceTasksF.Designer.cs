@@ -55,6 +55,7 @@
             // 
             this.gridView1.GridControl = this.GrdServiceTasks;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             // 
             // Btnclose
             // 

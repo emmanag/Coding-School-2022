@@ -30,5 +30,18 @@ namespace DataLibrary.ItemHandlers
             
             return managersSalaries + engineersSalaries;
         }
+
+        public void CreateMonthlyLedger(CarService carService)
+        {
+            var monthlyLedger = new MonthlyLedger()
+            {
+                DateTimeValue = DateTime.Now,
+                Income = GetMonthlyIncome(DateTime.Now, carService),
+                Expenses = GetMonthlyExpenses(carService),
+                Total = GetTotal(DateTime.Now, carService)
+            };
+
+            carService.MonthlyLedgers.Add(monthlyLedger);
+        }
     }
 }

@@ -59,6 +59,7 @@
             // 
             this.gridView1.GridControl = this.GrdCustomers;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             // 
             // repositoryItemLookUpEdit1
             // 

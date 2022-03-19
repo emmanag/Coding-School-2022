@@ -34,7 +34,7 @@ namespace Session_11
             _customer = customer;
         }
 
-        private void CarF_Load(object sender, EventArgs e)
+        private void CustomerF_Load(object sender, EventArgs e)
         {
             PopulateControls();
 
@@ -81,5 +81,6 @@ namespace Session_11
             DialogResult = DialogResult.OK;
             Close();
         }
+
     }
 }

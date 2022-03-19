@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.GrdMonthlyLedgers = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
-            this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
-            this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
-            this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
             this.bsMonthlyLedger = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrdMonthlyLedgers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -46,7 +42,7 @@
             this.GrdMonthlyLedgers.Location = new System.Drawing.Point(2, 2);
             this.GrdMonthlyLedgers.MainView = this.gridView1;
             this.GrdMonthlyLedgers.Name = "GrdMonthlyLedgers";
-            this.GrdMonthlyLedgers.Size = new System.Drawing.Size(795, 162);
+            this.GrdMonthlyLedgers.Size = new System.Drawing.Size(795, 444);
             this.GrdMonthlyLedgers.TabIndex = 15;
             this.GrdMonthlyLedgers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -55,42 +51,7 @@
             // 
             this.gridView1.GridControl = this.GrdMonthlyLedgers;
             this.gridView1.Name = "gridView1";
-            // 
-            // Btnclose
-            // 
-            this.Btnclose.Location = new System.Drawing.Point(501, 310);
-            this.Btnclose.Name = "Btnclose";
-            this.Btnclose.Size = new System.Drawing.Size(80, 23);
-            this.Btnclose.TabIndex = 19;
-            this.Btnclose.Text = "Close";
-            this.Btnclose.Click += new System.EventHandler(this.Btnclose_Click);
-            // 
-            // Btndelete
-            // 
-            this.Btndelete.Location = new System.Drawing.Point(385, 310);
-            this.Btndelete.Name = "Btndelete";
-            this.Btndelete.Size = new System.Drawing.Size(75, 23);
-            this.Btndelete.TabIndex = 18;
-            this.Btndelete.Text = "Delete";
-            this.Btndelete.Click += new System.EventHandler(this.Btndelete_Click);
-            // 
-            // Btnedit
-            // 
-            this.Btnedit.Location = new System.Drawing.Point(264, 310);
-            this.Btnedit.Name = "Btnedit";
-            this.Btnedit.Size = new System.Drawing.Size(75, 23);
-            this.Btnedit.TabIndex = 17;
-            this.Btnedit.Text = "Edit";
-            this.Btnedit.Click += new System.EventHandler(this.Btnedit_Click);
-            // 
-            // Btnnew
-            // 
-            this.Btnnew.Location = new System.Drawing.Point(150, 310);
-            this.Btnnew.Name = "Btnnew";
-            this.Btnnew.Size = new System.Drawing.Size(75, 23);
-            this.Btnnew.TabIndex = 16;
-            this.Btnnew.Text = "New";
-            this.Btnnew.Click += new System.EventHandler(this.Btnnew_Click);
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             // 
             // MonthlyLedgersF
             // 
@@ -98,10 +59,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.GrdMonthlyLedgers);
-            this.Controls.Add(this.Btnclose);
-            this.Controls.Add(this.Btndelete);
-            this.Controls.Add(this.Btnedit);
-            this.Controls.Add(this.Btnnew);
             this.Name = "MonthlyLedgersF";
             this.Text = "MonthlyLedgers";
             this.Load += new System.EventHandler(this.MonthlyLedgersF_Load);
@@ -116,10 +73,6 @@
 
         private DevExpress.XtraGrid.GridControl GrdMonthlyLedgers;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton Btnclose;
-        private DevExpress.XtraEditors.SimpleButton Btndelete;
-        private DevExpress.XtraEditors.SimpleButton Btnedit;
-        private DevExpress.XtraEditors.SimpleButton Btnnew;
         private System.Windows.Forms.BindingSource bsMonthlyLedger;
     }
 }
