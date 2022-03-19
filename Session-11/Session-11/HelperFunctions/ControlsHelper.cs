@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Session_11.HelperFunctions
 {
@@ -73,37 +74,17 @@ namespace Session_11.HelperFunctions
         }
 
 
-        public void PopulateCarColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Car> list)
+        public void PopulateColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Car> list)
         {
             binding.DataSource = list;
             lookUpEdit.DataSource = binding;
            
-            lookUpEdit.DisplayMember = "CarRegNumber";
-            lookUpEdit.ValueMember = "ID";
-            lookUpEdit.ReadOnly = true;
-        }
-
-        public void PopulateCustomerColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Customer> list)
-        {
-            binding.DataSource = list;
-            lookUpEdit.DataSource = binding;
-
             lookUpEdit.DisplayMember = "FullName";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
         }
 
-        public void PopulateManagerColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Manager> list)
-        {
-            binding.DataSource = list;
-            lookUpEdit.DataSource = binding;
-
-            lookUpEdit.DisplayMember = "FullName";
-            lookUpEdit.ValueMember = "ID";
-            lookUpEdit.ReadOnly = true;
-        }
-
-        public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, DevExpress.XtraGrid.Views.Grid.GridView gridView, string indexColumn)
+        public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, GridView gridView, string indexColumn)
         {
             gridView.Columns[indexColumn].ColumnEdit = columnLookUpEdit;
         }
