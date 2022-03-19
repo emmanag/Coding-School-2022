@@ -13,9 +13,9 @@ namespace DataLibrary.ItemHandlers
 
         }
 
-        //public decimal GetMonthlyIncome(MonthsEnum month, string year, CarService carService)
-        //{
-        //    return carService.Transactions.FindAll(t => t.Date.Month == month && t.Date.Year == month)
-        //}
+        public decimal GetMonthlyIncome(int month, int year, CarService carService)
+        {
+            return carService.Transactions.FindAll(t => t.Date.Month == month && t.Date.Year == year).Sum(x => x.TotalPrice);
+        }
     }
 }
