@@ -18,15 +18,12 @@ namespace DataLibrary
             return new TransactionLine();
         }
 
-        public void Delete(TransactionLine transactionLine, List<TransactionLine> transactionLines)
+        public void Delete(TransactionLine transactionLine, List<TransactionLine> transactionLines, CarService carService)
         {
+            carService.Engineers.FirstOrDefault(e => e.ID == transactionLine.EngineerID).Status = StatusEnum.Free;
             transactionLines.Remove(transactionLine);
         }
 
-        public bool CheckEngineersAvail(List<Engineer> engineers)
-        {
-            return engineers.FindAll(e => e.Status == StatusEnum.Free).Count() > 0;
-        }
 
         public void CalcTaskCost(TransactionLine transactionLine, ServiceTask serviceTask)
         {

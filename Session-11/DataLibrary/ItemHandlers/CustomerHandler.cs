@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.ItemHandlers
 {
-    public class CustomerHandler : ActionHandler
+    public class CustomerHandler
     {
         public CustomerHandler()
         {
 
         }
 
-        public override object Create()
+        public Customer Create()
         {
             return new Customer();
         }
 
-        public override void Delete<Customer>(Customer customer, List<Customer> customers)
+        public void Delete(Customer customer, List<Customer> customers)
         {
             customers.Remove(customer);
         }

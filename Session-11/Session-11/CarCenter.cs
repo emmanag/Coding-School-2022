@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 using Session_11.HelperFunctions;
+using DataLibrary.ItemHandlers;
 
 namespace Session_11
 {
@@ -20,6 +21,7 @@ namespace Session_11
         private CarService _carService;
         private StorageHelper _storageHelper;
         private MessagesHelper _messagesHelper;
+        private MonthlyLedgerHandler _monthlyLedgerHandler;
 
         public CarCenter()
         {
@@ -104,7 +106,6 @@ namespace Session_11
                     EngineerID = _carService.Transactions[0].ID,
                     Hours = 5,
                     Price =6,
-                    PricePerHour =(decimal) 44.5,
                     ServiceTaskID = new Guid(),
                     TransactionID = new Guid()
                 }
@@ -221,5 +222,9 @@ namespace Session_11
             form.ShowDialog();
         }
 
+        private void buttonLedgersCreate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _monthlyLedgerHandler.CreateMonthlyLedger(_carService);
+        }
     }
 }

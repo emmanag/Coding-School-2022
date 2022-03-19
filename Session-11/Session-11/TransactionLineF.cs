@@ -1,4 +1,5 @@
 ﻿using DataLibrary;
+using DataLibrary.ItemHandlers;
 using Session_11.HelperFunctions;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,11 @@ namespace Session_11
         private Transaction _transaction;
         private TransactionLine _transactionLine;
         private TransactionLineHandler _transactionLineHandler;
+        private TransactionHandler _transactionHandler;
         private StorageHelper _storageHelper;
         private ControlsHelper _controlsHelper;
         private CarService _carService;
+        private CarServiceHandler _carServiceHandler;
 
         public TransactionLineF(Transaction transaction, CarService carService)
         {
@@ -30,7 +33,10 @@ namespace Session_11
             _storageHelper = new StorageHelper();
             _controlsHelper = new ControlsHelper();
             _carService = carService;
+            _transactionHandler = new TransactionHandler();
+            _carServiceHandler = new CarServiceHandler();
         }
+
 
         #region UI Controls
 
@@ -81,7 +87,7 @@ namespace Session_11
 
         private void SaveTransactionLine()
         {
-            _transaction.TransactionLines.Add(_transactionLine);
+            _transactionHandler.AddNewTransactionLine(_transaction, _transactionLine, _carServiceHandler, _carService);
             DialogResult = DialogResult.OK;
             Close();
         }

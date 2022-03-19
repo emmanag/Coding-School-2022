@@ -18,7 +18,8 @@ namespace DataLibrary
 
         public Transaction()
         {
-
+            TransactionLines = new List<TransactionLine>();
+            Date = DateTime.Now;
         }
     }
 }

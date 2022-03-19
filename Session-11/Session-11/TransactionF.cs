@@ -1,4 +1,5 @@
 ﻿using DataLibrary;
+using DataLibrary.ItemHandlers;
 using Session_11.HelperFunctions;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,9 @@ namespace Session_11
         private CarService _carService;
         private Transaction _transaction;
         private TransactionHandler _transactionHandler;
+        private TransactionLineHandler _transactionLineHandler;
         private StorageHelper _storageHelper;
+        private MessagesHelper _messagesHelper;
 
         public TransactionF(CarService carService)
         {
@@ -26,9 +29,12 @@ namespace Session_11
             _carService = carService;
             _transactionHandler = new TransactionHandler();
             _storageHelper = new StorageHelper();
+            _transaction = new Transaction();
+            _messagesHelper = new MessagesHelper();
+            _transactionLineHandler = new TransactionLineHandler();
         }
 
-        
+
         public TransactionF(CarService carService, Transaction transaction) : this(carService)
         {
             _transaction = transaction;
@@ -55,7 +61,7 @@ namespace Session_11
         }
         private void Btnsave_Click(object sender, EventArgs e)
         {
-             SaveTransaction();
+            SaveTransaction();
         }
 
         private void Btnexit_Click(object sender, EventArgs e)
@@ -72,8 +78,8 @@ namespace Session_11
             Ctrltotalprice.DataBindings.Add(new Binding("EditValue", bsTransaction, "TotalPrice", true));
 
             CtrlCustomer.DataBindings.Add(new Binding("EditValue", bsTransaction, "CustomerID", true));
-            CtrlManager.DataBindings.Add(new Binding("EditValue",bsTransaction,"ManagerID",true));
-            CtrlCar.DataBindings.Add(new Binding("EditValue",bsTransaction,"CarID",true));
+            CtrlManager.DataBindings.Add(new Binding("EditValue", bsTransaction, "ManagerID", true));
+            CtrlCar.DataBindings.Add(new Binding("EditValue", bsTransaction, "CarID", true));
         }
 
         private void PopulateControls()
@@ -95,9 +101,25 @@ namespace Session_11
 
         private void buttonAddLine_Click(object sender, EventArgs e)
         {
-            var form = new TransactionLineF(_transaction);
-            form.ShowDialog();
+            if (_transactionHandler.CheckEngineersAvail(_carService.Engineers))
+            {
+                var form = new TransactionLineF(_transaction, _carService);
+                form.ShowDialog();
+                grvTransLines.RefreshData();
+
+            }
+            else
+            {
+                _messagesHelper.MessageInfo("There are no available engineers.");
+            }
+        }
+
+        private void buttonRemoveLine_Click(object sender, EventArgs e)
+        {
+            var transactionLine = bsTransactionLines.Current as TransactionLine;
+            _transactionLineHandler.Delete(transactionLine, _transaction.TransactionLines, _carService);
             grvTransLines.RefreshData();
+
         }
     }
 }

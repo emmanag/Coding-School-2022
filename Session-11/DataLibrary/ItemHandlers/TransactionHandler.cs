@@ -54,5 +54,9 @@ namespace DataLibrary
         {
             return maxDayWorkLoad >= reservedHours + currentTransactionHours + transactionLine.Hours;
         }
+        public bool CheckEngineersAvail(List<Engineer> engineers)
+        {
+            return engineers.FindAll(e => e.Status == StatusEnum.Free).Count() > 0;
+        }
     }
 }

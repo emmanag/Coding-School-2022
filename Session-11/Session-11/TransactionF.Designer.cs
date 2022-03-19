@@ -44,14 +44,14 @@
             this.CtrlManager = new DevExpress.XtraEditors.LookUpEdit();
             this.grdTransLines = new DevExpress.XtraGrid.GridControl();
             this.grvTransLines = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colTransID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colServiceTaskID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colEngineerID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.buttonAddLine = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRemoveLine = new DevExpress.XtraEditors.SimpleButton();
             this.bsTransactionLines = new System.Windows.Forms.BindingSource(this.components);
             this.bsTransID = new System.Windows.Forms.BindingSource(this.components);
             this.bsServiveTask = new System.Windows.Forms.BindingSource(this.components);
-            this.colTransID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colServiceTaskID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colEngineerID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrltotalprice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldate.Properties.CalendarTimeProperties)).BeginInit();
@@ -61,12 +61,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlManager.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTransLines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransLines)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colTransID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colServiceTaskID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colEngineerID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -201,23 +201,6 @@
             this.grvTransLines.GridControl = this.grdTransLines;
             this.grvTransLines.Name = "grvTransLines";
             // 
-            // buttonAddLine
-            // 
-            this.buttonAddLine.Location = new System.Drawing.Point(293, 233);
-            this.buttonAddLine.Name = "buttonAddLine";
-            this.buttonAddLine.Size = new System.Drawing.Size(193, 23);
-            this.buttonAddLine.TabIndex = 38;
-            this.buttonAddLine.Text = "Add Line";
-            this.buttonAddLine.Click += new System.EventHandler(this.buttonAddLine_Click);
-            // 
-            // buttonRemoveLine
-            // 
-            this.buttonRemoveLine.Location = new System.Drawing.Point(492, 232);
-            this.buttonRemoveLine.Name = "buttonRemoveLine";
-            this.buttonRemoveLine.Size = new System.Drawing.Size(201, 23);
-            this.buttonRemoveLine.TabIndex = 39;
-            this.buttonRemoveLine.Text = "Remove Line";
-            // 
             // colTransID
             // 
             this.colTransID.AutoHeight = false;
@@ -241,6 +224,24 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.colEngineerID.Name = "colEngineerID";
             this.colEngineerID.ReadOnly = true;
+            // 
+            // buttonAddLine
+            // 
+            this.buttonAddLine.Location = new System.Drawing.Point(293, 233);
+            this.buttonAddLine.Name = "buttonAddLine";
+            this.buttonAddLine.Size = new System.Drawing.Size(193, 23);
+            this.buttonAddLine.TabIndex = 38;
+            this.buttonAddLine.Text = "Add Line";
+            this.buttonAddLine.Click += new System.EventHandler(this.buttonAddLine_Click);
+            // 
+            // buttonRemoveLine
+            // 
+            this.buttonRemoveLine.Location = new System.Drawing.Point(492, 232);
+            this.buttonRemoveLine.Name = "buttonRemoveLine";
+            this.buttonRemoveLine.Size = new System.Drawing.Size(201, 23);
+            this.buttonRemoveLine.TabIndex = 39;
+            this.buttonRemoveLine.Text = "Remove Line";
+            this.buttonRemoveLine.Click += new System.EventHandler(this.buttonRemoveLine_Click);
             // 
             // TransactionF
             // 
@@ -274,12 +275,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlManager.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdTransLines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvTransLines)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colTransID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colServiceTaskID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colEngineerID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
