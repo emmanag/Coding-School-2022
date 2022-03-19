@@ -18,6 +18,7 @@ namespace Session_11
         private Transaction _selectedTransaction;
         private TransactionHandler _transactionHandler;
         private ControlsHelper _controlsHelper;
+        private StorageHelper _storageHelper;
         
         public TransactionsF(CarService carServise)
         {
@@ -26,6 +27,7 @@ namespace Session_11
             _selectedTransaction = new Transaction();
             _transactionHandler = new TransactionHandler();
             _controlsHelper = new ControlsHelper();
+            _storageHelper = new StorageHelper();
         }
 
         private void TransactionsF_Load(object sender, EventArgs e)
@@ -37,9 +39,9 @@ namespace Session_11
 
         private void PopulateControls()
         {
-            _controlsHelper.PopulateCarColumns(CarLookUp, bsCarColumns, _carService.Cars);
-            _controlsHelper.PopulateCustomerColumns(CustomerLookUp, bsCustomerColumns, _carService.Customers);
-            _controlsHelper.PopulateManagerColumns(ManagerLookUp, bsManagerColumns, _carService.Managers);
+            _controlsHelper.PopulateCarsColumns(CarLookUp, bsCarColumns, _carService.Cars);
+            _controlsHelper.PopulateCustomersColumns(CustomerLookUp, bsCustomerColumns, _carService.Customers);
+            _controlsHelper.PopulateManagersColumns(ManagerLookUp, bsManagerColumns, _carService.Managers);
             
             _controlsHelper.SetColumn(CarLookUp,gridView1, "CarID");
             _controlsHelper.SetColumn(CustomerLookUp, gridView1, "CustomerID");
@@ -77,7 +79,10 @@ namespace Session_11
 
         private void Btndelete_Click(object sender, EventArgs e)
         {
-            //TODO Delete an current object form the grid
+            var transaction = bsTransactions.Current as Transaction;
+            _transactionHandler.Delete(transaction, _carService.Transactions);
+            _storageHelper.SaveData("strorage.json", _carService);
+            gridView1.RefreshData();
         }
 
         private void Btnclose_Click(object sender, EventArgs e)

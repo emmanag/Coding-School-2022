@@ -31,14 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.GrdEngineers = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ManagerIDlookup = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
             this.bsEngineers = new System.Windows.Forms.BindingSource(this.components);
+            this.bsManagerID = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrdEngineers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ManagerIDlookup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEngineers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsManagerID)).BeginInit();
             this.SuspendLayout();
             // 
             // GrdEngineers
@@ -46,6 +50,8 @@
             this.GrdEngineers.Location = new System.Drawing.Point(2, 3);
             this.GrdEngineers.MainView = this.gridView1;
             this.GrdEngineers.Name = "GrdEngineers";
+            this.GrdEngineers.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.ManagerIDlookup});
             this.GrdEngineers.Size = new System.Drawing.Size(795, 162);
             this.GrdEngineers.TabIndex = 10;
             this.GrdEngineers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -55,6 +61,13 @@
             // 
             this.gridView1.GridControl = this.GrdEngineers;
             this.gridView1.Name = "gridView1";
+            // 
+            // ManagerIDlookup
+            // 
+            this.ManagerIDlookup.AutoHeight = false;
+            this.ManagerIDlookup.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ManagerIDlookup.Name = "ManagerIDlookup";
             // 
             // Btnclose
             // 
@@ -104,9 +117,12 @@
             this.Controls.Add(this.Btnnew);
             this.Name = "EngineersF";
             this.Text = "Engineers";
+            this.Load += new System.EventHandler(this.EngineersF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrdEngineers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ManagerIDlookup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEngineers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsManagerID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,5 +136,7 @@
         private DevExpress.XtraEditors.SimpleButton Btnedit;
         private DevExpress.XtraEditors.SimpleButton Btnnew;
         private System.Windows.Forms.BindingSource bsEngineers;
+        private System.Windows.Forms.BindingSource bsManagerID;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit ManagerIDlookup;
     }
 }

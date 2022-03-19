@@ -18,22 +18,26 @@ namespace Session_11
         private CarService _carService;
         private Engineer _engineer;
         private EngineerHandler _engineerHandler;
+        private ControlsHelper _controlsHelper;
         public EngineersF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _engineerHandler = new EngineerHandler();
+            _controlsHelper = new ControlsHelper();
         }
 
         private void EngineersF_Load(object sender, EventArgs e)
         {
-            PopulateControls();
+            
             PopulateCars();
+            PopulateControls();
         }
 
         private void PopulateControls()
         {
-
+            _controlsHelper.PopulateManagersColumns(ManagerIDlookup, bsManagerID, _carService.Managers);
+            _controlsHelper.SetColumn(ManagerIDlookup, gridView1, "ManagerID");
         }
 
         private void PopulateCars()
@@ -76,6 +80,11 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void HideColumns(string indexColumn)
+        {
+            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

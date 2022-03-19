@@ -110,6 +110,7 @@ namespace Session_11
                 }
 
             };
+            _carService.Engineers[0].ManagerID = _carService.Managers[0].ID;
             callTestFunc();
         }
 

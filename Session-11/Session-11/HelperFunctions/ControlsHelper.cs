@@ -74,11 +74,29 @@ namespace Session_11.HelperFunctions
         }
 
 
-        public void PopulateColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Car> list)
+        public void PopulateCarsColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Car> list)
         {
             binding.DataSource = list;
             lookUpEdit.DataSource = binding;
            
+            lookUpEdit.DisplayMember = "FullName";
+            lookUpEdit.ValueMember = "ID";
+            lookUpEdit.ReadOnly = true;
+        }
+        public void PopulateManagersColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Manager> list)
+        {
+            binding.DataSource = list;
+            lookUpEdit.DataSource = binding;
+
+            lookUpEdit.DisplayMember = "FullName";
+            lookUpEdit.ValueMember = "ID";
+            lookUpEdit.ReadOnly = true;
+        }
+        public void PopulateCustomersColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Customer> list)
+        {
+            binding.DataSource = list;
+            lookUpEdit.DataSource = binding;
+
             lookUpEdit.DisplayMember = "FullName";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
