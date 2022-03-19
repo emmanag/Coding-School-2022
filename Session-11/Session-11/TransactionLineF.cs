@@ -15,25 +15,22 @@ namespace Session_11
     public partial class TransactionLineF : Form
     {
         private const string FILE_NAME = "storage.json";
-        private CarService _carService;
+        private Transaction _transaction;
         private TransactionLine _transactionLine;
         private TransactionLineHandler _transactionLineHandler;
         private StorageHelper _storageHelper;
+        private ControlsHelper _controlsHelper;
+        private CarService _carService;
 
-        public TransactionLineF(CarService carService)
+        public TransactionLineF(Transaction transaction, CarService carService)
         {
             InitializeComponent();
-            _carService = carService;
+            _transaction = transaction;
             _transactionLineHandler = new TransactionLineHandler();
             _storageHelper = new StorageHelper();
+            _controlsHelper = new ControlsHelper();
+            _carService = carService;
         }
-
-
-        public TransactionLineF(CarService carService, TransactionLine transactionLine) :this(carService)
-        {
-            _transactionLine = transactionLine;
-        }
-
 
         #region UI Controls
 
@@ -72,20 +69,19 @@ namespace Session_11
 
             CtrlengineerID.DataBindings.Add(new Binding("EditValue", bsTransactionLine, "EngineerID",true));
             CtrlservicetaskID.DataBindings.Add(new Binding("EditValue", bsTransactionLine, "ServiceTaskID", true));
-            CtrltransactionID.DataBindings.Add(new Binding("EditValue", bsTransactionLine, "ServiceTaskID", true));
-          
+            //CtrltransactionID.DataBindings.Add(new Binding("EditValue", bsTransactionLine, "ServiceTaskID", true));
+            CtrltransactionID.EditValue = _transaction.ID;
         }
 
         private void PopulateControls()
         {
-
+            _controlsHelper.PopulateServiceTasks(CtrlservicetaskID.Properties, _carService.ServiceTasks);
+            _controlsHelper.PopulateEngineers(CtrlengineerID.Properties, _carService.Engineers.FindAll(e => e.Status == StatusEnum.Free));
         }
 
         private void SaveTransactionLine()
         {
-
-           // _carService.TransactionLines.Add(_transactionLine);
-            _storageHelper.SaveData(FILE_NAME, _carService);
+            _transaction.TransactionLines.Add(_transactionLine);
             DialogResult = DialogResult.OK;
             Close();
         }

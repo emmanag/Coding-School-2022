@@ -12,12 +12,12 @@ namespace DataLibrary
         public Guid ServiceTaskID { get; set; }
         public Guid EngineerID { get; set; }
         public decimal Hours { get; set; }
-        public decimal PricePerHour { get; set; }
+        public decimal PricePerHour { get; }
         public decimal Price { get; set; }
 
         public TransactionLine()
-        { 
-        
+        {
+            PricePerHour = 44.5m;
         }
 
     }

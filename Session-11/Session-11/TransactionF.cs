@@ -78,7 +78,8 @@ namespace Session_11
 
         private void PopulateControls()
         {
-
+            bsTransactionLines.DataSource = _transaction.TransactionLines;
+            grdTransLines.DataSource = bsTransactionLines;
         }
 
         private void SaveTransaction()
@@ -90,6 +91,13 @@ namespace Session_11
             }
             DialogResult = DialogResult.OK;
             Close();
+        }
+
+        private void buttonAddLine_Click(object sender, EventArgs e)
+        {
+            var form = new TransactionLineF(_transaction);
+            form.ShowDialog();
+            grvTransLines.RefreshData();
         }
     }
 }

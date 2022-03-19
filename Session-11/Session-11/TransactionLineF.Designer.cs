@@ -32,8 +32,6 @@
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.CtrlengineerID = new DevExpress.XtraEditors.TextEdit();
-            this.CtrlservicetaskID = new DevExpress.XtraEditors.TextEdit();
             this.CtrltransactionID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -44,13 +42,15 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.Ctrlhours = new DevExpress.XtraEditors.SpinEdit();
             this.bsTransactionLine = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).BeginInit();
+            this.CtrlservicetaskID = new DevExpress.XtraEditors.LookUpEdit();
+            this.CtrlengineerID = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrltransactionID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlpriceperhour.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlprice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -79,24 +79,11 @@
             this.labelControl4.TabIndex = 26;
             this.labelControl4.Text = "Hours";
             // 
-            // CtrlengineerID
-            // 
-            this.CtrlengineerID.Location = new System.Drawing.Point(177, 138);
-            this.CtrlengineerID.Name = "CtrlengineerID";
-            this.CtrlengineerID.Size = new System.Drawing.Size(277, 20);
-            this.CtrlengineerID.TabIndex = 25;
-            // 
-            // CtrlservicetaskID
-            // 
-            this.CtrlservicetaskID.Location = new System.Drawing.Point(177, 93);
-            this.CtrlservicetaskID.Name = "CtrlservicetaskID";
-            this.CtrlservicetaskID.Size = new System.Drawing.Size(277, 20);
-            this.CtrlservicetaskID.TabIndex = 24;
-            // 
             // CtrltransactionID
             // 
             this.CtrltransactionID.Location = new System.Drawing.Point(177, 47);
             this.CtrltransactionID.Name = "CtrltransactionID";
+            this.CtrltransactionID.Properties.ReadOnly = true;
             this.CtrltransactionID.Size = new System.Drawing.Size(277, 20);
             this.CtrltransactionID.TabIndex = 23;
             // 
@@ -128,6 +115,7 @@
             // 
             this.Ctrlpriceperhour.Location = new System.Drawing.Point(177, 225);
             this.Ctrlpriceperhour.Name = "Ctrlpriceperhour";
+            this.Ctrlpriceperhour.Properties.ReadOnly = true;
             this.Ctrlpriceperhour.Size = new System.Drawing.Size(277, 20);
             this.Ctrlpriceperhour.TabIndex = 31;
             // 
@@ -143,6 +131,7 @@
             // 
             this.Ctrlprice.Location = new System.Drawing.Point(177, 266);
             this.Ctrlprice.Name = "Ctrlprice";
+            this.Ctrlprice.Properties.ReadOnly = true;
             this.Ctrlprice.Size = new System.Drawing.Size(277, 20);
             this.Ctrlprice.TabIndex = 33;
             // 
@@ -165,8 +154,29 @@
             this.Ctrlhours.Name = "Ctrlhours";
             this.Ctrlhours.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Ctrlhours.Properties.ReadOnly = true;
             this.Ctrlhours.Size = new System.Drawing.Size(100, 20);
             this.Ctrlhours.TabIndex = 34;
+            // 
+            // CtrlservicetaskID
+            // 
+            this.CtrlservicetaskID.Location = new System.Drawing.Point(177, 93);
+            this.CtrlservicetaskID.Name = "CtrlservicetaskID";
+            this.CtrlservicetaskID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CtrlservicetaskID.Properties.NullText = "";
+            this.CtrlservicetaskID.Size = new System.Drawing.Size(277, 20);
+            this.CtrlservicetaskID.TabIndex = 24;
+            // 
+            // CtrlengineerID
+            // 
+            this.CtrlengineerID.Location = new System.Drawing.Point(177, 138);
+            this.CtrlengineerID.Name = "CtrlengineerID";
+            this.CtrlengineerID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CtrlengineerID.Properties.NullText = "";
+            this.CtrlengineerID.Size = new System.Drawing.Size(277, 20);
+            this.CtrlengineerID.TabIndex = 25;
             // 
             // TransactionLineF
             // 
@@ -181,22 +191,22 @@
             this.Controls.Add(this.Btnexit);
             this.Controls.Add(this.Btnsave);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.CtrlengineerID);
-            this.Controls.Add(this.CtrlservicetaskID);
             this.Controls.Add(this.CtrltransactionID);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.CtrlservicetaskID);
+            this.Controls.Add(this.CtrlengineerID);
             this.Name = "TransactionLineF";
             this.Text = "TransactionLine";
             this.Load += new System.EventHandler(this.TransactionLineF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrltransactionID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlpriceperhour.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlprice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +217,6 @@
         private DevExpress.XtraEditors.SimpleButton Btnexit;
         private DevExpress.XtraEditors.SimpleButton Btnsave;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit CtrlengineerID;
-        private DevExpress.XtraEditors.TextEdit CtrlservicetaskID;
         private DevExpress.XtraEditors.TextEdit CtrltransactionID;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -219,5 +227,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SpinEdit Ctrlhours;
         private System.Windows.Forms.BindingSource bsTransactionLine;
+        private DevExpress.XtraEditors.LookUpEdit CtrlservicetaskID;
+        private DevExpress.XtraEditors.LookUpEdit CtrlengineerID;
     }
 }

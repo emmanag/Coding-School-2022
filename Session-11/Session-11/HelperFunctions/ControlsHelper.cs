@@ -110,7 +110,17 @@ namespace Session_11.HelperFunctions
             lookUpEdit.DisplayMember = "FullName";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
-            lookUpEdit.NullText = "Choose Cutomers"; 
+            lookUpEdit.NullText = "Choose Cutomers";
+        }
+        public void PopulateTransactionID(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Transaction> list)
+        {
+            binding.DataSource = list;
+            lookUpEdit.DataSource = binding;
+
+            lookUpEdit.DisplayMember = "FullName";
+            lookUpEdit.ValueMember = "ID";
+            lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "";
         }
 
         public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, DevExpress.XtraGrid.Views.Grid.GridView gridView, string indexColumn)

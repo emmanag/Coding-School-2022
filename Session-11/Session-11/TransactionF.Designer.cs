@@ -42,6 +42,16 @@
             this.CtrlCustomer = new DevExpress.XtraEditors.LookUpEdit();
             this.CtrlCar = new DevExpress.XtraEditors.LookUpEdit();
             this.CtrlManager = new DevExpress.XtraEditors.LookUpEdit();
+            this.grdTransLines = new DevExpress.XtraGrid.GridControl();
+            this.grvTransLines = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.buttonAddLine = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonRemoveLine = new DevExpress.XtraEditors.SimpleButton();
+            this.bsTransactionLines = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTransID = new System.Windows.Forms.BindingSource(this.components);
+            this.bsServiveTask = new System.Windows.Forms.BindingSource(this.components);
+            this.colTransID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colServiceTaskID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colEngineerID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrltotalprice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldate.Properties.CalendarTimeProperties)).BeginInit();
@@ -49,6 +59,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlCustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlCar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlManager.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTransLines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTransLines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colTransID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colServiceTaskID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colEngineerID)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -164,11 +182,74 @@
             this.CtrlManager.Size = new System.Drawing.Size(100, 20);
             this.CtrlManager.TabIndex = 36;
             // 
+            // grdTransLines
+            // 
+            this.grdTransLines.Location = new System.Drawing.Point(293, 32);
+            this.grdTransLines.MainView = this.grvTransLines;
+            this.grdTransLines.Name = "grdTransLines";
+            this.grdTransLines.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.colTransID,
+            this.colServiceTaskID,
+            this.colEngineerID});
+            this.grdTransLines.Size = new System.Drawing.Size(400, 194);
+            this.grdTransLines.TabIndex = 37;
+            this.grdTransLines.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvTransLines});
+            // 
+            // grvTransLines
+            // 
+            this.grvTransLines.GridControl = this.grdTransLines;
+            this.grvTransLines.Name = "grvTransLines";
+            // 
+            // buttonAddLine
+            // 
+            this.buttonAddLine.Location = new System.Drawing.Point(293, 233);
+            this.buttonAddLine.Name = "buttonAddLine";
+            this.buttonAddLine.Size = new System.Drawing.Size(193, 23);
+            this.buttonAddLine.TabIndex = 38;
+            this.buttonAddLine.Text = "Add Line";
+            this.buttonAddLine.Click += new System.EventHandler(this.buttonAddLine_Click);
+            // 
+            // buttonRemoveLine
+            // 
+            this.buttonRemoveLine.Location = new System.Drawing.Point(492, 232);
+            this.buttonRemoveLine.Name = "buttonRemoveLine";
+            this.buttonRemoveLine.Size = new System.Drawing.Size(201, 23);
+            this.buttonRemoveLine.TabIndex = 39;
+            this.buttonRemoveLine.Text = "Remove Line";
+            // 
+            // colTransID
+            // 
+            this.colTransID.AutoHeight = false;
+            this.colTransID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.colTransID.Name = "colTransID";
+            this.colTransID.ReadOnly = true;
+            // 
+            // colServiceTaskID
+            // 
+            this.colServiceTaskID.AutoHeight = false;
+            this.colServiceTaskID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.colServiceTaskID.Name = "colServiceTaskID";
+            this.colServiceTaskID.ReadOnly = true;
+            // 
+            // colEngineerID
+            // 
+            this.colEngineerID.AutoHeight = false;
+            this.colEngineerID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.colEngineerID.Name = "colEngineerID";
+            this.colEngineerID.ReadOnly = true;
+            // 
             // TransactionF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRemoveLine);
+            this.Controls.Add(this.buttonAddLine);
+            this.Controls.Add(this.grdTransLines);
             this.Controls.Add(this.CtrlManager);
             this.Controls.Add(this.CtrlCar);
             this.Controls.Add(this.CtrlCustomer);
@@ -191,6 +272,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlCustomer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlCar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlManager.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdTransLines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvTransLines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colTransID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colServiceTaskID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colEngineerID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +300,15 @@
         private DevExpress.XtraEditors.LookUpEdit CtrlCustomer;
         private DevExpress.XtraEditors.LookUpEdit CtrlCar;
         private DevExpress.XtraEditors.LookUpEdit CtrlManager;
+        private DevExpress.XtraGrid.GridControl grdTransLines;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvTransLines;
+        private DevExpress.XtraEditors.SimpleButton buttonAddLine;
+        private DevExpress.XtraEditors.SimpleButton buttonRemoveLine;
+        private System.Windows.Forms.BindingSource bsTransactionLines;
+        private System.Windows.Forms.BindingSource bsTransID;
+        private System.Windows.Forms.BindingSource bsServiveTask;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit colTransID;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit colServiceTaskID;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit colEngineerID;
     }
 }
