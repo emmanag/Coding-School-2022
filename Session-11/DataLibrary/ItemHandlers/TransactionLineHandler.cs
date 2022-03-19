@@ -32,10 +32,5 @@ namespace DataLibrary
         {
             transactionLine.Price = transactionLine.PricePerHour * serviceTask.Hours;
         }
-
-        public bool CheckWorkLoadAvail(int maxDayWorkLoad, TransactionLine transactionLine, decimal reservedHours, decimal currentTransactionHours)
-        {
-            return maxDayWorkLoad >= reservedHours + currentTransactionHours + transactionLine.Hours;
-        }
     }
 }
