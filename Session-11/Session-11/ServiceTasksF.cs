@@ -41,7 +41,7 @@ namespace Session_11
         private void PopulateServiceTask()
         {
             bsServiceTasks.DataSource = _carService;
-            bsServiceTasks.DataMember = "ServiceTask";
+            bsServiceTasks.DataMember = "ServiceTasks";
 
             GrdServiceTasks.DataSource = bsServiceTasks;
 
