@@ -26,6 +26,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Surname", "Surname"));
             lookup.DisplayMember = "FullName";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Manager";
         }
 
         public void PopulateEngineers(RepositoryItemLookUpEdit lookup, List<Engineer> list)
@@ -35,6 +36,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Surname", "Surname"));
             lookup.DisplayMember = "FullName";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Engineer";
         }
 
         public void PopulateCars(RepositoryItemLookUpEdit lookup, List<Car> list)
@@ -45,6 +47,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CarRegNumber", "CarRegNumber"));
             lookup.DisplayMember = "CarRegNumber";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Car";
         }
 
         public void PopulateCustomers(RepositoryItemLookUpEdit lookup, List<Customer> list)
@@ -55,6 +58,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Phone", "Phone"));
             lookup.DisplayMember = "FullName";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Customers";
         }
 
         public void PopulateServiceTasks(RepositoryItemLookUpEdit lookup, List<ServiceTask> list)
@@ -64,6 +68,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Hours", "Hours"));
             lookup.DisplayMember = "Code";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Service Task";
         }
 
         public void PopulateAccounts(RepositoryItemLookUpEdit lookup, List<Credential> list)
@@ -72,6 +77,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Username", "Username"));
             lookup.DisplayMember = "Username";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Account";
         }
 
 
@@ -83,6 +89,7 @@ namespace Session_11.HelperFunctions
             lookUpEdit.DisplayMember = "FullName";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "Choose Cars";
         }
         public void PopulateManagersColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Manager> list)
         {
@@ -92,6 +99,7 @@ namespace Session_11.HelperFunctions
             lookUpEdit.DisplayMember = "FullName";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "Choose Managers"; 
         }
         public void PopulateCustomersColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Customer> list)
         {
@@ -101,6 +109,7 @@ namespace Session_11.HelperFunctions
             lookUpEdit.DisplayMember = "FullName";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "Choose Cutomers"; 
         }
 
         public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, GridView gridView, string indexColumn)
