@@ -8,7 +8,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,11 +18,13 @@ namespace Session_11
         private CarService _carService;
         private Customer _customer;
         private CustomerHandler _customerHandler;
+        private StorageHelper _storageHelper;
         public CustomersF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _customerHandler = new CustomerHandler();
+            _storageHelper = new StorageHelper();
         }
 
         private void CarsF_Load(object sender, EventArgs e)
@@ -69,9 +70,9 @@ namespace Session_11
         private void Btndelete_Click(object sender, EventArgs e)
         {
 
-            //var customer = bsCustomers.Current as Customer;
-            //_customerHandler.Delete; (customer, _carService.Customers)
-            //SaveData();
+            var customer = bsCustomers.Current as Customer;
+            _customerHandler.Delete(customer, _carService.Customers);
+            _storageHelper.SaveData("storage.json", _carService);
         }
 
         private void Btnclose_Click(object sender, EventArgs e)
