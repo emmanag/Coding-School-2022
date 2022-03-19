@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.ctrlPassword = new DevExpress.XtraEditors.TextEdit();
             this.Btnenter = new DevExpress.XtraEditors.SimpleButton();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            this.ctrlUsername = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlUsername.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -54,19 +57,14 @@
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Password";
             // 
-            // textEdit1
+            // ctrlPassword
             // 
-            this.textEdit1.Location = new System.Drawing.Point(245, 113);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(222, 20);
-            this.textEdit1.TabIndex = 2;
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(245, 161);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(222, 20);
-            this.textEdit2.TabIndex = 3;
+            this.ctrlPassword.Location = new System.Drawing.Point(245, 161);
+            this.ctrlPassword.Name = "ctrlPassword";
+            this.ctrlPassword.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.ctrlPassword.Properties.UseSystemPasswordChar = true;
+            this.ctrlPassword.Size = new System.Drawing.Size(222, 20);
+            this.ctrlPassword.TabIndex = 3;
             // 
             // Btnenter
             // 
@@ -75,6 +73,7 @@
             this.Btnenter.Size = new System.Drawing.Size(75, 23);
             this.Btnenter.TabIndex = 4;
             this.Btnenter.Text = "Enter";
+            this.Btnenter.Click += new System.EventHandler(this.Btnenter_Click);
             // 
             // Btnexit
             // 
@@ -83,6 +82,18 @@
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 5;
             this.Btnexit.Text = "Exit";
+            this.Btnexit.Click += new System.EventHandler(this.Btnexit_Click);
+            // 
+            // ctrlUsername
+            // 
+            this.ctrlUsername.Location = new System.Drawing.Point(245, 113);
+            this.ctrlUsername.Name = "ctrlUsername";
+            this.ctrlUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ctrlUsername.Properties.NullText = "";
+            this.ctrlUsername.Properties.ShowHeader = false;
+            this.ctrlUsername.Size = new System.Drawing.Size(222, 20);
+            this.ctrlUsername.TabIndex = 2;
             // 
             // LoginF
             // 
@@ -91,14 +102,16 @@
             this.ClientSize = new System.Drawing.Size(704, 450);
             this.Controls.Add(this.Btnexit);
             this.Controls.Add(this.Btnenter);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.ctrlPassword);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.ctrlUsername);
             this.Name = "LoginF";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.LoginF_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlUsername.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,9 +121,10 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit ctrlPassword;
         private DevExpress.XtraEditors.SimpleButton Btnenter;
         private DevExpress.XtraEditors.SimpleButton Btnexit;
+        private DevExpress.XtraEditors.LookUpEdit ctrlUsername;
+        private System.Windows.Forms.BindingSource bsUsers;
     }
 }

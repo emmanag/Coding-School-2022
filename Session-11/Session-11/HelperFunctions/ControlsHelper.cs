@@ -1,4 +1,5 @@
 ﻿using DataLibrary;
+using DataLibrary.DataClasses;
 using DevExpress.XtraEditors.Repository;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,14 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description"));
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Hours", "Hours"));
             lookup.DisplayMember = "Code";
+            lookup.ValueMember = "ID";
+        }
+
+        public void PopulateAccounts(RepositoryItemLookUpEdit lookup, List<Credential> list)
+        {
+            lookup.DataSource = list;
+            lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Username", "Username"));
+            lookup.DisplayMember = "Username";
             lookup.ValueMember = "ID";
         }
 

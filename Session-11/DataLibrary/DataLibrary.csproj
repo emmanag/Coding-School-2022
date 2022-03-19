@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataClasses\Credential.cs" />
     <Compile Include="ItemHandlers\ActionHandler.cs" />
     <Compile Include="DataClasses\Car.cs" />
     <Compile Include="ItemHandlers\CarHandler.cs" />
     <Compile Include="DataClasses\CarService.cs" />
     <Compile Include="ItemHandlers\CarServiceHandler.cs" />
     <Compile Include="ItemHandlers\CustomerHandler.cs" />
+    <Compile Include="ItemHandlers\SecurityHandler.cs" />
     <Compile Include="ItemHandlers\TransactionLineHandler.cs" />
     <Compile Include="ItemHandlers\TransactionHandler.cs" />
     <Compile Include="ItemHandlers\ServiceTaskHandler.cs" />
