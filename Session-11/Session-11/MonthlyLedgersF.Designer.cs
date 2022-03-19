@@ -63,6 +63,7 @@
             this.Btnclose.Size = new System.Drawing.Size(80, 23);
             this.Btnclose.TabIndex = 19;
             this.Btnclose.Text = "Close";
+            this.Btnclose.Click += new System.EventHandler(this.Btnclose_Click);
             // 
             // Btndelete
             // 
@@ -71,6 +72,7 @@
             this.Btndelete.Size = new System.Drawing.Size(75, 23);
             this.Btndelete.TabIndex = 18;
             this.Btndelete.Text = "Delete";
+            this.Btndelete.Click += new System.EventHandler(this.Btndelete_Click);
             // 
             // Btnedit
             // 
@@ -79,6 +81,7 @@
             this.Btnedit.Size = new System.Drawing.Size(75, 23);
             this.Btnedit.TabIndex = 17;
             this.Btnedit.Text = "Edit";
+            this.Btnedit.Click += new System.EventHandler(this.Btnedit_Click);
             // 
             // Btnnew
             // 
@@ -87,6 +90,7 @@
             this.Btnnew.Size = new System.Drawing.Size(75, 23);
             this.Btnnew.TabIndex = 16;
             this.Btnnew.Text = "New";
+            this.Btnnew.Click += new System.EventHandler(this.Btnnew_Click);
             // 
             // MonthlyLedgersF
             // 
@@ -100,6 +104,7 @@
             this.Controls.Add(this.Btnnew);
             this.Name = "MonthlyLedgersF";
             this.Text = "MonthlyLedgers";
+            this.Load += new System.EventHandler(this.MonthlyLedgersF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrdMonthlyLedgers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMonthlyLedger)).EndInit();

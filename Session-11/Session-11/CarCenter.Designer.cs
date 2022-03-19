@@ -100,6 +100,7 @@
             this.Btnmonthlyledger.Size = new System.Drawing.Size(96, 23);
             this.Btnmonthlyledger.TabIndex = 6;
             this.Btnmonthlyledger.Text = "Monthly Ledger";
+            this.Btnmonthlyledger.Click += new System.EventHandler(this.Btnmonthlyledger_Click);
             // 
             // simpleButton1
             // 
@@ -108,6 +109,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Service Task";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // Btntransaction
             // 

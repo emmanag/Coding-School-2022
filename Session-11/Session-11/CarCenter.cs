@@ -200,28 +200,38 @@ namespace Session_11
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            ShowForm(new CarF(_carService));
+            ShowForm(new CarsF(_carService));
             
         }
 
         private void Btnengineer_Click(object sender, EventArgs e)
         {
-            ShowForm(new EngineerF(_carService));
+            ShowForm(new EngineersF(_carService));
         }
 
         private void Btnmanager_Click(object sender, EventArgs e)
         {
-            ShowForm(new ManagerF(_carService));
+            ShowForm(new ManagersF(_carService));
         }
 
         private void Btncustomer_Click(object sender, EventArgs e)
         {
-            ShowForm(new CustomerF(_carService));
+            ShowForm(new CustomersF(_carService));
         }
 
         private void Btntransaction_Click(object sender, EventArgs e)
         {
             ShowForm(new TransactionsF(_carService));
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            ShowForm(new ServiceTasksF(_carService));
+        }
+
+        private void Btnmonthlyledger_Click(object sender, EventArgs e)
+        {
+            ShowForm(new MonthlyLedgersF(_carService));
         }
     }
 }
