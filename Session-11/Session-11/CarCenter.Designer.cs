@@ -28,130 +28,258 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Btnload = new DevExpress.XtraEditors.SimpleButton();
-            this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
-            this.Btncar = new DevExpress.XtraEditors.SimpleButton();
-            this.Btncustomer = new DevExpress.XtraEditors.SimpleButton();
-            this.Btnengineer = new DevExpress.XtraEditors.SimpleButton();
-            this.Btnmanager = new DevExpress.XtraEditors.SimpleButton();
-            this.Btnmonthlyledger = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.Btntransaction = new DevExpress.XtraEditors.SimpleButton();
+            this.components = new System.ComponentModel.Container();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.barSubItemSystem = new DevExpress.XtraBars.BarSubItem();
+            this.buttonLoad = new DevExpress.XtraBars.BarButtonItem();
+            this.buttonSave = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItemTransactions = new DevExpress.XtraBars.BarSubItem();
+            this.buttonTransShow = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItemManagement = new DevExpress.XtraBars.BarSubItem();
+            this.buttonManagers = new DevExpress.XtraBars.BarButtonItem();
+            this.buttonEngineers = new DevExpress.XtraBars.BarButtonItem();
+            this.buttonCustomers = new DevExpress.XtraBars.BarButtonItem();
+            this.buttonServiceTask = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItemLedgers = new DevExpress.XtraBars.BarSubItem();
+            this.buttonLedgersShow = new DevExpress.XtraBars.BarButtonItem();
+            this.buttonLedgersCreate = new DevExpress.XtraBars.BarButtonItem();
+            this.buttonCars = new DevExpress.XtraBars.BarButtonItem();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Btnload
+            // barManager1
             // 
-            this.Btnload.Location = new System.Drawing.Point(215, 335);
-            this.Btnload.Name = "Btnload";
-            this.Btnload.Size = new System.Drawing.Size(75, 23);
-            this.Btnload.TabIndex = 0;
-            this.Btnload.Text = "Load";
-            this.Btnload.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barSubItemSystem,
+            this.buttonLoad,
+            this.buttonSave,
+            this.barButtonItem3,
+            this.barSubItemTransactions,
+            this.buttonTransShow,
+            this.barSubItemManagement,
+            this.buttonManagers,
+            this.buttonEngineers,
+            this.buttonCustomers,
+            this.buttonServiceTask,
+            this.barSubItemLedgers,
+            this.buttonLedgersShow,
+            this.buttonLedgersCreate,
+            this.buttonCars});
+            this.barManager1.MainMenu = this.bar2;
+            this.barManager1.MaxItemId = 15;
             // 
-            // Btnsave
+            // barDockControlTop
             // 
-            this.Btnsave.Location = new System.Drawing.Point(445, 335);
-            this.Btnsave.Name = "Btnsave";
-            this.Btnsave.Size = new System.Drawing.Size(75, 23);
-            this.Btnsave.TabIndex = 1;
-            this.Btnsave.Text = "Save";
-            this.Btnsave.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(800, 20);
             // 
-            // Btncar
+            // barDockControlBottom
             // 
-            this.Btncar.Location = new System.Drawing.Point(215, 137);
-            this.Btncar.Name = "Btncar";
-            this.Btncar.Size = new System.Drawing.Size(75, 23);
-            this.Btncar.TabIndex = 2;
-            this.Btncar.Text = "Car";
-            this.Btncar.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 450);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(800, 0);
             // 
-            // Btncustomer
+            // barDockControlLeft
             // 
-            this.Btncustomer.Location = new System.Drawing.Point(336, 137);
-            this.Btncustomer.Name = "Btncustomer";
-            this.Btncustomer.Size = new System.Drawing.Size(75, 23);
-            this.Btncustomer.TabIndex = 3;
-            this.Btncustomer.Text = "Customer";
-            this.Btncustomer.Click += new System.EventHandler(this.Btncustomer_Click);
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 430);
             // 
-            // Btnengineer
+            // barDockControlRight
             // 
-            this.Btnengineer.Location = new System.Drawing.Point(445, 137);
-            this.Btnengineer.Name = "Btnengineer";
-            this.Btnengineer.Size = new System.Drawing.Size(75, 23);
-            this.Btnengineer.TabIndex = 4;
-            this.Btnengineer.Text = "Engineer";
-            this.Btnengineer.Click += new System.EventHandler(this.Btnengineer_Click);
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(800, 20);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 430);
             // 
-            // Btnmanager
+            // bar2
             // 
-            this.Btnmanager.Location = new System.Drawing.Point(445, 203);
-            this.Btnmanager.Name = "Btnmanager";
-            this.Btnmanager.Size = new System.Drawing.Size(75, 23);
-            this.Btnmanager.TabIndex = 5;
-            this.Btnmanager.Text = "Manager";
-            this.Btnmanager.Click += new System.EventHandler(this.Btnmanager_Click);
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemSystem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemTransactions, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemLedgers),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemManagement)});
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
             // 
-            // Btnmonthlyledger
+            // barSubItemSystem
             // 
-            this.Btnmonthlyledger.Location = new System.Drawing.Point(326, 266);
-            this.Btnmonthlyledger.Name = "Btnmonthlyledger";
-            this.Btnmonthlyledger.Size = new System.Drawing.Size(96, 23);
-            this.Btnmonthlyledger.TabIndex = 6;
-            this.Btnmonthlyledger.Text = "Monthly Ledger";
-            this.Btnmonthlyledger.Click += new System.EventHandler(this.Btnmonthlyledger_Click);
+            this.barSubItemSystem.Caption = "System";
+            this.barSubItemSystem.Id = 0;
+            this.barSubItemSystem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonLoad),
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonSave)});
+            this.barSubItemSystem.Name = "barSubItemSystem";
             // 
-            // simpleButton1
+            // buttonLoad
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(215, 203);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 7;
-            this.simpleButton1.Text = "Service Task";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
+            this.buttonLoad.Caption = "Load";
+            this.buttonLoad.Id = 1;
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonLoad_ItemClick);
             // 
-            // Btntransaction
+            // buttonSave
             // 
-            this.Btntransaction.Location = new System.Drawing.Point(336, 203);
-            this.Btntransaction.Name = "Btntransaction";
-            this.Btntransaction.Size = new System.Drawing.Size(75, 23);
-            this.Btntransaction.TabIndex = 8;
-            this.Btntransaction.Text = "Transaction";
-            this.Btntransaction.Click += new System.EventHandler(this.Btntransaction_Click);
+            this.buttonSave.Caption = "Save";
+            this.buttonSave.Id = 2;
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonSave_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 3;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barSubItemTransactions
+            // 
+            this.barSubItemTransactions.Caption = "Transactions";
+            this.barSubItemTransactions.Id = 4;
+            this.barSubItemTransactions.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonTransShow)});
+            this.barSubItemTransactions.Name = "barSubItemTransactions";
+            // 
+            // buttonTransShow
+            // 
+            this.buttonTransShow.Caption = "Show";
+            this.buttonTransShow.Id = 5;
+            this.buttonTransShow.Name = "buttonTransShow";
+            this.buttonTransShow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonTransShow_ItemClick);
+            // 
+            // barSubItemManagement
+            // 
+            this.barSubItemManagement.Caption = "Management";
+            this.barSubItemManagement.Id = 6;
+            this.barSubItemManagement.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonCars),
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonCustomers),
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonEngineers),
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonManagers),
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonServiceTask)});
+            this.barSubItemManagement.Name = "barSubItemManagement";
+            // 
+            // buttonManagers
+            // 
+            this.buttonManagers.Caption = "Managers";
+            this.buttonManagers.Id = 7;
+            this.buttonManagers.Name = "buttonManagers";
+            this.buttonManagers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonManagers_ItemClick);
+            // 
+            // buttonEngineers
+            // 
+            this.buttonEngineers.Caption = "Engineers";
+            this.buttonEngineers.Id = 8;
+            this.buttonEngineers.Name = "buttonEngineers";
+            this.buttonEngineers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonEngineers_ItemClick);
+            // 
+            // buttonCustomers
+            // 
+            this.buttonCustomers.Caption = "Customers";
+            this.buttonCustomers.Id = 9;
+            this.buttonCustomers.Name = "buttonCustomers";
+            this.buttonCustomers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonCustomers_ItemClick);
+            // 
+            // buttonServiceTask
+            // 
+            this.buttonServiceTask.Caption = "Service Tasks";
+            this.buttonServiceTask.Id = 10;
+            this.buttonServiceTask.Name = "buttonServiceTask";
+            this.buttonServiceTask.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonServiceTask_ItemClick);
+            // 
+            // barSubItemLedgers
+            // 
+            this.barSubItemLedgers.Caption = "Ledgers";
+            this.barSubItemLedgers.Id = 11;
+            this.barSubItemLedgers.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonLedgersShow),
+            new DevExpress.XtraBars.LinkPersistInfo(this.buttonLedgersCreate)});
+            this.barSubItemLedgers.Name = "barSubItemLedgers";
+            // 
+            // buttonLedgersShow
+            // 
+            this.buttonLedgersShow.Caption = "Show";
+            this.buttonLedgersShow.Id = 12;
+            this.buttonLedgersShow.Name = "buttonLedgersShow";
+            this.buttonLedgersShow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonLedgersShow_ItemClick);
+            // 
+            // buttonLedgersCreate
+            // 
+            this.buttonLedgersCreate.Caption = "Create Ledger";
+            this.buttonLedgersCreate.Id = 13;
+            this.buttonLedgersCreate.Name = "buttonLedgersCreate";
+            // 
+            // buttonCars
+            // 
+            this.buttonCars.Caption = "Cars";
+            this.buttonCars.Id = 14;
+            this.buttonCars.Name = "buttonCars";
+            this.buttonCars.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.buttonCars_ItemClick);
             // 
             // CarCenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Btntransaction);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.Btnmonthlyledger);
-            this.Controls.Add(this.Btnmanager);
-            this.Controls.Add(this.Btnengineer);
-            this.Controls.Add(this.Btncustomer);
-            this.Controls.Add(this.Btncar);
-            this.Controls.Add(this.Btnsave);
-            this.Controls.Add(this.Btnload);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "CarCenter";
             this.Text = "CarCenter";
             this.Load += new System.EventHandler(this.CarCenter_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.SimpleButton Btnload;
-        private DevExpress.XtraEditors.SimpleButton Btnsave;
-        private DevExpress.XtraEditors.SimpleButton Btncar;
-        private DevExpress.XtraEditors.SimpleButton Btncustomer;
-        private DevExpress.XtraEditors.SimpleButton Btnengineer;
-        private DevExpress.XtraEditors.SimpleButton Btnmanager;
-        private DevExpress.XtraEditors.SimpleButton Btnmonthlyledger;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton Btntransaction;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.BarSubItem barSubItemSystem;
+        private DevExpress.XtraBars.BarButtonItem buttonLoad;
+        private DevExpress.XtraBars.BarButtonItem buttonSave;
+        private DevExpress.XtraBars.BarSubItem barSubItemTransactions;
+        private DevExpress.XtraBars.BarButtonItem buttonTransShow;
+        private DevExpress.XtraBars.BarSubItem barSubItemLedgers;
+        private DevExpress.XtraBars.BarButtonItem buttonLedgersShow;
+        private DevExpress.XtraBars.BarButtonItem buttonLedgersCreate;
+        private DevExpress.XtraBars.BarSubItem barSubItemManagement;
+        private DevExpress.XtraBars.BarButtonItem buttonManagers;
+        private DevExpress.XtraBars.BarButtonItem buttonEngineers;
+        private DevExpress.XtraBars.BarButtonItem buttonCustomers;
+        private DevExpress.XtraBars.BarButtonItem buttonServiceTask;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem buttonCars;
     }
 }
 

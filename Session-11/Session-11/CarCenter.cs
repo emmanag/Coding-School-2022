@@ -26,7 +26,7 @@ namespace Session_11
             InitializeComponent();
             _storageHelper = new StorageHelper();
             _messagesHelper = new MessagesHelper();
-            
+
             _carService = new CarService()
             {
                 Cars = new List<Car>()
@@ -53,8 +53,8 @@ namespace Session_11
                         Surname = "Zach",
                     }
                 },
-                Customers =new List<Customer>()
-                { 
+                Customers = new List<Customer>()
+                {
                     new Customer()
                     {
                         Name="Fotis",
@@ -63,8 +63,8 @@ namespace Session_11
                         TIN="12345"
                     }
                 },
-                Engineers =new List<Engineer>() 
-                { 
+                Engineers = new List<Engineer>()
+                {
                    new Engineer()
                    {
                        Name="Makis",
@@ -121,6 +121,50 @@ namespace Session_11
 
         }
 
+        private void buttonLoad_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _carService = _storageHelper.LoadData(FILE_NAME);
+        }
+
+        private void buttonSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _storageHelper.SaveData(FILE_NAME, _carService);
+            _messagesHelper.MessageInfo("File saved successfully");
+        }
+
+        private void buttonTransShow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForm(new TransactionsF(_carService));
+        }
+        private void buttonManagers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForm(new ManagersF(_carService));
+        }
+        private void buttonServiceTask_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForm(new CarsF(_carService));
+        }
+
+        private void buttonCustomers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForm(new CustomersF(_carService));
+        }
+        
+        private void buttonEngineers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForm(new EngineersF(_carService));
+        }
+        
+        private void buttonCars_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForm(new CarsF(_carService));
+        }
+        
+        private void buttonLedgersShow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ShowForm(new MonthlyLedgersF(_carService));
+        }
+
         #endregion
 
         private void callTestFunc()
@@ -172,15 +216,9 @@ namespace Session_11
             managerH.Delete(manager1, _carService.Managers, _carService);
         }
 
-        private void LoadData()
-        {
-            _carService = _storageHelper.LoadData(FILE_NAME);
-        }
-
         private void SaveData()
         {
-            _storageHelper.SaveData(FILE_NAME, _carService);
-            _messagesHelper.MessageInfo("File saved successfully");
+
 
         }
 
@@ -189,50 +227,10 @@ namespace Session_11
             form.ShowDialog();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            SaveData();
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            ShowForm(new CarsF(_carService));
-            
-        }
-
-        private void Btnengineer_Click(object sender, EventArgs e)
-        {
-            ShowForm(new EngineersF(_carService));
-        }
-
-        private void Btnmanager_Click(object sender, EventArgs e)
-        {
-            ShowForm(new ManagersF(_carService));
-        }
-
-        private void Btncustomer_Click(object sender, EventArgs e)
-        {
-            ShowForm(new CustomersF(_carService));
-        }
-
-        private void Btntransaction_Click(object sender, EventArgs e)
-        {
-            ShowForm(new TransactionsF(_carService));
-        }
-
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
             ShowForm(new ServiceTasksF(_carService));
         }
 
-        private void Btnmonthlyledger_Click(object sender, EventArgs e)
-        {
-            ShowForm(new MonthlyLedgersF(_carService));
-        }
     }
 }

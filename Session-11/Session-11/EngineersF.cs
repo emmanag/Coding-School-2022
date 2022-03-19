@@ -26,6 +26,7 @@ namespace Session_11
             _carService = carService;
             _engineerHandler = new EngineerHandler();
             _controlsHelper = new ControlsHelper();
+            _storageHelper = new StorageHelper();
         }
 
         private void EngineersF_Load(object sender, EventArgs e)
