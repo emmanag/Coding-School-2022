@@ -73,32 +73,6 @@ namespace Session_11
                        SallaryPerMonth=100
                    }
                 },
-                Transactions = new List<Transaction>()
-                {
-                    new Transaction()
-                    {
-                        CarID = new Guid(),
-                        CustomerID = new Guid(),
-                        ManagerID = new Guid(),
-                        TotalPrice =(decimal)5.7,
-                        Date = DateTime.Now,
-                        TransactionLines= new List<TransactionLine>()
-                        {
-                            
-                            new TransactionLine()
-                            {
-                                EngineerID = new Guid(),
-                                Hours = 5,
-                                Price =6,
-                                PricePerHour =(decimal) 44.5,
-                                ServiceTaskID = new Guid(),
-                                TransactionID = new Guid()
-                            }
-                
-                        }
-                        
-                    }
-                },
                 ServiceTasks = new List<ServiceTask>()
                 {
                     new ServiceTask()
@@ -108,6 +82,33 @@ namespace Session_11
                         Hours=5
                     }
                 }
+            };
+
+            _carService.Transactions = new List<Transaction>()
+                {
+                    new Transaction()
+                    {
+                        CarID = _carService.Cars[0].ID,
+                        CustomerID = _carService.Customers[0].ID,
+                        ManagerID = _carService.Managers[0].ID,
+                        TotalPrice =(decimal)5.7,
+                        Date = DateTime.Now,
+
+                    }
+                };
+            _carService.Transactions[0].TransactionLines = new List<TransactionLine>()
+            {
+
+                new TransactionLine()
+                {
+                    EngineerID = _carService.Transactions[0].ID,
+                    Hours = 5,
+                    Price =6,
+                    PricePerHour =(decimal) 44.5,
+                    ServiceTaskID = new Guid(),
+                    TransactionID = new Guid()
+                }
+
             };
             callTestFunc();
         }

@@ -30,21 +30,31 @@ namespace Session_11
 
         private void TransactionsF_Load(object sender, EventArgs e)
         {
-            PopulateControls();
+            
             PopulateTransactions();
+            PopulateControls();
         }
 
         private void PopulateControls()
         {
+            _controlsHelper.PopulateCarColumns(CarLookUp, bsCarColumns, _carService.Cars);
+            _controlsHelper.PopulateCustomerColumns(CustomerLookUp, bsCustomerColumns, _carService.Customers);
+            _controlsHelper.PopulateManagerColumns(ManagerLookUp, bsManagerColumns, _carService.Managers);
+            
+            _controlsHelper.SetColumn(CarLookUp,gridView1, "CarID");
+            _controlsHelper.SetColumn(CustomerLookUp, gridView1, "CustomerID");
+            _controlsHelper.SetColumn(ManagerLookUp, gridView1, "ManagerID");
 
         }
 
         private void PopulateTransactions()
         {
+           
             bsTransactions.DataSource = _carService;
             bsTransactions.DataMember = "Transactions";
-
-            GrdTransactions.DataSource = bsTransactions;   
+            GrdTransactions.DataSource = bsTransactions;
+            
+            HideColumns("ID");
             
         }
 
@@ -74,6 +84,11 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void HideColumns(string indexColumn)
+        {
+            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }
