@@ -73,8 +73,11 @@ namespace Session_11
 
         private void SaveCustomer()
         {
-            _carService.Customers.Add(_customer);
-            _storageHelper.SaveData(FILE_NAME, _carService);
+            if (_carService.Customers.FindAll(c => c.ID == _customer.ID).Count() <= 0)
+            {
+                _carService.Customers.Add(_customer);
+                _storageHelper.SaveData(FILE_NAME, _carService);
+            }
             DialogResult = DialogResult.OK;
             Close();
         }

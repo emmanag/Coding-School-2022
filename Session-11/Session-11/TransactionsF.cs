@@ -27,7 +27,6 @@ namespace Session_11
             _selectedTransaction = new Transaction();
             _transactionHandler = new TransactionHandler();
             _controlsHelper = new ControlsHelper();
-            _storageHelper = new StorageHelper();
         }
 
         private void TransactionsF_Load(object sender, EventArgs e)

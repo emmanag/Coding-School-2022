@@ -55,7 +55,7 @@ namespace Session_11
         }
         private void Btnsave_Click(object sender, EventArgs e)
         {
-            SaveTransaction();
+             SaveTransaction();
         }
 
         private void Btnexit_Click(object sender, EventArgs e)
@@ -83,8 +83,11 @@ namespace Session_11
 
         private void SaveTransaction()
         {
-            _carService.Transactions.Add(_transaction);
-            _storageHelper.SaveData(FILE_NAME, _carService);
+            if (_carService.Transactions.FindAll(c => c.ID == _transaction.ID).Count() <= 0)
+            {
+                _carService.Transactions.Add(_transaction);
+                _storageHelper.SaveData(FILE_NAME, _carService);
+            }
             DialogResult = DialogResult.OK;
             Close();
         }

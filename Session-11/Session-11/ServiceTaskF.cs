@@ -76,8 +76,11 @@ namespace Session_11
 
         private void SaveServiceTask()
         {
-            _carService.ServiceTasks.Add(_serviceTask);
-            _storageHelper.SaveData(FILE_NAME, _carService);
+            if (_carService.ServiceTasks.FindAll(c => c.ID == _serviceTask.ID).Count() <= 0)
+            {
+                _carService.ServiceTasks.Add(_serviceTask);
+                _storageHelper.SaveData(FILE_NAME, _carService);
+            }
             DialogResult = DialogResult.OK;
             Close();
         }
