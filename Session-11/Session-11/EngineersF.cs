@@ -64,7 +64,7 @@ namespace Session_11
 
         private void Btnedit_Click(object sender, EventArgs e)
         {
-            var engineers = bsEngineers.Current as Engineer;
+            _engineer = bsEngineers.Current as Engineer;
 
             EngineerF engineerF = new EngineerF(_carService, _engineer);
             engineerF.ShowDialog();

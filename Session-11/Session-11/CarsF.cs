@@ -18,23 +18,22 @@ namespace Session_11
         private CarService _carService;
         private Car _car;
         private CarHandler _carHandler;
+        private StorageHelper _storageHelper;
         public CarsF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _carHandler = new CarHandler();
+            _storageHelper = new StorageHelper();
         }
 
         private void CarsF_Load(object sender, EventArgs e)
         {
-            PopulateControls();
+            
             PopulateCars();
         }
 
-        private void PopulateControls()
-        {
-            
-        }
+       
 
         private void PopulateCars()
         {
@@ -44,7 +43,8 @@ namespace Session_11
             bsCars.DataMember = "Cars";
 
             GrdCars.DataSource = bsCars;
-                        
+            HideColumns("ID");
+
         }
 
         private void Btnnew_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Session_11
 
         private void Btnedit_Click(object sender, EventArgs e)
         {
-            var cars = bsCars.Current as Car;
+            _car = bsCars.Current as Car;
 
             CarF carF = new CarF(_carService, _car);
             carF.ShowDialog();
@@ -68,16 +68,21 @@ namespace Session_11
 
         private void Btndelete_Click(object sender, EventArgs e)
         {
-           
-            //var car = bsCars.Current as Car;
-            //_carHandler.Delete; (car, _carService.Cars)
-            //SaveData();
+
+            var car = bsCars.Current as Car;
+            _carHandler.Delete(car, _carService.Cars);
+            _storageHelper.SaveData("storage.json", _carService);
+            gridView1.RefreshData();
         }
 
         private void Btnclose_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+        private void HideColumns(string indexColumn)
+        {
+            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

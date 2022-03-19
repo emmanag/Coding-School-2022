@@ -43,13 +43,17 @@ namespace Session_11
         }
         private void PopulateControls()
         {
-
+            var controlHelper = new ControlsHelper();
+            controlHelper.PopulateManagers(CtrlmanagerID.Properties, _carService.Managers);
         }
 
         private void SaveEngineer()
         {
-            _carService.Engineers.Add(_engineer);
-            _storageHelper.SaveData(FILE_NAME, _carService);
+            if (_carService.Engineers.FindAll(c => c.ID == _engineer.ID).Count() <= 0)
+            {
+                _carService.Engineers.Add(_engineer);
+                _storageHelper.SaveData(FILE_NAME, _carService);
+            }
             DialogResult = DialogResult.OK;
             Close();
         }

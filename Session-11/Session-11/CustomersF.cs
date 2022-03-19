@@ -75,6 +75,7 @@ namespace Session_11
             var customer = bsCustomers.Current as Customer;
             _customerHandler.Delete(customer, _carService.Customers);
             _storageHelper.SaveData("storage.json", _carService);
+            gridView1.RefreshData();
         }
 
         private void Btnclose_Click(object sender, EventArgs e)

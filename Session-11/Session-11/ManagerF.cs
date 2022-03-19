@@ -71,8 +71,11 @@ namespace Session_11
 
         private void SaveManager()
         {
-            _carService.Managers.Add(_manager);
-            _storageHelper.SaveData(FILE_NAME, _carService);
+            if (_carService.Managers.FindAll(c => c.ID == _manager.ID).Count() <= 0)
+            {
+                _carService.Managers.Add(_manager);
+                _storageHelper.SaveData(FILE_NAME, _carService);
+            }
             DialogResult = DialogResult.OK;
             Close();
         }

@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class EngineerHandler : ActionHandler
+    public class EngineerHandler
     {
         public EngineerHandler()
         {
 
         }
 
-        public override object Create()
+        public Engineer Create()
         {
             return new Engineer();
         }
 
-        public override void Delete<Engineer>(Engineer obj, List<Engineer> list)
+        public void Delete(Engineer engineer, List<Engineer> engineers)
         {
-            list.Remove(obj);
+            engineers.Remove(engineer);
         }
  
     }

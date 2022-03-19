@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Grid;
 
 namespace Session_11.HelperFunctions
 {
@@ -26,6 +25,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Surname", "Surname"));
             lookup.DisplayMember = "FullName";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Manager";
         }
 
         public void PopulateEngineers(RepositoryItemLookUpEdit lookup, List<Engineer> list)
@@ -35,6 +35,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Surname", "Surname"));
             lookup.DisplayMember = "FullName";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Engineer";
         }
 
         public void PopulateCars(RepositoryItemLookUpEdit lookup, List<Car> list)
@@ -45,6 +46,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CarRegNumber", "CarRegNumber"));
             lookup.DisplayMember = "CarRegNumber";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Car";
         }
 
         public void PopulateCustomers(RepositoryItemLookUpEdit lookup, List<Customer> list)
@@ -55,6 +57,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Phone", "Phone"));
             lookup.DisplayMember = "FullName";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Customers";
         }
 
         public void PopulateServiceTasks(RepositoryItemLookUpEdit lookup, List<ServiceTask> list)
@@ -64,6 +67,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Hours", "Hours"));
             lookup.DisplayMember = "Code";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Service Task";
         }
 
         public void PopulateAccounts(RepositoryItemLookUpEdit lookup, List<Credential> list)
@@ -72,6 +76,7 @@ namespace Session_11.HelperFunctions
             lookup.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Username", "Username"));
             lookup.DisplayMember = "Username";
             lookup.ValueMember = "ID";
+            lookup.NullText = "Choose Account";
         }
 
 
@@ -80,19 +85,12 @@ namespace Session_11.HelperFunctions
             binding.DataSource = list;
             lookUpEdit.DataSource = binding;
            
-            lookUpEdit.DisplayMember = "FullName";
+            lookUpEdit.DisplayMember = "CarRegNumber";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "Choose Cars";
         }
-        public void PopulateManagersColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Manager> list)
-        {
-            binding.DataSource = list;
-            lookUpEdit.DataSource = binding;
 
-            lookUpEdit.DisplayMember = "FullName";
-            lookUpEdit.ValueMember = "ID";
-            lookUpEdit.ReadOnly = true;
-        }
         public void PopulateCustomersColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Customer> list)
         {
             binding.DataSource = list;
@@ -101,9 +99,21 @@ namespace Session_11.HelperFunctions
             lookUpEdit.DisplayMember = "FullName";
             lookUpEdit.ValueMember = "ID";
             lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "Choose Managers"; 
         }
 
-        public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, GridView gridView, string indexColumn)
+        public void PopulateManagersColumns(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Manager> list)
+        {
+            binding.DataSource = list;
+            lookUpEdit.DataSource = binding;
+
+            lookUpEdit.DisplayMember = "FullName";
+            lookUpEdit.ValueMember = "ID";
+            lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "Choose Cutomers"; 
+        }
+
+        public void SetColumn(RepositoryItemLookUpEdit columnLookUpEdit, DevExpress.XtraGrid.Views.Grid.GridView gridView, string indexColumn)
         {
             gridView.Columns[indexColumn].ColumnEdit = columnLookUpEdit;
         }
