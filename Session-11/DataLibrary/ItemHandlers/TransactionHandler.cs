@@ -34,6 +34,7 @@ namespace DataLibrary
             if (CheckWorkLoadAvail(carServiceHandler.GetMaxDayWorkload(carService), transactionLine, carServiceHandler.GetReservedHours(carService), CurentTransactionHours(transaction)))
             {
                 transaction.TransactionLines.Add(transactionLine);
+                carService.Engineers.FirstOrDefault(e => e.ID == transactionLine.EngineerID).Status = StatusEnum.InTask;
                 return true;
             }
             return false;
@@ -47,11 +48,6 @@ namespace DataLibrary
         public decimal GetTransactionPrice(Transaction transaction)
         {
             return transaction.TransactionLines.Sum(t => t.Price);
-        }
-
-        public bool CheckWorkLoadAvail(int maxDayWorkLoad, TransactionLine transactionLine, decimal reservedHours, decimal currentTransactionHours)
-        {
-            return maxDayWorkLoad >= reservedHours + currentTransactionHours + transactionLine.Hours;
         }
     }
 }
