@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.GrdMonthlyLedgers = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
+            this.bsMonthlyLedger = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrdMonthlyLedgers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMonthlyLedger)).BeginInit();
             this.SuspendLayout();
             // 
             // GrdMonthlyLedgers
@@ -99,6 +102,7 @@
             this.Text = "MonthlyLedgers";
             ((System.ComponentModel.ISupportInitialize)(this.GrdMonthlyLedgers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMonthlyLedger)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,5 +115,6 @@
         private DevExpress.XtraEditors.SimpleButton Btndelete;
         private DevExpress.XtraEditors.SimpleButton Btnedit;
         private DevExpress.XtraEditors.SimpleButton Btnnew;
+        private System.Windows.Forms.BindingSource bsMonthlyLedger;
     }
 }

@@ -80,7 +80,7 @@ namespace Session_11
                         CarID = new Guid(),
                         CustomerID = new Guid(),
                         ManagerID = new Guid(),
-                        TotalPrice =5,
+                        TotalPrice =(decimal)5.7,
                         Date = DateTime.Now,
                         TransactionLines= new List<TransactionLine>()
                         {
@@ -216,6 +216,11 @@ namespace Session_11
         private void Btncustomer_Click(object sender, EventArgs e)
         {
             ShowForm(new CustomerF(_carService));
+        }
+
+        private void Btntransaction_Click(object sender, EventArgs e)
+        {
+            ShowForm(new TransactionsF(_carService));
         }
     }
 }

@@ -24,11 +24,6 @@ namespace Session_11.HelperFunctions
             lookup.ValueMember = "ID";
         }
 
-        internal void PopulateStudentType(object repStudentType)
-        {
-            throw new NotImplementedException();
-        }
-
         public void PopulateEngineers(RepositoryItemLookUpEdit lookup, List<Engineer> list)
         {
             lookup.DataSource = list;
@@ -66,7 +61,6 @@ namespace Session_11.HelperFunctions
             lookup.DisplayMember = "Code";
             lookup.ValueMember = "ID";
         }
-
 
     }
 }

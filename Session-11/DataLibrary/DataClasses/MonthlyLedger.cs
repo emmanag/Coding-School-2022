@@ -21,7 +21,7 @@ namespace DataLibrary
         December
     };
 
-    internal class MonthlyLedger : Item
+    public class MonthlyLedger : Item
     {
         public int Year { get; set; }
 
