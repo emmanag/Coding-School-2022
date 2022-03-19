@@ -34,6 +34,7 @@ namespace DataLibrary
             if (CheckWorkLoadAvail(carServiceHandler.GetMaxDayWorkload(carService), transactionLine, carServiceHandler.GetReservedHours(carService), CurentTransactionHours(transaction)))
             {
                 transaction.TransactionLines.Add(transactionLine);
+                carService.Engineers.FirstOrDefault(e => e.ID == transactionLine.EngineerID).Status = StatusEnum.InTask;
                 return true;
             }
             return false;
