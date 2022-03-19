@@ -6,26 +6,13 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public enum Month {
-        January,
-        February, 
-        March,
-        April,
-        May,
-        June,
-        July,
-        August,
-        September,
-        October,
-        November,
-        December
-    };
-
     public class MonthlyLedger : Item
     {
-        public int Year { get; set; }
+        public int Year { get { return DateTimeValue.Year; } }
 
-        public Month Month { get; set; }
+        public int Month { get { return DateTimeValue.Month; } }
+
+        public DateTime DateTimeValue { get; set; }
 
         public decimal Income { get; set; }
 

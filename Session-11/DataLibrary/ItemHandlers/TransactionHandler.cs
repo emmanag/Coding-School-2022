@@ -44,6 +44,11 @@ namespace DataLibrary
             return transaction.TransactionLines.Sum(t => t.Hours);
         }
 
+        public decimal GetTransactionPrice(Transaction transaction)
+        {
+            return transaction.TransactionLines.Sum(t => t.Price);
+        }
+
         public bool CheckWorkLoadAvail(int maxDayWorkLoad, TransactionLine transactionLine, decimal reservedHours, decimal currentTransactionHours)
         {
             return maxDayWorkLoad >= reservedHours + currentTransactionHours + transactionLine.Hours;

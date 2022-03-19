@@ -1,6 +1,7 @@
 ﻿using DataLibrary;
 using DataLibrary.DataClasses;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.Linq;
