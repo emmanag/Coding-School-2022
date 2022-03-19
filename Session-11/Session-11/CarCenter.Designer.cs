@@ -50,6 +50,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.DockWindowTabFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barSubItemSystem,
@@ -77,9 +79,11 @@
             this.barSubItemLedgers,
             this.buttonLedgersShow,
             this.buttonLedgersCreate,
-            this.buttonCars});
+            this.buttonCars,
+            this.skinBarSubItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 15;
+            this.barManager1.MaxItemId = 16;
+            this.barManager1.UseF10KeyForMenu = false;
             // 
             // bar2
             // 
@@ -92,6 +96,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemTransactions, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemLedgers),
             new DevExpress.XtraBars.LinkPersistInfo(this.barSubItemManagement)});
+            this.bar2.OptionsBar.DisableCustomization = true;
+            this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -101,8 +107,9 @@
             this.barSubItemSystem.Caption = "System";
             this.barSubItemSystem.Id = 0;
             this.barSubItemSystem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonLoad),
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonSave)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonLoad, DevExpress.XtraBars.BarItemPaintStyle.Caption),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonSave, DevExpress.XtraBars.BarItemPaintStyle.Caption),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.skinBarSubItem1, DevExpress.XtraBars.BarItemPaintStyle.Caption)});
             this.barSubItemSystem.Name = "barSubItemSystem";
             // 
             // buttonLoad
@@ -124,7 +131,7 @@
             this.barSubItemTransactions.Caption = "Transactions";
             this.barSubItemTransactions.Id = 4;
             this.barSubItemTransactions.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonTransShow)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonTransShow, DevExpress.XtraBars.BarItemPaintStyle.Caption)});
             this.barSubItemTransactions.Name = "barSubItemTransactions";
             // 
             // buttonTransShow
@@ -139,8 +146,8 @@
             this.barSubItemLedgers.Caption = "Ledgers";
             this.barSubItemLedgers.Id = 11;
             this.barSubItemLedgers.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonLedgersShow),
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonLedgersCreate)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonLedgersShow, DevExpress.XtraBars.BarItemPaintStyle.Caption),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonLedgersCreate, DevExpress.XtraBars.BarItemPaintStyle.Caption)});
             this.barSubItemLedgers.Name = "barSubItemLedgers";
             // 
             // buttonLedgersShow
@@ -162,11 +169,11 @@
             this.barSubItemManagement.Caption = "Management";
             this.barSubItemManagement.Id = 6;
             this.barSubItemManagement.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonCars),
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonCustomers),
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonEngineers),
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonManagers),
-            new DevExpress.XtraBars.LinkPersistInfo(this.buttonServiceTask)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonCars, DevExpress.XtraBars.BarItemPaintStyle.Caption),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonCustomers, DevExpress.XtraBars.BarItemPaintStyle.Caption),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonEngineers, DevExpress.XtraBars.BarItemPaintStyle.Caption),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonManagers, DevExpress.XtraBars.BarItemPaintStyle.Caption),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.buttonServiceTask, DevExpress.XtraBars.BarItemPaintStyle.Caption)});
             this.barSubItemManagement.Name = "barSubItemManagement";
             // 
             // buttonCars
@@ -210,7 +217,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(800, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(800, 25);
             // 
             // barDockControlBottom
             // 
@@ -224,23 +231,29 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 430);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 425);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(800, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(800, 25);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 430);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 425);
             // 
             // barButtonItem3
             // 
             this.barButtonItem3.Caption = "barButtonItem3";
             this.barButtonItem3.Id = 3;
             this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // skinBarSubItem1
+            // 
+            this.skinBarSubItem1.Caption = "Skins";
+            this.skinBarSubItem1.Id = 15;
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
             // CarCenter
             // 
@@ -251,6 +264,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IsMdiContainer = true;
             this.Name = "CarCenter";
             this.Text = "CarCenter";
             this.Load += new System.EventHandler(this.CarCenter_Load);
@@ -282,6 +296,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem buttonCars;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
     }
 }
 

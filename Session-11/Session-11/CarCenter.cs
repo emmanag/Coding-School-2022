@@ -12,6 +12,8 @@ using System.IO;
 using Newtonsoft.Json;
 using Session_11.HelperFunctions;
 using DataLibrary.ItemHandlers;
+using DevExpress.LookAndFeel;
+using DevExpress.Utils;
 
 namespace Session_11
 {
@@ -26,8 +28,13 @@ namespace Session_11
         public CarCenter()
         {
             InitializeComponent();
+
+            // Set Default Theme
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Office2019DarkGray);
+            
             _storageHelper = new StorageHelper();
             _messagesHelper = new MessagesHelper();
+            _monthlyLedgerHandler = new MonthlyLedgerHandler();
 
             _carService = new CarService()
             {
@@ -150,17 +157,17 @@ namespace Session_11
         {
             ShowForm(new CustomersF(_carService));
         }
-        
+
         private void buttonEngineers_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowForm(new EngineersF(_carService));
         }
-        
+
         private void buttonCars_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowForm(new CarsF(_carService));
         }
-        
+
         private void buttonLedgersShow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowForm(new MonthlyLedgersF(_carService));
