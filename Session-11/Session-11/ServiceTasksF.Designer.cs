@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.GrdServiceTasks = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
+            this.bsServiceTasks = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrdServiceTasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiceTasks)).BeginInit();
             this.SuspendLayout();
             // 
             // GrdServiceTasks
@@ -99,6 +102,7 @@
             this.Text = "ServiceTasks";
             ((System.ComponentModel.ISupportInitialize)(this.GrdServiceTasks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsServiceTasks)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,5 +115,6 @@
         private DevExpress.XtraEditors.SimpleButton Btndelete;
         private DevExpress.XtraEditors.SimpleButton Btnedit;
         private DevExpress.XtraEditors.SimpleButton Btnnew;
+        private System.Windows.Forms.BindingSource bsServiceTasks;
     }
 }

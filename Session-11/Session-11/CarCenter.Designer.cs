@@ -116,6 +116,7 @@
             this.Btntransaction.Size = new System.Drawing.Size(75, 23);
             this.Btntransaction.TabIndex = 8;
             this.Btntransaction.Text = "Transaction";
+            this.Btntransaction.Click += new System.EventHandler(this.Btntransaction_Click);
             // 
             // CarCenter
             // 

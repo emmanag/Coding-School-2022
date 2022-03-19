@@ -25,6 +25,7 @@ namespace Session_11
             InitializeComponent();
             _carService = carService;
             _transactionHandler = new TransactionHandler();
+            _storageHelper = new StorageHelper();
         }
 
         
@@ -46,6 +47,11 @@ namespace Session_11
             bsTransaction.DataSource = _transaction;
 
             SetDataBindings();
+
+            var controlHelper = new ControlsHelper();
+            controlHelper.PopulateManagers(CtrlManager.Properties, _carService.Managers);
+            controlHelper.PopulateCars(CtrlCar.Properties, _carService.Cars);
+            controlHelper.PopulateCustomers(CtrlCustomer.Properties, _carService.Customers);
         }
         private void Btnsave_Click(object sender, EventArgs e)
         {
