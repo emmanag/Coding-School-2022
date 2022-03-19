@@ -20,7 +20,7 @@ namespace DataLibrary.ItemHandlers
 
         public decimal GetTotal(DateTime dateTime, CarService carService)
         {
-            return GetMonthlyIncome(dateTime, carService); //- GetMonthlyExpenses(carService);
+            return GetMonthlyIncome(dateTime, carService)- GetMonthlyExpenses(carService);
         }
 
         public decimal GetMonthlyExpenses(CarService carService)
