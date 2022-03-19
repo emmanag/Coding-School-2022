@@ -13,10 +13,15 @@ namespace DataLibrary.ItemHandlers
 
         }
 
-        //public decimal GetMonthlyIncome(MonthsEnum month, string year, CarService carService)
-        //{
-        //    return carService.Transactions.FindAll(t => t.Date.Month == month && t.Date.Year == month)
-        //}
+        public decimal GetMonthlyIncome(DateTime dateTime, CarService carService)
+        {
+            return carService.Transactions.FindAll(t => t.Date.Month == dateTime.Month && t.Date.Year == dateTime.Year).Sum(x => x.TotalPrice);
+        }
+
+        public decimal GetTotal(DateTime dateTime, CarService carService)
+        {
+            return GetMonthlyIncome(dateTime, carService); //- GetMonthlyExpenses(carService);
+        }
 
         public decimal GetMonthlyExpenses(CarService carService)
         {
