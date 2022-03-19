@@ -104,6 +104,7 @@
             this.Controls.Add(this.Btnnew);
             this.Name = "ManagersF";
             this.Text = "Managers";
+            this.Load += new System.EventHandler(this.ManagersF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrdManagers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsManagers)).EndInit();

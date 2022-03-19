@@ -19,6 +19,7 @@ namespace Session_11
         private Engineer _engineer;
         private EngineerHandler _engineerHandler;
         private ControlsHelper _controlsHelper;
+        private StorageHelper _storageHelper;
         public EngineersF(CarService carService)
         {
             InitializeComponent();
@@ -71,9 +72,10 @@ namespace Session_11
 
         private void Btndelete_Click(object sender, EventArgs e)
         {
-            //var engineer = bsEngineer.Current as Engineer;
-            //_engineerHandler.Delete; (engineer, _carService.Cars)
-            //SaveData();
+            var engineer = bsEngineers.Current as Engineer;
+            _engineerHandler.Delete(engineer, _carService.Engineers);
+            _storageHelper.SaveData("storage.json", _carService);
+            gridView1.RefreshData();
         }
 
         private void Btnclose_Click(object sender, EventArgs e)

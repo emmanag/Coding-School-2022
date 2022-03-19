@@ -19,6 +19,8 @@ namespace Session_11
         private Customer _customer;
         private CustomerHandler _customerHandler;
         private StorageHelper _storageHelper;
+        private ControlsHelper _controlsHelper;
+
         public CustomersF(CarService carService)
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace Session_11
             _storageHelper = new StorageHelper();
         }
 
-        private void CarsF_Load(object sender, EventArgs e)
+        private void CustomersF_Load(object sender, EventArgs e)
         {
             PopulateControls();
             PopulateCustomers();
@@ -35,7 +37,7 @@ namespace Session_11
 
         private void PopulateControls()
         {
-
+            
         }
 
         private void PopulateCustomers()
@@ -79,6 +81,10 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+        private void HideColumns(string indexColumn)
+        {
+            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

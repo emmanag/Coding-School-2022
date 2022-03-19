@@ -19,17 +19,21 @@ namespace Session_11
         private CarService _carService;
         private Manager _manager;
         private ManagerHandler _managerHandler;
+        private StorageHelper _storageHelper;
+        private ControlsHelper _controlsHelper;
         public ManagersF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _managerHandler = new ManagerHandler();
+            _storageHelper = new StorageHelper();
         }
 
         private void ManagersF_Load(object sender, EventArgs e)
         {
-            PopulateControls();
+            
             PopulateCars();
+            PopulateControls();
         }
 
         private void PopulateControls()
@@ -69,15 +73,20 @@ namespace Session_11
         private void Btndelete_Click(object sender, EventArgs e)
         {
 
-            //var manager = bsManagers.Current as Manager;
-            //_managerHandler.Delete; (manager, _carService.Managers)
-            //SaveData();
+            var manager = bsManagers.Current as Manager;
+            _managerHandler.Delete(manager, _carService.Managers, _carService);
+            _storageHelper.SaveData("storage.json", _carService);
+            gridView1.RefreshData();
         }
 
         private void Btnclose_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+        private void HideColumns(string indexColumn)
+        {
+            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

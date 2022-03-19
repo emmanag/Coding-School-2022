@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.GrdCustomers = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
             this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
@@ -38,6 +39,7 @@
             this.bsCustomers = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrdCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +48,8 @@
             this.GrdCustomers.Location = new System.Drawing.Point(3, 1);
             this.GrdCustomers.MainView = this.gridView1;
             this.GrdCustomers.Name = "GrdCustomers";
+            this.GrdCustomers.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit1});
             this.GrdCustomers.Size = new System.Drawing.Size(795, 162);
             this.GrdCustomers.TabIndex = 5;
             this.GrdCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -55,6 +59,13 @@
             // 
             this.gridView1.GridControl = this.GrdCustomers;
             this.gridView1.Name = "gridView1";
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
             // 
             // Btnclose
             // 
@@ -104,8 +115,10 @@
             this.Controls.Add(this.Btnnew);
             this.Name = "CustomersF";
             this.Text = "Customers";
+            this.Load += new System.EventHandler(this.CustomersF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrdCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomers)).EndInit();
             this.ResumeLayout(false);
 
@@ -120,5 +133,6 @@
         private DevExpress.XtraEditors.SimpleButton Btnedit;
         private DevExpress.XtraEditors.SimpleButton Btnnew;
         private System.Windows.Forms.BindingSource bsCustomers;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
     }
 }
