@@ -43,7 +43,8 @@ namespace Session_11
         }
         private void PopulateControls()
         {
-
+            var controlHelper = new ControlsHelper();
+            controlHelper.PopulateManagers(CtrlmanagerID.Properties, _carService.Managers);
         }
 
         private void SaveEngineer()

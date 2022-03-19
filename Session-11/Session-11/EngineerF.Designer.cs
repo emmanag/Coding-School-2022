@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
-            this.Ctrlsallarypermonth = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.CtrlmanagerID = new DevExpress.XtraEditors.TextEdit();
             this.Ctrlsurname = new DevExpress.XtraEditors.TextEdit();
             this.Ctrlname = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.bsEngineer = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).BeginInit();
+            this.CtrlmanagerID = new DevExpress.XtraEditors.LookUpEdit();
+            this.Ctrlsallarypermonth = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEngineer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -65,13 +65,6 @@
             this.Btnsave.Text = "Save";
             this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
             // 
-            // Ctrlsallarypermonth
-            // 
-            this.Ctrlsallarypermonth.Location = new System.Drawing.Point(168, 167);
-            this.Ctrlsallarypermonth.Name = "Ctrlsallarypermonth";
-            this.Ctrlsallarypermonth.Size = new System.Drawing.Size(277, 20);
-            this.Ctrlsallarypermonth.TabIndex = 17;
-            // 
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(45, 170);
@@ -79,13 +72,6 @@
             this.labelControl4.Size = new System.Drawing.Size(78, 13);
             this.labelControl4.TabIndex = 16;
             this.labelControl4.Text = "SallaryPerMonth";
-            // 
-            // CtrlmanagerID
-            // 
-            this.CtrlmanagerID.Location = new System.Drawing.Point(168, 121);
-            this.CtrlmanagerID.Name = "CtrlmanagerID";
-            this.CtrlmanagerID.Size = new System.Drawing.Size(277, 20);
-            this.CtrlmanagerID.TabIndex = 15;
             // 
             // Ctrlsurname
             // 
@@ -105,9 +91,9 @@
             // 
             this.labelControl3.Location = new System.Drawing.Point(45, 128);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(53, 13);
+            this.labelControl3.Size = new System.Drawing.Size(42, 13);
             this.labelControl3.TabIndex = 12;
-            this.labelControl3.Text = "ManagerID";
+            this.labelControl3.Text = "Manager";
             // 
             // labelControl2
             // 
@@ -125,6 +111,27 @@
             this.labelControl1.TabIndex = 10;
             this.labelControl1.Text = "Name";
             // 
+            // CtrlmanagerID
+            // 
+            this.CtrlmanagerID.Location = new System.Drawing.Point(168, 121);
+            this.CtrlmanagerID.Name = "CtrlmanagerID";
+            this.CtrlmanagerID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.CtrlmanagerID.Properties.NullText = "";
+            this.CtrlmanagerID.Size = new System.Drawing.Size(277, 20);
+            this.CtrlmanagerID.TabIndex = 15;
+            // 
+            // Ctrlsallarypermonth
+            // 
+            this.Ctrlsallarypermonth.Location = new System.Drawing.Point(168, 167);
+            this.Ctrlsallarypermonth.Name = "Ctrlsallarypermonth";
+            this.Ctrlsallarypermonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Ctrlsallarypermonth.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.Ctrlsallarypermonth.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.Ctrlsallarypermonth.Size = new System.Drawing.Size(277, 20);
+            this.Ctrlsallarypermonth.TabIndex = 17;
+            // 
             // EngineerF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,21 +139,22 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Btnexit);
             this.Controls.Add(this.Btnsave);
-            this.Controls.Add(this.Ctrlsallarypermonth);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.CtrlmanagerID);
             this.Controls.Add(this.Ctrlsurname);
             this.Controls.Add(this.Ctrlname);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.CtrlmanagerID);
+            this.Controls.Add(this.Ctrlsallarypermonth);
             this.Name = "EngineerF";
             this.Text = "Engineer";
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.CarF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEngineer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,14 +164,14 @@
 
         private DevExpress.XtraEditors.SimpleButton Btnexit;
         private DevExpress.XtraEditors.SimpleButton Btnsave;
-        private DevExpress.XtraEditors.TextEdit Ctrlsallarypermonth;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit CtrlmanagerID;
         private DevExpress.XtraEditors.TextEdit Ctrlsurname;
         private DevExpress.XtraEditors.TextEdit Ctrlname;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.BindingSource bsEngineer;
+        private DevExpress.XtraEditors.LookUpEdit CtrlmanagerID;
+        private DevExpress.XtraEditors.SpinEdit Ctrlsallarypermonth;
     }
 }
