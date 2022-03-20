@@ -99,7 +99,12 @@ namespace Session_11
 
         private void CtrlservicetaskID_EditValueChanged(object sender, EventArgs e)
         {
-            Ctrlhours.EditValue = _carService.ServiceTasks.Find(s => s.ID.ToString() == CtrlservicetaskID.EditValue).Hours.ToString();
+            if ((Guid)CtrlservicetaskID.EditValue == Guid.Empty)
+            {
+                return;
+            }
+            Ctrlhours.EditValue = _carService.ServiceTasks.Find(s => s.ID.ToString() == CtrlservicetaskID.EditValue.ToString()).Hours.ToString();
+
         }
     }
 }
