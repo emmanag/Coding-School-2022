@@ -123,6 +123,7 @@
             // 
             this.Ctrltotalprice.Location = new System.Drawing.Point(159, 206);
             this.Ctrltotalprice.Name = "Ctrltotalprice";
+            this.Ctrltotalprice.Properties.ReadOnly = true;
             this.Ctrltotalprice.Size = new System.Drawing.Size(100, 20);
             this.Ctrltotalprice.TabIndex = 31;
             // 

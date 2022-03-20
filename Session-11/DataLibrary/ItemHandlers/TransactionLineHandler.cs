@@ -25,9 +25,10 @@ namespace DataLibrary
         }
 
 
-        public void CalcTaskCost(TransactionLine transactionLine, ServiceTask serviceTask)
+        public decimal CalcTaskCost(TransactionLine transactionLine, ServiceTask serviceTask)
         {
             transactionLine.Price = transactionLine.PricePerHour * serviceTask.Hours;
+            return transactionLine.Price;
         }
     }
 }

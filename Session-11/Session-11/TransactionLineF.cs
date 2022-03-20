@@ -35,6 +35,7 @@ namespace Session_11
             _carService = carService;
             _transactionHandler = new TransactionHandler();
             _carServiceHandler = new CarServiceHandler();
+            _transactionLine = new TransactionLine();
         }
 
 
@@ -77,6 +78,7 @@ namespace Session_11
             CtrlservicetaskID.DataBindings.Add(new Binding("EditValue", bsTransactionLine, "ServiceTaskID", true));
             //CtrltransactionID.DataBindings.Add(new Binding("EditValue", bsTransactionLine, "ServiceTaskID", true));
             CtrltransactionID.EditValue = _transaction.ID;
+            Ctrlprice.EditValue = _transactionLineHandler.CalcTaskCost(_transactionLine, _carService.ServiceTasks.Find(s => s.ID == _transactionLine.ServiceTaskID));
         }
 
         private void PopulateControls()

@@ -38,7 +38,6 @@
             this.bsCarColumns = new System.Windows.Forms.BindingSource(this.components);
             this.Btnclose = new DevExpress.XtraEditors.SimpleButton();
             this.Btndelete = new DevExpress.XtraEditors.SimpleButton();
-            this.Btnedit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnnew = new DevExpress.XtraEditors.SimpleButton();
             this.bsTransactions = new System.Windows.Forms.BindingSource(this.components);
             this.bsManagerColumns = new System.Windows.Forms.BindingSource(this.components);
@@ -104,7 +103,7 @@
             // 
             // Btnclose
             // 
-            this.Btnclose.Location = new System.Drawing.Point(501, 309);
+            this.Btnclose.Location = new System.Drawing.Point(392, 309);
             this.Btnclose.Name = "Btnclose";
             this.Btnclose.Size = new System.Drawing.Size(80, 23);
             this.Btnclose.TabIndex = 19;
@@ -113,21 +112,12 @@
             // 
             // Btndelete
             // 
-            this.Btndelete.Location = new System.Drawing.Point(385, 309);
+            this.Btndelete.Location = new System.Drawing.Point(271, 309);
             this.Btndelete.Name = "Btndelete";
             this.Btndelete.Size = new System.Drawing.Size(75, 23);
             this.Btndelete.TabIndex = 18;
             this.Btndelete.Text = "Delete";
             this.Btndelete.Click += new System.EventHandler(this.Btndelete_Click);
-            // 
-            // Btnedit
-            // 
-            this.Btnedit.Location = new System.Drawing.Point(264, 309);
-            this.Btnedit.Name = "Btnedit";
-            this.Btnedit.Size = new System.Drawing.Size(75, 23);
-            this.Btnedit.TabIndex = 17;
-            this.Btnedit.Text = "Edit";
-            this.Btnedit.Click += new System.EventHandler(this.Btnedit_Click);
             // 
             // Btnnew
             // 
@@ -146,7 +136,6 @@
             this.Controls.Add(this.GrdTransactions);
             this.Controls.Add(this.Btnclose);
             this.Controls.Add(this.Btndelete);
-            this.Controls.Add(this.Btnedit);
             this.Controls.Add(this.Btnnew);
             this.Name = "TransactionsF";
             this.Text = "Transactions";
@@ -171,7 +160,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton Btnclose;
         private DevExpress.XtraEditors.SimpleButton Btndelete;
-        private DevExpress.XtraEditors.SimpleButton Btnedit;
         private DevExpress.XtraEditors.SimpleButton Btnnew;
         private System.Windows.Forms.BindingSource bsTransactions;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;

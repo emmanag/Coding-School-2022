@@ -80,6 +80,7 @@ namespace Session_11
             CtrlCustomer.DataBindings.Add(new Binding("EditValue", bsTransaction, "CustomerID", true));
             CtrlManager.DataBindings.Add(new Binding("EditValue", bsTransaction, "ManagerID", true));
             CtrlCar.DataBindings.Add(new Binding("EditValue", bsTransaction, "CarID", true));
+            
         }
 
         private void PopulateControls()
@@ -106,6 +107,7 @@ namespace Session_11
                 var form = new TransactionLineF(_transaction, _carService);
                 form.ShowDialog();
                 grvTransLines.RefreshData();
+                Ctrltotalprice.EditValue = _transactionHandler.GetTransactionPrice(_transaction);
 
             }
             else

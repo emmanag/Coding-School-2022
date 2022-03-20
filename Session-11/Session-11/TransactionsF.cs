@@ -67,14 +67,14 @@ namespace Session_11
 
         }
 
-        private void Btnedit_Click(object sender, EventArgs e)
-        {
-            _selectedTransaction = bsTransactions.Current as Transaction;
+        //private void Btnedit_Click(object sender, EventArgs e)
+        //{
+        //    _selectedTransaction = bsTransactions.Current as Transaction;
 
-            TransactionF transactionF = new TransactionF(_carService, _selectedTransaction);
-            transactionF.ShowDialog();
-            gridView1.RefreshData();
-        }
+        //    TransactionF transactionF = new TransactionF(_carService, _selectedTransaction);
+        //    transactionF.ShowDialog();
+        //    gridView1.RefreshData();
+        //}
 
         private void Btndelete_Click(object sender, EventArgs e)
         {

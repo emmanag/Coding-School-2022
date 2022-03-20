@@ -16,7 +16,7 @@ namespace Session_11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CarCenter());
+            Application.Run(new LoginF());
         }
     }
 }
