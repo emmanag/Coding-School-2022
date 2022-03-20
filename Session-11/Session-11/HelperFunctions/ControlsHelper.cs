@@ -127,5 +127,10 @@ namespace Session_11.HelperFunctions
         {
             gridView.Columns[indexColumn].ColumnEdit = columnLookUpEdit;
         }
+
+        public void HideColumns(string indexColumn, GridView gridView)
+        {
+            gridView.Columns[indexColumn].Visible = false;
+        }
     }
 }

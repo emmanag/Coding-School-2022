@@ -55,9 +55,8 @@ namespace Session_11
             bsTransactions.DataSource = _carService;
             bsTransactions.DataMember = "Transactions";
             GrdTransactions.DataSource = bsTransactions;
-            
-            HideColumns("ID");
-            
+
+            _controlsHelper.HideColumns("ID", gridView1);   
         }
 
         private void Btnnew_Click(object sender, EventArgs e)
@@ -89,11 +88,6 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-
-        private void HideColumns(string indexColumn)
-        {
-            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

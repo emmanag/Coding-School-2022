@@ -18,6 +18,8 @@ namespace Session_11
         private ServiceTask _selectedServiceTask;
         private ServiceTaskHandler _serviceTaskHandler;
         private StorageHelper _storageHelper;
+        private ControlsHelper _controlsHelper;
+
         public ServiceTasksF(CarService carService)
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace Session_11
             _selectedServiceTask = new ServiceTask();
             _serviceTaskHandler = new ServiceTaskHandler();
             _storageHelper = new StorageHelper();
+            _controlsHelper = new ControlsHelper();
         }
 
         private void ServiceTaskF_Load(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace Session_11
 
             GrdServiceTasks.DataSource = bsServiceTasks;
 
-            HideColumns("ID");
+            _controlsHelper.HideColumns("ID", gridView1);
         }
 
         private void Btnnew_Click(object sender, EventArgs e)
@@ -72,11 +75,6 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-
-        private void HideColumns(string indexColumn)
-        {
-            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

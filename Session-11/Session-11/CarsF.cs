@@ -19,12 +19,15 @@ namespace Session_11
         private Car _car;
         private CarHandler _carHandler;
         private StorageHelper _storageHelper;
+        private ControlsHelper _controlsHelper;
+
         public CarsF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _carHandler = new CarHandler();
             _storageHelper = new StorageHelper();
+            _controlsHelper = new ControlsHelper();
         }
 
         private void CarsF_Load(object sender, EventArgs e)
@@ -43,7 +46,7 @@ namespace Session_11
             bsCars.DataMember = "Cars";
 
             GrdCars.DataSource = bsCars;
-            HideColumns("ID");
+            _controlsHelper.HideColumns("ID", gridView1);
 
         }
 
@@ -79,10 +82,6 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-        private void HideColumns(string indexColumn)
-        {
-            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

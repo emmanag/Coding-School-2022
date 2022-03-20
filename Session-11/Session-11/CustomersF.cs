@@ -27,6 +27,7 @@ namespace Session_11
             _carService = carService;
             _customerHandler = new CustomerHandler();
             _storageHelper = new StorageHelper();
+            _controlsHelper = new ControlsHelper();
         }
 
         private void CustomersF_Load(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace Session_11
             bsCustomers.DataMember = "Customers";
 
             GrdCustomers.DataSource = bsCustomers;
+            _controlsHelper.HideColumns("ID", gridView1);
 
         }
 
@@ -82,10 +84,6 @@ namespace Session_11
         {
             DialogResult = DialogResult.Cancel;
             Close();
-        }
-        private void HideColumns(string indexColumn)
-        {
-            gridView1.Columns[indexColumn].Visible = false;
         }
     }
 }

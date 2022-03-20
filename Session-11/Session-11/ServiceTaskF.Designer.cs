@@ -102,12 +102,21 @@
             // 
             // Ctrlhours
             // 
+            this.Ctrlhours.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.Ctrlhours.Location = new System.Drawing.Point(180, 85);
             this.Ctrlhours.Name = "Ctrlhours";
             this.Ctrlhours.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.Ctrlhours.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.Ctrlhours.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.Ctrlhours.Properties.MaxValue = new decimal(new int[] {
+            80,
+            0,
+            0,
+            65536});
             this.Ctrlhours.Size = new System.Drawing.Size(277, 20);
             this.Ctrlhours.TabIndex = 25;
             // 

@@ -84,9 +84,5 @@ namespace Session_11
             DialogResult = DialogResult.Cancel;
             Close();
         }
-        private void HideColumns(string indexColumn)
-        {
-            gridView1.Columns[indexColumn].Visible = false;
-        }
     }
 }
