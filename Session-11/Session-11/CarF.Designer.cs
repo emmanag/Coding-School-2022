@@ -36,12 +36,12 @@
             this.Btncarregistrationumber = new DevExpress.XtraEditors.LabelControl();
             this.Btnmodel = new DevExpress.XtraEditors.LabelControl();
             this.Btnbrand = new DevExpress.XtraEditors.LabelControl();
-            this.Ctrlcarregistrationnumber = new DevExpress.XtraEditors.SpinEdit();
             this.bsCar = new System.Windows.Forms.BindingSource(this.components);
+            this.Ctrlcarregistrationnumber = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlmodel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlbrand.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlcarregistrationnumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlcarregistrationnumber.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -109,10 +109,6 @@
             0});
             this.Ctrlcarregistrationnumber.Location = new System.Drawing.Point(169, 125);
             this.Ctrlcarregistrationnumber.Name = "Ctrlcarregistrationnumber";
-            this.Ctrlcarregistrationnumber.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.Ctrlcarregistrationnumber.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.Ctrlcarregistrationnumber.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.Ctrlcarregistrationnumber.Size = new System.Drawing.Size(277, 20);
             this.Ctrlcarregistrationnumber.TabIndex = 15;
             // 
@@ -134,8 +130,8 @@
             this.Load += new System.EventHandler(this.CarF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlmodel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlbrand.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlcarregistrationnumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ctrlcarregistrationnumber.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,7 +146,7 @@
         private DevExpress.XtraEditors.LabelControl Btncarregistrationumber;
         private DevExpress.XtraEditors.LabelControl Btnmodel;
         private DevExpress.XtraEditors.LabelControl Btnbrand;
-        private DevExpress.XtraEditors.SpinEdit Ctrlcarregistrationnumber;
         private System.Windows.Forms.BindingSource bsCar;
+        private DevExpress.XtraEditors.TextEdit Ctrlcarregistrationnumber;
     }
 }

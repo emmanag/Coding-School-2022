@@ -198,6 +198,7 @@
             // 
             this.grvTransLines.GridControl = this.grdTransLines;
             this.grvTransLines.Name = "grvTransLines";
+            this.grvTransLines.OptionsBehavior.ReadOnly = true;
             // 
             // colServiceTaskID
             // 

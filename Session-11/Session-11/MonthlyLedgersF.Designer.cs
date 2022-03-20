@@ -30,28 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GrdMonthlyLedgers = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grvMothlyLedger = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bsMonthlyLedger = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLedgers = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GrdMonthlyLedgers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvMothlyLedger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMonthlyLedger)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLedgers)).BeginInit();
             this.SuspendLayout();
             // 
             // GrdMonthlyLedgers
             // 
             this.GrdMonthlyLedgers.Location = new System.Drawing.Point(2, 2);
-            this.GrdMonthlyLedgers.MainView = this.gridView1;
+            this.GrdMonthlyLedgers.MainView = this.grvMothlyLedger;
             this.GrdMonthlyLedgers.Name = "GrdMonthlyLedgers";
             this.GrdMonthlyLedgers.Size = new System.Drawing.Size(795, 444);
             this.GrdMonthlyLedgers.TabIndex = 15;
             this.GrdMonthlyLedgers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grvMothlyLedger});
             // 
-            // gridView1
+            // grvMothlyLedger
             // 
-            this.gridView1.GridControl = this.GrdMonthlyLedgers;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.grvMothlyLedger.GridControl = this.GrdMonthlyLedgers;
+            this.grvMothlyLedger.Name = "grvMothlyLedger";
+            this.grvMothlyLedger.OptionsBehavior.ReadOnly = true;
             // 
             // MonthlyLedgersF
             // 
@@ -63,8 +65,9 @@
             this.Text = "MonthlyLedgers";
             this.Load += new System.EventHandler(this.MonthlyLedgersF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrdMonthlyLedgers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvMothlyLedger)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMonthlyLedger)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLedgers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,7 +75,8 @@
         #endregion
 
         private DevExpress.XtraGrid.GridControl GrdMonthlyLedgers;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvMothlyLedger;
         private System.Windows.Forms.BindingSource bsMonthlyLedger;
+        private System.Windows.Forms.BindingSource bsLedgers;
     }
 }

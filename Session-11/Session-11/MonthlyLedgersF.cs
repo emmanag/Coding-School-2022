@@ -16,54 +16,21 @@ namespace Session_11
     {
         private CarService _carService;
         private MonthlyLedger _monthlyLenger;
+        private ControlsHelper _controlsHelper;
 
         public MonthlyLedgersF(CarService carService)
         {
             InitializeComponent();
             _carService = carService;
             _monthlyLenger = new MonthlyLedger();
+            _controlsHelper = new ControlsHelper();
         }
 
         private void MonthlyLedgersF_Load(object sender, EventArgs e)
         {
-            PopulateControls();
-            PopulateMonthlyLedgers();
-        }
-
-        private void PopulateControls()
-        {
-
-        }
-
-        private void PopulateMonthlyLedgers()
-        {
-            //bsMonthlyLedger.DataSource = _carService;
-            //bsMonthlyLedger.DataMember = "MonthlyLedgers";
-
-            //GrdMonthlyLedgers.DataSource = bsMonthlyLedger;
-
-        }
-
-        private void Btnnew_Click(object sender, EventArgs e)
-        {
-            // TODO isos den xreiazete new
-
-        }
-
-        private void Btnedit_Click(object sender, EventArgs e)
-        {
-           //TODO isos oute edit bgainei gt only read;
-        }
-
-        private void Btndelete_Click(object sender, EventArgs e)
-        {
-            //TODO Delete an current object form the grid
-        }
-
-        private void Btnclose_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
+            bsLedgers.DataSource = _carService.MonthlyLedgers;
+            GrdMonthlyLedgers.DataSource = bsLedgers;
+            _controlsHelper.HideColumns("DateTimeValue", grvMothlyLedger);
         }
     }
 }

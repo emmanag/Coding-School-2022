@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary
 {
-    public class MonthlyLedger : Item
+    public class MonthlyLedger
     {
         public int Year { get { return DateTimeValue.Year; } }
 

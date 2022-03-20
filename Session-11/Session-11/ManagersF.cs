@@ -27,6 +27,7 @@ namespace Session_11
             _carService = carService;
             _managerHandler = new ManagerHandler();
             _storageHelper = new StorageHelper();
+            _controlsHelper = new ControlsHelper();
         }
 
         private void ManagersF_Load(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace Session_11
             bsManagers.DataMember = "Managers";
 
             GrdManagers.DataSource = bsManagers;
+            _controlsHelper.HideColumns("ID", gridView1);
 
         }
 

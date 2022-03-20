@@ -20,7 +20,8 @@ namespace DataLibrary
 
         public void Delete(TransactionLine transactionLine, List<TransactionLine> transactionLines, CarService carService)
         {
-            carService.Engineers.FirstOrDefault(e => e.ID == transactionLine.EngineerID).Status = StatusEnum.Free;
+            if (transactionLine != null)
+                carService.Engineers.FirstOrDefault(e => e.ID == transactionLine.EngineerID).Status = StatusEnum.Free;
             transactionLines.Remove(transactionLine);
         }
 

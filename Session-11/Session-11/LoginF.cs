@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.LookAndFeel;
+using System.IO;
 
 namespace Session_11
 {
@@ -25,6 +27,10 @@ namespace Session_11
         public LoginF()
         {
             InitializeComponent();
+
+            // Set Default Theme
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Office2019DarkGray);
+
             _securityHandler = new SecurityHandler();
             _messagesHelper = new MessagesHelper();
             _userPassword = string.Empty;
@@ -33,9 +39,12 @@ namespace Session_11
         private void LoginF_Load(object sender, EventArgs e)
         {
             //RUN THIS FIRST -> Creating new user - ONLY FOR DEBBUGING!
-            //var user = new Credential("Timos");
-            //user.Password = _securityHandler.EncryptUserPassword("1234");
-            //_securityHandler.WritePassFile(FILE_NAME, user);
+            if (!File.Exists(FILE_NAME))
+            {
+                var user = new Credential("Admin");
+                user.Password = _securityHandler.EncryptUserPassword("1234");
+                _securityHandler.WritePassFile(FILE_NAME, user);
+            }
 
             _users = _securityHandler.ReadPassFile(FILE_NAME);
 
