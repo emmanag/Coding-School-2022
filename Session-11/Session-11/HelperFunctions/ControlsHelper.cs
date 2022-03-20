@@ -112,7 +112,19 @@ namespace Session_11.HelperFunctions
             lookUpEdit.ReadOnly = true;
             lookUpEdit.NullText = "Choose Cutomers";
         }
-        public void PopulateTransactionID(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Transaction> list)
+
+        public void PopulateServiceTaskID(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<ServiceTask> list)
+        {
+            binding.DataSource = list;
+            lookUpEdit.DataSource = binding;
+
+            lookUpEdit.DisplayMember = "Description";
+            lookUpEdit.ValueMember = "ID";
+            lookUpEdit.ReadOnly = true;
+            lookUpEdit.NullText = "";
+        }
+
+        public void PopulateEngineersID(RepositoryItemLookUpEdit lookUpEdit, BindingSource binding, List<Engineer> list)
         {
             binding.DataSource = list;
             lookUpEdit.DataSource = binding;

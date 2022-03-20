@@ -22,6 +22,7 @@ namespace Session_11
         private TransactionLineHandler _transactionLineHandler;
         private StorageHelper _storageHelper;
         private MessagesHelper _messagesHelper;
+        private ControlsHelper _controlsHelper;
 
         public TransactionF(CarService carService)
         {
@@ -32,6 +33,7 @@ namespace Session_11
             _transaction = new Transaction();
             _messagesHelper = new MessagesHelper();
             _transactionLineHandler = new TransactionLineHandler();
+            _controlsHelper = new ControlsHelper();
         }
 
 
@@ -66,6 +68,11 @@ namespace Session_11
 
         private void Btnexit_Click(object sender, EventArgs e)
         {
+            foreach (var line in _transaction.TransactionLines)
+            {
+                _carService.Engineers.Find(en => en.ID == line.EngineerID).Status = StatusEnum.Free;
+            }
+
             DialogResult = DialogResult.Cancel;
             Close();
         }
@@ -87,12 +94,20 @@ namespace Session_11
         {
             bsTransactionLines.DataSource = _transaction.TransactionLines;
             grdTransLines.DataSource = bsTransactionLines;
+            _controlsHelper.PopulateServiceTaskID(colServiceTaskID, bsServiveTask, _carService.ServiceTasks);
+            _controlsHelper.PopulateEngineersID(colEngineerID, bsTransID, _carService.Engineers);
+
+            _controlsHelper.SetColumn(colServiceTaskID, grvTransLines, "ServiceTaskID");
+            _controlsHelper.SetColumn(colEngineerID, grvTransLines, "EngineerID");
+            _controlsHelper.HideColumns("TransactionID", grvTransLines);
+            _controlsHelper.HideColumns("ID", grvTransLines);
         }
 
         private void SaveTransaction()
         {
             if (_carService.Transactions.FindAll(c => c.ID == _transaction.ID).Count() <= 0)
             {
+                _transaction.TotalPrice = _transactionHandler.GetTransactionPrice(_transaction);
                 _carService.Transactions.Add(_transaction);
                 _storageHelper.SaveData(FILE_NAME, _carService);
             }
