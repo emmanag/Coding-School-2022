@@ -80,7 +80,7 @@ namespace Session_11
         {
             var transaction = bsTransactions.Current as Transaction;
             _transactionHandler.Delete(transaction, _carService.Transactions);
-            _storageHelper.SaveData("strorage.json", _carService);
+            _storageHelper.SaveData("storage.json", _carService);
             gridView1.RefreshData();
         }
 

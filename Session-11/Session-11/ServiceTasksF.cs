@@ -67,7 +67,7 @@ namespace Session_11
         {
             var serviceTask = bsServiceTasks.Current as ServiceTask;
             _serviceTaskHandler.Delete(serviceTask, _carService.ServiceTasks);
-            _storageHelper.SaveData("strorage.json", _carService);
+            _storageHelper.SaveData("storage.json", _carService);
             gridView1.RefreshData();
         }
 
