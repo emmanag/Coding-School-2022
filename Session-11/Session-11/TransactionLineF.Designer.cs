@@ -167,6 +167,7 @@
             this.CtrlservicetaskID.Properties.NullText = "";
             this.CtrlservicetaskID.Size = new System.Drawing.Size(277, 20);
             this.CtrlservicetaskID.TabIndex = 24;
+            this.CtrlservicetaskID.EditValueChanged += new System.EventHandler(this.CtrlservicetaskID_EditValueChanged);
             // 
             // CtrlengineerID
             // 
