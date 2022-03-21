@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
-            this.Ctrlsallarypermonth = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.Ctrlsurname = new DevExpress.XtraEditors.TextEdit();
             this.Ctrlname = new DevExpress.XtraEditors.TextEdit();
@@ -39,11 +38,12 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.bsManager = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).BeginInit();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -63,13 +63,6 @@
             this.Btnsave.TabIndex = 28;
             this.Btnsave.Text = "Save";
             this.Btnsave.Click += new System.EventHandler(this.Btnsave_Click);
-            // 
-            // Ctrlsallarypermonth
-            // 
-            this.Ctrlsallarypermonth.Location = new System.Drawing.Point(160, 124);
-            this.Ctrlsallarypermonth.Name = "Ctrlsallarypermonth";
-            this.Ctrlsallarypermonth.Size = new System.Drawing.Size(277, 20);
-            this.Ctrlsallarypermonth.TabIndex = 27;
             // 
             // labelControl4
             // 
@@ -115,14 +108,29 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // spinEdit1
+            // 
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(160, 124);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Size = new System.Drawing.Size(277, 20);
+            this.spinEdit1.TabIndex = 30;
+            this.spinEdit1.EditValueChanged += new System.EventHandler(this.spinEdit1_EditValueChanged);
+            // 
             // ManagerF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.spinEdit1);
             this.Controls.Add(this.Btnexit);
             this.Controls.Add(this.Btnsave);
-            this.Controls.Add(this.Ctrlsallarypermonth);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.Ctrlsurname);
             this.Controls.Add(this.Ctrlname);
@@ -131,11 +139,11 @@
             this.Name = "ManagerF";
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.ManagerF_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,7 +153,6 @@
 
         private DevExpress.XtraEditors.SimpleButton Btnexit;
         private DevExpress.XtraEditors.SimpleButton Btnsave;
-        private DevExpress.XtraEditors.TextEdit Ctrlsallarypermonth;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit Ctrlsurname;
         private DevExpress.XtraEditors.TextEdit Ctrlname;
@@ -153,5 +160,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.BindingSource bsManager;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
     }
 }
