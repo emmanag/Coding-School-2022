@@ -38,10 +38,12 @@
             this.bsServiceTask = new System.Windows.Forms.BindingSource(this.components);
             this.Ctrldescription = new DevExpress.XtraEditors.TextEdit();
             this.Ctrlhours = new DevExpress.XtraEditors.SpinEdit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServiceTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -68,6 +70,7 @@
             this.Ctrlcode.Name = "Ctrlcode";
             this.Ctrlcode.Size = new System.Drawing.Size(277, 20);
             this.Ctrlcode.TabIndex = 23;
+            this.Ctrlcode.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlcode_Validating);
             // 
             // labelControl3
             // 
@@ -99,6 +102,7 @@
             this.Ctrldescription.Name = "Ctrldescription";
             this.Ctrldescription.Size = new System.Drawing.Size(277, 20);
             this.Ctrldescription.TabIndex = 30;
+            this.Ctrldescription.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrldescription_Validating);
             // 
             // Ctrlhours
             // 
@@ -120,6 +124,10 @@
             this.Ctrlhours.Size = new System.Drawing.Size(277, 20);
             this.Ctrlhours.TabIndex = 25;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ServiceTaskF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsServiceTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldescription.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlhours.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +165,6 @@
         private System.Windows.Forms.BindingSource bsServiceTask;
         private DevExpress.XtraEditors.TextEdit Ctrldescription;
         private DevExpress.XtraEditors.SpinEdit Ctrlhours;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
