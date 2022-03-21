@@ -41,6 +41,9 @@
             // 
             // GrdMonthlyLedgers
             // 
+            this.GrdMonthlyLedgers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GrdMonthlyLedgers.Location = new System.Drawing.Point(2, 2);
             this.GrdMonthlyLedgers.MainView = this.grvMothlyLedger;
             this.GrdMonthlyLedgers.Name = "GrdMonthlyLedgers";

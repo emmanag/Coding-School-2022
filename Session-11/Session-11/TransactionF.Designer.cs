@@ -72,7 +72,7 @@
             // Btnexit
             // 
             this.Btnexit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btnexit.Location = new System.Drawing.Point(472, 363);
+            this.Btnexit.Location = new System.Drawing.Point(429, 379);
             this.Btnexit.Name = "Btnexit";
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 29;
@@ -82,7 +82,7 @@
             // Btnsave
             // 
             this.Btnsave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btnsave.Location = new System.Drawing.Point(270, 363);
+            this.Btnsave.Location = new System.Drawing.Point(227, 379);
             this.Btnsave.Name = "Btnsave";
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 28;

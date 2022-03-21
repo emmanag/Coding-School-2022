@@ -48,7 +48,7 @@
             this.GrdCars.Location = new System.Drawing.Point(2, 1);
             this.GrdCars.MainView = this.gridView1;
             this.GrdCars.Name = "GrdCars";
-            this.GrdCars.Size = new System.Drawing.Size(795, 162);
+            this.GrdCars.Size = new System.Drawing.Size(795, 300);
             this.GrdCars.TabIndex = 0;
             this.GrdCars.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

@@ -48,7 +48,7 @@
             this.GrdManagers.Location = new System.Drawing.Point(2, 1);
             this.GrdManagers.MainView = this.gridView1;
             this.GrdManagers.Name = "GrdManagers";
-            this.GrdManagers.Size = new System.Drawing.Size(795, 162);
+            this.GrdManagers.Size = new System.Drawing.Size(795, 300);
             this.GrdManagers.TabIndex = 15;
             this.GrdManagers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

@@ -48,7 +48,7 @@
             this.GrdServiceTasks.Location = new System.Drawing.Point(2, 0);
             this.GrdServiceTasks.MainView = this.gridView1;
             this.GrdServiceTasks.Name = "GrdServiceTasks";
-            this.GrdServiceTasks.Size = new System.Drawing.Size(795, 162);
+            this.GrdServiceTasks.Size = new System.Drawing.Size(795, 300);
             this.GrdServiceTasks.TabIndex = 5;
             this.GrdServiceTasks.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

@@ -54,7 +54,7 @@
             this.GrdEngineers.Name = "GrdEngineers";
             this.GrdEngineers.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ManagerIDlookup});
-            this.GrdEngineers.Size = new System.Drawing.Size(795, 162);
+            this.GrdEngineers.Size = new System.Drawing.Size(795, 300);
             this.GrdEngineers.TabIndex = 10;
             this.GrdEngineers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

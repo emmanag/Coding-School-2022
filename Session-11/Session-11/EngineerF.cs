@@ -78,7 +78,7 @@ namespace Session_11
                 MessageBox.Show("Please fill the empty fields", "Warning");
                 return;
             }
-            if (Convert.ToInt32(Ctrlsallarypermonth.EditValue.ToString()) < Ctrlsallarypermonth.Properties.MinValue)
+            if (Convert.ToDecimal(Ctrlsallarypermonth.EditValue.ToString()) < Ctrlsallarypermonth.Properties.MinValue)
             {
                 MessageBox.Show("Sallary can't be a negative number", "Warning");
                 return;

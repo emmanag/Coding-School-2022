@@ -47,7 +47,7 @@
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl1.Location = new System.Drawing.Point(63, 26);
+            this.labelControl1.Location = new System.Drawing.Point(115, 34);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 13);
             this.labelControl1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // labelControl2
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl2.Location = new System.Drawing.Point(63, 74);
+            this.labelControl2.Location = new System.Drawing.Point(115, 82);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 1;
@@ -65,7 +65,7 @@
             // ctrlPassword
             // 
             this.ctrlPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctrlPassword.Location = new System.Drawing.Point(138, 71);
+            this.ctrlPassword.Location = new System.Drawing.Point(190, 79);
             this.ctrlPassword.Name = "ctrlPassword";
             this.ctrlPassword.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.ctrlPassword.Properties.UseSystemPasswordChar = true;
@@ -75,7 +75,7 @@
             // Btnenter
             // 
             this.Btnenter.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btnenter.Location = new System.Drawing.Point(245, 268);
+            this.Btnenter.Location = new System.Drawing.Point(245, 276);
             this.Btnenter.Name = "Btnenter";
             this.Btnenter.Size = new System.Drawing.Size(92, 25);
             this.Btnenter.TabIndex = 4;
@@ -85,7 +85,7 @@
             // Btnexit
             // 
             this.Btnexit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btnexit.Location = new System.Drawing.Point(392, 268);
+            this.Btnexit.Location = new System.Drawing.Point(392, 276);
             this.Btnexit.Name = "Btnexit";
             this.Btnexit.Size = new System.Drawing.Size(92, 25);
             this.Btnexit.TabIndex = 5;
@@ -95,7 +95,7 @@
             // ctrlUsername
             // 
             this.ctrlUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctrlUsername.Location = new System.Drawing.Point(138, 23);
+            this.ctrlUsername.Location = new System.Drawing.Point(190, 31);
             this.ctrlUsername.Name = "ctrlUsername";
             this.ctrlUsername.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -106,16 +106,13 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.White;
-            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.ctrlPassword);
             this.panelControl1.Controls.Add(this.ctrlUsername);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Location = new System.Drawing.Point(109, 59);
+            this.panelControl1.Location = new System.Drawing.Point(87, 59);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(555, 163);
             this.panelControl1.TabIndex = 6;
