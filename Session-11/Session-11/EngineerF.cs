@@ -76,12 +76,14 @@ namespace Session_11
             if (!ValidateChildren(ValidationConstraints.Enabled))
             {
                 MessageBox.Show("Please fill the empty fields", "Warning");
+                return;
             }
-            else
+            if (Convert.ToInt32(Ctrlsallarypermonth.EditValue.ToString()) < Ctrlsallarypermonth.Properties.MinValue)
             {
-                SaveEngineer();
+                MessageBox.Show("Sallary can't be a negative number", "Warning");
+                return;
             }
-            
+            SaveEngineer();
         }
 
         private void Btnexit_Click(object sender, EventArgs e)
