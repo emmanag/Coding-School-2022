@@ -71,7 +71,8 @@
             // 
             // Btnexit
             // 
-            this.Btnexit.Location = new System.Drawing.Point(361, 344);
+            this.Btnexit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btnexit.Location = new System.Drawing.Point(472, 363);
             this.Btnexit.Name = "Btnexit";
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 29;
@@ -80,7 +81,8 @@
             // 
             // Btnsave
             // 
-            this.Btnsave.Location = new System.Drawing.Point(159, 344);
+            this.Btnsave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btnsave.Location = new System.Drawing.Point(270, 363);
             this.Btnsave.Name = "Btnsave";
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 28;
@@ -89,7 +91,8 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(36, 169);
+            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelControl4.Location = new System.Drawing.Point(45, 173);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(42, 13);
             this.labelControl4.TabIndex = 26;
@@ -97,7 +100,8 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(36, 127);
+            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelControl3.Location = new System.Drawing.Point(45, 131);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(17, 13);
             this.labelControl3.TabIndex = 22;
@@ -105,7 +109,8 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(36, 78);
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelControl2.Location = new System.Drawing.Point(45, 82);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 21;
@@ -113,7 +118,8 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(36, 32);
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelControl1.Location = new System.Drawing.Point(45, 36);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(23, 13);
             this.labelControl1.TabIndex = 20;
@@ -121,7 +127,8 @@
             // 
             // Ctrltotalprice
             // 
-            this.Ctrltotalprice.Location = new System.Drawing.Point(159, 206);
+            this.Ctrltotalprice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Ctrltotalprice.Location = new System.Drawing.Point(168, 210);
             this.Ctrltotalprice.Name = "Ctrltotalprice";
             this.Ctrltotalprice.Properties.ReadOnly = true;
             this.Ctrltotalprice.Size = new System.Drawing.Size(100, 20);
@@ -129,7 +136,8 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(36, 209);
+            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelControl5.Location = new System.Drawing.Point(45, 213);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(50, 13);
             this.labelControl5.TabIndex = 30;
@@ -137,8 +145,9 @@
             // 
             // Ctrldate
             // 
+            this.Ctrldate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Ctrldate.EditValue = null;
-            this.Ctrldate.Location = new System.Drawing.Point(159, 29);
+            this.Ctrldate.Location = new System.Drawing.Point(168, 33);
             this.Ctrldate.Name = "Ctrldate";
             this.Ctrldate.Properties.Appearance.Options.UseTextOptions = true;
             this.Ctrldate.Properties.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
@@ -159,7 +168,8 @@
             // 
             // CtrlCustomer
             // 
-            this.CtrlCustomer.Location = new System.Drawing.Point(159, 75);
+            this.CtrlCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CtrlCustomer.Location = new System.Drawing.Point(168, 79);
             this.CtrlCustomer.Name = "CtrlCustomer";
             this.CtrlCustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -169,7 +179,8 @@
             // 
             // CtrlCar
             // 
-            this.CtrlCar.Location = new System.Drawing.Point(159, 120);
+            this.CtrlCar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CtrlCar.Location = new System.Drawing.Point(168, 124);
             this.CtrlCar.Name = "CtrlCar";
             this.CtrlCar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -179,7 +190,8 @@
             // 
             // CtrlManager
             // 
-            this.CtrlManager.Location = new System.Drawing.Point(159, 162);
+            this.CtrlManager.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CtrlManager.Location = new System.Drawing.Point(168, 166);
             this.CtrlManager.Name = "CtrlManager";
             this.CtrlManager.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -189,6 +201,7 @@
             // 
             // grdTransLines
             // 
+            this.grdTransLines.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grdTransLines.Location = new System.Drawing.Point(293, 32);
             this.grdTransLines.MainView = this.grvTransLines;
             this.grdTransLines.Name = "grdTransLines";
@@ -224,6 +237,7 @@
             // 
             // buttonAddLine
             // 
+            this.buttonAddLine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAddLine.Location = new System.Drawing.Point(293, 233);
             this.buttonAddLine.Name = "buttonAddLine";
             this.buttonAddLine.Size = new System.Drawing.Size(193, 23);
@@ -233,6 +247,7 @@
             // 
             // buttonRemoveLine
             // 
+            this.buttonRemoveLine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRemoveLine.Location = new System.Drawing.Point(492, 232);
             this.buttonRemoveLine.Name = "buttonRemoveLine";
             this.buttonRemoveLine.Size = new System.Drawing.Size(201, 23);
