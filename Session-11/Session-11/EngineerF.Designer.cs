@@ -40,11 +40,13 @@
             this.bsEngineer = new System.Windows.Forms.BindingSource(this.components);
             this.CtrlmanagerID = new DevExpress.XtraEditors.LookUpEdit();
             this.Ctrlsallarypermonth = new DevExpress.XtraEditors.SpinEdit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsEngineer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -79,6 +81,7 @@
             this.Ctrlsurname.Name = "Ctrlsurname";
             this.Ctrlsurname.Size = new System.Drawing.Size(277, 20);
             this.Ctrlsurname.TabIndex = 14;
+            this.Ctrlsurname.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlsurname_Validating);
             // 
             // Ctrlname
             // 
@@ -86,6 +89,7 @@
             this.Ctrlname.Name = "Ctrlname";
             this.Ctrlname.Size = new System.Drawing.Size(277, 20);
             this.Ctrlname.TabIndex = 13;
+            this.Ctrlname.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlname_Validating);
             // 
             // labelControl3
             // 
@@ -120,9 +124,15 @@
             this.CtrlmanagerID.Properties.NullText = "";
             this.CtrlmanagerID.Size = new System.Drawing.Size(277, 20);
             this.CtrlmanagerID.TabIndex = 15;
+            this.CtrlmanagerID.Validating += new System.ComponentModel.CancelEventHandler(this.CtrlmanagerID_Validating);
             // 
             // Ctrlsallarypermonth
             // 
+            this.Ctrlsallarypermonth.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.Ctrlsallarypermonth.Location = new System.Drawing.Point(168, 167);
             this.Ctrlsallarypermonth.Name = "Ctrlsallarypermonth";
             this.Ctrlsallarypermonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -131,6 +141,10 @@
             this.Ctrlsallarypermonth.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.Ctrlsallarypermonth.Size = new System.Drawing.Size(277, 20);
             this.Ctrlsallarypermonth.TabIndex = 17;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // EngineerF
             // 
@@ -155,6 +169,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEngineer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlmanagerID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +188,6 @@
         private System.Windows.Forms.BindingSource bsEngineer;
         private DevExpress.XtraEditors.LookUpEdit CtrlmanagerID;
         private DevExpress.XtraEditors.SpinEdit Ctrlsallarypermonth;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
