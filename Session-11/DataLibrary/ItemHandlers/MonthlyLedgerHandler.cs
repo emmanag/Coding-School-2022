@@ -20,28 +20,39 @@ namespace DataLibrary.ItemHandlers
 
         public decimal GetTotal(DateTime dateTime, CarService carService)
         {
-            return GetMonthlyIncome(dateTime, carService)- GetMonthlyExpenses(carService);
+            return GetMonthlyIncome(dateTime, carService) - GetMonthlyExpenses(carService);
         }
 
         public decimal GetMonthlyExpenses(CarService carService)
         {
             decimal managersSalaries = carService.Managers.Sum(m => m.SallaryPerMonth);
             decimal engineersSalaries = carService.Engineers.Sum(e => e.SallaryPerMonth);
-            
+
             return managersSalaries + engineersSalaries;
         }
 
         public void CreateMonthlyLedger(CarService carService)
         {
-            var monthlyLedger = new MonthlyLedger()
+            var ledgerToUpdate = carService.MonthlyLedgers.Find(ml => 
+                ml.DateTimeValue.Year == DateTime.Now.Year &&
+                ml.DateTimeValue.Month == DateTime.Now.Month);
+            
+            if (ledgerToUpdate is null)
             {
-                DateTimeValue = DateTime.Now,
-                Income = GetMonthlyIncome(DateTime.Now, carService),
-                Expenses = GetMonthlyExpenses(carService),
-                Total = GetTotal(DateTime.Now, carService)
-            };
-
-            carService.MonthlyLedgers.Add(monthlyLedger);
+                carService.MonthlyLedgers.Add(new MonthlyLedger()
+                {
+                    DateTimeValue = DateTime.Now,
+                    Income = GetMonthlyIncome(DateTime.Now, carService),
+                    Expenses = GetMonthlyExpenses(carService),
+                    Total = GetTotal(DateTime.Now, carService)
+                });
+            }
+            else
+            {
+                ledgerToUpdate.Income = GetMonthlyIncome(DateTime.Now, carService);
+                ledgerToUpdate.Expenses = GetMonthlyExpenses(carService);
+                ledgerToUpdate.Total = GetTotal(DateTime.Now, carService);
+            }
         }
     }
 }
