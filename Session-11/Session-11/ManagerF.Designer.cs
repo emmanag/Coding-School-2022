@@ -38,10 +38,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.bsManager = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsallarypermonth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -83,6 +85,7 @@
             this.Ctrlsurname.Name = "Ctrlsurname";
             this.Ctrlsurname.Size = new System.Drawing.Size(277, 20);
             this.Ctrlsurname.TabIndex = 24;
+            this.Ctrlsurname.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlsurname_Validating);
             // 
             // Ctrlname
             // 
@@ -90,6 +93,7 @@
             this.Ctrlname.Name = "Ctrlname";
             this.Ctrlname.Size = new System.Drawing.Size(277, 20);
             this.Ctrlname.TabIndex = 23;
+            this.Ctrlname.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlname_Validating);
             // 
             // labelControl2
             // 
@@ -106,6 +110,10 @@
             this.labelControl1.Size = new System.Drawing.Size(27, 13);
             this.labelControl1.TabIndex = 20;
             this.labelControl1.Text = "Name";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ManagerF
             // 
@@ -127,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +152,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.BindingSource bsManager;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

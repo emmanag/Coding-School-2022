@@ -55,7 +55,15 @@ namespace Session_11
 
         private void Btnsave_Click(object sender, EventArgs e)
         {
-            SaveManager();
+            if (!ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show("Please fill the empty fields", "Warning");
+            }
+            else
+            {
+                SaveManager();
+            }
+            
         }
 
         private void Btnexit_Click(object sender, EventArgs e)
@@ -80,5 +88,34 @@ namespace Session_11
             Close();
         }
 
+        private void Ctrlname_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlname.Text))
+            {
+                e.Cancel = true;
+                Ctrlname.Focus();
+                errorProvider1.SetError(Ctrlname, "Name should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlname, "");
+            }
+        }
+
+        private void Ctrlsurname_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlsurname.Text))
+            {
+                e.Cancel = true;
+                Ctrlsurname.Focus();
+                errorProvider1.SetError(Ctrlsurname, "Surname should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlsurname, "");
+            }
+        }
     }
 }
