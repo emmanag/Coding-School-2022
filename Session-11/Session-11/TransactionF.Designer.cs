@@ -51,6 +51,7 @@
             this.bsTransactionLines = new System.Windows.Forms.BindingSource(this.components);
             this.bsTransID = new System.Windows.Forms.BindingSource(this.components);
             this.bsServiveTask = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrltotalprice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrldate.Properties.CalendarTimeProperties)).BeginInit();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -173,6 +175,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CtrlCustomer.Size = new System.Drawing.Size(100, 20);
             this.CtrlCustomer.TabIndex = 34;
+            this.CtrlCustomer.Validating += new System.ComponentModel.CancelEventHandler(this.CtrlCustomer_Validating);
             // 
             // CtrlCar
             // 
@@ -183,6 +186,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CtrlCar.Size = new System.Drawing.Size(100, 20);
             this.CtrlCar.TabIndex = 35;
+            this.CtrlCar.Validating += new System.ComponentModel.CancelEventHandler(this.CtrlCar_Validating);
             // 
             // CtrlManager
             // 
@@ -193,6 +197,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.CtrlManager.Size = new System.Drawing.Size(100, 20);
             this.CtrlManager.TabIndex = 36;
+            this.CtrlManager.Validating += new System.ComponentModel.CancelEventHandler(this.CtrlManager_Validating);
             // 
             // grdTransLines
             // 
@@ -250,6 +255,10 @@
             this.buttonRemoveLine.Text = "Remove Line";
             this.buttonRemoveLine.Click += new System.EventHandler(this.buttonRemoveLine_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // TransactionF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +296,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServiveTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +326,6 @@
         private System.Windows.Forms.BindingSource bsServiveTask;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit colServiceTaskID;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit colEngineerID;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

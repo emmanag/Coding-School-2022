@@ -53,6 +53,11 @@ namespace Session_11
         
         private void Btnsave_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show("Please fill the empty fields", "Warning");
+                return;
+            }
             SaveCar();
         }
         
@@ -89,5 +94,49 @@ namespace Session_11
             Close();
         }
 
+        private void Ctrlmodel_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlmodel.Text))
+            {
+                e.Cancel = true;
+                Ctrlmodel.Focus();
+                errorProvider1.SetError(Ctrlmodel, "Model should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlmodel, "");
+            }
+        }
+
+        private void Ctrlcarregistrationnumber_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlcarregistrationnumber.Text))
+            {
+                e.Cancel = true;
+                Ctrlcarregistrationnumber.Focus();
+                errorProvider1.SetError(Ctrlcarregistrationnumber, "Registration Number should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlcarregistrationnumber, "");
+            }
+        }
+
+        private void Ctrlbrand_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlbrand.EditValue.ToString()))
+            {
+                e.Cancel = true;
+                Ctrlbrand.Focus();
+                errorProvider1.SetError(Ctrlbrand, "Brand should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlbrand, "");
+            }
+        }
     }
 }

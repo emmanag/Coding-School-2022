@@ -37,14 +37,17 @@
             this.Btnbrand = new DevExpress.XtraEditors.LabelControl();
             this.bsCar = new System.Windows.Forms.BindingSource(this.components);
             this.Ctrlcarregistrationnumber = new DevExpress.XtraEditors.TextEdit();
+            this.Ctrlbrand = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Ctrlbrand = new DevExpress.XtraEditors.LookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlmodel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlcarregistrationnumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlbrand.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -73,6 +76,7 @@
             this.Ctrlmodel.Name = "Ctrlmodel";
             this.Ctrlmodel.Size = new System.Drawing.Size(277, 20);
             this.Ctrlmodel.TabIndex = 14;
+            this.Ctrlmodel.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlmodel_Validating);
             // 
             // Btncarregistrationumber
             // 
@@ -109,6 +113,7 @@
             this.Ctrlcarregistrationnumber.Name = "Ctrlcarregistrationnumber";
             this.Ctrlcarregistrationnumber.Size = new System.Drawing.Size(277, 20);
             this.Ctrlcarregistrationnumber.TabIndex = 15;
+            this.Ctrlcarregistrationnumber.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlcarregistrationnumber_Validating);
             // 
             // Ctrlbrand
             // 
@@ -116,11 +121,22 @@
             this.Ctrlbrand.Name = "Ctrlbrand";
             this.Ctrlbrand.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.Ctrlbrand.Properties.DropDownRows = 10;
             this.Ctrlbrand.Properties.NullText = "";
-            this.Ctrlbrand.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.Ctrlbrand.Properties.PopupView = this.searchLookUpEdit1View;
             this.Ctrlbrand.Size = new System.Drawing.Size(277, 20);
             this.Ctrlbrand.TabIndex = 13;
+            this.Ctrlbrand.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlbrand_Validating);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // panelControl1
             // 
@@ -155,6 +171,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlcarregistrationnumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlbrand.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -172,6 +190,9 @@
         private DevExpress.XtraEditors.LabelControl Btnbrand;
         private System.Windows.Forms.BindingSource bsCar;
         private DevExpress.XtraEditors.TextEdit Ctrlcarregistrationnumber;
+        private DevExpress.XtraEditors.SearchLookUpEdit Ctrlbrand;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private DevExpress.XtraEditors.LookUpEdit Ctrlbrand;
         private DevExpress.XtraEditors.PanelControl panelControl1;
     }
