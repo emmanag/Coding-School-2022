@@ -36,9 +36,11 @@
             this.bsTransactionLine = new System.Windows.Forms.BindingSource(this.components);
             this.CtrlservicetaskID = new DevExpress.XtraEditors.LookUpEdit();
             this.CtrlengineerID = new DevExpress.XtraEditors.LookUpEdit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btnexit
@@ -85,6 +87,7 @@
             this.CtrlservicetaskID.Size = new System.Drawing.Size(277, 20);
             this.CtrlservicetaskID.TabIndex = 24;
             this.CtrlservicetaskID.EditValueChanged += new System.EventHandler(this.CtrlservicetaskID_EditValueChanged);
+            this.CtrlservicetaskID.Validating += new System.ComponentModel.CancelEventHandler(this.CtrlservicetaskID_Validating);
             // 
             // CtrlengineerID
             // 
@@ -95,6 +98,11 @@
             this.CtrlengineerID.Properties.NullText = "";
             this.CtrlengineerID.Size = new System.Drawing.Size(277, 20);
             this.CtrlengineerID.TabIndex = 25;
+            this.CtrlengineerID.Validating += new System.ComponentModel.CancelEventHandler(this.CtrlengineerID_Validating);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // TransactionLineF
             // 
@@ -113,6 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +136,6 @@
         private System.Windows.Forms.BindingSource bsTransactionLine;
         private DevExpress.XtraEditors.LookUpEdit CtrlservicetaskID;
         private DevExpress.XtraEditors.LookUpEdit CtrlengineerID;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

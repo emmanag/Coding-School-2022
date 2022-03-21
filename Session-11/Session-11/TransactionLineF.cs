@@ -56,6 +56,11 @@ namespace Session_11
 
         private void Btnsave_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show("Please fill the empty fields", "Warning");
+                return;
+            }
             SaveTransactionLine();
         }
 
@@ -95,6 +100,36 @@ namespace Session_11
             }
             _transactionLine.Hours = _carService.ServiceTasks.Find(s => s.ID.ToString() == CtrlservicetaskID.EditValue.ToString()).Hours;
 
+        }
+
+        private void CtrlservicetaskID_Validating(object sender, CancelEventArgs e)
+        {
+            if (_carService.ServiceTasks.FirstOrDefault(st => st.ID.ToString() == CtrlservicetaskID.EditValue.ToString()) == null)
+            {
+                e.Cancel = true;
+                CtrlservicetaskID.Focus();
+                errorProvider1.SetError(CtrlservicetaskID, "Service Task should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(CtrlservicetaskID, "");
+            }
+        }
+
+        private void CtrlengineerID_Validating(object sender, CancelEventArgs e)
+        {
+            if (_carService.Engineers.FirstOrDefault(en => en.ID.ToString() == CtrlengineerID.EditValue.ToString()) == null)
+            {
+                e.Cancel = true;
+                CtrlengineerID.Focus();
+                errorProvider1.SetError(CtrlengineerID, "Engineer should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(CtrlengineerID, "");
+            }
         }
     }
 }
