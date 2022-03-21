@@ -36,14 +36,18 @@
             this.bsTransactionLine = new System.Windows.Forms.BindingSource(this.components);
             this.CtrlservicetaskID = new DevExpress.XtraEditors.LookUpEdit();
             this.CtrlengineerID = new DevExpress.XtraEditors.LookUpEdit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Btnexit
             // 
-            this.Btnexit.Location = new System.Drawing.Point(379, 362);
+            this.Btnexit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btnexit.Location = new System.Drawing.Point(450, 364);
             this.Btnexit.Name = "Btnexit";
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 29;
@@ -52,7 +56,8 @@
             // 
             // Btnsave
             // 
-            this.Btnsave.Location = new System.Drawing.Point(177, 362);
+            this.Btnsave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Btnsave.Location = new System.Drawing.Point(248, 364);
             this.Btnsave.Name = "Btnsave";
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 28;
@@ -61,7 +66,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(65, 99);
+            this.labelControl3.Location = new System.Drawing.Point(73, 58);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(42, 13);
             this.labelControl3.TabIndex = 22;
@@ -69,7 +74,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(65, 50);
+            this.labelControl2.Location = new System.Drawing.Point(73, 9);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(57, 13);
             this.labelControl2.TabIndex = 21;
@@ -77,7 +82,7 @@
             // 
             // CtrlservicetaskID
             // 
-            this.CtrlservicetaskID.Location = new System.Drawing.Point(188, 47);
+            this.CtrlservicetaskID.Location = new System.Drawing.Point(198, 8);
             this.CtrlservicetaskID.Name = "CtrlservicetaskID";
             this.CtrlservicetaskID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -88,7 +93,7 @@
             // 
             // CtrlengineerID
             // 
-            this.CtrlengineerID.Location = new System.Drawing.Point(188, 92);
+            this.CtrlengineerID.Location = new System.Drawing.Point(198, 53);
             this.CtrlengineerID.Name = "CtrlengineerID";
             this.CtrlengineerID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -96,25 +101,41 @@
             this.CtrlengineerID.Size = new System.Drawing.Size(277, 20);
             this.CtrlengineerID.TabIndex = 25;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.White;
+            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.CtrlengineerID);
+            this.panelControl1.Controls.Add(this.CtrlservicetaskID);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.labelControl3);
+            this.panelControl1.Location = new System.Drawing.Point(74, 79);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(577, 100);
+            this.panelControl1.TabIndex = 30;
+            // 
             // TransactionLineF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.Btnexit);
             this.Controls.Add(this.Btnsave);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.CtrlservicetaskID);
-            this.Controls.Add(this.CtrlengineerID);
             this.Name = "TransactionLineF";
             this.Text = "TransactionLine";
             this.Load += new System.EventHandler(this.TransactionLineF_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsTransactionLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlservicetaskID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlengineerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -127,5 +148,6 @@
         private System.Windows.Forms.BindingSource bsTransactionLine;
         private DevExpress.XtraEditors.LookUpEdit CtrlservicetaskID;
         private DevExpress.XtraEditors.LookUpEdit CtrlengineerID;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
