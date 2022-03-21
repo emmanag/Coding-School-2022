@@ -4,6 +4,7 @@ using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,12 @@ namespace Session_11.HelperFunctions
             lookup.DisplayMember = "CarRegNumber";
             lookup.ValueMember = "ID";
             lookup.NullText = "Choose Car";
+        }
+        public void PopulateCarBrands(RepositoryItemLookUpEdit lookup)
+        {
+            var brands = File.ReadAllLines("brands.txt").ToList();
+            lookup.DataSource = brands;
+            lookup.NullText = "Choose Car Brands";
         }
 
         public void PopulateCustomers(RepositoryItemLookUpEdit lookup, List<Customer> list)

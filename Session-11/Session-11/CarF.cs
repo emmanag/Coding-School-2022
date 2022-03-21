@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace Session_11
         private Car _car;
         private CarHandler _carHandler;
         private StorageHelper _storageHelper;
+        private ControlsHelper _controlsHelper;
 
         public CarF(CarService carService)
         {
@@ -26,6 +28,7 @@ namespace Session_11
             _carService = carService;
             _carHandler = new CarHandler();
             _storageHelper = new StorageHelper();
+            _controlsHelper = new ControlsHelper();
         }
 
         public CarF(CarService carService, Car car) : this(carService)
@@ -69,8 +72,8 @@ namespace Session_11
         }
 
         private void PopulateControls()
-        {
-
+        { 
+            _controlsHelper.PopulateCarBrands(Ctrlbrand.Properties);
         }
 
         private void SaveCar()
