@@ -100,6 +100,7 @@ namespace Session_11
         private void buttonLedgersCreate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _monthlyLedgerHandler.CreateMonthlyLedger(_carService);
+            _messagesHelper.MessageInfo("Monthly Ledger created successfully.");
         }
     }
 }
