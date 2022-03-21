@@ -63,6 +63,11 @@ namespace Session_11
         }
         private void Btnsave_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show("Please fill the empty fields", "Warning");
+                return;
+            }
             SaveTransaction();
         }
 
@@ -137,6 +142,51 @@ namespace Session_11
             _transactionLineHandler.Delete(transactionLine, _transaction.TransactionLines, _carService);
             grvTransLines.RefreshData();
 
+        }
+
+        private void CtrlCustomer_Validating(object sender, CancelEventArgs e)
+        {
+            if (_carService.Customers.FirstOrDefault(c => c.ID.ToString() == CtrlCustomer.EditValue.ToString()) == null)
+            {
+                e.Cancel = true;
+                CtrlCustomer.Focus();
+                errorProvider1.SetError(CtrlCustomer, "Customer should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(CtrlCustomer, "");
+            }
+        }
+
+        private void CtrlCar_Validating(object sender, CancelEventArgs e)
+        {
+            if (_carService.Cars.FirstOrDefault(c => c.ID.ToString() == CtrlCar.EditValue.ToString()) == null)
+            {
+                e.Cancel = true;
+                CtrlCar.Focus();
+                errorProvider1.SetError(CtrlCar, "Car should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(CtrlCar, "");
+            }
+        }
+
+        private void CtrlManager_Validating(object sender, CancelEventArgs e)
+        {
+            if (_carService.Managers.FirstOrDefault(m => m.ID.ToString() == CtrlManager.EditValue.ToString()) == null)
+            {
+                e.Cancel = true;
+                CtrlManager.Focus();
+                errorProvider1.SetError(CtrlManager, "Manager should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(CtrlManager, "");
+            }
         }
     }
 }
