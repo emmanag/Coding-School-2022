@@ -36,7 +36,6 @@ namespace Session_11
         private void ManagerF_Load(object sender, EventArgs e)
         {
             PopulateControls();
-
             if (_manager == null)
             {
                 _manager = (Manager)_managerHandler.Create();
@@ -50,7 +49,7 @@ namespace Session_11
         {
             Ctrlname.DataBindings.Add(new Binding("EditValue", bsManager, "Name", true));
             Ctrlsurname.DataBindings.Add(new Binding("EditValue", bsManager, "Surname", true));
-            Ctrlsallarypermonth.DataBindings.Add(new Binding("EditValue", bsManager, "SallaryPerMonth", true));
+            spinEdit1.DataBindings.Add(new Binding("EditValue", bsManager, "SallaryPerMonth", true));
         }
 
         private void Btnsave_Click(object sender, EventArgs e)
@@ -58,12 +57,14 @@ namespace Session_11
             if (!ValidateChildren(ValidationConstraints.Enabled))
             {
                 MessageBox.Show("Please fill the empty fields", "Warning");
+                return;
             }
-            else
+            if (Convert.ToInt32(spinEdit1.EditValue.ToString()) < spinEdit1.Properties.MinValue)
             {
-                SaveManager();
+                MessageBox.Show("Sallary can't be a negative number", "Warning");
+                return;
             }
-            
+            SaveManager();
         }
 
         private void Btnexit_Click(object sender, EventArgs e)
@@ -116,6 +117,11 @@ namespace Session_11
                 e.Cancel = false;
                 errorProvider1.SetError(Ctrlsurname, "");
             }
+        }
+
+        private void spinEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
