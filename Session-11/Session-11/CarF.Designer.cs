@@ -40,7 +40,6 @@
             this.Ctrlbrand = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Ctrlbrand = new DevExpress.XtraEditors.LookUpEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlmodel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCar)).BeginInit();
@@ -193,7 +192,6 @@
         private DevExpress.XtraEditors.SearchLookUpEdit Ctrlbrand;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private DevExpress.XtraEditors.LookUpEdit Ctrlbrand;
         private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
