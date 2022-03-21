@@ -40,11 +40,13 @@
             this.Btnsave = new DevExpress.XtraEditors.SimpleButton();
             this.Btnexit = new DevExpress.XtraEditors.SimpleButton();
             this.bsCustomer = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlsurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlphone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlTIN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -77,6 +79,7 @@
             this.Ctrlname.Name = "Ctrlname";
             this.Ctrlname.Size = new System.Drawing.Size(277, 20);
             this.Ctrlname.TabIndex = 3;
+            this.Ctrlname.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlname_Validating);
             // 
             // Ctrlsurname
             // 
@@ -84,6 +87,7 @@
             this.Ctrlsurname.Name = "Ctrlsurname";
             this.Ctrlsurname.Size = new System.Drawing.Size(277, 20);
             this.Ctrlsurname.TabIndex = 4;
+            this.Ctrlsurname.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlsurname_Validating);
             // 
             // Ctrlphone
             // 
@@ -91,6 +95,7 @@
             this.Ctrlphone.Name = "Ctrlphone";
             this.Ctrlphone.Size = new System.Drawing.Size(277, 20);
             this.Ctrlphone.TabIndex = 5;
+            this.Ctrlphone.Validating += new System.ComponentModel.CancelEventHandler(this.Ctrlphone_Validating);
             // 
             // labelControl4
             // 
@@ -106,6 +111,7 @@
             this.CtrlTIN.Name = "CtrlTIN";
             this.CtrlTIN.Size = new System.Drawing.Size(277, 20);
             this.CtrlTIN.TabIndex = 7;
+            this.CtrlTIN.Validating += new System.ComponentModel.CancelEventHandler(this.CtrlTIN_Validating);
             // 
             // Btnsave
             // 
@@ -124,6 +130,10 @@
             this.Btnexit.TabIndex = 9;
             this.Btnexit.Text = "Exit";
             this.Btnexit.Click += new System.EventHandler(this.Btnexit_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // CustomerF
             // 
@@ -148,6 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Ctrlphone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlTIN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +177,6 @@
         private DevExpress.XtraEditors.SimpleButton Btnsave;
         private DevExpress.XtraEditors.SimpleButton Btnexit;
         private System.Windows.Forms.BindingSource bsCustomer;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

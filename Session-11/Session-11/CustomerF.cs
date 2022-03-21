@@ -49,7 +49,15 @@ namespace Session_11
 
         private void Btnsave_Click(object sender, EventArgs e)
         {
-            SaveCustomer();
+            if (!ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show("Please fill the empty fields", "Warning");
+            }
+            else
+            {
+                SaveCustomer();
+            }
+            
         }
 
         private void Btnexit_Click(object sender, EventArgs e)
@@ -82,5 +90,64 @@ namespace Session_11
             Close();
         }
 
+        private void Ctrlname_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlname.Text))
+            {
+                e.Cancel = true;
+                Ctrlname.Focus();
+                errorProvider1.SetError(Ctrlname, "Name should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlname, "");
+            }
+        }
+
+        private void Ctrlsurname_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlsurname.Text))
+            {
+                e.Cancel = true;
+                Ctrlsurname.Focus();
+                errorProvider1.SetError(Ctrlsurname, "Surname should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlsurname, "");
+            }
+        }
+
+        private void Ctrlphone_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ctrlphone.Text))
+            {
+                e.Cancel = true;
+                Ctrlphone.Focus();
+                errorProvider1.SetError(Ctrlphone, "Phone should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(Ctrlphone, "");
+            }
+        }
+
+        private void CtrlTIN_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(CtrlTIN.Text))
+            {
+                e.Cancel = true;
+                CtrlTIN.Focus();
+                errorProvider1.SetError(CtrlTIN, "TIN should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(CtrlTIN, "");
+            }
+        }
     }
 }
