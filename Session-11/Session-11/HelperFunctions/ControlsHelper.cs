@@ -49,11 +49,22 @@ namespace Session_11.HelperFunctions
             lookup.ValueMember = "ID";
             lookup.NullText = "Choose Car";
         }
-        public void PopulateCarBrands(RepositoryItemLookUpEdit lookup)
+        public void PopulateCarBrands(RepositoryItemSearchLookUpEdit lookup)
         {
-            var brands = File.ReadAllLines("brands.txt").ToList();
+            #region CarBrand
+            var Brand = "AC_Cobra,Abarth,Acura,Aixam,Alfa_Romeo,Alpina,Ariel,Asia_Motors,Aston_Martin,Audi,Austin_Healey,Austin_Morris,Austin_Rover,Autobianchi," +
+"Beev,Bentley,Bmw,Brilliance,Bugatti,Buick,Cadillac,Casalini,Caterham,Chatenet,Chery,Chevrolet,China_Motors,Chrysler,Citroen,Club_Car," +
+"Corvette,Cupra,DR,DS,Dacia,Daewoo,Daihatsu,DeTomaso,Dodge,ETuk,Ecocar,Fang_Power,Ferrari,Fiat,Fisker,Ford,GAC_Gonow,Gemballa,Gmc,Goupil," +
+"Grecav,HDK,Hamann,Honda,Hummer,Hyundai,Infiniti,Innocenti,Isuzu,Iveco,Jaguar,Jeep,Jensen_Healey,Jiangling,KTM,Kia,Koenigsegg,Lada,Lamborghini," +
+"Lancia,Land_Rover,Landwind,Lexus,Lifan,Ligier,Lincoln,Lotus,Mahindra,Maserati,Maybach,Mazda,McLaren,Mercedes_Benz,Mg,Microcar,Mini,Mitsubishi," +
+"Moretti,Morgan,Neptun,Nissan,Nsu,Oldsmobile,Opel,Pagani,Panther,Peugeot,Piaggio,Plymouth,Polestar,Pontiac,Porsche,Proton," +
+"Rch_Replicarhellas,Renault,Rolls_Royce,Rover,Saab,Santana,Seat,Shuanghuan,Skoda,Smart,Speedcar,Spyker,SsangYong,Subaru,Suzuki," +
+"TVR,Talbot,Tata,Tazzari,Techart,Tesla,Toyota,Trabant,Triumph,Uaz,Vauxhall,Volkswagen,Volvo,Wartburg,Westfield,Wiesmann,Zastava,Zhidou," +
+"Zotye,Other";
+            #endregion
+            var brands = Brand.Split(',');
             lookup.DataSource = brands;
-            lookup.NullText = "Choose Car Brands";
+            lookup.NullText = "Automotive Panopoulos Chaos";
         }
 
         public void PopulateCustomers(RepositoryItemLookUpEdit lookup, List<Customer> list)
