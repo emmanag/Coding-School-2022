@@ -151,6 +151,7 @@
             this.Ctrldate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.Ctrldate.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.Ctrldate.Properties.MaskSettings.Set("mask", "");
+            this.Ctrldate.Properties.ReadOnly = true;
             this.Ctrldate.Size = new System.Drawing.Size(100, 20);
             this.Ctrldate.TabIndex = 33;
             // 
