@@ -59,7 +59,7 @@ namespace Session_11
                 MessageBox.Show("Please fill the empty fields", "Warning");
                 return;
             }
-            if (Convert.ToInt32(spinEdit1.EditValue.ToString()) < spinEdit1.Properties.MinValue)
+            if (Convert.ToDecimal(spinEdit1.EditValue.ToString()) < spinEdit1.Properties.MinValue)
             {
                 MessageBox.Show("Sallary can't be a negative number", "Warning");
                 return;

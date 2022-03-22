@@ -55,7 +55,7 @@
             // Btnexit
             // 
             this.Btnexit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btnexit.Location = new System.Drawing.Point(455, 354);
+            this.Btnexit.Location = new System.Drawing.Point(437, 350);
             this.Btnexit.Name = "Btnexit";
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
             this.Btnexit.TabIndex = 19;
@@ -65,7 +65,7 @@
             // Btnsave
             // 
             this.Btnsave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Btnsave.Location = new System.Drawing.Point(253, 354);
+            this.Btnsave.Location = new System.Drawing.Point(235, 350);
             this.Btnsave.Name = "Btnsave";
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
             this.Btnsave.TabIndex = 18;
@@ -153,8 +153,7 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.White;
-            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.Ctrlsallarypermonth);
             this.panelControl1.Controls.Add(this.CtrlmanagerID);

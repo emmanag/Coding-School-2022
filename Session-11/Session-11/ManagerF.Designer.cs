@@ -51,6 +51,7 @@
             // 
             // Btnexit
             // 
+            this.Btnexit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btnexit.Location = new System.Drawing.Point(443, 337);
             this.Btnexit.Name = "Btnexit";
             this.Btnexit.Size = new System.Drawing.Size(75, 23);
@@ -60,6 +61,7 @@
             // 
             // Btnsave
             // 
+            this.Btnsave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btnsave.Location = new System.Drawing.Point(241, 337);
             this.Btnsave.Name = "Btnsave";
             this.Btnsave.Size = new System.Drawing.Size(75, 23);
@@ -128,10 +130,7 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl1.Appearance.BackColor = System.Drawing.Color.White;
-            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.spinEdit1);
             this.panelControl1.Controls.Add(this.labelControl1);
@@ -139,7 +138,7 @@
             this.panelControl1.Controls.Add(this.Ctrlname);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.Ctrlsurname);
-            this.panelControl1.Location = new System.Drawing.Point(65, 64);
+            this.panelControl1.Location = new System.Drawing.Point(100, 66);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(557, 131);
             this.panelControl1.TabIndex = 31;

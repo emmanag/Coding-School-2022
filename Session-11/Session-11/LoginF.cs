@@ -54,19 +54,22 @@ namespace Session_11
         }
         private void Btnenter_Click(object sender, EventArgs e)
         {
-            _user = _users.Find(u => u.ID == new Guid(ctrlUsername.EditValue.ToString()));
-            if (ctrlPassword.EditValue != null)
-                _userPassword = ctrlPassword.EditValue.ToString();
+            if (!(ctrlUsername.EditValue is null))
+            {
+                _user = _users.Find(u => u.ID == new Guid(ctrlUsername.EditValue.ToString()));
+                if (ctrlPassword.EditValue != null)
+                    _userPassword = ctrlPassword.EditValue.ToString();
 
-            if (_securityHandler.ValidateUserCredentials(_user, _userPassword))
-            {
-                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OpenApp));
-                t.Start();
-                this.Close();
-            }
-            else
-            {
-                _messagesHelper.MessageError("Account username and password don't match.\nPlease try again.");
+                if (_securityHandler.ValidateUserCredentials(_user, _userPassword))
+                {
+                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OpenApp));
+                    t.Start();
+                    this.Close();
+                }
+                else
+                {
+                    _messagesHelper.MessageError("Account username and password don't match.\nPlease try again.");
+                }
             }
         }
 

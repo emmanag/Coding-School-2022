@@ -66,7 +66,7 @@
             this.CarLookUp,
             this.ManagerLookUp,
             this.CustomerLookUp});
-            this.GrdTransactions.Size = new System.Drawing.Size(795, 162);
+            this.GrdTransactions.Size = new System.Drawing.Size(795, 300);
             this.GrdTransactions.TabIndex = 15;
             this.GrdTransactions.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

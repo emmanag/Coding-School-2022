@@ -52,7 +52,7 @@
             this.GrdCustomers.Name = "GrdCustomers";
             this.GrdCustomers.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.GrdCustomers.Size = new System.Drawing.Size(795, 162);
+            this.GrdCustomers.Size = new System.Drawing.Size(795, 300);
             this.GrdCustomers.TabIndex = 5;
             this.GrdCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
