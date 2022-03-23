@@ -19,6 +19,9 @@ namespace Session_14.App
             builder.Property(transactionLine => transactionLine.Hours).HasMaxLength(12);
             builder.Property(transactionLine => transactionLine.PricePerHour).HasMaxLength(12);
             builder.Property(transactionLine => transactionLine.Price).HasMaxLength(12);
+            builder.HasOne(transactionLine => transactionLine.Transaction)
+                .WithMany(transaction => transaction.TransactionLines)
+                .HasForeignKey(transactionLine => transactionLine.TransactionID);
         }
     }
 }

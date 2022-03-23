@@ -14,6 +14,7 @@ namespace Session_14.model
         public Credential(string username)
         {
             Username = username;
+            Password = string.Empty;
         }
     }
 }

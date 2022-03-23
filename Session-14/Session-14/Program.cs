@@ -1,17 +1,30 @@
+
+using Microsoft.Extensions.DependencyInjection;
+
+using Session_14.App.Repositories;
+using Session_14.model;
+using TodoApp.EF.Repositories;
+
 namespace Session_14
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static IServiceProvider ServiceProvider { get; private set; }
+
+      
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            var services = new ServiceCollection();
+            services.AddSingleton<IEntityRepo<TransactionLine>, TransactionLineRepository>();
+            services.AddSingleton<MainForm>();
+
+            ServiceProvider = services.BuildServiceProvider();
+            var mainForm = ServiceProvider.GetRequiredService<MainForm>();
+            Application.Run(mainForm);
         }
     }
 }

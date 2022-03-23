@@ -17,10 +17,14 @@ namespace Session_14.model
         public Engineer Engineer { get; set; }
         public Transaction Transaction { get; set; }
         public ServiceTask ServiceTask { get; set; }
+        
 
         public TransactionLine()
         {
             PricePerHour = 44.5m;
+            Transaction = new Transaction();
+            ServiceTask = new ServiceTask();
+            Engineer = new Engineer();
         }
 
     }
