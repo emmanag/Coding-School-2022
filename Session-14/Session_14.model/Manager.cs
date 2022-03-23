@@ -9,6 +9,8 @@ namespace Session_14.model
     public class Manager : Person
     {
         public decimal SallaryPerMonth { get; set; }
+        public List<Engineer> Engineers { get; set; }
+        public List<Transaction> Transactions { get; set; }
 
         public Manager()
         {

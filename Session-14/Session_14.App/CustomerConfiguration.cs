@@ -13,8 +13,13 @@ namespace Session_14.App
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.Property(car => car.Phone).HasMaxLength(12);
-            builder.Property(car => car.TIN).HasMaxLength(12);
+            builder.HasKey(customer => customer.ID);
+            builder.Property(customer => customer.Surname).HasMaxLength(12);
+            builder.Property(customer => customer.TIN).HasMaxLength(12);
+            builder.Property(customer => customer.Phone).HasMaxLength(12);
+            builder.Property(customer => customer.Name).HasMaxLength(12);
+            
+
         }
     }
 }

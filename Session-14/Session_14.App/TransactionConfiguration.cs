@@ -13,11 +13,13 @@ namespace Session_14.App
     {
         public void Configure(EntityTypeBuilder<Transaction> builder)
         {
+            builder.HasKey(transaction => transaction.ID);
             builder.Property(transaction => transaction.Date).HasMaxLength(15);
             builder.Property(transaction => transaction.CustomerID).HasMaxLength(15);
             builder.Property(transaction => transaction.CarID).HasMaxLength(15);
             builder.Property(transaction => transaction.ManagerID).HasMaxLength(15);
             builder.Property(transaction => transaction.TotalPrice).HasMaxLength(12);
+            
             
         }
     }

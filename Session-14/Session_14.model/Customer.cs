@@ -10,6 +10,7 @@ namespace Session_14.model
     {
         public string Phone { get; set; }
         public string TIN { get; set; }
+        
 
         public Customer()
         {

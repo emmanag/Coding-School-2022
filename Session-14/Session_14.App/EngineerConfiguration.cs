@@ -13,9 +13,16 @@ namespace Session_14.App
     {
         public void Configure(EntityTypeBuilder<Engineer> builder)
         {
+            
+            builder.HasKey(engineer => engineer.ID);
+            builder.Property(engineer => engineer.Name).HasMaxLength(12);
+            builder.Property(engineer => engineer.Surname).HasMaxLength(12);
             builder.Property(engineer => engineer.ManagerID).HasMaxLength(12);
             builder.Property(engineer => engineer.SallaryPerMonth).HasMaxLength(12);
             builder.Property(engineer => engineer.Status).HasMaxLength(12);
+            
+
+
         }
     }
 }

@@ -14,6 +14,11 @@ namespace Session_14.model
         public Guid ManagerID { get; set; }
         public decimal TotalPrice { get; set; }
         public List<TransactionLine> TransactionLines { get; set; }
+        public Customer Customer { get; set; }
+        public Car Car { get; set; }
+        public Manager Manager { get; set; }
+
+
 
         public Transaction()
         {
