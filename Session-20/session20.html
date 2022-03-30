@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+</html>
+
+<head>
+        
+</head>
+
+<body>
+    <H1>
+        Session20  Manos Anagnostopoulos
+    </H1>
+    <div class="main-container">
+        <h2> Question 1</h2>
+        <table>
+            <tr>
+                <td><label for="txtName">Name</label></td>
+                <td><input id="txtName"></td>
+            </tr>
+            <tr>
+                <td><label for="txtReversedName">Reversed Name</label></td>
+                <td><input id="txtReversedName"></td>
+            </tr>            
+        </table>
+    </div>
+
+    <div>        
+        <input type="button" onclick="Reverser()" value="Reverse Name" />        
+    </div>
+    
+        <h2> Question 3</h2>
+    </div>
+
+    <h1>Customer Details</h1>
+    <table>
+    <tr>
+        <td><label for="txtInputName">Name</label></td>
+        <td><input id="txtInputName" type="text"></td>
+    </tr>
+ 
+    <tr>
+        <td><label for="txtInputSurname">Surname</label></td>
+        <td><input id="txtInputSurname" type="text"></td>
+    </tr>
+    <tr>
+        <td><label for="txtInputAge">Age</label></td>
+        <td><input id="txtInputAge" type="number"></td>
+    </tr>
+    <tr>
+        <td><label for="txtInputGender">Gender</label></td>
+        <td><input id="txtInputGender" type="text"></td>
+    </tr>
+    
+    
+    </table>
+
+    <button onclick="addCustomer()">Add Customer</button>
+    <br>
+    <ul id="tableCustomers"></ul>
+    <br>
+    <h2>Customer Info</h2>
+    <label id="info"></label>
+    
+
+<script type="text/javascript">
+
+    function Reverser() 
+    {
+        var name = document.getElementById("txtName").value;
+        var ReversedName = "";
+        for (var i = name.length - 1; i >= 0; i--) 
+        { 
+            ReversedName += name[i];
+        }
+        document.getElementById("txtReversedName").value = ReversedName;
+    }
+
+//Question 2
+    function CheckIfPalindrome(str){
+        str = str.toLowerCase().split(" ").join("");
+        let len = str.length;
+        for(let i=0; i <len/2; i++){
+            if(str[i] !== str[len - 1 - i]){
+                return false;
+            }            
+        }
+        return true;        
+    }
+
+//Question 3
+var counter = 0;
+let customers = [];
+function addCustomer(){
+    let id = counter;
+    counter++;
+    let name = document.getElementById("txtInputName").value;
+    let surname = document.getElementById("txtInputSurname").value;
+    let age = document.getElementById("txtInputAge").value;
+    let gender = document.getElementById("txtInputGender").value;
+    let customer = {id, name, surname, age, gender};
+    customers.push(customer);
+    showCustomers();
+}
+
+function showCustomers(){
+    var customersTable = document.getElementById("tableCustomers");
+    customersTable.innerHTML = "";
+    customers.forEach(c => {
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(c.name));
+        li.setAttribute('id', c.id);
+        li.setAttribute('data-id', c.id);
+        li.addEventListener('click', (event) => {
+            test(event);
+        })
+        customersTable.appendChild(li);
+    });
+}
+
+function test(e){
+    
+    let selectedId = +e.target.dataset.id;
+    let selectedItem = findItemById(selectedId);
+    let info = "Name: " + selectedItem.name + "<br>Surname: " + selectedItem.surname + "<br>Age: " + selectedItem.age + "<br>Gender: " + selectedItem.gender
+    document.getElementById("info").innerHTML = info;
+    
+}
+
+function findItemById(id){
+    return customers.find(c => c.id === id);
+}
+
+
+//Question 4
+// δεν χρειαζονται αλλαγες
+function multiply(a,b){
+    return a * b;
+}
+
+
+//Question 5
+
+function incrementString(input) {
+    var splits = input.split(/(\d+)$/),
+    num = 1;
+    if (splits[1] !== undefined) num = parseInt(splits[1]) + 1;
+    return splits[0] + num;
+}
+
+
+</script>
+
+<h2>Other questions are inside the code file</h2>
+    
