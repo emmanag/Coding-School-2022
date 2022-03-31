@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackCoffeeshop.EF.Configuration
 {
-    internal class TransactionLineConfiguration
+    public class TransactionLineConfiguration
     {
     }
 }

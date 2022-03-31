@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace BlackCoffeeshop.EF.Configuration
 {
-    internal class Class1
-    {
+    public class CustomerRepo {
     }
 }

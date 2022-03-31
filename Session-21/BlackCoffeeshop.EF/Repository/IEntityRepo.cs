@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackCoffeeshop.EF.Repository
 {
-    internal class IEntityRepo
+    public class IEntityRepo
     {
     }
 }
