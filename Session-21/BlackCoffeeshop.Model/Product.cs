@@ -1,7 +1,6 @@
 ﻿namespace BlackCoffeeshop.Model;
 
-public class Product {
-    public Guid ID { get; set; } = Guid.NewGuid();
+public class Product : BaseEntity {
     public string Code { get; set; }
     public string Description { get; set; }
     public Guid ProductCategoryID { get; set; }

@@ -1,7 +1,6 @@
 ﻿
 namespace BlackCoffeeshop.Model;
-public class TransactionLine {
-    public Guid ID { get; set; }
+public class TransactionLine : BaseEntity {
     public Guid ProductID { get; set; }
     public Guid TransactionID { get; set; }
     public int Quantity { get; set; }

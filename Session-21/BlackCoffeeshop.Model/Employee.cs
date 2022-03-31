@@ -2,10 +2,7 @@
 
 namespace BlackCoffeeshop.Model
 {
-    public class Employee
-    {
-        public Guid ID { get; } = Guid.NewGuid();
-
+    public class Employee : BaseEntity {
         public string Name { get; set; }
 
         public string Surname { get; set; }

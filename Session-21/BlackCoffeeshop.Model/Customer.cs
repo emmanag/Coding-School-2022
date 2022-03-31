@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackCoffeeshop.Model;
 
-public class Customer {
-    public Guid ID { get; } = Guid.NewGuid();
+public class Customer : BaseEntity {
     public string Code { get; set; }
     public string Description { get; set; } = string.Empty;
 
