@@ -1,12 +1,7 @@
-﻿
-using BlackCoffeeshop.EF.Context;
+﻿using BlackCoffeeshop.EF.Context;
 using BlackCoffeeshop.EF.Repository;
 using BlackCoffeeshop.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CoffeeShop.EF.Repositories {
     public class CustomerRepo : IEntityRepo<Customer> {
