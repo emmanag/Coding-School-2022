@@ -1,6 +1,6 @@
 ﻿namespace BlackCoffeeshop.Model
 {
-    public class Class1
+    public class BaseEntity
     {
 
     }
