@@ -9,6 +9,9 @@ public class Transaction : BaseEntity {
     public decimal TotalPrice { get; set; }
     public decimal TotalCost { get; set; }
     public string EmployeeName { get; set; }
+    public Customer Customer { get; set; }
+    public Employee Employee { get; set; }
+    public ProductCategory ProductCategory { get; set; }
+    public Product Product { get; set; }
     
-
 }

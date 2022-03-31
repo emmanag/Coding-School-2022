@@ -11,6 +11,7 @@ public class TransactionLine : BaseEntity {
     public decimal DisplayPrice { get; set; }
     public decimal TotalPrice { get; set; }
     public decimal TotalCost { get; set; }
+    public Transaction Transaction { get; set; }
 
     
 }

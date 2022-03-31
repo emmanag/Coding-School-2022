@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BlackCoffeeshop.EF.Configuration
 {
-    public class CustomerRepo {
+    public class IEntityTypeConfiguration {
     }
 }
