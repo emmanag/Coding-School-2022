@@ -25,7 +25,7 @@ namespace BlackCoffeeshop.EF.Configuration
             //builder.Property(productcategory => productcategory.ProductType).HasMaxLength(30);
 
 
-            builder.HasOne(productcategory => productcategory.Transaction).WithOne(transaction => transaction.ProductCategory).HasForeignKey<Transaction>(transaction => transaction.ID);
+            //builder.HasOne(productcategory => productcategory.Transaction).WithOne(transaction => transaction.ProductCategory).HasForeignKey<Transaction>(transaction => transaction.ID);
             
         }
     }

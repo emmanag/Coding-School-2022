@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlackCoffeeshop.EF.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,23 +55,6 @@ namespace BlackCoffeeshop.EF.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    ProductCategoryID = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", maxLength: 10, nullable: false),
-                    Cost = table.Column<decimal>(type: "decimal(18,2)", maxLength: 10, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Products", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Transactions",
                 columns: table => new
                 {
@@ -99,16 +82,27 @@ namespace BlackCoffeeshop.EF.Migrations
                         principalTable: "Employees",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    ProductCategoryID = table.Column<int>(type: "int", maxLength: 10, nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", maxLength: 10, nullable: false),
+                    Cost = table.Column<decimal>(type: "decimal(18,2)", maxLength: 10, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Transactions_ProductCategories_ID",
-                        column: x => x.ID,
+                        name: "FK_Products_ProductCategories_ProductCategoryID",
+                        column: x => x.ProductCategoryID,
                         principalTable: "ProductCategories",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Transactions_Products_ID",
-                        column: x => x.ID,
-                        principalTable: "Products",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -142,6 +136,11 @@ namespace BlackCoffeeshop.EF.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Products_ProductCategoryID",
+                table: "Products",
+                column: "ProductCategoryID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TransactionLines_TransactionID",
                 table: "TransactionLines",
                 column: "TransactionID");
@@ -150,7 +149,13 @@ namespace BlackCoffeeshop.EF.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "TransactionLines");
+
+            migrationBuilder.DropTable(
+                name: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "Transactions");
@@ -160,12 +165,6 @@ namespace BlackCoffeeshop.EF.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employees");
-
-            migrationBuilder.DropTable(
-                name: "ProductCategories");
-
-            migrationBuilder.DropTable(
-                name: "Products");
         }
     }
 }

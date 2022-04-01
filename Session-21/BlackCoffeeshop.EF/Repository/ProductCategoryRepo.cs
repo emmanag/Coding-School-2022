@@ -40,7 +40,7 @@ namespace BlackCoffeeshop.EF.Configuration
             foundProductCat.Code = entity.Code;
             foundProductCat.Description = entity.Description;
             foundProductCat.ProductType = entity.ProductType;
-            foundProductCat.Transaction = entity.Transaction;
+           // foundProductCat.Transaction = entity.Transaction;
 
             await context.SaveChangesAsync();
         }

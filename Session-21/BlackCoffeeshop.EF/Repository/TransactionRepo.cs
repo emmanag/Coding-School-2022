@@ -46,8 +46,8 @@ namespace BlackCoffeeshop.EF.Configuration {
             foundTrans.EmployeeName = entity.EmployeeName;
             foundTrans.Customer = entity.Customer;
             foundTrans.Employee = entity.Employee;
-            foundTrans.ProductCategory = entity.ProductCategory;
-            foundTrans.Product = entity.Product;
+          /*  foundTrans.ProductCategory = entity.ProductCategory;
+            foundTrans.Product = entity.Product;*/
 
             await context.SaveChangesAsync();
         }

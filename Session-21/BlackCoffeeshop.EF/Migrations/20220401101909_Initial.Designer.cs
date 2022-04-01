@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlackCoffeeshop.EF.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220331135125_initial")]
-    partial class initial
+    [Migration("20220401101909_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -105,9 +105,12 @@ namespace BlackCoffeeshop.EF.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductCategoryID")
+                        .HasMaxLength(10)
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ProductCategoryID");
 
                     b.ToTable("Products", (string)null);
                 });
@@ -224,6 +227,17 @@ namespace BlackCoffeeshop.EF.Migrations
                     b.ToTable("TransactionLines", (string)null);
                 });
 
+            modelBuilder.Entity("BlackCoffeeshop.Model.Product", b =>
+                {
+                    b.HasOne("BlackCoffeeshop.Model.ProductCategory", "ProductCategory")
+                        .WithMany()
+                        .HasForeignKey("ProductCategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductCategory");
+                });
+
             modelBuilder.Entity("BlackCoffeeshop.Model.Transaction", b =>
                 {
                     b.HasOne("BlackCoffeeshop.Model.Customer", "Customer")
@@ -238,25 +252,9 @@ namespace BlackCoffeeshop.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BlackCoffeeshop.Model.Product", "Product")
-                        .WithOne("Transaction")
-                        .HasForeignKey("BlackCoffeeshop.Model.Transaction", "ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BlackCoffeeshop.Model.ProductCategory", "ProductCategory")
-                        .WithOne("Transaction")
-                        .HasForeignKey("BlackCoffeeshop.Model.Transaction", "ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Customer");
 
                     b.Navigation("Employee");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("ProductCategory");
                 });
 
             modelBuilder.Entity("BlackCoffeeshop.Model.TransactionLine", b =>
@@ -277,18 +275,6 @@ namespace BlackCoffeeshop.EF.Migrations
                 });
 
             modelBuilder.Entity("BlackCoffeeshop.Model.Employee", b =>
-                {
-                    b.Navigation("Transaction")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BlackCoffeeshop.Model.Product", b =>
-                {
-                    b.Navigation("Transaction")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BlackCoffeeshop.Model.ProductCategory", b =>
                 {
                     b.Navigation("Transaction")
                         .IsRequired();
