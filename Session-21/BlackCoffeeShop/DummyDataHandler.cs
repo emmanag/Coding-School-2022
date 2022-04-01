@@ -79,7 +79,7 @@ namespace BlackCoffeeShop.Web {
 
             // TRANSACTIONS AND TRANSACTIONLINES
 
-            var transactionRepo = new TransactionRepo();
+/*            var transactionRepo = new TransactionRepo();
             var transactionLineRepo = new TransactionLineRepo();
 
 
@@ -97,15 +97,11 @@ namespace BlackCoffeeShop.Web {
                 ProductID = prod.ID,
                 Price = prod.Price,
                 Discount = 0,
-                DisplayPrice = prod.Price,
-                DiscountPerCent = 0,
                 Quantity = 2,
-                ProductDes = prod.Description,
-                TotalCost = prod.Cost * 2,
                 TotalPrice = prod.Price * 2,
             };
             await transactionLineRepo.Create(transactionLine);
-
+*/
         }
 
     }

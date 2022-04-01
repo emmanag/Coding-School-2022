@@ -116,13 +116,9 @@ namespace BlackCoffeeshop.EF.Migrations
                     ProductID = table.Column<int>(type: "int", maxLength: 30, nullable: false),
                     TransactionID = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    ProductDes = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    DiscountPerCent = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Discount = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    DisplayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    TotalCost = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false)
                 },
                 constraints: table =>
                 {

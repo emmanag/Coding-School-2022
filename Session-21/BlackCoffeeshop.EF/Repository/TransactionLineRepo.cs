@@ -39,13 +39,9 @@ namespace BlackCoffeeshop.EF.Configuration {
             foundTransLine.ProductID = entity.ProductID;
             foundTransLine.TransactionID = entity.TransactionID;
             foundTransLine.Quantity = entity.Quantity;
-            foundTransLine.ProductDes = entity.ProductDes;
             foundTransLine.Price = entity.Price;
-            foundTransLine.DiscountPerCent = entity.DiscountPerCent;
             foundTransLine.Discount = entity.Discount;
-            foundTransLine.DisplayPrice = entity.DisplayPrice;
             foundTransLine.TotalPrice = entity.TotalPrice;
-            foundTransLine.TotalCost = entity.TotalCost;
 
             await context.SaveChangesAsync();
         }

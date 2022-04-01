@@ -186,19 +186,9 @@ namespace BlackCoffeeshop.EF.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("DiscountPerCent")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("DisplayPrice")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<decimal>("Price")
                         .HasMaxLength(30)
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("ProductDes")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductID")
                         .HasMaxLength(30)
@@ -207,9 +197,6 @@ namespace BlackCoffeeshop.EF.Migrations
                     b.Property<int>("Quantity")
                         .HasMaxLength(30)
                         .HasColumnType("int");
-
-                    b.Property<decimal>("TotalCost")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("TotalPrice")
                         .HasMaxLength(30)

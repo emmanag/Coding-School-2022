@@ -25,8 +25,6 @@ namespace BlackCoffeeshop.EF.Configuration
             builder.Property(transaction => transaction.PaymentMethod);
             builder.Property(transaction => transaction.TotalPrice);
 
-            //builder.HasOne(transaction => transaction.TransactionLines).WithOne(transactionLine => transactionLine.Transaction).HasForeignKey<Transaction>(transaction => transaction.ID);
-
         }
     }
 }
