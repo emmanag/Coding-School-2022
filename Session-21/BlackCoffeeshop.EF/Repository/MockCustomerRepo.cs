@@ -46,7 +46,11 @@ public class MockCustomerRepo : IEntityRepo<Customer>
     public Task<IEnumerable<Customer>> GetAllAsync()
     {
         return Task.FromResult(_customers.AsEnumerable());
+
     }
+
+
+
 
     /// <inheritdoc />
     public Customer? GetById(int id)
