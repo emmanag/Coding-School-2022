@@ -87,7 +87,7 @@ namespace BlackCoffeeShop.Web.Controllers
                     Description = productCategoryModel.Description,
                     ProductType = productCategoryModel.ProductType
                 };
-                await _productCategoryRepo.CreateAsync(newProductCategory);
+                await _productCategoryRepo.AddAsync(newProductCategory);
 
                 /*  _context.Add(productCategory);
                   await _context.SaveChangesAsync();*/

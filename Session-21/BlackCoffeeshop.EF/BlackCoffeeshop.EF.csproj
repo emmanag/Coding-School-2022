@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repository\EmployeeRepo.cs" />
+    <Compile Remove="Repository\MockEmployeeRepo.cs" />
+    <Compile Remove="Repository\MockProduct.cs" />
+    <Compile Remove="Repository\MockProductCategory.cs" />
+    <Compile Remove="Repository\MockTransaction.cs" />
+    <Compile Remove="Repository\MockTransactionsLineRepo.cs" />
+    <Compile Remove="Repository\ProductCategoryRepo.cs" />
+    <Compile Remove="Repository\ProductRepo.cs" />
+    <Compile Remove="Repository\TransactionLineRepo.cs" />
+    <Compile Remove="Repository\TransactionRepo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3">
       <PrivateAssets>all</PrivateAssets>

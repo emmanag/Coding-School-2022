@@ -10,7 +10,7 @@ namespace CoffeeShop.EF.Repositories {
             await context.SaveChangesAsync();
         }
 
-        public Task CreateAsync(Customer entity) {
+        public Task AddAsync(Customer entity) {
             throw new NotImplementedException();
         }
 
@@ -60,6 +60,11 @@ namespace CoffeeShop.EF.Repositories {
         }
 
         public Task UpdateAsync(int id, Customer entity) {
+            throw new NotImplementedException();
+        }
+
+        Task<Customer?> IEntityRepo<Customer>.GetByIdAsync(int id)
+        {
             throw new NotImplementedException();
         }
     }

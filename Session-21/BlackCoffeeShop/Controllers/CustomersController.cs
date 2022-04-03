@@ -9,13 +9,14 @@ using Microsoft.EntityFrameworkCore;
 using BlackCoffeeshop.EF.Context;
 using BlackCoffeeshop.Model;
 using BlackCoffeeshop.EF.Repository;
+using BlackCoffeeShop.Web.Models;
 
 namespace BlackCoffeeShop.Web.Controllers
 {
     public class CustomersController : Controller
     {
-        
-        private readonly IEntityRepo<Customer> _customerRepo; 
+        private readonly ApplicationContext applicationContext;
+        private readonly IEntityRepo<Customer> _customerRepo;
 
 
         public CustomersController(IEntityRepo<Customer> customerRepo)
@@ -25,9 +26,9 @@ namespace BlackCoffeeShop.Web.Controllers
         // GET: Customers
         public async Task<IActionResult> Index()
         {
-            return View( _customerRepo.GetAll());
+            return View(await _customerRepo.GetAllAsync());
         }
-        
+
 
         // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -37,7 +38,7 @@ namespace BlackCoffeeShop.Web.Controllers
                 return NotFound();
             }
 
-            var customer = _customerRepo.GetById(id.Value);
+            var customer = await _customerRepo.GetByIdAsync(id.Value);
             if (customer == null)
             {
                 return NotFound();
@@ -57,17 +58,19 @@ namespace BlackCoffeeShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Code,Description,ID")] Customer customer)
+        public async Task<IActionResult> Create([Bind("Code,Description")] CustomerViewModel customerViewModel)
         {
             if (ModelState.IsValid)
             {
-                var newCustomer = new Customer() { Code = customer.Code,
-                Description = customer.Description
+                var newCustomer = new Customer()
+                {
+                    Code = customerViewModel.Code,
+                    Description = customerViewModel.Description
                 };
-                _customerRepo.Create(customer);
+                await _customerRepo.AddAsync(newCustomer);
                 return RedirectToAction(nameof(Index));
             }
-            return View(customer);
+            return View(customerViewModel);
         }
 
         // GET: Customers/Edit/5
@@ -78,12 +81,19 @@ namespace BlackCoffeeShop.Web.Controllers
                 return NotFound();
             }
 
-            var customer = _customerRepo.GetById(id.Value);
+            var customer = await _customerRepo.GetByIdAsync(id.Value);
             if (customer == null)
             {
                 return NotFound();
             }
-            return View(customer);
+            var customerViewModel = new CustomerUpdateViewModel
+            {
+                ID = customer.ID,
+                Code = customer.Code,
+                Description = customer.Description,
+
+            };
+            return View(customerViewModel);
         }
 
         // POST: Customers/Edit/5
@@ -91,7 +101,7 @@ namespace BlackCoffeeShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Code,Description,ID")] Customer customer)
+        public async Task<IActionResult> Edit(int id, [Bind("Code,Description,ID")] CustomerUpdateViewModel customer)
         {
             if (id != customer.ID)
             {
@@ -102,12 +112,18 @@ namespace BlackCoffeeShop.Web.Controllers
             {
                 try
                 {
-                    _customerRepo.Update(id,customer);
+                    var currentCustomer = await _customerRepo.GetByIdAsync(id);
+                    if (currentCustomer is null)
+                        return BadRequest("Could not find customer");
+                    currentCustomer.Code = customer.Code;
+                    currentCustomer.Description = customer.Description;
+
+                    await _customerRepo.UpdateAsync(id,currentCustomer);
                     //await _customerRepo.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (_customerRepo.GetById(id) is null)
+                    if (_customerRepo.GetByIdAsync(id) is null)
                     {
                         return NotFound();
                     }
@@ -129,7 +145,7 @@ namespace BlackCoffeeShop.Web.Controllers
                 return NotFound();
             }
 
-            var customer = _customerRepo.GetById(id.Value);
+            var customer = await _customerRepo.GetByIdAsync(id.Value);
             if (customer == null)
             {
                 return NotFound();
@@ -143,9 +159,9 @@ namespace BlackCoffeeShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var customer = _customerRepo.GetById(id);
-            _customerRepo.Delete(id);
-           //await _customersRepo.SaveChangesAsync();
+            var customer = _customerRepo.GetByIdAsync(id);
+            await _customerRepo.DeleteAsync(id);
+            //await _customersRepo.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

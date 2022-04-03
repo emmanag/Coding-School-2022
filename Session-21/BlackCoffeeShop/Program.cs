@@ -15,13 +15,13 @@ builder.Services.AddDbContext<ApplicationContext>();
 
 var useMocks = Boolean.Parse(builder.Configuration["UseMocks"]);
 if (!useMocks) {
-    builder.Services.AddScoped<IEntityRepo<ProductCategory>, ProductCategoryRepo>();
-    //builder.Services.AddScoped<IEntityRepo<Customer>, CustomerRepo>();
+    //builder.Services.AddScoped<IEntityRepo<ProductCategory>, ProductCategoryRepo>();
+    builder.Services.AddScoped<IEntityRepo<Customer>, CustomerRepo>();
 
 }
 else {
-    builder.Services.AddSingleton<IEntityRepo<ProductCategory>, MockProductCategory>();
-    //builder.Services.AddSingleton<IEntityRepo<Customer>, MockCustomerRepo>();
+    //builder.Services.AddSingleton<IEntityRepo<ProductCategory>, MockProductCategory>();
+    builder.Services.AddSingleton<IEntityRepo<Customer>, MockCustomerRepo>();
 }
 
 

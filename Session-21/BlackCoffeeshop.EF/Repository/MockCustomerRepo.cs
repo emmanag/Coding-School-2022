@@ -37,84 +37,74 @@ public class MockCustomerRepo : IEntityRepo<Customer>
         };
 
     }
-    /// <inheritdoc />
-    public IEnumerable<Customer> GetAll()
+    public Task Create(Customer entity)
+    {
+        throw new NotImplementedException();
+    }
+    public Task Delete(int id)
+    {
+        throw new NotImplementedException();
+    }
+    public List<Customer> GetAll()
+    {
+        throw new NotImplementedException();
+    }
+    public Customer? GetById(int id)
+    {
+        throw new NotImplementedException();
+    }
+    public Task Update(int id, Customer entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    //ASYNC
+    public  Task AddAsync(Customer entity)
+    {
+        _customers.Add(entity);
+
+        return Task.CompletedTask;
+    }
+    public Task DeleteAsync(int id)
+    {
+        var foundCustomer = _customers.SingleOrDefault(c => c.ID == id);
+        if (foundCustomer is null)
+            throw new KeyNotFoundException($"Given id '{id}' was not found");
+
+        _customers.Remove(foundCustomer);
+
+        return Task.CompletedTask;
+    }
+
+    public IEnumerable<Customer> Get_customers()
     {
         return _customers;
     }
 
-    public Task<IEnumerable<Customer>> GetAllAsync()
+    public Task<IEnumerable<Customer>> GetAllAsync(IEnumerable<Customer> _customers)
     {
         return Task.FromResult(_customers.AsEnumerable());
-
     }
-
-
-
-
-    /// <inheritdoc />
-    public Customer? GetById(int id)
-    {
-        return _customers.SingleOrDefault(customer => customer.ID == id);
-    }
-
     public Task<Customer?> GetByIdAsync(int id)
     {
         return Task.FromResult(_customers.SingleOrDefault(customer => customer.ID == id));
     }
+    public Task UpdateAsync(int id, Customer entity)
+    {
+        var foundCustomer = _customers.SingleOrDefault(todo => todo.ID == id);
+        if (foundCustomer is null)
+            throw new KeyNotFoundException($"Given id '{id}' was not found");
 
+        foundCustomer.Code = entity.Code;
+        foundCustomer.Description = entity.Description;
 
+        return Task.CompletedTask;
+    }
 
-    List<Customer> IEntityRepo<Customer>.GetAll()
+    public async Task<IEnumerable<Customer>> GetAllAsync()
     {
         return _customers;
     }
 
-    public async Task Create(Customer entity)
-    {
-        if (entity.ID != 0)
-            throw new ArgumentException("Given entity should not have Id set", nameof(entity));
 
-        var lastId = _customers.OrderBy(customer => customer.ID).Last().ID;
-        entity.ID = ++lastId;
-        _customers.Add(entity);
-
-    }
-
-    public async Task Update(int id, Customer entity)
-    {
-        var foundcustomer = _customers.SingleOrDefault(customer => customer.ID == id);
-        if (foundcustomer is null)
-            throw new KeyNotFoundException($"Given id '{id}' was not found");
-
-        foundcustomer.Description = entity.Description;
-        foundcustomer.Code = entity.Code;
-    }
-
-
-
-    public async Task Delete(int id)
-    {
-        var foundcustomer = _customers.SingleOrDefault(customer => customer.ID == id);
-        if (foundcustomer is null)
-            throw new KeyNotFoundException($"Given id '{id}' was not found");
-
-        _customers.Remove(foundcustomer);
-    }
-
-    Task<ProductCategory?> IEntityRepo<Customer>.GetByIdAsync(int id) {
-        throw new NotImplementedException();
-    }
-
-    public Task CreateAsync(Customer entity) {
-        throw new NotImplementedException();
-    }
-
-    public Task UpdateAsync(int id, Customer entity) {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteAsync(int id) {
-        throw new NotImplementedException();
-    }
 }
