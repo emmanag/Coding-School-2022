@@ -30,9 +30,17 @@ namespace BlackCoffeeshop.EF.Repository
             _transactions.Add(entity);
         }
 
+        public Task CreateAsync(Transaction entity) {
+            throw new NotImplementedException();
+        }
+
         public async Task Delete(int id)
         {
             _transactions.Remove(GetById(id));
+        }
+
+        public Task DeleteAsync(int id) {
+            throw new NotImplementedException();
         }
 
         public List<Transaction> GetAll()
@@ -40,9 +48,17 @@ namespace BlackCoffeeshop.EF.Repository
             return _transactions;
         }
 
+        public Task<IEnumerable<Transaction>> GetAllAsync() {
+            throw new NotImplementedException();
+        }
+
         public Transaction? GetById(int id)
         {
             return _transactions.SingleOrDefault(product => product.ID == id);
+        }
+
+        public Task<ProductCategory?> GetByIdAsync(int id) {
+            throw new NotImplementedException();
         }
 
         public async Task Update(int id, Transaction entity)
@@ -60,7 +76,9 @@ namespace BlackCoffeeshop.EF.Repository
             //foundTransaction.ID = entity.ID;
         }
 
-
+        public Task UpdateAsync(int id, Transaction entity) {
+            throw new NotImplementedException();
+        }
     }
 }
 

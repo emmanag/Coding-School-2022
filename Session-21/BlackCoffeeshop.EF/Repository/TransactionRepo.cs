@@ -10,6 +10,10 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
         }
 
+        public Task CreateAsync(Transaction entity) {
+            throw new NotImplementedException();
+        }
+
         public async Task Delete(int id) {
             using var context = new ApplicationContext();
             var foundTrans = context.Transactions.SingleOrDefault(trans => trans.ID == id);
@@ -20,14 +24,26 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
         }
 
+        public Task DeleteAsync(int id) {
+            throw new NotImplementedException();
+        }
+
         public List<Model.Transaction> GetAll() {
             using var context = new ApplicationContext();
             return context.Transactions.ToList();
         }
 
+        public Task<IEnumerable<Transaction>> GetAllAsync() {
+            throw new NotImplementedException();
+        }
+
         public Model.Transaction? GetById(int id) {
             using var context = new ApplicationContext();
             return context.Transactions.Where(trans => trans.ID == id).SingleOrDefault(); ;
+        }
+
+        public Task<ProductCategory?> GetByIdAsync(int id) {
+            throw new NotImplementedException();
         }
 
         public async Task Update(int id, Transaction entity) {
@@ -50,6 +66,10 @@ namespace BlackCoffeeshop.EF.Configuration {
             foundTrans.Product = entity.Product;*/
 
             await context.SaveChangesAsync();
+        }
+
+        public Task UpdateAsync(int id, Transaction entity) {
+            throw new NotImplementedException();
         }
     }
 }

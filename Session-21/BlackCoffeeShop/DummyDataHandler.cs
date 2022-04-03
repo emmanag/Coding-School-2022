@@ -7,7 +7,7 @@ namespace BlackCoffeeShop.Web {
 
         public async Task Initialize() {
 
-            var prodCatRepo = new ProductCategoryRepo();
+            var prodCatRepo = new ProductCategoryRepo(null);
             var prodRepo = new ProductRepo();
 
             var prodCat = new ProductCategory() {

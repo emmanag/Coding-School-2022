@@ -1,27 +1,28 @@
 
 
+using BlackCoffeeshop.EF.Configuration;
 using BlackCoffeeshop.EF.Context;
 using BlackCoffeeshop.EF.Repository;
 using BlackCoffeeshop.Model;
-
+using CoffeeShop.EF.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationContext>();
-builder.Services.AddSingleton<IEntityRepo<Customer>, MockCustomerRepo>();
-//var useMocks = Boolean.Parse(builder.Configuration["UseMocks"]);
-//if (!useMocks)
-//{
-//    //builder.Services.AddScoped<IEntityRepo<Customer>, CustomerRepo>();
-//}
-//else
-//{
-//    builder.Services.AddSingleton<IEntityRepo<Customer>, MockCustomerRepo>();
-//}
+
+var useMocks = Boolean.Parse(builder.Configuration["UseMocks"]);
+if (!useMocks) {
+    builder.Services.AddScoped<IEntityRepo<ProductCategory>, ProductCategoryRepo>();
+    //builder.Services.AddScoped<IEntityRepo<Customer>, CustomerRepo>();
+
+}
+else {
+    builder.Services.AddSingleton<IEntityRepo<ProductCategory>, MockProductCategory>();
+    //builder.Services.AddSingleton<IEntityRepo<Customer>, MockCustomerRepo>();
+}
 
 
 var app = builder.Build();

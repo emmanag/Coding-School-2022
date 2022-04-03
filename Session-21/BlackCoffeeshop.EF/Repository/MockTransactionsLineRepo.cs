@@ -84,5 +84,21 @@ public class MockTransactionLineRepo : IEntityRepo<TransactionLine>
 
         _transactionLines.Remove(foundtransactionLine);
     }
+
+    Task<ProductCategory?> IEntityRepo<TransactionLine>.GetByIdAsync(int id) {
+        throw new NotImplementedException();
+    }
+
+    public Task CreateAsync(TransactionLine entity) {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateAsync(int id, TransactionLine entity) {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteAsync(int id) {
+        throw new NotImplementedException();
+    }
 }
 

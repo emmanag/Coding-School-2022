@@ -28,9 +28,17 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
         _employees.Add(entity);
     }
 
+    public Task CreateAsync(Employee entity) {
+        throw new NotImplementedException();
+    }
+
     public async Task Delete(int id)
     {
         _employees.Remove(GetById(id));
+    }
+
+    public Task DeleteAsync(int id) {
+        throw new NotImplementedException();
     }
 
     public List<Employee> GetAll()
@@ -38,9 +46,17 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
         return _employees;
     }
 
+    public Task<IEnumerable<Employee>> GetAllAsync() {
+        throw new NotImplementedException();
+    }
+
     public Employee? GetById(int id)
     {
         return _employees.SingleOrDefault(Employee => Employee.ID == id);
+    }
+
+    public Task<ProductCategory?> GetByIdAsync(int id) {
+        throw new NotImplementedException();
     }
 
     public async Task Update(int id, Employee entity)
@@ -57,5 +73,7 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
 
     }
 
-
+    public Task UpdateAsync(int id, Employee entity) {
+        throw new NotImplementedException();
+    }
 }

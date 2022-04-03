@@ -2,13 +2,16 @@
 using BlackCoffeeshop.EF.Repository;
 using BlackCoffeeshop.Model;
 
-
 namespace BlackCoffeeshop.EF.Configuration {
     public class ProductRepo : IEntityRepo<Product> {
         public async Task Create(Product entity) {
             using var context = new ApplicationContext();
             context.Products.Add(entity);
             await context.SaveChangesAsync();
+        }
+
+        public Task CreateAsync(Product entity) {
+            throw new NotImplementedException();
         }
 
         public async Task Delete(int id) {
@@ -21,14 +24,26 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
         }
 
+        public Task DeleteAsync(int id) {
+            throw new NotImplementedException();
+        }
+
         public List<Product> GetAll() {
             using var context = new ApplicationContext();
             return context.Products.ToList();
         }
 
+        public Task<IEnumerable<Product>> GetAllAsync() {
+            throw new NotImplementedException();
+        }
+
         public Product? GetById(int id) {
             using var context = new ApplicationContext();
             return context.Products.Where(prod => prod.ID == id).SingleOrDefault();
+        }
+
+        public Task<ProductCategory?> GetByIdAsync(int id) {
+            throw new NotImplementedException();
         }
 
         public async Task Update(int id, Product entity) {
@@ -44,6 +59,10 @@ namespace BlackCoffeeshop.EF.Configuration {
             foundProduct.ProductCategoryID = entity.ProductCategoryID;
 
             await context.SaveChangesAsync();
+        }
+
+        public Task UpdateAsync(int id, Product entity) {
+            throw new NotImplementedException();
         }
     }
 }

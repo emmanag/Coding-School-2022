@@ -10,6 +10,10 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
         }
 
+        public Task CreateAsync(TransactionLine entity) {
+            throw new NotImplementedException();
+        }
+
         public async Task Delete(int id) {
             using var context = new ApplicationContext();
             var foundTransLine = context.TransactionLines.SingleOrDefault(transLine => transLine.ID == id);
@@ -20,14 +24,26 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
         }
 
+        public Task DeleteAsync(int id) {
+            throw new NotImplementedException();
+        }
+
         public List<TransactionLine> GetAll() {
             using var context = new ApplicationContext();
             return context.TransactionLines.ToList();
         }
 
+        public Task<IEnumerable<TransactionLine>> GetAllAsync() {
+            throw new NotImplementedException();
+        }
+
         public TransactionLine? GetById(int id) {
             using var context = new ApplicationContext();
             return context.TransactionLines.Where(transline => transline.ID == id).SingleOrDefault(); ;
+        }
+
+        public Task<ProductCategory?> GetByIdAsync(int id) {
+            throw new NotImplementedException();
         }
 
         public async Task Update(int id, TransactionLine entity) {
@@ -44,6 +60,10 @@ namespace BlackCoffeeshop.EF.Configuration {
             foundTransLine.TotalPrice = entity.TotalPrice;
 
             await context.SaveChangesAsync();
+        }
+
+        public Task UpdateAsync(int id, TransactionLine entity) {
+            throw new NotImplementedException();
         }
     }
 }

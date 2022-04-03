@@ -101,4 +101,20 @@ public class MockCustomerRepo : IEntityRepo<Customer>
 
         _customers.Remove(foundcustomer);
     }
+
+    Task<ProductCategory?> IEntityRepo<Customer>.GetByIdAsync(int id) {
+        throw new NotImplementedException();
+    }
+
+    public Task CreateAsync(Customer entity) {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateAsync(int id, Customer entity) {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteAsync(int id) {
+        throw new NotImplementedException();
+    }
 }

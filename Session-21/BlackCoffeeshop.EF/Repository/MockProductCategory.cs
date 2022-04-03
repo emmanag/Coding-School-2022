@@ -5,13 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlackCoffeeshop.EF.Repository
-{
-    public class MockProductCategory : IEntityRepo<ProductCategory>
-    {
+namespace BlackCoffeeshop.EF.Repository {
+    public class MockProductCategory : IEntityRepo<ProductCategory> {
         private readonly List<ProductCategory> _productcategories;
-        public MockProductCategory()
-        {
+        public MockProductCategory() {
             _productcategories = new List<ProductCategory>
 
             {
@@ -24,39 +21,56 @@ namespace BlackCoffeeshop.EF.Repository
                 }
             };
         }
-        public async Task Create(ProductCategory entity)
-        {
+
+        public Task Create(ProductCategory entity) {
+            throw new NotImplementedException();
+        }
+        public Task Delete(int id) {
+            throw new NotImplementedException();
+        }
+        public List<ProductCategory> GetAll() {
+            throw new NotImplementedException();
+        }
+        public ProductCategory? GetById(int id) {
+            throw new NotImplementedException();
+        }
+        public Task Update(int id, ProductCategory entity) {
+            throw new NotImplementedException();
+        }
+
+        //ASYNC
+        public Task CreateAsync(ProductCategory entity) {
             _productcategories.Add(entity);
+
+            return Task.CompletedTask;
         }
-
-        public async Task Delete(int id)
-        {
-            _productcategories.Remove(GetById(id));
-        }
-
-        public List<ProductCategory> GetAll()
-        {
-            return _productcategories;
-        }
-
-        public ProductCategory? GetById(int id)
-        {
-            return _productcategories.SingleOrDefault(product => product.ID == id);
-        }
-
-        public async Task Update(int id, ProductCategory entity)
-        {
-            var foundProductCategory = _productcategories.SingleOrDefault(product => product.ID == id);
-
-            if (foundProductCategory is null)
+        public Task DeleteAsync(int id) {
+            var foundProdCat = _productcategories.SingleOrDefault(prodCat => prodCat.ID == id);
+            if (foundProdCat is null)
                 throw new KeyNotFoundException($"Given id '{id}' was not found");
 
-            foundProductCategory.Code = entity.Code;
-            foundProductCategory.ProductType = entity.ProductType;
-            foundProductCategory.Description = entity.Description;
-            //foundProductCategory.ID = entity.ID;
+            _productcategories.Remove(foundProdCat);
+
+            return Task.CompletedTask;
         }
 
+        public Task<IEnumerable<ProductCategory>> GetAllAsync() {
+            return Task.FromResult(_productcategories.AsEnumerable());
+        }
+        public Task<ProductCategory?> GetByIdAsync(int id) {
+            return Task.FromResult(_productcategories.SingleOrDefault(product => product.ID == id));
+        }
+        public Task UpdateAsync(int id, ProductCategory entity) {
+            var foundProdCat = _productcategories.SingleOrDefault(todo => todo.ID == id);
+            if (foundProdCat is null)
+                throw new KeyNotFoundException($"Given id '{id}' was not found");
+
+            foundProdCat.Code = entity.Code;
+            foundProdCat.ProductType = entity.ProductType;
+            foundProdCat.Description = entity.Description;
+
+            return Task.CompletedTask;
+        }
 
     }
 }
