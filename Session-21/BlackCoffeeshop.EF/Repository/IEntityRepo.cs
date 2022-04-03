@@ -18,7 +18,7 @@ namespace BlackCoffeeshop.EF.Repository
 
 
         Task<IEnumerable<TEntity>> GetAllAsync();
-        Task<ProductCategory?> GetByIdAsync(int id);
+        Task<TEntity?> GetByIdAsync(int id);
         Task CreateAsync(TEntity entity);
         Task UpdateAsync(int id, TEntity entity);
         Task DeleteAsync(int id);

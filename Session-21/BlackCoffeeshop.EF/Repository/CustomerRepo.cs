@@ -62,5 +62,10 @@ namespace CoffeeShop.EF.Repositories {
         public Task UpdateAsync(int id, Customer entity) {
             throw new NotImplementedException();
         }
+
+        Task<Customer?> IEntityRepo<Customer>.GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

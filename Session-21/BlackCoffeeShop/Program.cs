@@ -21,6 +21,7 @@ if (!useMocks) {
 }
 else {
     builder.Services.AddSingleton<IEntityRepo<ProductCategory>, MockProductCategory>();
+    builder.Services.AddSingleton<IEntityRepo<Employee>, MockEmployeeRepo>();
     //builder.Services.AddSingleton<IEntityRepo<Customer>, MockCustomerRepo>();
 }
 

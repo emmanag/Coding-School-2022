@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlackCoffeeshop.Model\BlackCoffeeshop.Model.csproj" />
+    <ProjectReference Include="..\BlackCoffeeshop.Model\BlackCoffeeShop.Model.csproj" />
   </ItemGroup>
 
 </Project>
