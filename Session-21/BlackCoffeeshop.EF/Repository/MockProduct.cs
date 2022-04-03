@@ -81,5 +81,10 @@ namespace BlackCoffeeshop.EF.Repository
         public Task UpdateAsync(int id, Product entity) {
             throw new NotImplementedException();
         }
+
+        Task<Product?> IEntityRepo<Product>.GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

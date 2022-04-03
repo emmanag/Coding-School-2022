@@ -46,8 +46,8 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
         return _employees;
     }
 
-    public Task<IEnumerable<Employee>> GetAllAsync() {
-        throw new NotImplementedException();
+    public async Task<IEnumerable<Employee>> GetAllAsync() {
+        return _employees;
     }
 
     public Employee? GetById(int id)
@@ -55,7 +55,7 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
         return _employees.SingleOrDefault(Employee => Employee.ID == id);
     }
 
-    public Task<ProductCategory?> GetByIdAsync(int id) {
+    public Task<Employee?> GetByIdAsync(int id) {
         throw new NotImplementedException();
     }
 
@@ -76,4 +76,6 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
     public Task UpdateAsync(int id, Employee entity) {
         throw new NotImplementedException();
     }
+
+    
 }
