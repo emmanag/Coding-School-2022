@@ -104,10 +104,5 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
 
         }
-
-        Task<Transaction?> IEntityRepo<Transaction>.GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
