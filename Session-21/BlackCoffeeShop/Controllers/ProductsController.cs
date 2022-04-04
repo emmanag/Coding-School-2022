@@ -70,17 +70,21 @@ namespace BlackCoffeeShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        /*public string ProductCode { get; set; }
-        public string ProductDescription { get; set; }
-        public int ProductProductCategoryID { get; set; }
-        public decimal ProductPrice { get; set; }
-        public decimal ProductCost { get; set; }*/
         public async Task<IActionResult> Create([Bind("ProductCode,ProductDescription,ProductProductCategoryID,ProductPrice,ProductCost")] ProductsCreateModel productsCreateModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(productsCreateModel);
-                await _context.SaveChangesAsync();
+                await _productRepo.CreateAsync(new Product() {
+                    Code = productsCreateModel.ProductCode,
+                    Description = productsCreateModel.ProductDescription,
+                    Cost = productsCreateModel.ProductCost,
+                    Price = productsCreateModel.ProductPrice,
+                    ProductCategoryID = productsCreateModel.ProductProductCategoryID,
+                    ProductCategory = await _productCategoryRepo.GetByIdAsync(productsCreateModel.ProductProductCategoryID) 
+                });
+
+                /*_context.Add(productsCreateModel);
+                await _context.SaveChangesAsync();*/
                 return RedirectToAction(nameof(Index));
             }
             return View(productsCreateModel);
