@@ -1,9 +1,14 @@
 ﻿using BlackCoffeeshop.EF.Context;
 using BlackCoffeeshop.EF.Repository;
 using BlackCoffeeshop.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlackCoffeeshop.EF.Configuration {
     public class TransactionRepo : IEntityRepo<Transaction> {
+        private readonly ApplicationContext context;
+        public TransactionRepo(ApplicationContext dbCOntext) {
+            context = dbCOntext;
+        }
         public async Task Create(Model.Transaction entity) {
             using var context = new ApplicationContext();
             context.Transactions.Add(entity);
@@ -42,8 +47,8 @@ namespace BlackCoffeeshop.EF.Configuration {
             return context.Transactions.Where(trans => trans.ID == id).SingleOrDefault(); ;
         }
 
-        public Task<ProductCategory?> GetByIdAsync(int id) {
-            throw new NotImplementedException();
+        public async Task<Transaction?> GetByIdAsync(int id) {
+            return await context.Transactions.SingleOrDefaultAsync(trans => trans.ID == id);
         }
 
         public async Task Update(int id, Transaction entity) {
@@ -69,11 +74,6 @@ namespace BlackCoffeeshop.EF.Configuration {
         }
 
         public Task UpdateAsync(int id, Transaction entity) {
-            throw new NotImplementedException();
-        }
-
-        Task<Transaction?> IEntityRepo<Transaction>.GetByIdAsync(int id)
-        {
             throw new NotImplementedException();
         }
     }

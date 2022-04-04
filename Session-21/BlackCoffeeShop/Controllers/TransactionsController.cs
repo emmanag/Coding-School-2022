@@ -8,16 +8,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlackCoffeeshop.EF.Context;
 using BlackCoffeeshop.Model;
+using BlackCoffeeshop.EF.Repository;
+using BlackCoffeeShop.Web.Models;
 
 namespace BlackCoffeeShop.Web.Controllers
 {
     public class TransactionsController : Controller
     {
         private readonly ApplicationContext _context;
-
-        public TransactionsController(ApplicationContext context)
+        private readonly IEntityRepo<Transaction> _transactionRepo;
+        private readonly IEntityRepo<TransactionLine> _transactionLinesRepo;
+        public TransactionsController(IEntityRepo<Transaction> dbContextTrans, IEntityRepo<TransactionLine> dbContextLine)
         {
-            _context = context;
+            _transactionRepo = dbContextTrans;
+            _transactionLinesRepo = dbContextLine;
         }
 
         // GET: Transactions
@@ -34,17 +38,21 @@ namespace BlackCoffeeShop.Web.Controllers
             {
                 return NotFound();
             }
-
-            var transaction = await _context.Transactions
-                .Include(t => t.Customer)
-                .Include(t => t.Employee)
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var transaction = await _transactionRepo.GetByIdAsync(id.Value);
+            
             if (transaction == null)
             {
                 return NotFound();
             }
+            var transactionLines = await _transactionLinesRepo.GetAllAsync();
+            
+            var transactionLineEditModel = new TransactionLinesDetailsModel() {
+                Date=transaction.Date,
+                TransactionID = transaction.ID,
+                TransactionLines= transactionLines.Where(x=> x.TransactionID == transaction.ID)
+            };
 
-            return View(transaction);
+            return View(transactionLineEditModel);
         }
 
         // GET: Transactions/Create
