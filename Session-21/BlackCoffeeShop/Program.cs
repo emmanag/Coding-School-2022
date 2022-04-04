@@ -17,12 +17,7 @@ var useMocks = Boolean.Parse(builder.Configuration["UseMocks"]);
 if (!useMocks) {
     builder.Services.AddScoped<IEntityRepo<ProductCategory>, ProductCategoryRepo>();
     builder.Services.AddScoped<IEntityRepo<Customer>, CustomerRepo>();
-    builder.Services.AddSingleton<IEntityRepo<Employee>, EmployeeRepo>();
-    builder.Services.AddScoped<IEntityRepo<Employee>, EmployeeRepo>();
-
-
-    builder.Services.AddScoped<IEntityRepo<Employee>, EmployeeRepo>();
-    builder.Services.AddScoped<IEntityRepo<Transaction>, TransactionRepo>();
+    builder.Services.AddScoped<IEntityRepo<Employee>, EmployeeRepo>();    
     builder.Services.AddScoped<IEntityRepo<Product>, ProductRepo>();
     builder.Services.AddScoped<IEntityRepo<Transaction>, TransactionRepo>();
     builder.Services.AddScoped<IEntityRepo<TransactionLine>, TransactionLineRepo>();
