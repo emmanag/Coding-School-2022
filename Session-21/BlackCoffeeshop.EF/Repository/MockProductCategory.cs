@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlackCoffeeshop.EF.Repository {
     public class MockProductCategory : IEntityRepo<ProductCategory> {
+        private int _latestID = 1;
         private readonly List<ProductCategory> _productcategories;
         public MockProductCategory() {
             _productcategories = new List<ProductCategory>
@@ -40,6 +41,7 @@ namespace BlackCoffeeshop.EF.Repository {
 
         //ASYNC
         public Task CreateAsync(ProductCategory entity) {
+            entity.ID = ++_latestID;
             _productcategories.Add(entity);
 
             return Task.CompletedTask;

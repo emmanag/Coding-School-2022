@@ -67,7 +67,7 @@ namespace BlackCoffeeShop.Web.Controllers
                     Code = customerViewModel.Code,
                     Description = customerViewModel.Description
                 };
-                await _customerRepo.AddAsync(newCustomer);
+                await _customerRepo.CreateAsync(newCustomer);
                 return RedirectToAction(nameof(Index));
             }
             return View(customerViewModel);

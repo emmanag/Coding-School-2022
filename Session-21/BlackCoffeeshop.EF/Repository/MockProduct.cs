@@ -9,6 +9,7 @@ namespace BlackCoffeeshop.EF.Repository
 {
     public class MockProduct : IEntityRepo<Product>
     {
+        private int _latestID = 1;
         private readonly List<Product> _products;
         public MockProduct()
         {
@@ -31,40 +32,19 @@ namespace BlackCoffeeshop.EF.Repository
         {
             _products.Add(entity);
         }
-
-        public Task CreateAsync(Product entity) {
-            throw new NotImplementedException();
-        }
-
         public async Task Delete(int id)
         {
             _products.Remove(GetById(id));
         }
-
-        public Task DeleteAsync(int id) {
-            throw new NotImplementedException();
-        }
-
         public List<Product> GetAll()
         {
             return _products;
         }
-
-        public Task<IEnumerable<Product>> GetAllAsync() {
-            throw new NotImplementedException();
-        }
-
         public Product? GetById(int id)
         {
             return _products.SingleOrDefault(product => product.ID == id);
         }
-
-        public Task<ProductCategory?> GetByIdAsync(int id) {
-            throw new NotImplementedException();
-        }
-
-        public async Task Update(int id, Product entity)
-        {
+        public async Task Update(int id, Product entity) {
             var foundProduct = _products.SingleOrDefault(product => product.ID == id);
 
             if (foundProduct is null)
@@ -77,14 +57,42 @@ namespace BlackCoffeeshop.EF.Repository
             foundProduct.Description = entity.Description;
             //foundProduct.ID = entity.ID;
         }
+        //ASYNC
 
+        public Task CreateAsync(Product entity) {
+            entity.ID = ++_latestID;
+            _products.Add(entity);
+
+            return Task.CompletedTask;
+        }
+        public Task DeleteAsync(int id) {
+            var foundProd = _products.SingleOrDefault(prod => prod.ID == id);
+            if (foundProd is null)
+                throw new KeyNotFoundException($"Given id '{id}' was not found");
+
+            _products.Remove(foundProd);
+
+            return Task.CompletedTask;
+        }
+        public Task<IEnumerable<Product>> GetAllAsync() {
+            return Task.FromResult(_products.AsEnumerable());
+        }
+        Task<Product?> IEntityRepo<Product>.GetByIdAsync(int id) {
+            return Task.FromResult(_products.SingleOrDefault(product => product.ID == id));
+        }
         public Task UpdateAsync(int id, Product entity) {
-            throw new NotImplementedException();
+            var foundProd = _products.SingleOrDefault(todo => todo.ID == id);
+            if (foundProd is null)
+                throw new KeyNotFoundException($"Given id '{id}' was not found");
+            foundProd.ProductCategoryID = entity.ProductCategoryID;
+            foundProd.Code = entity.Code;
+            foundProd.Description = entity.Description;
+            foundProd.Price = entity.Price;
+            foundProd.Cost = entity.Cost;
+
+
+            return Task.CompletedTask;
         }
 
-        Task<Product?> IEntityRepo<Product>.GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

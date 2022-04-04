@@ -59,7 +59,7 @@ public class MockCustomerRepo : IEntityRepo<Customer>
     }
 
     //ASYNC
-    public  Task AddAsync(Customer entity)
+    public  Task CreateAsync(Customer entity)
     {
         _customers.Add(entity);
 

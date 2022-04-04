@@ -4,13 +4,13 @@ using BlackCoffeeshop.Model;
 
 namespace CoffeeShop.EF.Repositories {
     public class CustomerRepo : IEntityRepo<Customer> {
-        public async Task Create(Customer entity) {
+        public async Task CreateAsync(Customer entity) {
             using var context = new ApplicationContext();
             context.Customers.Add(entity);
             await context.SaveChangesAsync();
         }
 
-        public Task AddAsync(Customer entity) {
+        public Task Create(Customer entity) {
             throw new NotImplementedException();
         }
 
