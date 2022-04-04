@@ -1,8 +1,4 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -29,28 +25,8 @@ namespace BlackCoffeeShop.Web.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            //var applicationContext = _context.Products.Include(p => p.ProductCategory);
             var products = await _productRepo.GetAllAsync();
             return View(products);
-        }
-
-        // GET: Products/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Products
-                .Include(p => p.ProductCategory)
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
         }
 
         // GET: Products/Create
@@ -70,17 +46,19 @@ namespace BlackCoffeeShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        /*public string ProductCode { get; set; }
-        public string ProductDescription { get; set; }
-        public int ProductProductCategoryID { get; set; }
-        public decimal ProductPrice { get; set; }
-        public decimal ProductCost { get; set; }*/
         public async Task<IActionResult> Create([Bind("ProductCode,ProductDescription,ProductProductCategoryID,ProductPrice,ProductCost")] ProductsCreateModel productsCreateModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(productsCreateModel);
-                await _context.SaveChangesAsync();
+                await _productRepo.CreateAsync(new Product() {
+                    Code = productsCreateModel.ProductCode,
+                    Description = productsCreateModel.ProductDescription,
+                    Cost = productsCreateModel.ProductCost,
+                    Price = productsCreateModel.ProductPrice,
+                    ProductCategoryID = productsCreateModel.ProductProductCategoryID,
+                    ProductCategory = await _productCategoryRepo.GetByIdAsync(productsCreateModel.ProductProductCategoryID) 
+                });
+
                 return RedirectToAction(nameof(Index));
             }
             return View(productsCreateModel);
@@ -94,13 +72,26 @@ namespace BlackCoffeeShop.Web.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products.FindAsync(id);
+            var product = await _productRepo.GetByIdAsync(id.Value);
             if (product == null)
             {
                 return NotFound();
             }
-            ViewData["ProductCategoryID"] = new SelectList(_context.ProductCategories, "ID", "Code", product.ProductCategoryID);
-            return View(product);
+
+            var productCategories = await _productCategoryRepo.GetAllAsync();
+
+            var productEditModel = new ProductEditModel() {
+                ProductID = product.ID,
+                ProductCode = product.Code,
+                ProductCost = product.Cost,
+                ProductPrice = product.Price,
+                ProductProductCategoryID = product.ProductCategoryID,
+                ProductDescription = product.Description,
+                
+                ProductCategories = productCategories
+            };
+            
+            return View(productEditModel);
         }
 
         // POST: Products/Edit/5
@@ -108,9 +99,9 @@ namespace BlackCoffeeShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Code,Description,ProductCategoryID,Price,Cost,ID")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductCode,ProductDescription,ProductProductCategoryID,ProductPrice,ProductCost,ProductID")] ProductEditModel productsEditModel)
         {
-            if (id != product.ID)
+            if (id != productsEditModel.ProductID)
             {
                 return NotFound();
             }
@@ -119,12 +110,18 @@ namespace BlackCoffeeShop.Web.Controllers
             {
                 try
                 {
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
+                   await _productRepo.Update(id, new Product() {
+                        Code = productsEditModel.ProductCode,
+                        Cost = productsEditModel.ProductCost,
+                        Price = productsEditModel.ProductPrice,
+                        ProductCategoryID = productsEditModel.ProductProductCategoryID,
+                        Description = productsEditModel.ProductDescription,
+                    });
+
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductExists(product.ID))
+                    if (!ProductExists(productsEditModel.ProductID))
                     {
                         return NotFound();
                     }
@@ -135,8 +132,8 @@ namespace BlackCoffeeShop.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductCategoryID"] = new SelectList(_context.ProductCategories, "ID", "Code", product.ProductCategoryID);
-            return View(product);
+
+            return View(productsEditModel);
         }
 
         // GET: Products/Delete/5
@@ -147,15 +144,22 @@ namespace BlackCoffeeShop.Web.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products
-                .Include(p => p.ProductCategory)
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var product = await _productRepo.GetByIdAsync(id.Value);
+
             if (product == null)
             {
                 return NotFound();
             }
+            var productDeleteModel = new ProductDeleteModel() {
+                ProductID = product.ID,
+                ProductCode = product.Code,
+                ProductCost = product.Cost,
+                ProductPrice = product.Price,
+                ProductProductCategoryID = product.ProductCategoryID,
+                ProductDescription = product.Description
+            };
 
-            return View(product);
+            return View(productDeleteModel);
         }
 
         // POST: Products/Delete/5
@@ -163,9 +167,8 @@ namespace BlackCoffeeShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var product = await _context.Products.FindAsync(id);
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            await _productRepo.DeleteAsync(id);
+
             return RedirectToAction(nameof(Index));
         }
 

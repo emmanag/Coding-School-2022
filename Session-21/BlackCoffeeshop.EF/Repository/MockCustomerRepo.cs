@@ -59,7 +59,7 @@ public class MockCustomerRepo : IEntityRepo<Customer>
     }
 
     //ASYNC
-    public  Task CreateAsync(Customer entity)
+    public Task CreateAsync(Customer entity)
     {
         _customers.Add(entity);
 
@@ -103,7 +103,7 @@ public class MockCustomerRepo : IEntityRepo<Customer>
 
     public async Task<IEnumerable<Customer>> GetAllAsync()
     {
-        return _customers;
+        return  _customers;
     }
 
 

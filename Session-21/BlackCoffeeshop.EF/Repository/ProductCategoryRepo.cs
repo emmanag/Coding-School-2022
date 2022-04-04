@@ -10,6 +10,7 @@ namespace BlackCoffeeshop.EF.Configuration {
             context = dbCOntext;
         }
 
+        #region SYNC
         public async Task Create(ProductCategory entity) {
             if (entity.ID != 0)
                 throw new ArgumentException("Given entity should not have Id set", nameof(entity));
@@ -47,8 +48,9 @@ namespace BlackCoffeeshop.EF.Configuration {
 
             await context.SaveChangesAsync();
         }
+        #endregion
 
-        //ASYNC
+        #region ASYNC
         public async Task CreateAsync(ProductCategory entity) {
             if (entity.ID != 0)
                 throw new ArgumentException("Given entity should not have Id set", nameof(entity));
@@ -88,5 +90,6 @@ namespace BlackCoffeeshop.EF.Configuration {
 
             await context.SaveChangesAsync();
         }
+        #endregion
     }
 }
