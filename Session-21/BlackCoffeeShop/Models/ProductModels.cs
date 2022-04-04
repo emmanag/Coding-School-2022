@@ -25,4 +25,14 @@ namespace BlackCoffeeShop.Web.Models {
         public decimal ProductCost { get; set; }
         public IEnumerable<ProductCategory>? ProductCategories { get; set; }
     }
+
+    public class ProductEditModel {
+        public int ProductID { get; set; }
+        public string ProductCode { get; set; }
+        public string ProductDescription { get; set; }
+        public int ProductProductCategoryID { get; set; }
+        public decimal ProductPrice { get; set; }
+        public decimal ProductCost { get; set; }
+        public IEnumerable<ProductCategory>? ProductCategories { get; set; }
+    }
 }

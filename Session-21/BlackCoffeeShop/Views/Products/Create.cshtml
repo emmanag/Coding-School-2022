@@ -23,9 +23,9 @@
                 <input asp-for="ProductDescription" class="form-control" />
                 <span asp-validation-for="ProductDescription" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin : 20px">
-                <label asp-for="ProductProductCategoryID" class="control-label"></label>
-                <select class="form-control" @Html.DropDownListFor(x=>x.ProductProductCategoryID, new SelectList(Model.ProductCategories, "ID", "Description"), "Product Category Desc")></select>
+            <div class="form-group">
+                <label asp-for="ProductProductCategoryID" class="control-label">Product Categories</label>
+                <select class="form-control" @Html.DropDownListFor(x=>x.ProductProductCategoryID, new SelectList(Model.ProductCategories, "ID", "Description"), "Product Category") </select>
                 <span asp-validation-for="ProductProductCategoryID" class="text-danger"></span>
             </div>
 
