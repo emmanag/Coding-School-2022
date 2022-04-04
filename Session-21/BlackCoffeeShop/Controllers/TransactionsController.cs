@@ -15,6 +15,8 @@ namespace BlackCoffeeShop.Web.Controllers
 {
     public class TransactionsController : Controller
     {
+        private readonly IEntityRepo<Transaction> _transactionRepo;
+        private readonly IEntityRepo<TransactionLine> _transactionLinesRepo;
         private readonly ApplicationContext _context;
         private readonly IEntityRepo<Transaction> _transactionRepo;
         private readonly IEntityRepo<TransactionLine> _transactionLinesRepo;
@@ -23,12 +25,15 @@ namespace BlackCoffeeShop.Web.Controllers
             _transactionRepo = dbContextTrans;
             _transactionLinesRepo = dbContextLine;
         }
-
+        //public TransactionsController(ApplicationContext dbContext)
+        //{
+        //    _context = dbContext;
+        //}
         // GET: Transactions
         public async Task<IActionResult> Index()
         {
-            var applicationContext = _context.Transactions.Include(t => t.Customer).Include(t => t.Employee);
-            return View(await applicationContext.ToListAsync());
+            var transactions = await _transactionRepo.GetAllAsync();
+            return View();
         }
 
         // GET: Transactions/Details/5
