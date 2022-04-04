@@ -8,23 +8,31 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BlackCoffeeshop.EF.Context;
 using BlackCoffeeshop.Model;
+using BlackCoffeeshop.EF.Repository;
 
 namespace BlackCoffeeShop.Web.Controllers
 {
     public class TransactionsController : Controller
     {
+        private readonly IEntityRepo<Transaction> _transactionRepo;
+        private readonly IEntityRepo<TransactionLine> _transactionLinesRepo;
         private readonly ApplicationContext _context;
 
-        public TransactionsController(ApplicationContext context)
+        public TransactionsController(IEntityRepo<Transaction> transactionRepo, IEntityRepo<TransactionLine> transactionLinesRepo)
         {
-            _context = context;
-        }
+            _transactionRepo = transactionRepo;
+            _transactionLinesRepo = transactionLinesRepo;
 
+        }
+        //public TransactionsController(ApplicationContext dbContext)
+        //{
+        //    _context = dbContext;
+        //}
         // GET: Transactions
         public async Task<IActionResult> Index()
         {
-            var applicationContext = _context.Transactions.Include(t => t.Customer).Include(t => t.Employee);
-            return View(await applicationContext.ToListAsync());
+            var transactions = await _transactionRepo.GetAllAsync();
+            return View();
         }
 
         // GET: Transactions/Details/5
