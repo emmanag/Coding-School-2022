@@ -29,7 +29,8 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
     }
 
     public Task CreateAsync(Employee entity) {
-        throw new NotImplementedException();
+        _employees.Add(entity);
+        return Task.CompletedTask;
     }
 
     public async Task Delete(int id)
@@ -38,7 +39,15 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
     }
 
     public Task DeleteAsync(int id) {
-        throw new NotImplementedException();
+
+        var foundEmployee = _employees.SingleOrDefault(Employee => Employee.ID == id);
+        if (foundEmployee is null)
+            throw new KeyNotFoundException($"Given id '{id}' was not found");
+
+        _employees.Remove(foundEmployee);
+
+
+        return Task.CompletedTask;
     }
 
     public List<Employee> GetAll()
@@ -50,13 +59,13 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
         return _employees;
     }
 
-    public Employee? GetById(int id)
+    public Employee GetById(int id)
     {
-        return _employees.SingleOrDefault(Employee => Employee.ID == id);
+        return _employees.SingleOrDefault(employee => employee.ID == id);
     }
 
     public Task<Employee?> GetByIdAsync(int id) {
-        throw new NotImplementedException();
+        return Task.FromResult(_employees.SingleOrDefault(employee => employee.ID == id));
     }
 
     public async Task Update(int id, Employee entity)
@@ -74,7 +83,17 @@ public class MockEmployeeRepo : IEntityRepo<Employee>
     }
 
     public Task UpdateAsync(int id, Employee entity) {
-        throw new NotImplementedException();
+        var foundEmployee = _employees.SingleOrDefault(Employee => Employee.ID == id);
+
+        if (foundEmployee is null)
+            throw new KeyNotFoundException($"Given id '{id}' was not found");
+
+        foundEmployee.Name = entity.Name;
+        foundEmployee.Surname = entity.Surname;
+        foundEmployee.SalaryPerMonth = entity.SalaryPerMonth;
+        foundEmployee.EmployeeType = entity.EmployeeType;
+
+        return Task.CompletedTask;
     }
 
     

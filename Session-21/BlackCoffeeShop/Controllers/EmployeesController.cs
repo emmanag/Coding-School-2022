@@ -136,7 +136,7 @@ namespace BlackCoffeeShop.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Surname,Name,SalaryPerMonth,ID")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("Surname,Name,SalaryPerMonth,ID")] EmployeeEditModel employee)
         {
             if (id != employee.ID)
             {
@@ -147,7 +147,16 @@ namespace BlackCoffeeShop.Web.Controllers
             {
                 try
                 {
-                    await _employeeRepo.UpdateAsync(id, employee);
+                    await _employeeRepo.UpdateAsync(id, new Employee()
+                    {
+                        EmployeeType = employee.EmployeeType,
+                        ID = employee.ID,
+                        Name= employee.Name,
+                        Surname = employee.Surname,
+                        SalaryPerMonth = employee.SalaryPerMonth
+                        
+
+                    });
                     /*_context.Update(employee);
                     await _context.SaveChangesAsync();*/
                 }
@@ -208,7 +217,7 @@ namespace BlackCoffeeShop.Web.Controllers
 
         private bool EmployeeExists(int id)
         {
-            return _employeeRepo.GetAll().Any(e => e.ID == id);
+            return _employeeRepo.GetAll().Any(employee => employee.ID == id);
         }
     }
 }
