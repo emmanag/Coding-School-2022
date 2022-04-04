@@ -9,7 +9,7 @@ namespace BlackCoffeeshop.Model {
         public EmployeeType EmployeeType { get; set; }
 
         public decimal SalaryPerMonth { get; set; }
-        public Transaction Transaction { get; set; }
+        public Transaction? Transaction { get; set; }
 
         public Employee() {
         }
