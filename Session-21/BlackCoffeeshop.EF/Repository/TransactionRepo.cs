@@ -1,21 +1,30 @@
 ﻿using BlackCoffeeshop.EF.Context;
 using BlackCoffeeshop.EF.Repository;
 using BlackCoffeeshop.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlackCoffeeshop.EF.Configuration {
     public class TransactionRepo : IEntityRepo<Transaction> {
+        private readonly ApplicationContext context;
+        public TransactionRepo(ApplicationContext dbCOntext) {
+            context = dbCOntext;
+        }
         public async Task Create(Model.Transaction entity) {
-            using var context = new ApplicationContext();
+
             context.Transactions.Add(entity);
             await context.SaveChangesAsync();
         }
 
-        public Task CreateAsync(Transaction entity) {
-            throw new NotImplementedException();
+        public async Task CreateAsync(Transaction entity) {
+            if (entity.ID != 0)
+                throw new ArgumentException("Given entity should not have Id set", nameof(entity));
+
+            context.Transactions.Add(entity);
+
+            await context.SaveChangesAsync();
         }
 
         public async Task Delete(int id) {
-            using var context = new ApplicationContext();
             var foundTrans = context.Transactions.SingleOrDefault(trans => trans.ID == id);
             if (foundTrans is null)
                 return;
@@ -24,30 +33,36 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(int id) {
-            throw new NotImplementedException();
+        public async Task DeleteAsync(int id) {
+            var dbtrans = context.Transactions.SingleOrDefault(t => t.ID == id);
+            if (dbtrans is null)
+                throw new KeyNotFoundException($"Given id '{id}' was not found in database");
+
+            context.Transactions.Remove(dbtrans);
+
+            await context.SaveChangesAsync();
         }
 
         public List<Model.Transaction> GetAll() {
-            using var context = new ApplicationContext();
+
             return context.Transactions.ToList();
         }
 
-        public Task<IEnumerable<Transaction>> GetAllAsync() {
-            throw new NotImplementedException();
+        public async Task<IEnumerable<Transaction>> GetAllAsync() {
+            return await context.Transactions.ToListAsync();
         }
 
         public Model.Transaction? GetById(int id) {
-            using var context = new ApplicationContext();
+
             return context.Transactions.Where(trans => trans.ID == id).SingleOrDefault(); ;
         }
 
-        public Task<ProductCategory?> GetByIdAsync(int id) {
-            throw new NotImplementedException();
+        public async Task<Transaction?> GetByIdAsync(int id) {
+            return await context.Transactions.SingleOrDefaultAsync(trans => trans.ID == id);
         }
 
         public async Task Update(int id, Transaction entity) {
-            using var context = new ApplicationContext();
+          
             var foundTrans = context.Transactions.SingleOrDefault(trans => trans.ID == id);
             if (foundTrans is null)
                 return;
@@ -68,13 +83,26 @@ namespace BlackCoffeeshop.EF.Configuration {
             await context.SaveChangesAsync();
         }
 
-        public Task UpdateAsync(int id, Transaction entity) {
-            throw new NotImplementedException();
-        }
+        public async Task UpdateAsync(int id, Transaction entity) {
+            var foundTrans = context.Transactions.SingleOrDefault(trans => trans.ID == id);
+            if (foundTrans is null)
+                throw new KeyNotFoundException($"Given id '{id}' was not found in database");
 
-        Task<Transaction?> IEntityRepo<Transaction>.GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
+
+            foundTrans.Date = entity.Date;
+            foundTrans.EmployeeID = entity.EmployeeID;
+            foundTrans.CustomerID = entity.CustomerID;
+            foundTrans.TransactionLines = entity.TransactionLines;
+            foundTrans.PaymentMethod = entity.PaymentMethod;
+            foundTrans.TotalPrice = entity.TotalPrice;
+            foundTrans.TotalCost = entity.TotalCost;
+            foundTrans.EmployeeName = entity.EmployeeName;
+            foundTrans.Customer = entity.Customer;
+            foundTrans.Employee = entity.Employee;
+
+
+            await context.SaveChangesAsync();
+
         }
     }
 }
