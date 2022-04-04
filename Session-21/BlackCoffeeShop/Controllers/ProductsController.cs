@@ -144,15 +144,22 @@ namespace BlackCoffeeShop.Web.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Products
-                .Include(p => p.ProductCategory)
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var product = await _productRepo.GetByIdAsync(id.Value);
+
             if (product == null)
             {
                 return NotFound();
             }
+            var productDeleteModel = new ProductDeleteModel() {
+                ProductID = product.ID,
+                ProductCode = product.Code,
+                ProductCost = product.Cost,
+                ProductPrice = product.Price,
+                ProductProductCategoryID = product.ProductCategoryID,
+                ProductDescription = product.Description
+            };
 
-            return View(product);
+            return View(productDeleteModel);
         }
 
         // POST: Products/Delete/5
@@ -160,9 +167,8 @@ namespace BlackCoffeeShop.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var product = await _context.Products.FindAsync(id);
-            _context.Products.Remove(product);
-            await _context.SaveChangesAsync();
+            await _productRepo.DeleteAsync(id);
+
             return RedirectToAction(nameof(Index));
         }
 
