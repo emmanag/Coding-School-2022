@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gas_Station.Shared.ViewModels
 {
-    public class ItemViewModel
+    public class ItemListViewModel
     {
         public Guid ID { get; set; }
         public string Code { get; set; }

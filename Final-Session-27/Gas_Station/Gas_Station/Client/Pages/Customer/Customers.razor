@@ -60,7 +60,8 @@ else
             {
                 ID = customerViewModel.ID,
                 Name = customerViewModel.Name,
-                Surname = customerViewModel.Surname
+                Surname = customerViewModel.Surname,
+                CardNumber = customerViewModel.CardNumber
             };
         navigationManager.NavigateTo($"/customerlist/edit/{customerEditViewModel.ID}");
     }

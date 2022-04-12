@@ -1,0 +1,123 @@
+﻿@using Gas_Station.Model
+@using Gas_Station.Shared.ViewModels
+@page "/employeelist/edit/{id:guid?}"
+@inject HttpClient httpClient
+@inject NavigationManager navManager
+
+<h3>Edit</h3>
+
+<div class="row">
+    <div class="col-md-4">
+       
+            
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input class="form-control" @bind="@EmployeeItem.Name" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">Surname</label>
+                <input class="form-control" @bind="@EmployeeItem.Surname" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">HireDateStart</label>
+                
+                <input type="date" class="form-control" @bind="@EmployeeItem.HireDateStart" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">HireDateEnd</label>
+                <input type="date" class="form-control" @bind="@EmployeeItem.HireDateEnd" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">SallaryPerMonth</label>
+                <input type="number" class="form-control" @bind="@EmployeeItem.SallaryPerMonth" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">EmployeeType</label>
+                <select class="form-select" @bind="@EmployeeItem.EmployeeType">
+                @foreach (var type in Enum.GetValues(typeof(Model.EmployeeType)))
+                {
+                    <option value="@type">@type</option>
+                }
+            </select>
+               
+            </div>
+            <button class="btn btn-success" @onclick="OnSave">save </button>        
+           
+
+           
+        
+    </div>
+</div>
+
+@code {
+    [Parameter] public Guid? Id { get; set; }
+    EmployeeEditViewModel EmployeeItem { get; set; } = new();
+    private string EmployeeName { get; set; }
+    private string EmployeeSurname { get; set; }
+    private DateTime EmployeeHireDateStart { get; set; } = DateTime.Now;
+    private DateTime EmployeeHireDateEnd { get; set; } = DateTime.Now;
+    private decimal EmployeeSallaryPerMonth { get; set; }
+    private EmployeeType EmployeeEmployeeType { get; set; }
+    private bool ShowingErrorMessages = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id == null)
+        {
+            Id = Guid.Empty;
+        }
+
+        EmployeeItem = await httpClient.GetFromJsonAsync<EmployeeEditViewModel>($"employee/{Id}");
+
+        if (Id != null)
+        {
+            EmployeeName = EmployeeItem.Name;
+            EmployeeSurname = EmployeeItem.Surname;
+            EmployeeHireDateStart = EmployeeItem.HireDateStart;
+            EmployeeHireDateEnd = EmployeeItem.HireDateEnd;
+            EmployeeSallaryPerMonth = EmployeeItem.SallaryPerMonth;
+            EmployeeEmployeeType = EmployeeItem.EmployeeType;
+            //EmployeeEmployeeType = Model.EmployeeType.Manager;
+        }
+
+    }
+
+    protected async Task OnSave()
+    {
+        //if (string.IsNullOrEmpty(EmployeeItem.Name) ||
+        //    string.IsNullOrEmpty(EmployeeItem.Surname) ||
+        //    string.IsNullOrEmpty(EmployeeItem.CardNumber))
+            
+             
+        //{
+        //    ShowingErrorMessages = true;
+        //    return;
+        //}
+        //ShowingErrorMessages = false;
+
+
+        HttpResponseMessage response;
+       
+        if (Id == Guid.Empty)
+        {
+            
+            response = await httpClient.PostAsJsonAsync("employee", EmployeeItem);
+        }
+        else
+        {
+            response = await httpClient.PutAsJsonAsync("employee", EmployeeItem);
+        }
+        response.EnsureSuccessStatusCode();
+        navManager.NavigateTo("employeelist");
+    }
+
+    protected void OnCancel()
+    {
+        navManager.NavigateTo("employeelist");
+    }
+}

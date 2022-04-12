@@ -19,7 +19,7 @@ namespace Gas_Station.EF.Repositories
 
         public async Task CreateAsync(Employee entity)
         {
-            if (entity.ID != Guid.Empty)
+            if (entity.ID == Guid.Empty)
                 throw new ArgumentException("Given entity should not have Id set", nameof(entity));
 
             context.Employees.Add(entity);
@@ -96,6 +96,8 @@ namespace Gas_Station.EF.Repositories
             foundEmployee.HireDateEnd = entity.HireDateEnd;
             foundEmployee.SallaryPerMonth = entity.SallaryPerMonth;
             foundEmployee.EmployeeType = entity.EmployeeType;
+
+            await context.SaveChangesAsync();
         }
     }
 }

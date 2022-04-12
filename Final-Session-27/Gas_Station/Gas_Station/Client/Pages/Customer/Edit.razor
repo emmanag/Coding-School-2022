@@ -12,17 +12,17 @@
             <div class="form-group">
                 <label class="control-label">Name</label>
                 <input class="form-control" @bind="@CustomerItem.Name" />
-                <span asp-validation-for="Code" class="text-danger"></span>
+               
             </div>
             <div class="form-group">
                 <label class="control-label">Surname</label>
                 <input class="form-control" @bind="@CustomerItem.Surname" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                
             </div>
             <div class="form-group">
                 <label class="control-label">CardNumber</label>
                 <input class="form-control" @bind="@CustomerItem.CardNumber" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                
             </div>
             <button class="btn btn-success" @onclick="OnSave">save </button>        
            

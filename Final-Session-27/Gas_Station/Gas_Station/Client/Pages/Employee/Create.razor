@@ -1,0 +1,101 @@
+﻿@using Gas_Station.Model
+@using Gas_Station.Shared.ViewModels
+@page "/employees/create/{id:guid}"
+@inject HttpClient httpClient
+@inject NavigationManager navManager
+
+<h3>Create</h3>
+<div class="row">
+    <div class="col-md-4">
+       
+            
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input class="form-control" @bind="@EmployeeName" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Surname</label>
+                <input class="form-control" @bind="@EmployeeSurname" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">HireDateStart</label>
+                <input class="form-control" @bind="@EmployeeHireDateStart" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <button class="btn btn-success" @onclick="OnSave">save </button>        
+           
+
+           
+        
+    </div>
+</div>
+
+@code {
+    [Parameter] public Guid? Id { get; set; }
+    EmployeeEditViewModel EmployeeItem { get; set; }
+    private string EmployeeName { get; set; }
+    private string EmployeeSurname { get; set; }
+    private DateTime EmployeeHireDateStart { get; set; }
+    private DateTime EmployeeHireDateEnd { get; set; }
+    private string SallaryPerMonth { get; set; }
+    private EmployeeType EmployeeType { get; set; }
+    private bool ShowingErrorMessages = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        EmployeeItem = await httpClient.GetFromJsonAsync<EmployeeEditViewModel>($"employee/{(Id == null ? Guid.Empty : Id)}");
+
+
+        //var newEmployee = new EmployeeEditViewModel()
+        //{
+        //    newEmployee.Name = EmployeeName;
+        //    newEmployee.Surname = EmployeeSurname;
+        //    newEmployee.HireDateStart = EmployeeHireDateStart;
+        //}
+
+        //if (Id != null)
+        //{
+        //    EmployeeName = EmployeeItem.Name;
+        //    EmployeeSurname = EmployeeItem.Surname;
+        //    EmployeeHireDateStart = EmployeeItem.HireDateStart;
+        //}
+
+    }
+
+    protected async Task OnSave()
+    {
+        if (string.IsNullOrEmpty(EmployeeItem.Name) ||
+            string.IsNullOrEmpty(EmployeeItem.Surname) ||
+            EmployeeItem.HireDateStart > EmployeeItem.HireDateEnd ||            
+            EmployeeItem.SallaryPerMonth < 0)
+            
+            
+             
+        {
+            ShowingErrorMessages = true;
+            return;
+        }
+        ShowingErrorMessages = false;
+
+
+        HttpResponseMessage response;
+       
+        if (Id == Guid.Empty)
+        {
+            response = await httpClient.PostAsJsonAsync("employee", EmployeeItem);
+        }
+        else
+        {
+            response = await httpClient.PutAsJsonAsync("employee", EmployeeItem);
+        }
+        response.EnsureSuccessStatusCode();
+        navManager.NavigateTo("employeelist");
+    }
+
+    protected void OnCancel()
+    {
+        navManager.NavigateTo("employeelist");
+    }
+}
