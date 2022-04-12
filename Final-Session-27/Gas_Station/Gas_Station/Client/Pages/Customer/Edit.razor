@@ -1,0 +1,94 @@
+﻿@using Gas_Station.Shared.ViewModels
+@page "/customerlist/edit/{id:guid?}"
+@inject HttpClient httpClient
+@inject NavigationManager navManager
+
+<h3>Edit</h3>
+
+<div class="row">
+    <div class="col-md-4">
+       
+            
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input class="form-control" @bind="@CustomerItem.Name" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Surname</label>
+                <input class="form-control" @bind="@CustomerItem.Surname" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">CardNumber</label>
+                <input class="form-control" @bind="@CustomerItem.CardNumber" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <button class="btn btn-success" @onclick="OnSave">save </button>        
+           
+
+           
+        
+    </div>
+</div>
+
+@code {
+    [Parameter] public Guid? Id { get; set; }
+    CustomerEditViewModel CustomerItem { get; set; } = new();
+    private string CustomerName { get; set; }
+    private string CustomerSurname { get; set; }
+    private string CustomerCardNumber { get; set; }
+    private bool ShowingErrorMessages = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id == null)
+        {
+            Id = Guid.Empty;
+        }
+
+        CustomerItem = await httpClient.GetFromJsonAsync<CustomerEditViewModel>($"customer/{Id}");
+
+        if (Id != null)
+        {
+            CustomerName = CustomerItem.Name;
+            CustomerSurname = CustomerItem.Surname;
+            CustomerCardNumber = CustomerItem.CardNumber;
+        }
+
+    }
+
+    protected async Task OnSave()
+    {
+        //if (string.IsNullOrEmpty(CustomerItem.Name) ||
+        //    string.IsNullOrEmpty(CustomerItem.Surname) ||
+        //    string.IsNullOrEmpty(CustomerItem.CardNumber))
+            
+             
+        //{
+        //    ShowingErrorMessages = true;
+        //    return;
+        //}
+        //ShowingErrorMessages = false;
+
+
+        HttpResponseMessage response;
+       
+        if (Id == Guid.Empty)
+        {
+            
+            response = await httpClient.PostAsJsonAsync("customer", CustomerItem);
+        }
+        else
+        {
+            response = await httpClient.PutAsJsonAsync("customer", CustomerItem);
+        }
+        response.EnsureSuccessStatusCode();
+        navManager.NavigateTo("customerlist");
+    }
+
+    protected void OnCancel()
+    {
+        navManager.NavigateTo("customerlist");
+    }
+}

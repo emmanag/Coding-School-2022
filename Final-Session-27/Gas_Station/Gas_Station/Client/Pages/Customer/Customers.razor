@@ -1,0 +1,79 @@
+﻿@page "/customerlist"
+@using Gas_Station.Shared
+@using System.Net.Http.Json
+@using Gas_Station.Shared.ViewModels
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3>Customer List</h3>
+
+<button class="btn btn-primary" @onclick="AddNewCustomer">New Customer</button>
+
+@if (isLoading)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customerViewModel in _customerList)
+            {
+                <tr>
+                    <td>@customerViewModel.Name</td>
+                    <td>@customerViewModel.Surname</td>
+                    <td>@customerViewModel.CardNumber</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => EditCustomer(customerViewModel)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteCustomer(customerViewModel)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private List<CustomerListViewModel> _customerList = new();
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadItemsFromServer();
+        isLoading = false;
+    }
+
+    protected async Task AddNewCustomer()
+    {
+        navigationManager.NavigateTo("/customerlist/edit");
+    }
+
+    protected async Task EditCustomer(CustomerListViewModel customerViewModel)
+    {
+        var customerEditViewModel = new CustomerEditViewModel
+            {
+                ID = customerViewModel.ID,
+                Name = customerViewModel.Name,
+                Surname = customerViewModel.Surname
+            };
+        navigationManager.NavigateTo($"/customerlist/edit/{customerEditViewModel.ID}");
+    }
+
+    protected async Task DeleteCustomer(CustomerListViewModel customerViewModel)
+    {
+        var response = await httpClient.DeleteAsync($"customer/{customerViewModel.ID}");
+        response.EnsureSuccessStatusCode();
+        await LoadItemsFromServer();
+    }
+
+    private async Task LoadItemsFromServer()
+    {
+        _customerList = await httpClient.GetFromJsonAsync<List<CustomerListViewModel>>("Customer");
+    }
+}
