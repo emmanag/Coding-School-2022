@@ -1,6 +1,6 @@
 ﻿@using Gas_Station.Model
 @using Gas_Station.Shared.ViewModels
-@page "/employees/create/{id:guid}"
+@page "/employeelist/create/"
 @inject HttpClient httpClient
 @inject NavigationManager navManager
 
@@ -48,19 +48,7 @@
         EmployeeItem = await httpClient.GetFromJsonAsync<EmployeeEditViewModel>($"employee/{(Id == null ? Guid.Empty : Id)}");
 
 
-        //var newEmployee = new EmployeeEditViewModel()
-        //{
-        //    newEmployee.Name = EmployeeName;
-        //    newEmployee.Surname = EmployeeSurname;
-        //    newEmployee.HireDateStart = EmployeeHireDateStart;
-        //}
-
-        //if (Id != null)
-        //{
-        //    EmployeeName = EmployeeItem.Name;
-        //    EmployeeSurname = EmployeeItem.Surname;
-        //    EmployeeHireDateStart = EmployeeItem.HireDateStart;
-        //}
+        
 
     }
 

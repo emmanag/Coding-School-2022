@@ -1,5 +1,89 @@
-﻿<h3>Items</h3>
+﻿@page "/itemlist"
+@using Gas_Station.Shared
+@using System.Net.Http.Json
+@using Gas_Station.Shared.ViewModels
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
 
+<h3>Items</h3>
+
+<button class="btn btn-primary" @onclick="AddNewItem">New Item</button>
+
+@if (isLoading)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+                <th>ItemType</th>
+                <th>Price</th>
+                <th>Cost</th>
+                              
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var itemViewModel in _itemList)
+            {
+                <tr>
+                    <td>@itemViewModel.Code</td>
+                    <td>@itemViewModel.Description</td>
+                    <td>@itemViewModel.ItemType</td>
+                    <td>@itemViewModel.Price</td>
+                    <td>@itemViewModel.Cost</td>
+                    
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => EditItem(itemViewModel)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteItem(itemViewModel)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 @code {
+    private List<ItemListViewModel> _itemList = new();
+    private bool isLoading = true;
 
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadItemsFromServer();
+        isLoading = false;
+    }
+
+    protected async Task AddNewItem()
+    {
+        navigationManager.NavigateTo("/itemlist/edit");
+    }
+
+    protected async Task EditItem(ItemListViewModel itemViewModel)
+    {
+        var itemEditViewModel = new ItemEditViewModel
+            {
+                ID = itemViewModel.ID,
+                Code = itemViewModel.Code,
+                Description = itemViewModel.Description,
+                Price = itemViewModel.Price,
+                Cost = itemViewModel.Cost,                
+                ItemType = itemViewModel.ItemType
+            };
+        navigationManager.NavigateTo($"/itemlist/edit/{itemEditViewModel.ID}");
+    }
+
+    protected async Task DeleteItem(ItemListViewModel itemViewModel)
+    {
+        var response = await httpClient.DeleteAsync($"item/{itemViewModel.ID}");
+        response.EnsureSuccessStatusCode();
+        await LoadItemsFromServer();
+    }
+
+    private async Task LoadItemsFromServer()
+    {
+        _itemList = await httpClient.GetFromJsonAsync<List<ItemListViewModel>>("Item");
+    }
 }

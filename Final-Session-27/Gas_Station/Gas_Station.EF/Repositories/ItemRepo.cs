@@ -13,7 +13,7 @@ namespace Gas_Station.EF.Repositories
         }
         public async Task CreateAsync(Item entity)
         {
-            if (entity.ID != Guid.Empty)
+            if (entity.ID == Guid.Empty)
                 throw new ArgumentException("Given entity should not have Id set", nameof(entity));
 
             context.Items.Add(entity);

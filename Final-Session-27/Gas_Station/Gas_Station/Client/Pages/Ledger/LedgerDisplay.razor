@@ -1,0 +1,68 @@
+﻿@page "/ledgerlist"
+@using Gas_Station.Shared
+@using System.Net.Http.Json
+@using Gas_Station.Shared.ViewModels
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<PageTitle>Ledger</PageTitle>
+
+<h3>LedgerDisplay</h3>
+
+<div class="row justify-content-start">
+    <div class="col-md-4">
+        <input type="date" class="form-control" @bind="LedgerDate" />
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-primary" @onclick="GetLedger">GetLedger</button>
+    </div>
+
+</div>
+
+    <div class="table-responsive-md">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Income</th>
+                    <th>Expenses</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@ledger.Year</td>
+                    <td>@ledger.Month</td>
+                    <td>@ledger.Income</td>
+                    <td>@ledger.Expenses</td>
+                    <td>@ledger.Total</td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+
+    <div class="col-md-4">
+        <label class="form-label">Set Rent</label>
+        <input class="form-control" type="number" min="0" step="10" placeholder="5000" @bind="@Rent"/>
+    </div>
+
+
+
+@code {
+    private LedgerViewModel ledger = new();
+    private DateTime LedgerDate { get; set; } = DateTime.Now;
+    
+    private decimal Rent;
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    ledger = await httpClient.GetFromJsonAsync<LedgerViewModel>($"ledger/{LedgerDate.Year}/{LedgerDate.Month}");
+    //    isLoading = false;
+    //}
+
+    protected async Task GetLedger()
+    {
+        ledger = await httpClient.GetFromJsonAsync<LedgerViewModel>($"ledger/{LedgerDate.Year}/{LedgerDate.Month}/{Rent}");
+    }
+}

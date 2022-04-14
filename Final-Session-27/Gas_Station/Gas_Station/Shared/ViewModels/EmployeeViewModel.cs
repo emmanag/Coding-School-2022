@@ -13,9 +13,9 @@ namespace Gas_Station.Shared.ViewModels
             public Guid ID { get; set; }
             public string Name { get; set; }
             public string Surname { get; set; }
-            public DateTime HireDateStart { get; set; }
-            public DateTime HireDateEnd { get; set; }
-            public decimal SallaryPerMonth { get; set; }
+            public DateTime HireDateStart { get; set; } = DateTime.Now;
+            public DateTime HireDateEnd { get; set; } = DateTime.Now;
+        public decimal SallaryPerMonth { get; set; }
             public EmployeeType EmployeeType { get; set; }
 
 
@@ -27,8 +27,8 @@ namespace Gas_Station.Shared.ViewModels
         public Guid ID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public DateTime HireDateStart { get; set; }
-        public DateTime HireDateEnd { get; set; }
+        public DateTime HireDateStart { get; set; } = DateTime.Now;
+        public DateTime HireDateEnd { get; set; } = DateTime.Now;
         public decimal SallaryPerMonth { get; set; }
         public EmployeeType EmployeeType { get; set; }
 

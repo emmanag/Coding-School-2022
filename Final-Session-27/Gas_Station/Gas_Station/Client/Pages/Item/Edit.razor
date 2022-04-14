@@ -1,5 +1,116 @@
-﻿<h3>Edit</h3>
+﻿@using Gas_Station.Model
+@using Gas_Station.Shared.ViewModels
+@page "/itemlist/edit/{id:guid?}"
+@inject HttpClient httpClient
+@inject NavigationManager navManager
+
+
+<h3>Edit</h3>
+
+<div class="row">
+    <div class="col-md-4">
+       
+            
+            <div class="form-group">
+                <label class="control-label">Code</label>
+                <input class="form-control" @bind="@ItemCode" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Description</label>
+                <input class="form-control" @bind="@ItemDescription" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">ItemType</label>
+                <select class="form-select" @bind="@ItemType">
+                @foreach (var type in Enum.GetValues(typeof(Model.ItemType)))
+                {
+                    <option value="@type">@type</option>
+                }
+            </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Price</label>
+                <input class="form-control" @bind="@ItemPrice" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Cost</label>
+                <input class="form-control" @bind="@ItemCost" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <button class="btn btn-success" @onclick="OnSave">save </button>     
+                     
+        
+    </div>
+</div>
 
 @code {
+    [Parameter] public Guid? Id { get; set; }
+    ItemEditViewModel ItemItem { get; set; }
+    private string ItemCode { get; set; }
+    private string ItemDescription { get; set; }   
+    private decimal ItemPrice { get; set; }
+    private decimal ItemCost { get; set; }
+    private ItemType ItemType { get; set; }
+    private bool ShowingErrorMessages = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id == null)
+        {
+            Id = Guid.Empty;
+        }
+
+        ItemItem = await httpClient.GetFromJsonAsync<ItemEditViewModel>($"item/{Id}");
+
+        if (Id != null)
+        {
+            ItemCode = ItemItem.Code;
+            ItemDescription = ItemItem.Description;            
+            ItemPrice = ItemItem.Price;
+            ItemCost = ItemItem.Cost;
+            ItemType = ItemItem.ItemType;
+
+
+        }
+
+    }
+
+    protected async Task OnSave()
+    {       
+
+
+        HttpResponseMessage response;
+
+        if (Id == Guid.Empty)
+        {
+            ItemItem.Code = ItemCode;
+            ItemItem.Description = ItemDescription;
+            ItemItem.Price = ItemPrice;
+            ItemItem.Cost = ItemCost;
+            ItemItem.ItemType = ItemType;
+
+            response = await httpClient.PostAsJsonAsync("item", ItemItem);
+        }
+        else
+        {
+            ItemItem.Code = ItemCode;
+            ItemItem.Description = ItemDescription;
+            ItemItem.Price = ItemPrice;
+            ItemItem.Cost = ItemCost;
+            ItemItem.ItemType = ItemType;
+
+            response = await httpClient.PutAsJsonAsync("item", ItemItem);
+        }
+        response.EnsureSuccessStatusCode();
+        navManager.NavigateTo("itemlist");
+    }
+
+    protected void OnCancel()
+    {
+        navManager.NavigateTo("itemlist");
+    }
 
 }
