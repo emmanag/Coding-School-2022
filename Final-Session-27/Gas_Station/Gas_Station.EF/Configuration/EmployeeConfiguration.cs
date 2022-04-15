@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Gas_Station.EF.Context;
+
 namespace Gas_Station.EF.Configuration
 {
     public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>

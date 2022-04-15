@@ -34,11 +34,11 @@
 
     protected async Task OnLogin()
     {
-        login = await httpClient.GetFromJsonAsync<LoginViewModel>($"login/{Username}/{Password}");
+        login = await httpClient.GetFromJsonAsync<LoginViewModel>($"Login/{Username}/{Password}");
         if (login.IsLogin)
         {
             await jsRuntime.InvokeAsync<string>("localStorage.setItem", "username", login.Username);
-            await jsRuntime.InvokeAsync<string>("localStorage.setItem", "employeeType", login.EmployeeType);
+            await jsRuntime.InvokeAsync<string>("localStorage.setItem", "role", login.EmployeeType);
             await jsRuntime.InvokeAsync<string>("localStorage.setItem", "isLogin", true);
             navigationManager.NavigateTo("/", true);
         }

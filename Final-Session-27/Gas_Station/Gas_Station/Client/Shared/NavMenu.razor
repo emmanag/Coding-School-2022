@@ -1,4 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Gas_Station.Model
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Gas_Station</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -15,36 +19,73 @@
             </NavLink>
         </div>
        
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="CustomerList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Customers
-            </NavLink>            
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="EmployeeList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Employees
-            </NavLink>
-        </div>
-         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="ItemList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Items
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="LedgerList">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Ledgers
-            </NavLink>
-        </div>
+       @if (Role == (int)EmployeeType.Manager)
+        {    
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="employeelist">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Employees
+                </NavLink>
+            </div>
+        }
+        @if(Role == (int)EmployeeType.Manager || Role == (int)EmployeeType.Cashier)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="customerlist">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Customers
+                </NavLink>
+            </div>
+        }
+        @if(Role == (int)EmployeeType.Manager || Role == (int)EmployeeType.Staff){
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="itemlist">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Items
+                </NavLink>
+            </div>
+        }
+        @if(Role == (int)EmployeeType.Manager)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="ledger">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Ledger
+                </NavLink>
+            </div>
+        }
+        @if (isLogin)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" @onclick="Logout">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Logout
+                </NavLink>
+            </div>
+        }
+
     </nav>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
+    private int Role { get; set; } = -1;
+    private bool isLogin { get; set; }
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLogin = Convert.ToBoolean(await jsRuntime.InvokeAsync<string>("localStorage.getItem", "isLogin"));
+        if (!isLogin)
+            return;
+        Role = Convert.ToInt32(await jsRuntime.InvokeAsync<string>("localStorage.getItem", "role"));
+    }
+
+    protected async void Logout()
+    {
+        await jsRuntime.InvokeAsync<string>("localStorage.setItem", "isLogin", false);
+        await jsRuntime.InvokeAsync<string>("localStorage.setItem", "role", -1);
+        navigationManager.NavigateTo("/login", true);
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +39,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
             this.customersToolStripMenuItem,
             this.itemsToolStripMenuItem,
             this.transactionsToolStripMenuItem});
@@ -49,12 +47,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.homeToolStripMenuItem.Text = "Options";
             // 
             // customersToolStripMenuItem
             // 
@@ -97,7 +89,6 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem homeToolStripMenuItem;
         private ToolStripMenuItem customersToolStripMenuItem;
         private ToolStripMenuItem itemsToolStripMenuItem;
         private ToolStripMenuItem transactionsToolStripMenuItem;

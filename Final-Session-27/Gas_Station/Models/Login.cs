@@ -12,6 +12,8 @@ namespace Gas_Station.Model
         public string Username { get; set; }
         public string Password { get; set; }
         public EmployeeType EmployeeType { get; set; }
-        public Login() { }
+        public Login() 
+        {
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Gas_Station.EF.Configuration
             builder.Property(user => user.ID).ValueGeneratedOnAdd();
 
             builder.HasIndex(user => user.Username).IsUnique();
-            builder.Property(user => user.EmployeeType).HasConversion(x=> x.ToString(), x=> (EmployeeType)Enum.Parse(typeof(EmployeeType), x));
+            builder.Property(user => user.EmployeeType).HasConversion(x=> x.ToString(), x=> (EmployeeType)Enum.Parse(typeof(EmployeeType), x)).HasColumnName("Role");
         }
     }
 }
