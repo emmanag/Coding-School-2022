@@ -1,0 +1,46 @@
+﻿@page "/login"
+@using Gas_Station.Shared
+@using Gas_Station.Shared.ViewModels
+@inject HttpClient httpClient
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
+
+<h3>Login Page</h3>
+<div class="col-md-6">
+    <div class="row mt-6">
+         <div class="col-md-4">
+            <label class="form-label">Username</label>
+            <input class="form-control" @bind="@Username"/>
+        </div>
+    </div>
+    <div class="row mt-6">
+         <div class="col-md-4">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" @bind="@Password"/>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <button class="btn btn-success" @onclick="OnLogin">Log In</button>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    private LoginViewModel login { get; set; } = new();
+    private string Password { get; set; }
+    private string Username { get; set; }
+
+    protected async Task OnLogin()
+    {
+        login = await httpClient.GetFromJsonAsync<LoginViewModel>($"login/{Username}/{Password}");
+        if (login.IsLogin)
+        {
+            await jsRuntime.InvokeAsync<string>("localStorage.setItem", "username", login.Username);
+            await jsRuntime.InvokeAsync<string>("localStorage.setItem", "employeeType", login.EmployeeType);
+            await jsRuntime.InvokeAsync<string>("localStorage.setItem", "isLogin", true);
+            navigationManager.NavigateTo("/", true);
+        }
+    }
+}

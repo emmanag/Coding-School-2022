@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Gas_Station.EF.Migrations
 {
-    public partial class initial : Migration
+    public partial class initial777 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,10 +30,10 @@ namespace Gas_Station.EF.Migrations
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Surname = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    HireDateStart = table.Column<DateTime>(type: "datetime2", maxLength: 30, nullable: false),
-                    HireDateEnd = table.Column<DateTime>(type: "datetime2", maxLength: 30, nullable: false),
-                    SallaryPerMonth = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    EmployeeType = table.Column<int>(type: "int", maxLength: 30, nullable: false)
+                    HireDateStart = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HireDateEnd = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SallaryPerMonth = table.Column<decimal>(type: "decimal(10,3)", precision: 10, scale: 3, nullable: false),
+                    EmployeeType = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,9 +47,9 @@ namespace Gas_Station.EF.Migrations
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    ItemType = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", maxLength: 10, nullable: false),
-                    Cost = table.Column<decimal>(type: "decimal(18,2)", maxLength: 10, nullable: false)
+                    ItemType = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(10,3)", precision: 10, scale: 3, nullable: false),
+                    Cost = table.Column<decimal>(type: "decimal(10,3)", precision: 10, scale: 3, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,11 +61,11 @@ namespace Gas_Station.EF.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Year = table.Column<int>(type: "int", maxLength: 10, nullable: false),
-                    Month = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    Income = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    Expenses = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    Total = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false)
+                    Year = table.Column<int>(type: "int", precision: 10, scale: 3, nullable: false),
+                    Month = table.Column<int>(type: "int", precision: 10, scale: 3, nullable: false),
+                    Income = table.Column<decimal>(type: "decimal(10,3)", precision: 10, scale: 3, nullable: false),
+                    Expenses = table.Column<decimal>(type: "decimal(10,3)", precision: 10, scale: 3, nullable: false),
+                    Total = table.Column<decimal>(type: "decimal(10,3)", precision: 10, scale: 3, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,25 +78,23 @@ namespace Gas_Station.EF.Migrations
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", maxLength: 10, nullable: false),
-                    EmployeeID = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    EmployeeID1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CustomerID = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    CustomerID1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PaymentMethod = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    TotalValue = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false)
+                    EmployeeID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CustomerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PaymentMethod = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    TotalValue = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Transactions", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Transactions_Customers_CustomerID1",
-                        column: x => x.CustomerID1,
+                        name: "FK_Transactions_Customers_CustomerID",
+                        column: x => x.CustomerID,
                         principalTable: "Customers",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Transactions_Employeess_EmployeeID1",
-                        column: x => x.EmployeeID1,
+                        name: "FK_Transactions_Employeess_EmployeeID",
+                        column: x => x.EmployeeID,
                         principalTable: "Employeess",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
@@ -107,53 +105,57 @@ namespace Gas_Station.EF.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TransactionID = table.Column<int>(type: "int", maxLength: 10, nullable: false),
-                    TransactionID1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ItemID = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    ItemID1 = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", maxLength: 30, nullable: false),
-                    ItemPrice = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    NetValue = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    DiscountPercent = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    DiscountValue = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false),
-                    TotalValue = table.Column<decimal>(type: "decimal(18,2)", maxLength: 30, nullable: false)
+                    TransactionID = table.Column<Guid>(type: "uniqueidentifier", maxLength: 10, nullable: false),
+                    ItemID = table.Column<Guid>(type: "uniqueidentifier", maxLength: 30, nullable: false),
+                    Quantity = table.Column<int>(type: "int", precision: 9, scale: 3, nullable: false),
+                    ItemPrice = table.Column<decimal>(type: "decimal(9,3)", precision: 9, scale: 3, nullable: false),
+                    NetValue = table.Column<decimal>(type: "decimal(9,3)", precision: 9, scale: 3, nullable: false),
+                    DiscountPercent = table.Column<decimal>(type: "decimal(9,3)", precision: 9, scale: 3, nullable: false),
+                    DiscountValue = table.Column<decimal>(type: "decimal(9,3)", precision: 9, scale: 3, nullable: false),
+                    TotalValue = table.Column<decimal>(type: "decimal(9,3)", precision: 9, scale: 3, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TransactionLines", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_TransactionLines_Items_ItemID1",
-                        column: x => x.ItemID1,
+                        name: "FK_TransactionLines_Items_ItemID",
+                        column: x => x.ItemID,
                         principalTable: "Items",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_TransactionLines_Transactions_TransactionID1",
-                        column: x => x.TransactionID1,
+                        name: "FK_TransactionLines_Transactions_TransactionID",
+                        column: x => x.TransactionID,
                         principalTable: "Transactions",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_TransactionLines_ItemID1",
+                name: "IX_Customers_CardNumber",
+                table: "Customers",
+                column: "CardNumber",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TransactionLines_ItemID",
                 table: "TransactionLines",
-                column: "ItemID1");
+                column: "ItemID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TransactionLines_TransactionID1",
+                name: "IX_TransactionLines_TransactionID",
                 table: "TransactionLines",
-                column: "TransactionID1");
+                column: "TransactionID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Transactions_CustomerID1",
+                name: "IX_Transactions_CustomerID",
                 table: "Transactions",
-                column: "CustomerID1");
+                column: "CustomerID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Transactions_EmployeeID1",
+                name: "IX_Transactions_EmployeeID",
                 table: "Transactions",
-                column: "EmployeeID1");
+                column: "EmployeeID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

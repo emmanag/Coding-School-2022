@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Gas_Station.EF.Context;
 using Gas_Station.EF.Repositories;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,6 +22,8 @@ builder.Services.AddScoped<IEntityRepo<Item>, ItemRepo>();
 builder.Services.AddScoped<IEntityRepo<Transaction>, TransactionRepo>();
 builder.Services.AddScoped<IEntityRepo<TransactionLine>, TransactionLineRepo>();
 builder.Services.AddScoped<IEntityRepo<Ledger>, LedgerRepo>();
+
+
 
 var app = builder.Build();
 

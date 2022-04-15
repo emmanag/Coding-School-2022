@@ -20,10 +20,10 @@ namespace Gas_Station.Blazor.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<CustomerListViewModel>> Get()
+        public async Task<IEnumerable<CustomerEditListViewModel>> Get()
         {
             var result = await _customerRepo.GetAllAsync();
-            return result.Select(x => new CustomerListViewModel
+            return result.Select(x => new CustomerEditListViewModel
             {
                 ID = x.ID,
                 Name = x.Name,
@@ -63,29 +63,29 @@ namespace Gas_Station.Blazor.Server.Controllers
         public async Task Post(CustomerEditViewModel customer)
         {
             var newCustomer = new Customer()
-            {    
-               
-                Name= customer.Name,
-                Surname= customer.Surname,
-                CardNumber= customer.CardNumber
+            {
+  
+                Name = customer.Name,
+                Surname = customer.Surname,
+                
             };
-            
+            if (customer.CardNumber != String.Empty)
+            {
+                newCustomer.CardNumber = customer.CardNumber;
+            }
+
             await _customerRepo.CreateAsync(newCustomer);
         }
 
         [HttpPut]
         public async Task<ActionResult> Put(CustomerEditViewModel customer)
         {
-            var itemToUpdate = await _customerRepo.GetByIdAsync(customer.ID);
-            if (itemToUpdate == null) return NotFound();            
-            
+            var customerUpdate = await _customerRepo.GetByIdAsync(customer.ID);
+            if (customerUpdate == null) return NotFound();
+            customerUpdate.Name = customer.Name;
+            customerUpdate.Surname = customer.Surname;
 
-            itemToUpdate.Name = customer.Name;
-            itemToUpdate.Surname = customer.Surname;
-            itemToUpdate.CardNumber = customer.CardNumber;
-            
-
-            await _customerRepo.UpdateAsync(customer.ID, itemToUpdate);
+            await _customerRepo.UpdateAsync(customer.ID, customerUpdate);
 
             return Ok();
         }

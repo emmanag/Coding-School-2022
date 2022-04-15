@@ -70,7 +70,7 @@ namespace Gas_Station.Server.Controllers
             var expences = 0m;
             foreach (var t in monthlyTrans)
             {
-                expences += t.TransactionLines.Sum(tl => tl.Item.Cost * tl.Quantity);
+                expences += t.TransactionLine.Sum(tl => tl.Item.Cost * tl.Quantity);
             }
             return expences;
             

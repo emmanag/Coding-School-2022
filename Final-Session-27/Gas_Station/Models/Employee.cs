@@ -16,6 +16,12 @@ namespace Gas_Station.Model
         public DateTime HireDateEnd { get; set; }
         public decimal SallaryPerMonth { get; set; }
         public EmployeeType EmployeeType { get; set; }
-        //public List<Transaction> Transactions { get; set; }
+        public List<Transaction> Transaction { get; set; }
+
+        public Employee () { }
     }
+
+
+
+   
 }

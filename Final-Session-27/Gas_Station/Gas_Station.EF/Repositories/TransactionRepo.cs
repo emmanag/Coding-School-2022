@@ -14,7 +14,7 @@ namespace Gas_Station.EF.Repositories
         }
         public async Task CreateAsync(Transaction entity)
         {
-            if (entity.ID != Guid.Empty)
+            if (entity.ID == Guid.Empty)
                 throw new ArgumentException("Given entity should not have Id set", nameof(entity));
 
             context.Transactions.Add(entity);
@@ -34,17 +34,25 @@ namespace Gas_Station.EF.Repositories
 
         public async Task<IEnumerable<Transaction>> GetAllAsync()
         {
-            return await context.Transactions.ToListAsync();
+            return await context.Transactions.Include(trasaction => trasaction.Customer)
+                                                    .Include(trasaction => trasaction.Employee)
+                                                    .Include(trasaction => trasaction.TransactionLine)
+                                                    .ThenInclude(transactionLine => transactionLine.Item)
+                                                    .ToListAsync();
         }
 
         public async Task<Transaction?> GetByIdAsync(Guid id)
         {
-            return await context.Transactions.SingleOrDefaultAsync(transaction => transaction.ID == id);
+            return await context.Transactions.Include(trasaction => trasaction.Customer)
+                                                    .Include(trasaction => trasaction.Employee)
+                                                    .Include(trasaction => trasaction.TransactionLine)
+                                                    .ThenInclude(transactionLine => transactionLine.Item)
+                                                    .SingleOrDefaultAsync(trasaction => trasaction.ID == id);
         }
 
         public async Task UpdateAsync(Guid id, Transaction entity)
         {
-            var foundTransaction = context.Transactions.SingleOrDefault(transaction => transaction.ID == id);
+            var foundTransaction = context.Transactions.Include(x => x.TransactionLine).SingleOrDefault(transaction => transaction.ID == id);
             if (foundTransaction is null)
                 return;
 

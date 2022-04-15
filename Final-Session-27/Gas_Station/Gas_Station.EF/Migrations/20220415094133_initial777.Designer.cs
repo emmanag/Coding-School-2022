@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gas_Station.EF.Migrations
 {
     [DbContext(typeof(GasStationContext))]
-    [Migration("20220411113151_initial")]
-    partial class initial
+    [Migration("20220415094133_initial777")]
+    partial class initial777
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,6 +47,9 @@ namespace Gas_Station.EF.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("CardNumber")
+                        .IsUnique();
+
                     b.ToTable("Customers", (string)null);
                 });
 
@@ -56,16 +59,15 @@ namespace Gas_Station.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("EmployeeType")
-                        .HasMaxLength(30)
-                        .HasColumnType("int");
+                    b.Property<string>("EmployeeType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime>("HireDateEnd")
-                        .HasMaxLength(30)
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("HireDateStart")
-                        .HasMaxLength(30)
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -74,8 +76,8 @@ namespace Gas_Station.EF.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<decimal>("SallaryPerMonth")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(10, 3)
+                        .HasColumnType("decimal(10,3)");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -99,21 +101,22 @@ namespace Gas_Station.EF.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<decimal>("Cost")
-                        .HasMaxLength(10)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(10, 3)
+                        .HasColumnType("decimal(10,3)");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int>("ItemType")
-                        .HasMaxLength(30)
-                        .HasColumnType("int");
+                    b.Property<string>("ItemType")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<decimal>("Price")
-                        .HasMaxLength(10)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(10, 3)
+                        .HasColumnType("decimal(10,3)");
 
                     b.HasKey("ID");
 
@@ -127,23 +130,23 @@ namespace Gas_Station.EF.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Expenses")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(10, 3)
+                        .HasColumnType("decimal(10,3)");
 
                     b.Property<decimal>("Income")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(10, 3)
+                        .HasColumnType("decimal(10,3)");
 
                     b.Property<int>("Month")
-                        .HasMaxLength(30)
+                        .HasPrecision(10, 3)
                         .HasColumnType("int");
 
                     b.Property<decimal>("Total")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(10, 3)
+                        .HasColumnType("decimal(10,3)");
 
                     b.Property<int>("Year")
-                        .HasMaxLength(10)
+                        .HasPrecision(10, 3)
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -157,37 +160,30 @@ namespace Gas_Station.EF.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CustomerID")
-                        .HasMaxLength(30)
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("CustomerID1")
+                    b.Property<Guid>("CustomerID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Date")
                         .HasMaxLength(10)
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("EmployeeID")
-                        .HasMaxLength(30)
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("EmployeeID1")
+                    b.Property<Guid>("EmployeeID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("PaymentMethod")
-                        .HasMaxLength(30)
-                        .HasColumnType("int");
+                    b.Property<string>("PaymentMethod")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<decimal>("TotalValue")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CustomerID1");
+                    b.HasIndex("CustomerID");
 
-                    b.HasIndex("EmployeeID1");
+                    b.HasIndex("EmployeeID");
 
                     b.ToTable("Transactions", (string)null);
                 });
@@ -199,48 +195,42 @@ namespace Gas_Station.EF.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("DiscountPercent")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(9, 3)
+                        .HasColumnType("decimal(9,3)");
 
                     b.Property<decimal>("DiscountValue")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(9, 3)
+                        .HasColumnType("decimal(9,3)");
 
-                    b.Property<int>("ItemID")
+                    b.Property<Guid>("ItemID")
                         .HasMaxLength(30)
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("ItemID1")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("ItemPrice")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(9, 3)
+                        .HasColumnType("decimal(9,3)");
 
                     b.Property<decimal>("NetValue")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(9, 3)
+                        .HasColumnType("decimal(9,3)");
 
                     b.Property<int>("Quantity")
-                        .HasMaxLength(30)
+                        .HasPrecision(9, 3)
                         .HasColumnType("int");
 
                     b.Property<decimal>("TotalValue")
-                        .HasMaxLength(30)
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(9, 3)
+                        .HasColumnType("decimal(9,3)");
 
-                    b.Property<int>("TransactionID")
+                    b.Property<Guid>("TransactionID")
                         .HasMaxLength(10)
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("TransactionID1")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ItemID1");
+                    b.HasIndex("ItemID");
 
-                    b.HasIndex("TransactionID1");
+                    b.HasIndex("TransactionID");
 
                     b.ToTable("TransactionLines", (string)null);
                 });
@@ -248,14 +238,14 @@ namespace Gas_Station.EF.Migrations
             modelBuilder.Entity("Gas_Station.Model.Transaction", b =>
                 {
                     b.HasOne("Gas_Station.Model.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerID1")
+                        .WithMany("Transaction")
+                        .HasForeignKey("CustomerID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Gas_Station.Model.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeID1")
+                        .WithMany("Transaction")
+                        .HasForeignKey("EmployeeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -267,14 +257,14 @@ namespace Gas_Station.EF.Migrations
             modelBuilder.Entity("Gas_Station.Model.TransactionLine", b =>
                 {
                     b.HasOne("Gas_Station.Model.Item", "Item")
-                        .WithMany()
-                        .HasForeignKey("ItemID1")
+                        .WithMany("TransactionLine")
+                        .HasForeignKey("ItemID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Gas_Station.Model.Transaction", "Transaction")
-                        .WithMany("TransactionLines")
-                        .HasForeignKey("TransactionID1")
+                        .WithMany("TransactionLine")
+                        .HasForeignKey("TransactionID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -283,9 +273,24 @@ namespace Gas_Station.EF.Migrations
                     b.Navigation("Transaction");
                 });
 
+            modelBuilder.Entity("Gas_Station.Model.Customer", b =>
+                {
+                    b.Navigation("Transaction");
+                });
+
+            modelBuilder.Entity("Gas_Station.Model.Employee", b =>
+                {
+                    b.Navigation("Transaction");
+                });
+
+            modelBuilder.Entity("Gas_Station.Model.Item", b =>
+                {
+                    b.Navigation("TransactionLine");
+                });
+
             modelBuilder.Entity("Gas_Station.Model.Transaction", b =>
                 {
-                    b.Navigation("TransactionLines");
+                    b.Navigation("TransactionLine");
                 });
 #pragma warning restore 612, 618
         }

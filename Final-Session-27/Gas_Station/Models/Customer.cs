@@ -12,7 +12,7 @@ namespace Gas_Station.Model
         public string Name { get; set; }
         public string Surname { get; set; }
         public string CardNumber { get; set; }
-        //public List<Transaction> Transactions { get; set; }
+        public List<Transaction> Transaction { get; set; }
 
         public Customer()
         {

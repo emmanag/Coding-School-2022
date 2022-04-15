@@ -16,13 +16,17 @@ namespace Gas_Station.EF.Configuration
         {
             builder.ToTable("Customers");
             builder.HasKey(customer => customer.ID);
-            builder.Property(customer => customer.ID).ValueGeneratedOnAdd();
+            //builder.Property(customer => customer.ID).ValueGeneratedOnAdd();
 
             builder.Property(customer => customer.Name).HasMaxLength(10);
             builder.Property(customer => customer.Surname).HasMaxLength(30);
             builder.Property(customer => customer.CardNumber).HasMaxLength(30);
+            builder.HasIndex(customer => customer.CardNumber).IsUnique();
 
-            
+            builder.HasMany(customer => customer.Transaction)
+                .WithOne(transaction => transaction.Customer)
+                .HasForeignKey(transaction => transaction.CustomerID);
+
         }
     }
 }

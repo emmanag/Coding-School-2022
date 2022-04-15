@@ -14,7 +14,7 @@ namespace Gas_Station.Model
         public ItemType ItemType { get; set; }
         public decimal Price { get; set; }
         public decimal Cost { get; set; }
-        //public List<TransactionLine> TransactionLines { get; set; }
+        public List<TransactionLine> TransactionLine { get; set; }
         public Item()
         {
             

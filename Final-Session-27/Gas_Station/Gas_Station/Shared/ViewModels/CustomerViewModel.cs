@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Gas_Station.Shared.ViewModels
 {
-    public class CustomerListViewModel
+    public class CustomerEditListViewModel
     {
         public Guid ID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string CardNumber { get; set; }
+        public string CardNumber { get; set; } = string.Empty;
     }
 
     public class CustomerEditViewModel
@@ -19,11 +19,7 @@ namespace Gas_Station.Shared.ViewModels
         public Guid ID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string CardNumber { get; set; }
+        public string CardNumber { get; set; } = string.Empty;
     }
-    //public class CustomerListViewModel
-    //{
-    //    public List<CustomerViewModel> CustomerList { get; set; } = new List<CustomerViewModel>();
-
-    //}
+    
 }

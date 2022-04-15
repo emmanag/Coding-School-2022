@@ -10,15 +10,13 @@ namespace Gas_Station.Model
     {
         
         public DateTime Date { get; set; }
-        public int EmployeeID { get; set; }
+        public Guid EmployeeID { get; set; }
         public Employee Employee { get; set; }
-        public int CustomerID { get; set; }
+        public Guid CustomerID { get; set; }
         public Customer Customer { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
         public decimal TotalValue { get; set; }
-        public List<TransactionLine> TransactionLines { get; set; }
-
-        
+        public List<TransactionLine> TransactionLine { get; set; }        
 
     }
 }

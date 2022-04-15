@@ -17,6 +17,8 @@ namespace Gas_Station.EF.Context
         public DbSet<Ledger> Ledgers { get; set; } = null!;
         public DbSet<Transaction> Transactions { get; set; } = null!;
         public DbSet<TransactionLine> TransactionLines { get; set; } = null!;
+        public DbSet<Login> Logins { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,6 +29,7 @@ namespace Gas_Station.EF.Context
             modelBuilder.ApplyConfiguration(new LedgerConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionLineConfiguration());
+            modelBuilder.ApplyConfiguration(new LoginConfiguration());
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

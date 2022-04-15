@@ -16,13 +16,13 @@ namespace Gas_Station.EF.Configuration
         {
             builder.ToTable("Ledgers");
             builder.HasKey(ledger => ledger.ID);
-            builder.Property(ledger => ledger.ID).ValueGeneratedOnAdd();
+            //builder.Property(ledger => ledger.ID).ValueGeneratedOnAdd();
 
-            builder.Property(ledger => ledger.Year).HasMaxLength(10);
-            builder.Property(ledger => ledger.Month).HasMaxLength(30);
-            builder.Property(ledger => ledger.Income).HasMaxLength(30);
-            builder.Property(ledger => ledger.Expenses).HasMaxLength(30);
-            builder.Property(ledger => ledger.Total).HasMaxLength(30);
+            builder.Property(ledger => ledger.Year).HasPrecision(10, 3);
+            builder.Property(ledger => ledger.Month).HasPrecision(10, 3);
+            builder.Property(ledger => ledger.Income).HasPrecision(10, 3);
+            builder.Property(ledger => ledger.Expenses).HasPrecision(10, 3);
+            builder.Property(ledger => ledger.Total).HasPrecision(10, 3);
         }
     }
 }

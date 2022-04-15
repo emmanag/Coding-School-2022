@@ -41,7 +41,7 @@ else
     </table>
 }
 @code {
-    private List<CustomerListViewModel> _customerList = new();
+    private List<CustomerEditListViewModel> _customerList = new();
     private bool isLoading = true;
 
     protected override async Task OnInitializedAsync()
@@ -55,7 +55,7 @@ else
         navigationManager.NavigateTo("/customerlist/edit");
     }
 
-    protected async Task EditCustomer(CustomerListViewModel customerViewModel)
+    protected async Task EditCustomer(CustomerEditListViewModel customerViewModel)
     {
         var customerEditViewModel = new CustomerEditViewModel
             {
@@ -67,7 +67,7 @@ else
         navigationManager.NavigateTo($"/customerlist/edit/{customerEditViewModel.ID}");
     }
 
-    protected async Task DeleteCustomer(CustomerListViewModel customerViewModel)
+    protected async Task DeleteCustomer(CustomerEditListViewModel customerViewModel)
     {
         var response = await httpClient.DeleteAsync($"customer/{customerViewModel.ID}");
         response.EnsureSuccessStatusCode();
@@ -76,6 +76,6 @@ else
 
     private async Task LoadItemsFromServer()
     {
-        _customerList = await httpClient.GetFromJsonAsync<List<CustomerListViewModel>>("Customer");
+        _customerList = await httpClient.GetFromJsonAsync<List<CustomerEditListViewModel>>("Customer");
     }
 }

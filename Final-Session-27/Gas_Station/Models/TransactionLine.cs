@@ -9,9 +9,9 @@ namespace Gas_Station.Model
     public class TransactionLine : BaseEntity
     {
         
-        public int TransactionID { get; set; }
+        public Guid TransactionID { get; set; }
         public Transaction Transaction { get; set; }
-        public int ItemID { get; set; }
+        public Guid ItemID { get; set; }
         public Item Item { get; set; }
         public int Quantity { get; set; }
         public decimal ItemPrice { get; set; }

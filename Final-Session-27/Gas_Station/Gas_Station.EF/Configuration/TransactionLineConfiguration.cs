@@ -16,16 +16,16 @@ namespace Gas_Station.EF.Configuration
         {
             builder.ToTable("TransactionLines");
             builder.HasKey(transactionLine => transactionLine.ID);
-            builder.Property(transactionLine => transactionLine.ID).ValueGeneratedOnAdd();
+            //builder.Property(transactionLine => transactionLine.ID).ValueGeneratedOnAdd();
 
             builder.Property(transactionLine => transactionLine.TransactionID).HasMaxLength(10);
             builder.Property(transactionLine => transactionLine.ItemID).HasMaxLength(30);
-            builder.Property(transactionLine => transactionLine.Quantity).HasMaxLength(30);
-            builder.Property(transactionLine => transactionLine.ItemPrice).HasMaxLength(30);
-            builder.Property(transactionLine => transactionLine.NetValue).HasMaxLength(30);
-            builder.Property(transactionLine => transactionLine.DiscountPercent).HasMaxLength(30);
-            builder.Property(transactionLine => transactionLine.DiscountValue).HasMaxLength(30);
-            builder.Property(transactionLine => transactionLine.TotalValue).HasMaxLength(30);
+            builder.Property(transactionLine => transactionLine.Quantity).HasPrecision(9, 3);
+            builder.Property(transactionLine => transactionLine.ItemPrice).HasPrecision(9, 3);
+            builder.Property(transactionLine => transactionLine.NetValue).HasPrecision(9, 3);
+            builder.Property(transactionLine => transactionLine.DiscountPercent).HasPrecision(9, 3);
+            builder.Property(transactionLine => transactionLine.DiscountValue).HasPrecision(9, 3);
+            builder.Property(transactionLine => transactionLine.TotalValue).HasPrecision(9, 3);
         }
     }
 }

@@ -15,14 +15,17 @@ namespace Gas_Station.EF.Configuration
         {
             builder.ToTable("Employeess");
             builder.HasKey(employee => employee.ID);
-            builder.Property(employee => employee.ID).ValueGeneratedOnAdd();
+            //builder.Property(employee => employee.ID).ValueGeneratedOnAdd();
 
             builder.Property(employee => employee.Name).HasMaxLength(10);
-            builder.Property(employee => employee.Surname).HasMaxLength(30);
-            builder.Property(employee => employee.HireDateStart).HasMaxLength(30);
-            builder.Property(employee => employee.HireDateEnd).HasMaxLength(30);
-            builder.Property(employee => employee.SallaryPerMonth).HasMaxLength(30);
-            builder.Property(employee => employee.EmployeeType).HasMaxLength(30);
+            builder.Property(employee => employee.Surname).HasMaxLength(30);            
+            builder.Property(employee => employee.SallaryPerMonth).HasPrecision(10, 3);
+            builder.Property(employee => employee.EmployeeType).HasConversion(employeeType => employeeType.ToString(),
+                            employeeType => (EmployeeType)Enum.Parse(typeof(EmployeeType), employeeType)).HasMaxLength(20);
+
+            builder.HasMany(employee => employee.Transaction)
+                .WithOne(transaction => transaction.Employee)
+                .HasForeignKey(transaction => transaction.EmployeeID);
         }
     }
 }
