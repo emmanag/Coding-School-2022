@@ -12,19 +12,21 @@ namespace Gas_Station.Server.Controllers
     {
         private readonly IEntityRepo<Ledger> _ledgerRepo;
         private readonly GasStationContext _context;
+        private readonly IEntityRepo<Transaction> _transactionRepo;
         private decimal _rent;
 
 
 
-        public LedgerController(IEntityRepo<Ledger> ledgerRepo, GasStationContext context)
+        public LedgerController(IEntityRepo<Ledger> ledgerRepo, GasStationContext context, IEntityRepo<Transaction> transactionRepo)
         {
             _ledgerRepo = ledgerRepo;
             _context = context;
+            _transactionRepo = transactionRepo;
 
         }
         
         [HttpGet("{year}/{month}/{rent}")]
-        public LedgerViewModel Get(int year, int month, decimal rent)
+        public async Task<LedgerViewModel> Get(int year, int month, decimal rent)
         {
             var ledgerViewModel = new LedgerViewModel()
             {
@@ -37,22 +39,23 @@ namespace Gas_Station.Server.Controllers
                 Month = month
             };
             SetRentCost(rent);
-            ledgerViewModel.Income = GetIncome(ledger);
-            ledgerViewModel.Expenses = GetTotalExpences(ledger);
-            ledgerViewModel.Total = GetTotal(ledger);
+            ledgerViewModel.Income = await GetIncome(ledger);
+            ledgerViewModel.Expenses = await GetTotalExpences(ledger);
+            ledgerViewModel.Total = await GetTotal(ledger);
             return ledgerViewModel;
         }
-        public void SetRentCost(decimal rent)
+        private void SetRentCost(decimal rent)
         {
             _rent = rent;
         }
-        public decimal GetIncome(Ledger ledger)
+        private async Task<decimal> GetIncome(Ledger ledger)
         {
-            return _context.Transactions.Where(transaction => transaction.Date.Year == ledger.Year && transaction.Date.Month == ledger.Month).Sum(transaction => transaction.TotalValue);
+            var helper = await _transactionRepo.GetAllAsync();
+            return helper.Where(transaction => transaction.Date.Year == ledger.Year && transaction.Date.Month == ledger.Month).Sum(transaction => transaction.TotalValue);
         }
-        public decimal GetTotalExpences(Ledger ledger)
+        private async Task<decimal> GetTotalExpences(Ledger ledger)
         {
-            return GetStuffExpences(ledger) + GetItemExpences(ledger) + _rent;
+            return GetStuffExpences(ledger) + await GetItemExpences(ledger) + _rent;
         }
         private decimal GetStuffExpences(Ledger ledger)
         {
@@ -64,16 +67,17 @@ namespace Gas_Station.Server.Controllers
             }
             return expences;
         }
-        private decimal GetItemExpences(Ledger ledger)
+        private async Task<decimal> GetItemExpences(Ledger ledger)
         {
-            var monthlyTrans = _context.Transactions.Where(transaction => transaction.Date.Year == ledger.Year && transaction.Date.Month == ledger.Month);
+            var helper = await _transactionRepo.GetAllAsync();
+            var monthlyTrans = helper.Where(transaction => transaction.Date.Year == ledger.Year && transaction.Date.Month == ledger.Month);
             var expences = 0m;
             foreach (var t in monthlyTrans)
             {
                 expences += t.TransactionLine.Sum(tl => tl.Item.Cost * tl.Quantity);
             }
             return expences;
-            
+
         }
         private int CalculateWorkingDays(Ledger ledger, Employee employee)
         {
@@ -106,9 +110,9 @@ namespace Gas_Station.Server.Controllers
                 return true;
             return false;
         }
-        public decimal GetTotal(Ledger ledger)
+        public async Task<decimal> GetTotal(Ledger ledger)
         {
-            return GetIncome(ledger) - GetTotalExpences(ledger);
+            return await GetIncome(ledger) - await GetTotalExpences(ledger);
         }
     }
 }

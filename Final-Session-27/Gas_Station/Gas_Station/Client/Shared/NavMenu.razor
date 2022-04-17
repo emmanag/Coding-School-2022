@@ -2,7 +2,7 @@
 @inject IJSRuntime jsRuntime
 @inject NavigationManager navigationManager
 
-<div class="top-row ps-3 navbar navbar-dark">
+<div class="top-row ps-3 navbar navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Gas_Station</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -45,7 +45,7 @@
         @if(Role == (int)EmployeeType.Manager)
         {
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="ledger">
+                <NavLink class="nav-link" href="ledgerlist">
                     <span class="oi oi-list-rich" aria-hidden="true"></span> Ledger
                 </NavLink>
             </div>

@@ -54,12 +54,12 @@ namespace Gas_Station.Win.TransactionFomrs
             grvTransactionList.ReadOnly = true;
         }
 
-        private async void bntRefresh_Click(object sender, EventArgs e)
+        private void bntRefresh_Click(object sender, EventArgs e)
         {
              RefreshTransactionList();
         }
 
-        private async void btnAddTransaction_Click(object sender, EventArgs e)
+        private void btnAddTransaction_Click(object sender, EventArgs e)
         {
             var carNumber = new CardNumberF(_client, _handler);
             carNumber.ShowDialog();
