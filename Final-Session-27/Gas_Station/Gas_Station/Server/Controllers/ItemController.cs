@@ -84,7 +84,7 @@ namespace Gas_Station.Server.Controllers
             var itemToUpdate = await _customerRepo.GetByIdAsync(customer.ID);
             if (itemToUpdate == null) return NotFound();
 
-
+            
             itemToUpdate.Code = customer.Code;
             itemToUpdate.Description = customer.Description;
             itemToUpdate.ItemType = customer.ItemType;

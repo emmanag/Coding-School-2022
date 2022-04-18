@@ -44,7 +44,7 @@ namespace Gas_Station.Win.TransactionForms
                 {
                     CardNumber = _cardNumber,
                 };
-                var frameNewCustomer = new CustomerForms.CustomerEditF(_client, newCustomer);
+                var frameNewCustomer = new CustomerForms.CustomerEditF(_client, convertViewtoEdit(newCustomer));
                 frameNewCustomer.ShowDialog();
 
                 
@@ -75,6 +75,18 @@ namespace Gas_Station.Win.TransactionForms
             };
             var frameNewCustomer = new TransactionEditF(_client, transaction, _handler);
             frameNewCustomer.ShowDialog();
+        }
+
+        private CustomerEditViewModel convertViewtoEdit(CustomerEditListViewModel mycustomer)
+        {
+            var editcustomer = new CustomerEditViewModel()
+            {
+                ID = mycustomer.ID,
+                Name = mycustomer.Name,
+                Surname = mycustomer.Surname,
+                CardNumber = mycustomer.CardNumber
+            };
+            return editcustomer;
         }
     }
 }

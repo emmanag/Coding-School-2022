@@ -40,6 +40,8 @@
             this.bsItem = new System.Windows.Forms.BindingSource(this.components);
             this.txtCost = new System.Windows.Forms.NumericUpDown();
             this.txtPrice = new System.Windows.Forms.NumericUpDown();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.lblCode = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
@@ -95,11 +97,10 @@
             this.comboItemType.Name = "comboItemType";
             this.comboItemType.Size = new System.Drawing.Size(175, 23);
             this.comboItemType.TabIndex = 7;
-            
             // 
             // bntClose
             // 
-            this.bntClose.Location = new System.Drawing.Point(185, 216);
+            this.bntClose.Location = new System.Drawing.Point(221, 251);
             this.bntClose.Name = "bntClose";
             this.bntClose.Size = new System.Drawing.Size(134, 36);
             this.bntClose.TabIndex = 9;
@@ -108,7 +109,7 @@
             // 
             // bntSave
             // 
-            this.bntSave.Location = new System.Drawing.Point(12, 216);
+            this.bntSave.Location = new System.Drawing.Point(44, 251);
             this.bntSave.Name = "bntSave";
             this.bntSave.Size = new System.Drawing.Size(134, 36);
             this.bntSave.TabIndex = 8;
@@ -152,11 +153,29 @@
             this.txtPrice.Size = new System.Drawing.Size(175, 23);
             this.txtPrice.TabIndex = 11;
             // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(117, 197);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(175, 23);
+            this.txtCode.TabIndex = 12;
+            // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(44, 200);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(35, 15);
+            this.lblCode.TabIndex = 13;
+            this.lblCode.Text = "Code";
+            // 
             // ItemEditF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 264);
+            this.ClientSize = new System.Drawing.Size(442, 344);
+            this.Controls.Add(this.lblCode);
+            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtCost);
             this.Controls.Add(this.bntClose);
@@ -191,5 +210,7 @@
         private BindingSource bsItem;
         private NumericUpDown txtCost;
         private NumericUpDown txtPrice;
+        private TextBox txtCode;
+        private Label lblCode;
     }
 }

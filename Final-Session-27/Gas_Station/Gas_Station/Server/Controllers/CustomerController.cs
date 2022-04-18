@@ -84,7 +84,7 @@ namespace Gas_Station.Blazor.Server.Controllers
             if (customerUpdate == null) return NotFound();
             customerUpdate.Name = customer.Name;
             customerUpdate.Surname = customer.Surname;
-
+            customerUpdate.CardNumber = customer.CardNumber;
             await _customerRepo.UpdateAsync(customer.ID, customerUpdate);
 
             return Ok();

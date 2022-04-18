@@ -68,7 +68,8 @@ namespace Gas_Station.Win.CustomerForms
                 return;
 
             _selectedCustomer = ConvertViewToEdit((CustomerEditListViewModel)grvCustomerList.SelectedRows[index: 0].DataBoundItem);
-            _client.DeleteAsync($"customer/{_selectedCustomer.ID}");
+            var frmCustomerList = new CustomerEditF(_client, _selectedCustomer);
+            frmCustomerList.ShowDialog();
             await RefreshCustomerList();
         }
 

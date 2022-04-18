@@ -49,7 +49,8 @@ namespace Gas_Station.Win.ItemForms
             txtDescription.DataBindings.Add(new Binding("Text", bsItem, "Description", true));
             txtCost.DataBindings.Add(new Binding("Text", bsItem, "Cost", true));
             txtPrice.DataBindings.Add(new Binding("Text", bsItem,"Price", true));
-            
+            txtCode.DataBindings.Add(new Binding("Text", bsItem, "Code", true));
+
             string[] itemType = Enum.GetNames(typeof(ItemType));
             comboItemType.Items.AddRange(itemType);
 
